@@ -1,0 +1,23 @@
+{
+  "project": "Linkoteq Structural Detection",
+  "repository": "dehghoon/linkoteq-structural-detection",
+  "overallStatus": "in-progress",
+  "currentStage": "contract-and-annotation-bootstrap",
+  "stages": {
+    "detection-contract": "in-progress",
+    "annotation-specification": "not-started",
+    "dataset-pilot": "not-started",
+    "detector-benchmark": "not-started",
+    "training-and-evaluation": "not-started",
+    "model-registry": "not-started",
+    "inference-adapter": "not-started",
+    "gpt6-handoff-verification": "not-started",
+    "production-verification": "not-started"
+  },
+  "handoffTarget": "dehghoon/linkoteq-drawing-reconstruction",
+  "handoffContract": "contracts/structural-detection-evidence-v0.1.md",
+  "securityOwner": "GPT-5",
+  "detectionOwner": "GPT-7",
+  "reconstructionOwner": "GPT-6",
+  "orchestrator": "GPT-4"
+}
