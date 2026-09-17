@@ -1,0 +1,24 @@
+{
+  "spec_version": "0.1",
+  ""coordinate_space": "source-page",
+  "allowed_classes": ["column", "beam"],
+  "required_fields": [
+    "annotation_id", "source_id", "page_id", "project_group_id",
+    "class_name", "box", "coordinate_space", "spec_version", "qa_state"
+  ],
+  "box": {
+    "fields": ["xmin", "ymin", "xmax", "ymax"],
+    "finite": true,
+    "positive_area": true,
+    "must_be_within_source_page_bounds": true
+  },
+  "blocking_flags": ["ambiguous-class", "ambiguous-presence", "overlap-ambiguous"],
+  "allowed_edge_flags": ["partial", "occluded", "duplicate-render", "low-resolution", "scan-noise", "faded", "compression-artifact"],
+  "qa_states": ["draft", "review-required", "adjudication-required", "approved", "corrected-approved", "excluded-ambiguous", "needs-reannotation"],
+  "split_rules": {
+    "group_key": "project_group_id",
+    "disjoint_across_train_val_test": true,
+    "exact_cross_split_duplicates_block_release": true,
+    "near_cross_split_duplicates_block_release": true
+  }
+}
