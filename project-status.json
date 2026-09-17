@@ -2,10 +2,10 @@
   "project": "Linkoteq Structural Detection",
   "repository": "dehghoon/linkoteq-structural-detection",
   "overallStatus": "in-progress",
-  "currentStage": "contract-and-annotation-bootstrap",
+  "currentStage": "annotation-specification",
   "stages": {
     "detection-contract": "in-progress",
-    "annotation-specification": "not-started",
+    "annotation-specification": "complete",
     "dataset-pilot": "not-started",
     "detector-benchmark": "not-started",
     "training-and-evaluation": "not-started",
