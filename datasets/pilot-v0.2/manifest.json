@@ -35,8 +35,20 @@
     "page_scope": "All 14 v0.1 pilot pages are in scope for v0.2 wall re-review. Existing column/beam annotations remain baseline references until v0.2 page QA is complete."
   },
   "wall_qa": {
-    "status": "not-started",
-    "required_per_page_dispositions": ["wall-reviewed-none", "wall-candidates-reviewed", "needs-adjudication"],
+    "status": "in-progress",
+    "pages_reviewed": 14,
+    "pages_total": 14,
+    "page_review_coverage_complete": true,
+    "human_semantics_confirmed_pages": 2,
+    "instance_bbox_qa_complete": false,
+    "adjudication_remains": true,
+    "required_per_page_dispositions": ["wall-reviewed-none", "wall-candidates-review", "needs-adjudication"],
+    "review_artifacts": [
+      "datasets/pilot-v0.2/wall-14page-review-checkpoint-v0.2.jsonl",
+      "datasets/pilot-v0.2/wall-page-review-dispositions-v0.2.jsonl",
+      "datasets/pilot-v0.2/wall-human-qa-v0.2.jsonl",
+      "datasets/pilot-v0.2/wall-bbox-review-queue-v0.2.jsonl"
+    ],
     "approval_gate": "Every included page must have a recorded wall re-review disposition. Every wall candidate must have human QA before approved training/evaluation use."
   },
   "activation_gate": {
