@@ -1,0 +1,289 @@
+{
+  "schema_version": "0.1",
+  "coordinate_space": "source-page",
+  "unit": "PDF point",
+  "page_count": 14,
+  "mapping_rule": "Render coordinates MUST be converted deterministically to PDF source-page coordinates using the recorded page box, rotation, and render matrix. Annotation boxes are stored only in source-page coordinates.",
+  "pages": [
+    {
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p02",
+      "pdf_page_number": 2,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "width_points": 3456.0,
+      "height_points": 2592.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p04",
+      "pdf_page_number": 4,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "width_points": 3456.0,
+      "height_points": 2592.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p05",
+      "pdf_page_number": 5,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "width_points": 3456.0,
+      "height_points": 2592.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2026-024-croquis",
+      "page_id": "p02",
+      "pdf_page_number": 2,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "width_points": 3456.0,
+      "height_points": 2592.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "pdf_page_number": 2,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "width_points": 3456.0,
+      "height_points": 2592.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p04",
+      "pdf_page_number": 4,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3456.0,
+        2592.0
+      ],
+      "width_points": 3456.0,
+      "height_points": 2592.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2026-012-croquis",
+      "page_id": "p02",
+      "pdf_page_number": 2,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        2592.0,
+        1728.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        2592.0,
+        1728.0
+      ],
+      "width_points": 2592.0,
+      "height_points": 1728.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2025-182-croquis",
+      "page_id": "p02",
+      "pdf_page_number": 2,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        2592.0,
+        1728.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        2592.0,
+        1728.0
+      ],
+      "width_points": 2592.0,
+      "height_points": 1728.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2025-182-croquis",
+      "page_id": "p03",
+      "pdf_page_number": 3,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        2592.0,
+        1728.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        2592.0,
+        1728.0
+      ],
+      "width_points": 2592.0,
+      "height_points": 1728.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p04",
+      "pdf_page_number": 4,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3024.0,
+        2160.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3024.0,
+        2160.0
+      ],
+      "width_points": 3024.0,
+      "height_points": 2160.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p06",
+      "pdf_page_number": 6,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3024.0,
+        2160.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3024.0,
+        2160.0
+      ],
+      "width_points": 3024.0,
+      "height_points": 2160.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p07",
+      "pdf_page_number": 7,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3024.0,
+        2160.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3024.0,
+        2160.0
+      ],
+      "width_points": 3024.0,
+      "height_points": 2160.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p08",
+      "pdf_page_number": 8,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3024.0,
+        2160.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3024.0,
+        2160.0
+      ],
+      "width_points": 3024.0,
+      "height_points": 2160.0,
+      "rotation": 0
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p09",
+      "pdf_page_number": 9,
+      "mediabox_points": [
+        0.0,
+        0.0,
+        3024.0,
+        2160.0
+      ],
+      "cropbox_points": [
+        0.0,
+        0.0,
+        3024.0,
+        2160.0
+      ],
+      "width_points": 3024.0,
+      "height_points": 2160.0,
+      "rotation": 0
+    }
+  ]
+}
