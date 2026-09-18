@@ -10,101 +10,226 @@
     {
       "source_id": "src-lacmark-242536-str-2024",
       "project_group_id": "prj-lacmark-242536",
-      "filename": "JP 242536 - Nouvelle usine Lacmark inc._STR 2024.pdf",
+      "filename": "JP 242536 - Nouvelle usine Lacmark Inc._STR 2024.pdf",
       "sha256": "df9930d8c7e5644a4fa4c5e99832bda20b6733ce01179ea33c1f8dde47f0308d",
       "size_bytes": 5493088,
       "page_count": 10,
-      "sheets": [
-        {
-          "page_id": "p01",
-          "sheet_id": "Mx001",
-          "title": "NOTES GÉNÉRALES",
-          "pilot_scope": "exclude",
-          "reason": "notes, schedules, and reference/isometric graphics"
-        },
+      "pilot_pages": [
         {
           "page_id": "p02",
           "sheet_id": "Mx101",
-          "title": "PLAN D'ANCRAGE",
-          "pilot_scope": "include",
+          "scope": "include",
           "target_classes": [
             "column"
-          ],
-          "reason": "plan-view column footprint evidence"
-        },
-        {
-          "page_id": "p03",
-          "sheet_id": "Mx102",
-          "title": "DÉTAILS D'ANCRAGE",
-          "pilot_scope": "exclude",
-          "reason": "primarily typical and reference details"
+          ]
         },
         {
           "page_id": "p04",
           "sheet_id": "Mx201",
-          "title": "PLAN DE MEZZANINE ET DÉTAILS",
-          "pilot_scope": "include",
+          "scope": "include",
           "target_classes": [
             "beam",
             "column"
-          ],
-          "reason": "plan-view mezzanine components; detail regions excluded"
+          ]
         },
         {
           "page_id": "p05",
           "sheet_id": "Mx401",
-          "title": "PLAN DE TOIT ET DÉTAILS",
-          "pilot_scope": "include",
+          "scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-p2026-024-croquis",
+      "project_group_id": "prj-p2026-024",
+      "filename": "P2026-024 Croquis.pdf",
+      "sha256": "2ae8aab43214858421569ba7a15d1704eca3787fef4e9bdaf3393e44c41fa4af",
+      "size_bytes": 4606519,
+      "page_count": 4,
+      "pilot_pages": [
+        {
+          "page_id": "p02",
+          "sheet_id": "EsMx401",
+          "title": "CROQUIS PRÉLIMINAIRE - PLAN DE TOIT",
+          "scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "project_group_id": "prj-p2026-115",
+      "filename": "P2026-115 - 03. 60_ Structural_5.18.26.pdf",
+      "sha256": "ea68c549a8d88ca92c5d385fd9a0047fc824def83fe552cd1b289816c7e93338",
+      "size_bytes": 3226956,
+      "page_count": 11,
+      "pilot_pages": [
+        {
+          "page_id": "p04",
+          "sheet_id": "S-100",
+          "title": "FOUNDATION PLAN",
+          "scope": "include",
+          "target_classes": [
+            "column"
+          ]
+        },
+        {
+          "page_id": "p06",
+          "sheet_id": "S-201",
+          "title": "OFFICE MEZZANINE FRAMING PLAN",
+          "scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ]
+        },
+        {
+          "page_id": "p07",
+          "sheet_id": "S-202",
+          "title": "LOW ROOF FRAMING PLAN",
+          "scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ]
+        },
+        {
+          "page_id": "p08",
+          "sheet_id": "S-203",
+          "title": "HIGH ROOF FRAMING PLAN AND CRANE PLAN",
+          "scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ]
+        },
+        {
+          "page_id": "p09",
+          "sheet_id": "S-204",
+          "title": "ROOF FRAMING PLAN",
+          "scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-p2026-130-260890-permit",
+      "project_group_id": "prj-p2026-130-260890",
+      "filename": "P2026-130 - 260890 - Mx for Permit 2026-06-12-COPIE-TO-SL.pdf",
+      "sha256": "d2ca23e469f0e0577e9e0d702c3d80c6c3cae12e032022eb67f86ac4e7329f1e",
+      "size_bytes": 7200534,
+      "page_count": 8,
+      "pilot_pages": [
+        {
+          "page_id": "p02",
+          "sheet_id": "Mx101",
+          "title": "ANCHOR PLAN",
+          "scope": "include",
+          "target_classes": [
+            "column"
+          ]
+        },
+        {
+          "page_id": "p04",
+          "sheet_id": "Mx401",
+          "title": "ROOF PLAN & DETAILS",
+          "scope": "include",
           "target_classes": [
             "beam",
             "column"
           ],
-          "reason": "roof plan view; detail/key-plan regions excluded"
+          "region_note": "annotate plan region only; exclude detail regions"
+        }
+      ]
+    },
+    {
+      "source_id": "src-p2025-182-croquis",
+      "project_group_id": "prj-p2025-182",
+      "filename": "P2025-182 Croquis.pdf",
+      "sha256": "381823c292035715c8117dcdf3df0da70a908cecc1759ea6d75327c6f0c647d8",
+      "size_bytes": 1022529,
+      "page_count": 5,
+      "pilot_pages": [
+        {
+          "page_id": "p02",
+          "sheet_id": "EsMx201",
+          "title": "CROQUIS PRÉLIMINAIRE - PLAN DE MEZZANINE",
+          "scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ]
         },
         {
-          "page_id": "p06",
-          "sheet_id": "Mx402",
-          "title": "DÉTAILS DE TOIT",
-          "pilot_scope": "exclude",
-          "reason": "primarily reference details"
-        },
+          "pae_id": "p03",
+          "sheet_id": "EsMx401",
+          "title": "CROQUIS PRÍLIMINAIRE - PLAN DE TOIT",
+          "scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "src-p2026-012-croquis",
+      "project_group_id": "prj-p2026-012",
+      "filename": "P2026-012 Croquis.pdf",
+      "sha256": "943e42bb4555304ba847cedfbc91327d696c5b77a057916c5f976f725da12396",
+      "size_bytes": 303948,
+      "page_count": 3,
+      "pilot_pages": [
         {
-          "page_id": "p07",
-          "sheet_id": "Mx501",
-          "title": "ÉLÉVATIONS ET DÉTAILS",
-          "pilot_scope": "exclude",
-          "reason": "elevation/detail scope excluded from plan-focused pilot"
-        },
-        {
-          "page_id": "p08",
-          "sheet_id": "Mx502",
-          "title": "ÉLÉVATION INTÉRIEUR ET DÉTAIL MOULURE",
-          "pilot_scope": "exclude",
-          "reason": "elevation/detail scope excluded from plan-focused pilot"
-        },
-        {
-          "page_id": "p09",
-          "sheet_id": "Mx503",
-          "title": "DÉTAILS D'ÉLÉVATIONS ET MARQUISE",
-          "pilot_scope": "exclude",
-          "reason": "detail/elevation scope"
-        },
-        {
-          "page_id": "p10",
-          "sheet_id": "Mx601",
-          "title": "COUPE DE MUR + DÉTAILS DE FINITION",
-          "pilot_scope": "exclude",
-          "reason": "wall section and finish details"
+          "page_id": "p02",
+          "sheet_id": "EsMx401",
+          "title": "CROQUIS PRÉLIMINAIRE - PLAN DE TOIT",
+          "scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ]
         }
       ]
     }
   ],
+  "inventory": {
+    "source_count": 6,
+    "project_group_count": 6,
+    "page_count_total": 41,
+    "pilot_page_count": 14
+  },
   "splits": {
-    "status": "not-created",
-    "reason": "single project group cannot support a leakage-safe train/validation/test split"
+    "status": "pilot-draft",
+    "group_key": "project_group_id",
+    "train": [
+      "prj-lacmark-242536",
+      "prj-p2026-024",
+      "prj-p2026-130-260890",
+      "prj-p2026-012"
+    ],
+    "validation": [
+      "prj-p2025-182"
+    ],
+    "test": [
+      "prj-p2026-115"
+    ],
+    "release_gate": "Exact and near cross-split duplicate checks plus annotation QA must pass before any split is approved."
   },
   "notes": [
-    "No training, validation, or test split is created from this single project.",
-    "No Core geometry is derived from this manifest."
+    "Split is project-group-disjoint and is a pilot workflow split, not a production benchmark claim.",
+    "Salas O'Brien P2026-115 is held out as a drafting-style domain-shift test group.",
+    "Only source-page detection evidence is in scope; no Core geometry is derived.",
+    "Detail/elevation/note regions are excluded unless a plan region is explicitly listed."
   ]
 }
