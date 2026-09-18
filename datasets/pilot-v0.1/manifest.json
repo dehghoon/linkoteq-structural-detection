@@ -10,7 +10,7 @@
     {
       "source_id": "src-lacmark-242536-str-2024",
       "project_group_id": "prj-lacmark-242536",
-      "filename": "JP 242536 - Nouvelle usine Lacmark Inc._STR 2024.pdf",
+      "filename": "JP 242536 - Nouvelle usine Lacmark inc._STR 2024.pdf",
       "sha256": "df9930d8c7e5644a4fa4c5e99832bda20b6733ce01179ea33c1f8dde47f0308d",
       "size_bytes": 5493088,
       "page_count": 10,
@@ -171,7 +171,7 @@
           ]
         },
         {
-          "pae_id": "p03",
+          "page_id": "p03",
           "sheet_id": "EsMx401",
           "title": "CROQUIS PRÍLIMINAIRE - PLAN DE TOIT",
           "scope": "include",
