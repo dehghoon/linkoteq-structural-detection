@@ -1,0 +1,63 @@
+{
+  "dataset_id": "structural-detection-pilot-v0.2",
+  "status": "wall-qa-migration-in-progress",
+  "purpose": "Wall-capable migration pilot for column, beam, and wall detection.",
+  "parent_dataset_id": "structural-detection-pilot-v0.1",
+  "parent_manifest_sha": "6de93f5ac133c5e309eeb5fc25faefa481b0195e",
+  "ontology_version": "0.2",
+  "annotation_spec_version": "0.2",
+  "validation_rules_version": "0.2",
+  "evidence_contract_version": "0.2",
+  "coordinate_space": "source-page",
+  "target_classes": ["column", "beam", "wall"],
+  "migration_policy": {
+    "mutate_parent_v0_1": false,
+    "rereview_every_included_page_for_walls": true,
+    "v0_1_missing_wall_annotation_is_negative": false,
+    "new_wall_candidates_require_human_qa": true,
+    "initial_wall_geometry": "tight-axis-aligned-source-page-box",
+    "infer_hidden_continuation": false
+  },
+  "project_grouping_rule": "preserve v0.1 project_group_id and split assignment",
+  "splits": {
+    "status": "migration-draft",
+    "group_key": "project_group_id",
+    "train": ["prj-lacmark-242536", "prj-p2026-024", "prj-p2026-130-260890", "prj-p2026-012"],
+    "validation": ["prj-p2025-182"],
+    "test": ["prj-p2026-115"],
+    "release_gate": "Exact and near cross-split duplicate checks, wall page re-review, and annotation QA must pass."
+  },
+  "source_inheritance": {
+    "mode": "reference-v0.1-manifest",
+    "source_count": 6,
+    "page_count_total": 41,
+    "pilot_page_count": 14,
+    "page_scope": "All 14 v0.1 pilot pages are in scope for v0.2 wall re-review. Existing column/beam annotations remain baseline references until v0.2 page QA is complete."
+  },
+  "wall_qa": {
+    "status": "not-started",
+    "required_per_page_dispositions": ["wall-reviewed-none", "wall-candidates-reviewed", "needs-adjudication"],
+    "approval_gate": "Every included page must have a recorded wall re-review disposition. Every wall candidate must have human QA before approved training/evaluation use."
+  },
+  "activation_gate": {
+    "status": "blocked",
+    "requires": [
+      "ontology v0.2 approval",
+      "annotation spec v0.2 approval",
+      "validation rules v0.2 approval",
+      "StructuralDetectionEvidence v0.2 approval",
+      "all 14 included pages wall re-reviewed",
+      "wall candidates human QA complete",
+      "GPT-6 v0.2 wall consumer regression passing",
+      "GPT-6 v0.1 wall rejection regression passing",
+      "legacy v0.1 compatibility regression passing",
+      "provenance and source-page regressions passing",
+      "exact and near cross-split duplicate gates passing"
+    ]
+  },
+  "notes": [
+    "This dataset version does not activate wall handoff.",
+    "No v0.1 missing wall label may be treated as a valid wall negative.",
+    "Detector boxes remain source-page evidence only and are not Core Surface or engineering wall geometry."
+  ]
+}
