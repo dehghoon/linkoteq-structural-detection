@@ -1,0 +1,35 @@
+{
+  "batch_id": "pilot-annotation-batch-v0.1",
+  "dataset_id": "structural-detection-pilot-v0.1",
+  "status": "ready-for-source-page-render",
+  "annotation_spec_version": "0.1",
+  "ontology_version": "0.1",
+  "coordinate_space": "source-page",
+  "allowed_classes": ["column", "beam"],
+  "record_format": "jsonl",
+  "output_path": "datasets/pilot-v0.1/annotations.jsonl",
+  "pages": [
+    {"source_id":"src-lacmark-242536-str-2024","project_group_id":"prj-lacmark-242536","page_id":"p02","sheet_id":"Mx101","target_classes":["column"],"split":"train"},
+    {"source_id":"src-lacmark-242536-str-2024","project_group_id":"prj-lacmark-242536","page_id":"p04","sheet_id":"Mx201","target_classes":["beam","column"],"split":"train","region_rule":"plan-region-only"},
+    {"source_id":"src-lacmark-242536-str-2024","project_group_id":"prj-lacmark-242536","page_id":"p05","sheet_id":"Mx401","target_classes":["beam","column"],"split":"train","region_rule":"plan-region-only"},
+    {"source_id":"src-p2026-024-croquis","project_group_id":"prj-p2026-024","page_id":"p02","sheet_id":"EsMx401","target_classes":["beam","column"],"split":"train"},
+    {"source_id":"src-p2026-130-260890-permit","project_group_id":"prj-p2026-130-260890","page_id":"p02","sheet_id":"Mx101","target_classes":["column"],"split":"train"},
+    {"source_id":"src-p2026-130-260890-permit","project_group_id":"prj-p2026-130-260890","page_id":"p04","sheet_id":"Mx401","target_classes":["beam","column"],"split":"train","region_rule":"plan-region-only"},
+    {"source_id":"src-p2026-012-croquis","project_group_id":"prj-p2026-012","page_id":"p02","sheet_id":"EsMx401","target_classes":["beam","column"],"split":"train"},
+    {"source_id":"src-p2025-182-croquis","project_group_id":"prj-p2025-182","page_id":"p02","sheet_id":"EsMx201","target_classes":["beam","column"],"split":"validation"},
+    {"source_id":"src-p2025-182-croquis","project_group_id":"prj-p2025-182","page_id":"p03","sheet_id":"EsMx401","target_classes":["beam","column"],"split":"validation"},
+    {"source_id":"src-p2026-115-structural-60dd","project_group_id":"prj-p2026-115","page_id":"p04","sheet_id":"S-100","target_classes":["column"],"split":"test"},
+    {"source_id":"src-p2026-115-structural-60dd","project_group_id":"prj-p2026-115","page_id":"p06","sheet_id":"S-201","target_classes":["beam","column"],"split":"test"},
+    {"source_id":"src-p2026-115-structural-60dd","project_group_id":"prj-p2026-115","page_id":"p07","sheet_id":"S-202","target_classes":["beam","column"],"split":"test"},
+    {"source_id":"src-p2026-115-structural-60dd","project_group_id":"prj-p2026-115","page_id":"p08","sheet_id":"S-203","target_classes":["beam","column"],"split":"test"},
+    {"source_id":"src-p2026-115-structural-60dd","project_group_id":"prj-p2026-115","page_id":"p09","sheet_id":"S-204","target_classes":["beam","column"],"split":"test"}
+  ],
+  "qa_gates": [
+    "all records pass tools/validate_annotations.py",
+    "all boxes are measured in original source-page coordinates",
+    "no detail, legend, schedule, grid, text, or leader graphics is included in a component box",
+    "blocking ambiguity flags cannot be approved",
+    "test labels remain hidden from training curation"
+  ],
+  "blocker": "Exact source-page bounding boxes require a page render or vector-geometry extraction that preserves a deterministic mapping to the original PDF page coordinate space. Parsed text alone is not sufficient."
+}
