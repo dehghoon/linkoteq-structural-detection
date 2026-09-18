@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""Validate Linkoteq structural-detection annotation JSONL records (v0.1)."""
+"""Validate Linkoteq structural-detection annotation JSONL records (v0.1/v0.2)."""
 from __future__ import annotations
 import argparse, json, math
 from pathlib import Path
 
-ALLOWED_CLASSES = {"column", "beam"}
-BLOCKING_FLAGS = {"ambiguous-class", "ambiguous-presence", "overlap-ambiguous"}
-ALLOWED_EDGE_FLAGS = {"partial", "occluded", "duplicate-render", "low-resolution", "scan-noise", "faded", "compression-artifact"}
-ALLOWED_FLAGS = BLOCKING_FLAGS | ALLOWED_EDGE_FLAGS
-QA_STATES = {"draft", "review-required", "adjudication-required", "approved", "corrected-approved", "excluded-ambiguous", "needs-reannotation"}
+RULES_DIR = Path(__file__).resolve().parents[1] / "contracts"
+SUPPORTED_VERSIONS = {"0.1", "0.2"}
 APPROVED_STATES = {"approved", "corrected-approved"}
-REQUIRED = {"annotation_id","source_id","page_id","project_group_id","class_name","box","coordinate_space","spec_version","qa_state"}
+
+def load_rules(version: str, rules_dir: Path = RULES_DIR) -> dict:
+    if version not in SUPPORTED_VERSIONS:
+        raise ValueError(f"unsupported spec_version: {version}")
+    path = rules_dir / f"annotation-validation-rules-v{version}.json"
+    return json.loads(path.read_text(encoding="utf-8"))
 
 def load_geometry(path: Path) -> dict[tuple[str, str], tuple[float, float]]:
     data = json.loads(path.read_text(encoding="utf-8"))
@@ -19,43 +21,64 @@ def load_geometry(path: Path) -> dict[tuple[str, str], tuple[float, float]]:
         for p in data.get("pages", [])
     }
 
-def validate_record(record: dict, page_width: float | None = None, page_height: float | None = None) -> list[str]:
+def validate_record(record: dict, page_width: float | None = None, page_height: float | None = None,
+                    rules_dir: Path = RULES_DIR) -> list[str]:
     errors = []
-    missing = sorted(REQUIRED - record.keys())
-    if missing: errors.append("missing required fields: " + ", ".join(missing))
-    if record.get("spec_version") != "0.1": errors.append("spec_version must be 0.1")
-    if record.get("coordinate_space") != "source-page": errors.append("coordinate_space must be source-page")
-    if record.get("class_name") not in ALLOWED_CLASSES: errors.append("class_name must be column or beam")
-    if record.get("qa_state") not in QA_STATES: errors.append("qa_state is not approved by v0.1 validation rules")
-    for key in ("annotation_id","source_id","page_id","project_group_id"):
+    version = record.get("spec_version")
+    try:
+        rules = load_rules(version, rules_dir)
+    except (ValueError, OSError, json.JSONDecodeError) as exc:
+        return [str(exc)]
+
+    required = set(rules["required_fields"])
+    missing = sorted(required - record.keys())
+    if missing:
+        errors.append("missing required fields: " + ", ".join(missing))
+    if record.get("coordinate_space") != rules["coordinate_space"]:
+        errors.append(f"coordinate_space must be {rules['coordinate_space']}")
+    allowed_classes = set(rules["allowed_classes"])
+    if record.get("class_name") not in allowed_classes:
+        errors.append("class_name must be one of: " + ", ".join(rules["allowed_classes"]))
+    qa_states = set(rules["qa_states"])
+    if record.get("qa_state") not in qa_states:
+        errors.append(f"qa_state is not approved by v{version} validation rules")
+
+    for key in ("annotation_id", "source_id", "page_id", "project_group_id"):
         if not isinstance(record.get(key), str) or not record.get(key, "").strip():
             errors.append(f"{key} must be non-empty")
+
     box = record.get("box")
     if not isinstance(box, dict):
         errors.append("box must be an object")
     else:
         vals = []
-        for key in ("xmin","ymin","xmax","ymax"):
-            v = box.get(key)
-            if not isinstance(v, (int,float)) or isinstance(v,bool) or not math.isfinite(v):
+        for key in rules["box"]["fields"]:
+            value = box.get(key)
+            if not isinstance(value, (int, float)) or isinstance(value, bool) or not math.isfinite(value):
                 errors.append(f"box.{key} must be finite")
-            else: vals.append(v)
+            else:
+                vals.append(value)
         if len(vals) == 4:
-            xmin,ymin,xmax,ymax = vals
+            xmin, ymin, xmax, ymax = vals
             if not xmin < xmax: errors.append("box requires xmin < xmax")
             if not ymin < ymax: errors.append("box requires ymin < ymax")
             if xmin < 0 or ymin < 0: errors.append("box must not start outside source-page bounds")
             if page_width is not None and xmax > page_width: errors.append("box.xmax exceeds source-page width")
             if page_height is not None and ymax > page_height: errors.append("box.ymax exceeds source-page height")
-    raw_flags = record.get("flags") or []
+
+    raw_flags = record.get("flags", [])
+    flags = set()
     if not isinstance(raw_flags, list):
         errors.append("flags must be a list")
-        flags = set()
+    elif any(not isinstance(flag, str) for flag in raw_flags):
+        errors.append("flags entries must be strings")
     else:
         flags = set(raw_flags)
-        unknown = sorted(flags - ALLOWED_FLAGS)
-        if unknown: errors.append("unapproved flag(s): " + ", ".join(unknown))
-    if record.get("qa_state") in APPROVED_STATES and flags & BLOCKING_FLAGS:
+        allowed_flags = set(rules["blocking_flags"]) | set(rules["allowed_edge_flags"])
+        unknown = sorted(flags - allowed_flags)
+        if unknown:
+            errors.append("unapproved flag(s): " + ", ".join(unknown))
+    if record.get("qa_state") in APPROVED_STATES and flags & set(rules["blocking_flags"]):
         errors.append("approved record contains unresolved blocking flag(s)")
     return errors
 
@@ -65,14 +88,13 @@ def main() -> int:
     ap.add_argument("--geometry", type=Path)
     args = ap.parse_args()
     geometry = load_geometry(args.geometry) if args.geometry else {}
-    failures = 0
-    seen_ids = set()
-    for i,line in enumerate(args.jsonl.read_text(encoding="utf-8").splitlines(),1):
+    failures, seen_ids = 0, set()
+    for i, line in enumerate(args.jsonl.read_text(encoding="utf-8").splitlines(), 1):
         if not line.strip(): continue
         try:
             record = json.loads(line)
-        except json.JSONDecodeError as e:
-            print(f"{args.jsonl}:{i}: invalid JSON: {e}"); failures += 1; continue
+        except json.JSONDecodeError as exc:
+            print(f"{args.jsonl}:{i}: invalid JSON: {exc}"); failures += 1; continue
         annotation_id = record.get("annotation_id")
         if annotation_id in seen_ids:
             print(f"{args.jsonl}:{i}: duplicate annotation_id: {annotation_id}"); failures += 1
