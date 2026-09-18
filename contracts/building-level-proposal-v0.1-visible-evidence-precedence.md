@@ -47,7 +47,7 @@ Coverage MUST therefore be evaluated independently by:
 One component type may be detected while another component type on the same level enters proposal mode.
 
 ## Coverage states
-The proposal layer SHOULD preserve one of these coverage states:
+The proposal layer MUST preserve exactly one coverage state for each assessed component/scope:
 - `visible-complete`
 - `visible-incomplete`
 - `visible-absent`
@@ -55,4 +55,48 @@ The proposal layer SHOULD preserve one of these coverage states:
 
 `visible-complete` MUST suppress replacement proposal generation for that component/scope.
 
-`visible-incomplete` MAY permit gap-only proposals,
+`visible-incomplete` MAY permit gap-only proposals. Existing visible evidence MUST remain authoritative for the visible portions, and proposals MUST be limited to identified gaps.
+
+`visible-absent` MAY permit contextual proposals after the applicable Human-confirmed/corrected BuildingLevelProposal gate.
+
+`uncertain` MUST NOT be silently converted to absence. It MUST route to Human QA before inferred replacement or gap proposals are promoted.
+
+## Multi-floor behavior
+Coverage is assessed per level/component/scope, while proposal reasoning MAY use the confirmed building-level multi-floor context.
+
+Visible structural evidence on one floor MAY support contextual reasoning about another floor but MUST NOT be copied or fabricated as StructuralDetectionEvidence on that other floor.
+
+When a component is visible on an upper floor but corresponding visible evidence is absent on a lower floor, GPT-7 MAY create a reviewed downward-continuity/layout proposal or QA issue under an approved proposal contract. It MUST NOT fabricate lower-floor detection evidence.
+
+A lower-floor vertical component MAY terminate before an upper floor. Transfer structures, offsets, setbacks, podiums, system changes, irregular layouts, and other exceptions MUST remain possible and route to QA when evidence is insufficient.
+
+## Building-level grid precedence
+If explicit grids are available and sufficiently complete across the relevant confirmed floors, proposed-grid generation MUST remain suppressed for those covered scopes.
+
+If explicit grids are absent or materially incomplete on some floors, a building-level proposed grid MAY be generated only for the uncovered scopes. It SHOULD seek cross-floor consistency with visible columns, structural-wall axes/centers, core geometry, perimeter/break geometry, and repeated bays without inventing project/global engineering coordinates.
+
+Per-page realizations MUST remain in explicit `source-page` coordinates. GPT-7 MUST NOT create canonical Core `GridLine` or final engineering grid geometry.
+
+## Provenance and review
+Every coverage decision and every allowed proposal MUST preserve traceable source/page scope, model/rule name and version, confidence, provenance, and review state as required by the applicable approved contract.
+
+Human confirmation of an inferred proposal does not retroactively convert it into visible source evidence.
+
+## Validation requirements
+Machine validation and regression coverage MUST include at least:
+- complete visible grid suppresses proposed-grid replacement;
+- absent grid permits a review-gated proposed grid;
+- incomplete grid permits only gap proposals;
+- uncertain grid coverage routes to QA;
+- visible columns remain detections and suppress replacement column proposals for covered locations;
+- absent/incomplete columns may enter proposal mode without becoming detection evidence;
+- v0.1 rejects wall detection;
+- mixed floors may use different coverage states;
+- visible evidence on one floor is not copied as detection evidence to another floor;
+- `visible-incomplete` preserves existing evidence and limits proposals to gaps;
+- proposal output cannot overwrite or mutate StructuralDetectionEvidence records.
+
+## Compatibility and activation
+This addendum does not modify StructuralDetectionEvidence v0.1/v0.2 ontology and does not activate layout-proposal handoff.
+
+Runtime proposal consumption remains disabled until the controlling proposal contracts, machine validation, datasets, Human QA workflow, GPT-7 regressions, GPT-6 consumer regressions, provenance/source-page coverage, legacy compatibility, and GPT-4 cross-repository activation are approved.
