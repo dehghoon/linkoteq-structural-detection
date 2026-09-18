@@ -1,0 +1,51 @@
+{
+  "contract_version": "0.1-candidate",
+  "contract": "building-level-proposal-v0.1-visible-evidence-precedence",
+  "coverage_states": [
+    "visible-complete",
+    "visible-incomplete",
+    "visible-absent",
+    "uncertain"
+  ],
+  "component_types": [
+    "grid",
+    "column",
+    "wall"
+  ],
+  "coordinate_space": "source-page",
+  "proposal_policy": {
+    "visible-complete": "suppress",
+    "visible-incomplete": "gap-only",
+    "visible-absent": "review-gated",
+    "uncertain": "qa-required"
+  },
+  "required_coverage_fields": [
+    "coverage_id",
+    "source_id",
+    "page_id",
+    "component_type",
+    "coverage_state",
+    "confidence",
+    "provenance",
+    "review_state"
+  ],
+  "confidence": {
+    "min": 0.0,
+    "max": 1.0
+  },
+  "review_states": [
+    "review-required",
+    "human-confirmed",
+    "human-corrected",
+    "human-rejected",
+    "adjudication-required"
+  ],
+  "invariants": [
+    "proposal_must_not_replace_visible_evidence",
+    "proposal_must_not_mutate_detection_evidence",
+    "cross_floor_context_must_not_be_copied_as_detection_evidence",
+    "v0.1_wall_detection_must_be_rejected",
+    "visible_incomplete_proposals_must_be_gap_only",
+    "uncertain_coverage_must_route_to_human_qa"
+  ]
+}
