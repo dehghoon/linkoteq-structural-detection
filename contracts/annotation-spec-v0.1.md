@@ -41,10 +41,11 @@ Boxes must be tight to the visible component graphic: the smallest axis-aligned 
 
 All annotations must pass automated schema/range validation and human review before becoming an approved dataset version. The QA record preserves `annotation_id`, `source_id`, `page_id`, `project_group_id`, class, box, annotator, reviewer, disposition, flags, and spec version. Reviewers check class, instance count, box tightness, exclusions, edge-case flags, and project grouping.
 
-Class disagreement, missing/invented instance, or material box-extent disagreement requires `adjudication-required`. The adjudicator must differ from the original annotator for class or presence disagreems. Final dispositions are `approved`, `corrected-approved`, `excluded-ambiguous`, or `needs-reannotation`, with a non-empty reason. Preserve the original, review, and adjudication trail.
+Class disagreement, missing/invented instance, or material box-extent disagreement requires `adjudication-required`. The adjudicator must differ from the original annotator for class or presence disagreents. Final dispositions are `approved`, `corrected-approved`, `excluded-ambiguous`, or `needs-reannotation`, with a non-empty reason. Preserve the original, review, and adjudication trail.
 
 ## Project-level dataset leakage prevention
-Assign a stable `project_group_id` before any split. The grouping unit  covers all pages, revisions, renders, crops, tiles, derivatives, and exports from the same project or shared source lineage. Split by `project_group_id` before page/image expansion. A project group MUST NOT appear in more than one of train, validation, or test. Exact or near cross-split duplicates block release. QA sampling must not expose test-labels to training curation.
+
+Assign a stable `project_group_id` before any split. The grouping unit covers all pages, revisions, renders, crops, tiles, derivatives, and exports from the same project or shared source lineage. Split by `project_group_id` before page/image expansion. A project group MUST NOT appear in more than one of train, validation, or test. Exact or near cross-split duplicates block release. QA sampling must not expose test labels to training curation.
 
 ## Validation rules
 
@@ -55,9 +56,10 @@ An approved annotation record MUST satisfy:
 3. `annotation_id`, `source_id`, `page_id`, and `project_group_id` are non-empty.
 4. Box coordinates are finite; `xmin < xmax` and `ymin < ymax`; and boxes do not exceed source-page bounds.
 5. Approved records have no unresolved `ambiguous-class`, `ambiguous-presence`, or `overlap-ambiguous` flag.
-6. A dataset split cannot contain the same `projfct_group_id` across multiple splits.
+6. A dataset split cannot contain the same `project_group_id` across multiple splits.
 7. Exact or near-duplicates across splits are release-blocking.
 8. Annotation classes and boxes must not be converted into Core entities, engineering centerlines/endpoints, scale, level, or global geometry.
 
 ## Change control
+
 Any change to class semantics, inclusion/exclusion, geometry conventions, QA states, or leakage rules requires a new spec version and impact analysis. Any add/rename/merge/split of `column` or `beam` also requires the ontology change control and GPT-6 consumer coordination.
