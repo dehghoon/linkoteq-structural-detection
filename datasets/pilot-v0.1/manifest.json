@@ -1,0 +1,110 @@
+{
+  "dataset_id": "structural-detection-pilot-v0.1",
+  "status": "in-progress",
+  "purpose": "Annotation pipeline validation for column and beam detection.",
+  "ontology_version": "0.1",
+  "annotation_spec_version": "0.1",
+  "coordinate_space": "source-page",
+  "project_grouping_rule": "same construction/design project and all derivatives share one project_group_id",
+  "sources": [
+    {
+      "source_id": "src-lacmark-242536-str-2024",
+      "project_group_id": "prj-lacmark-242536",
+      "filename": "JP 242536 - Nouvelle usine Lacmark inc._STR 2024.pdf",
+      "sha256": "df9930d8c7e5644a4fa4c5e99832bda20b6733ce01179ea33c1f8dde47f0308d",
+      "size_bytes": 5493088,
+      "page_count": 10,
+      "sheets": [
+        {
+          "page_id": "p01",
+          "sheet_id": "Mx001",
+          "title": "NOTES GÉNÉRALES",
+          "pilot_scope": "exclude",
+          "reason": "notes, schedules, and reference/isometric graphics"
+        },
+        {
+          "page_id": "p02",
+          "sheet_id": "Mx101",
+          "title": "PLAN D'ANCRAGE",
+          "pilot_scope": "include",
+          "target_classes": [
+            "column"
+          ],
+          "reason": "plan-view column footprint evidence"
+        },
+        {
+          "page_id": "p03",
+          "sheet_id": "Mx102",
+          "title": "DÉTAILS D'ANCRAGE",
+          "pilot_scope": "exclude",
+          "reason": "primarily typical and reference details"
+        },
+        {
+          "page_id": "p04",
+          "sheet_id": "Mx201",
+          "title": "PLAN DE MEZZANINE ET DÉTAILS",
+          "pilot_scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ],
+          "reason": "plan-view mezzanine components; detail regions excluded"
+        },
+        {
+          "page_id": "p05",
+          "sheet_id": "Mx401",
+          "title": "PLAN DE TOIT ET DÉTAILS",
+          "pilot_scope": "include",
+          "target_classes": [
+            "beam",
+            "column"
+          ],
+          "reason": "roof plan view; detail/key-plan regions excluded"
+        },
+        {
+          "page_id": "p06",
+          "sheet_id": "Mx402",
+          "title": "DÉTAILS DE TOIT",
+          "pilot_scope": "exclude",
+          "reason": "primarily reference details"
+        },
+        {
+          "page_id": "p07",
+          "sheet_id": "Mx501",
+          "title": "ÉLÉVATIONS ET DÉTAILS",
+          "pilot_scope": "exclude",
+          "reason": "elevation/detail scope excluded from plan-focused pilot"
+        },
+        {
+          "page_id": "p08",
+          "sheet_id": "Mx502",
+          "title": "ÉLÉVATION INTÉRIEUR ET DÉTAIL MOULURE",
+          "pilot_scope": "exclude",
+          "reason": "elevation/detail scope excluded from plan-focused pilot"
+        },
+        {
+          "page_id": "p09",
+          "sheet_id": "Mx503",
+          "title": "DÉTAILS D'ÉLÉVATIONS ET MARQUISE",
+          "pilot_scope": "exclude",
+          "reason": "detail/elevation scope"
+        },
+        {
+          "page_id": "p10",
+          "sheet_id": "Mx601",
+          "title": "COUPE DE MUR + DÉTAILS DE FINITION",
+          "pilot_scope": "exclude",
+          "reason": "wall section and finish details"
+        }
+      ]
+    }
+  ],
+  "splits": {
+    "status": "not-created",
+    "reason": "single project group cannot support a leakage-safe train/validation/test split"
+  },
+  "notes": [
+    "No training, validation, or test split is created from this single project.",
+    "No Core geometry is derived from this manifest."
+  ]
+}
