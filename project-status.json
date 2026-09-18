@@ -2,11 +2,11 @@
   "project": "Linkoteq Structural Detection",
   "repository": "dehghoon/linkoteq-structural-detection",
   "overallStatus": "in-progress",
-  "currentStage": "annotation-specification",
+  "currentStage": "dataset-pilot",
   "stages": {
     "detection-contract": "in-progress",
     "annotation-specification": "complete",
-    "dataset-pilot": "not-started",
+    "dataset-pilot": "in-progress",
     "detector-benchmark": "not-started",
     "training-and-evaluation": "not-started",
     "model-registry": "not-started",
@@ -19,5 +19,6 @@
   "securityOwner": "GPT-5",
   "detectionOwner": "GPT-7",
   "reconstructionOwner": "GPT-6",
+  "orchestructionOwner": "GPT-4",
   "orchestrator": "GPT-4"
 }
