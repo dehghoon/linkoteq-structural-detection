@@ -1,7 +1,11 @@
 import importlib.util
+import json
 from pathlib import Path
 
-SPEC = importlib.util.spec_from_file_location("validate_annotations", Path(__file__).parent.parent / "tools" / "validate_annotations.py")
+SPEC = importlib.util.spec_from_file_location(
+    "validate_annotations",
+    Path(__file__).parent.parent / "tools" / "validate_annotations.py",
+)
 MOD = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MOD)
 
@@ -33,7 +37,7 @@ def test_rejects_unapproved_class():
 
 def test_rejects_non_source_page_coordinates():
     r = record()
-    r["oordinate_space"] = "pixel"
+    r["coordinate_space"] = "pixel"
     assert "coordinate_space must be source-page" in MOD.validate_record(r)
 
 
@@ -45,12 +49,39 @@ def test_rejects_non_positive_box():
 
 def test_rejects_box_outside_page_bounds():
     r = record()
-    r["ox"]["xmax"] = 101.0
-    assert "box.xmax exceeds source-page width" in MOD.validate_record(r, page_width=100.0, page_height=100.0)
+    r["box"]["xmax"] = 101.0
+    assert "box.xmax exceeds source-page width" in MOD.validate_record(
+        r, page_width=100.0, page_height=100.0
+    )
+
+
+def test_rejects_unknown_qa_state():
+    r = record()
+    r["qa_state"] = "ready"
+    assert "qa_state is not approved by v0.1 validation rules" in MOD.validate_record(r)
+
+
+def test_rejects_unknown_flag():
+    r = record()
+    r["flags"] = ["made-up-flag"]
+    assert "unapproved flag(s): made-up-flag" in MOD.validate_record(r)
 
 
 def test_approved_record_cannot_have_blocking_flag():
     r = record()
     r["qa_state"] = "approved"
-    r["lags"] = ["ambiguous-class"]
+    r["flags"] = ["ambiguous-class"]
     assert "approved record contains unresolved blocking flag(s)" in MOD.validate_record(r)
+
+
+def test_load_geometry_indexes_source_and_page(tmp_path):
+    path = tmp_path / "geometry.json"
+    path.write_text(json.dumps({
+        "pages": [{
+            "source_id": "src-1",
+            "page_id": "p01",
+            "width_points": 100.0,
+            "height_points": 200.0,
+        }]
+    }), encoding="utf-8")
+    assert MOD.load_geometry(path) == {("src-1", "p01"): (100.0, 200.0)}
