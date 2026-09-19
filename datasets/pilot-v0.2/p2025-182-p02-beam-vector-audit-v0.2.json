@@ -1,0 +1,28 @@
+{
+  "audit_id": "p2025-182-p02-beam-vector-audit-v0.2",
+  "source_id": "src-p2025-182-croquis",
+  "page_id": "p02",
+  "sheet_id": "EsMx201",
+  "split": "validation",
+  "coordinate_space": "source-page",
+  "page_geometry": {"width": 2592.0, "height": 1728.0, "unit": "PDF point", "rotation": 0},
+  "method": "PyMuPDF vector primitive inspection plus rendered visual verification",
+  "drawing_primitive_count": 871,
+  "review_stream_records": {
+    "beam": 4,
+    "column": 4
+  },
+  "beam_candidates": [
+    {"annotation_id":"ann-p2025-182-p02-beam-001","stroke_center_y":795.48,"stroke_width":1.32,"box":{"xmin":829.86,"ymin":794.82,"xmax":923.22,"ymax":796.14}},
+    {"annotation_id":"ann-p2025-182-p02-beam-002","stroke_center_y":795.48,"stroke_width":1.32, "box":{"xmin":940.26,"ymin":794.82,"xmax":1031.22,"ymax":796.14}},
+    {"annotation_id":"ann-p2025-182-p02-beam-003","stroke_center_y":795.48,"stroke_width":1.32,"box":{"xmin":1048.14,"ymin":794.82,"xmax":1139.1,"ymax":796.14}},
+    {"annotation_id":"ann-p2025-182-p02-beam-004","stroke_center_y":795.48,"stroke_width":1.32,"box":{"xmin":1156.02,"ymin":794.82,"xmax":1249.38,"ymax":796.14}}
+  ],
+  "rejected_long_line_examples": [
+    {"xmin":825.6,"ymin":937.08,"xmax":1250.16,"ymax":937.08,"width":0.24,"reason":"long line alone is not beam semantics"},
+    {"xmin":819.24,"ymin":1035.84,"xmax":1260.0,"ymax":1035.84,"width":0.24,"reason":"long line alone is not beam semantics"}
+  ],
+  "qa_state": "review-required",
+  "human_instance_approval": false,
+  "note": "The four beam records remain candidate detection evidence. The audit does not promote them to approved training evidence and does not create engineering beam endpoints or topology."
+}
