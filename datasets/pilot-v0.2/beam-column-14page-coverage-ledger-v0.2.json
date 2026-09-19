@@ -1,34 +1,173 @@
 {
-  "ledger_id": "beam-column-14page-coverage-v0.2",
+  "ledger_id": "beam-column-14page-coverage-ledger-v0.2",
   "spec_version": "0.2",
   "coordinate_space": "source-page",
   "total_pilot_pages": 14,
   "status_definitions": {
     "candidate-records-present": "at least one beam/column candidate exists in the v0.2 review stream; not final approval",
-    "source-audit-complete": "page-identity and structural source evidence audited; instance BBox QA may still be pending",
-    "needs-semantic-instance-review": "page audited but no safe instance annotations promoted"
+    "source-audit-complete": "page identity and structural source evidence audited; instance BBox QA may still be pending",
+    "semantic-instance-review-complete-no-safe-bboxes": "page-specific semantic instance review completed but no safe positive beam/column boxes promoted; not a negative label"
   },
   "pages": [
-    {"source_id":"src-lacmark-242536-str-2024","page_id":"p02","sheet_id":"Mx101","split":"train","target_classes":["column"],"status":"source-audit-complete"},
-    {"source_id":"src-lacmark-242536-str-2024","page_id":"p04","sheet_id":"Mx201","split":"train","target_classes":["beam","column"],"status":"source-audit-complete"},
-    {"source_id":"src-lacmark-242536-str-2024","page_id":"p05","sheet_id":"Mx401","split":"train","target_classes":["beam","column"],"status":"source-audit-complete"},
-    {"source_id":"src-p2026-024-croquis","page_id":"p02","sheet_id":"EsMx401","split":"train","target_classes":["beam","column"],"status":"source-audit-complete"},
-    {"source_id":"src-p2026-115-structural-60dd","page_id":"p04","sheet_id":"S-100","split":"test","target_classes":["column"],"status":"source-audit-complete"},
-    {"source_id":"src-p2026-115-structural-60dd","page_id":"p06","sheet_id":"S-201","split":"test","target_classes":["beam","column"],"status":"source-audit-complete"},
-    {"source_id":"src-p2026-115-structural-60dd","page_id":"p07","sheet_id":"S-202","split":"test","target_classes":["beam","column"],"status":"source-audit-complete"},
-    {"source_id":"src-p2026-115-structural-60dd","page_id":"p08","sheet_id":"S-203","split":"test","target_classes":["beam","column"],"status":"source-audit-complete"},
-    {"source_id":"src-p2026-115-structural-60dd","page_id":"p09","sheet_id":"S-204","split":"test","target_classes":["beam","column"],"status":"source-audit-complete"},
-    {"source_id":"src-p2026-130-260890-permit","page_id":"p02","sheet_id":"Mx101","split":"train","target_classes":["column"],"status":"source-audit-complete"},
-    {"source_id":"src-p2026-130-260890-permit","page_id":"p04","sheet_id":"Mx401","split":"train","target_classes":["beam","column"],"status":"needs-semantic-instance-review"},
-    {"source_id":"src-p2025-182-croquis","page_id":"p02","sheet_id":"EsMx201","split":"validation","target_classes":["beam","column"],"status":"candidate-records-present"},
-    {"source_id":"src-p2025-182-croquis","page_id":"p03","sheet_id":"EsMx401","split":"validation","target_classes":["beam","column"],"status":"needs-semantic-instance-review"},
-    {"source_id":"src-p2026-012-croquis","page_id":"p02","sheet_id":"EsMx401","split":"train","target_classes":["beam","column"],"status":"source-audit-complete"}
+    {
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p02",
+      "sheet_id": "Mx101",
+      "split": "train",
+      "target_classes": [
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p04",
+      "sheet_id": "Mx201",
+      "split": "train",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p05",
+      "sheet_id": "Mx401",
+      "split": "train",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-p2026-024-croquis",
+      "page_id": "p02",
+      "sheet_id": "EsMx401",
+      "split": "train",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p04",
+      "sheet_id": "S-100",
+      "split": "test",
+      "target_classes": [
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p06",
+      "sheet_id": "S-201",
+      "split": "test",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p07",
+      "sheet_id": "S-202",
+      "split": "test",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p08",
+      "sheet_id": "S-203",
+      "split": "test",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p09",
+      "sheet_id": "S-204",
+      "split": "test",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "sheet_id": "Mx101",
+      "split": "train",
+      "target_classes": [
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p04",
+      "sheet_id": "Mx401",
+      "split": "train",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "source-audit-complete"
+    },
+    {
+      "source_id": "src-p2025-182-croquis",
+      "page_id": "p02",
+      "sheet_id": "EsMx201",
+      "split": "validation",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "candidate-records-present"
+    },
+    {
+      "source_id": "src-p2025-182-croquis",
+      "page_id": "p03",
+      "sheet_id": "EsMx401",
+      "split": "validation",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "semantic-instance-review-complete-no-safe-bboxes"
+    },
+    {
+      "source_id": "src-p2026-012-croquis",
+      "page_id": "p02",
+      "sheet_id": "EsMx401",
+      "split": "train",
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "status": "source-audit-complete"
+    }
   ],
   "summary": {
     "pages_accounted_for": 14,
-    "source_audit_completeb: 11,
+    "source_audit_complete": 12,
     "candidate_record_pages": 1,
-    "needs_semantic_instance_review": 2,
+    "semantic_instance_review_complete_no_safe_bboxes": 1,
+    "pages_with_bbox_regression_pass": 1,
+    "bbox_regression_records_passed": 8,
     "finally_approved_annotation_pages": 0,
     "beam_column_coverage_complete": false
   },
@@ -38,5 +177,5 @@
   },
   "wall_handoff_enabled": false,
   "engineering_geometry_created": false,
-  "note": "This ledger accounts for all 14 pilot pages and separates source-level audit coverage from approved instance-annotation coverage. It MUST NOT be used to claim that the dataset is training-ready."
+  "note": "All 14 pilot pages are accounted for. P2026-130 p04 now has direct source audit. P2025-182 p03 completed semantic review with no safe positive beam/column boxes and is not a negative label. P2025-182 p02 has 8 review-required candidates; all 8 passed source-page BBox regression (4 beam + 4 column), while final human approval remains pending. Dataset is not training-ready."
 }
