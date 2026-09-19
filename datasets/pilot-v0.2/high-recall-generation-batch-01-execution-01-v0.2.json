@@ -1,0 +1,61 @@
+{
+  "execution_id": "high-recall-batch-01-execution-01-v0.2",
+  "status": "executed-promotion-blocked",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "batch_sha": "028968bdfc1bb0a6813901c2aa1eeb3f1c6096f0",
+  "semantic_regression_sha": "e693e7fb3674faa9050865135e9ea5f9b57bd96c",
+  "pages_executed": [
+    {
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p02",
+      "sheet_id": "Mx101",
+      "split": "train",
+      "target_classes": ["column", "wall"],
+      "observed": {
+        "column_semantics": "strong",
+        "wall_semantics": "human-confirmed",
+        "precise_instance_bboxes": "not-yet-defensible"
+      },
+      "disposition": "candidate-family-presence-confirmed-bbox-pending",
+      "emitted_approvable_boxes": 0,
+      "negative_labels_created": 0
+    },
+    {
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "sheet_id": "Mx101",
+      "split": "train",
+      "target_classes": ["column", "wall"],
+      "observed": {
+        "column_semantics": "strong-dense-anchor-baseplate-context",
+        "wall_semantics": "human-confirmed",
+        "human_confirmed_wall_regions": ["A","B","C","D","upper-right-existing-building-edge","lower-anchor-plan-edge"],
+        "human_rejected_wall_regions": ["E","F"],
+        "precise_instance_bboxes": "not-yet-defensible"
+      },
+      "disposition": "semantic-regions-preserved-bbox-pending",
+      "emitted_approvable_boxes": 0,
+      "negative_labels_created": 0
+    }
+  ],
+  "semantic_qa_result": {
+    "grid_or_regular_spacing_used_to_create_column": false,
+    "cross_level_column_repetition_used_to_create_column": false,
+    "missing_column_used_to_prove_wall": false,
+    "wall_semantics_preserved_without_inventing_geometry": true
+  },
+  "result": {
+    "pages_executed": 2,
+    "semantically_confirmed_wall_pages": 2,
+    "emitted_approvable_instance_bboxes": 0,
+    "promotion_blocker": "tight source-page instance boxes not yet defensible for these dense pages",
+    "background_contamination_avoided": true
+  },
+  "next_execution": "Use established beam seed families on train pages src-p2026-024-croquis/p02 and src-p2026-130-260890-permit/p04 to mine repeated visual/drafting families, while keeping joist/truss exclusions active.",
+  "boundary": {
+    "creates_engineering_geometry": false,
+    "enables_wall_handoff": false,
+    "enables_training": false
+  }
+}
