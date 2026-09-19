@@ -1,0 +1,32 @@
+{
+  "audit_id": "p2025-182-p02-bbox-regression-v0.2",
+  "source_id": "src-p2025-182-croquis",
+  "page_id": "p02",
+  "sheet_id": "EsMx201",
+  "project_group_id": "prj-p2025-182",
+  "split": "validation",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {"width_points":2592.0,"height_points":1728.0},
+  "regression_method": "PyMuPDF vector stroke extent verification against v0.2 review stream",
+  "coordinate_convention": "top-left; x increases right; y increases down",
+  "stroke_width_points": 1.32,
+  "stroke_half_width_points": 0.66,
+  "beams": [
+    {"annotation_id":"ann-p2025-182-p02-beam-001","centerline":[830.52,795.48,922.56,795.48],"serialized_box":[829.86,794.82,923.22,796.14],"expected_stroke_extent_box":[829.86,794.82,923.22,796.14],"exact_match":true},
+   {"annotation_id":"ann-p2025-182-p02-beam-002","centerline":[940.92,795.48,1030.56,795.48],"serialized_box":[940.26,794.82,1031.22,796.14],"expected_stroke_extent_box":[940.26,794.82,1031.22,796.14],"exact_match":true},
+   {"annotation_id":"ann-p2025-182-p02-beam-003","centerline":[1048.8,795.48,1138.44,795.48],"serialized_box":[1048.14,794.82,1139.1,796.14],"expected_stroke_extent_box":[1048.14,794.82,1139.1,796.14],"exact_match":true},
+   {"annotation_id":"ann-p2025-182-p02-beam-004","centerline":[1156.68,795.48,1248.72,795.48],"serialized_box":[1156.02,794.82,1249.38,796.14],"expected_stroke_extent_box":[1156.02,794.82,1249.38,796.14],"exact_match":true}
+  ],
+  "result": {
+    "beam_records_checked": 4,
+    "exact_stroke_extent_matches": 4,
+    "source_page_serialization_regression": "pass",
+    "bbox_tightness_vector_extent_check": "pass",
+    "human_final_approval": "pending",
+    "qa_state_changed": false
+  },
+  "engineering_geometry_created": false,
+  "handoff_enabled": false,
+  "note": "This regression verifies detection-evidence box serialization only. The four records remain review-required; no Core Member endpoints, topology or engineering geometry is created."
+}
