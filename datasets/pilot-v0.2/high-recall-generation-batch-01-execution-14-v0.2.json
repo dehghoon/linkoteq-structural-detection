@@ -1,0 +1,58 @@
+{
+  "execution_id": "high-recall-batch-01-execution-14-v0.2",
+  "status": "executed-batch-closed-guarded",
+  "spec_version": "0.2",
+  "activates_v0_2": false,
+  "source_of_truth": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "wall_adjudication_queue_sha": "4db56b10041507c60523721480d33f9ec81cbb4d",
+    "execution_13_sha": "14ec6c67208aeccd0185079d0e1fd52a9fb899f6"
+  },
+  "batch_01_disposition": {
+    "high_recall_generation_complete": true,
+    "promotion_complete": false,
+    "reason_promotion_incomplete": "human-instance-qa-pending",
+    "known_review_inventory_records": 29,
+    "known_review_inventory_by_class": {
+      "column": 4,
+      "beam": 25,
+      "wall": 0
+    },
+    "lacmark_mx201_high_recall_beam_candidates": 13,
+    "wall_positive_pages": 2,
+    "wall_instance_adjudication_regions": 7,
+    "automatically_approved_wall_instances": 0,
+    "new_negative_labels_from_no_safe_or_missing_candidates": 0
+  },
+  "closure_gates": {
+    "source_page_coordinate_space_preserved": true,
+    "project_group_split_isolation_preserved": true,
+    "missing_candidate_not_converted_to_negative": true,
+    "no_safe_box_not_converted_to_negative": true,
+    "wall_requires_human_qa_before_promotion": true,
+    "detector_box_not_canonical_engineering_geometry": true
+  },
+  "unresolved_blockers": [
+    "Final human instance QA for the 16 baseline column/beam review records.",
+    "Final human instance QA for the 13 Lacmark Mx201 high-recall beam candidates.",
+    "Human instance-boundary adjudication for the seven frozen wall regions across the two wall-positive pages.",
+    "Ontology v0.2, StructuralDetectionEvidence v0.2, dataset migration, and GPT-6 consumer regression remain approval-gated before wall handoff."
+  ],
+  "result": {
+    "batch_01_generation_status": "closed",
+    "dataset_pilot_status": "in-progress",
+    "training_ready": false,
+    "wall_handoff_enabled": false,
+    "production_handoff_enabled": false
+  },
+  "boundary": {
+    "creates_canonical_Core_entities": false,
+    "creates_engineering_geometry": false,
+    "creates_final_beam_endpoints": false,
+    "creates_wall_endpoints_or_thickness": false,
+    "enables_training": false,
+    "enables_wall_handoff": false
+  },
+  "next_stage": "Complete human instance QA/promotion for the frozen review queues, then re-run dataset completeness and contract/consumer regressions before any training or wall handoff."
+}
