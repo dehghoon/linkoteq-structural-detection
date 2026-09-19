@@ -1,0 +1,32 @@
+{
+  "audit_id": "p2026-130-p04-beam-bbox-regression-v0.2",
+  "source_id": "src-p2026-130-260890-permit",
+  "page_id": "p04",
+  "sheet_id": "Mx401",
+  "project_group_id": "prj-p2026-130-260890",
+  "split": "train",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "source_page_geometry": {"width_points": 3456.0, "height_points": 2592.0},
+  "coordinate_convention": "top-left; x right; y down",
+  "parser": "PyMuPDF",
+  "pdf_page_number": 4,
+  "review_stream_sha": "03f767950f969d433ae58f1d08dcdf840752c6bf",
+  "stroke_width": 1.8,
+  "half_stroke": 0.9,
+  "records": [
+    {"annotation_id":"ann-p2026-130-p04-beam-001","stroke_centerline":{"x":998.64,"y1":1367.04,"y2":1472.04},"expected_painted_extent":{"xmin":997.74,"ymin":1366.14,"xmax":999.54,"ymax":1472.94},"serialized_box_exact_match":true},
+    {"annotation_id":"ann-p2026-130-p04-beam-002","stroke_centerline":{"x":998.64,"y1":1491.36,"y2":1756.44},"expected_painted_extent":{"xmin":997.74,"ymin":1490.46,"xmax":999.54,"ymax":1757.34},"serialized_box_exact_match":true},
+    {"annotation_id":"ann-p2026-130-p04-beam-003","stroke_centerline":{"x":998.64,"y1":1775.64,"y2":2040.72},"expected_painted_extent":{"xmin":997.74,"ymin":1774.74,"xmax":999.54,"ymax":2041.62},"serialized_box_exact_match":true},
+    {"annotation_id":"ann-p2026-130-p04-beam-004","stroke_centerline":{"x":998.64,"y1":2060.04,"y2":2313.6},"expected_painted_extent":{"xmin":997.74,"ymin":2059.14,"xmax":999.54,"ymax":2314.5},"serialized_box_exact_match":true}
+  ],
+  "records_checked": 4,
+  "exact_stroke_extent_matches": 4,
+  "bbox_tightness_vector_extent_check": "pass",
+  "source_page_serialization_regression": "pass",
+  "human_final_approval": "pending",
+  "qa_state_changed": false,
+  "engineering_geometry_created": false,
+  "handoff_enabled": false,
+  "note": "Four review-required beam candidates match the painted extents of the underlying 1.8-pt PDF vector strokes exactly. This audit does not convert them into engineering beam endpoints or Core Members."
+}
