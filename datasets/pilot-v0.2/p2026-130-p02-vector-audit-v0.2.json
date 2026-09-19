@@ -1,0 +1,25 @@
+{
+  "audit_id": "p2026-130-p02-vector-audit-v0.2",
+  "source_id": "src-p2026-130-260890-permit",
+  "page_id": "p02",
+  "sheet_id": "Mx101",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "source_page_size": {"width": 3456, "height": 2592, "unit": "PDF-point", "rotation": 0},
+  "method": "PyMuPDF vector-primitive inspection + rendered visual verification",
+  "drawing_primitive_count": 20781,
+  "rejected_long_primitives": [
+    {"box":{"xmin":71.2,"ymin":35.4,"xmax":3420.7,"ymax":35.4},"reason":"sheet-frame/border, not wall evidence"},
+    {"box":{"xmin":71.2,"ymin":2556.5,"xmax":3420.7,"ymax":2556.5},"reason":"sheet-frame/border, not wall evidence"},
+   {"box":{"xmin":71.2,"ymin":35.4,"xmax":71.2,"ymax":2556.5},"reason":"sheet-frame/border, not wall evidence"},
+    {"box":{"xmin":3420.7,"ymin":35.4,"xmax":3420.7,"ymax":2556.5},"reason":"sheet-frame/border, not wall evidence"},
+   {"box":{"xmin":415.8,"ymin":326.8,"xmax":415.8,"ymax":2329.0},"reason":"long vector alone is insufficient for wall semantics"},
+    {"box":{"xmin":421.6,"ymin":326.8,"xmax":1950.4,"ymax":326.8},"reason":"long vector alone is insufficient for wall semantics"},
+    {"box":{"xmin":1950.4,"ymin":332.5,"xmax":1950.4,"ymax":913.0},"reason":"long vector alone is insufficient for wall semantics"},
+   {"box":{"xmin":415.8,"ymin":2334.7,"xmax":995.2,"ymax":2334.7},"reason":"long vector alone is insufficient for wall semantics"}
+  ],
+  "human_qa_constraint": "User-confirmed wall-positive regions are semantic constraints only; markup strokes are not annotation geometry.",
+  "candidate_wall_boxes_emitted": 0,
+  "qa_state": "review-required",
+  "note": "This audit intentionally rejects the previous heuristic that long/prominent PDF vectors can be treated as wall runs. No wall bbox is promoted until the visible wall graphic itself is verified."
+ }
