@@ -1,0 +1,82 @@
+{
+  "artifact_id": "semantic-qa-regression-cases-v0.2",
+  "status": "candidate-dataset-qa-only",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "source_contract": {
+    "path": "contracts/structural-layout-context-v0.1.md",
+    "sha": "de08b3037a1a3f12d026298fd671072ec0009b12"
+  },
+  "candidate_gate_contract": {
+    "path": "contracts/candidate-qa-gates-v0.2.json",
+    "sha": "5026198b24fb6ade833f8d525697260ef591f74f"
+  },
+  "cases": [
+    {
+      "id": "SQA-001",
+      "scenario": "no explicit grid",
+      "expected": "accept context; never invent grid"
+    },
+    {
+      "id": "SQA-002",
+      "scenario": "grid intersection without visible column evidence",
+      "expected": "context only; never auto-create column"
+    },
+    {
+      "id": "SQA-003",
+      "scenario": "likely framing location with no visible/detected column",
+      "expected": "review; never conclude structural absence automatically"
+    },
+    {
+      "id": "SQA-004",
+      "scenario": "column evidence repeats at corresponding position on adjacent levels",
+      "expected": "supporting context only; never auto-create target-level column"
+    },
+    {
+      "id": "SQA-005",
+      "scenario": "column appears on one level but not adjacent level",
+      "expected": "review trigger; never hallucinate continuation"
+    },
+    {
+      "id": "SQA-006",
+      "scenario": "column is offset or relocated between adjacent levels",
+      "expected": "review trigger; never force-snap or auto-continue"
+    },
+    {
+      "id": "SQA-007",
+      "scenario": "column section or symbol changes between adjacent levels",
+      "expected": "review trigger; never auto-assign vertical extent"
+    },
+    {
+      "id": "SQA-008",
+      "scenario": "story_count known without sufficient visible column evidence",
+      "expected": "context only; never create levels/column vertical_extent"
+    },
+    {
+      "id": "SQA-009",
+      "scenario": "beam-to-column, beam-to-wall, or beam-to-beam relation observed",
+      "expected": "contextual evidence only; detector box corners are not engineering endpoints"
+    },
+    {
+      "id": "SQA-010",
+      "scenario": "wall candidate inside column-grid bay",
+      "expected": "contextual prior only; never auto classify structural/nonstructural"
+    },
+    {
+      "id": "SQA-011",
+      "scenario": "internal shear/core wall evidence confirmed",
+      "expected": "preserve structural-wall possibility for QA; never reject merely because internal"
+    },
+    {
+      "id": "SQA-012",
+      "scenario": "wall semantics unresolved",
+      "expected": "adjudication required; never approve training/evaluation label"
+    }
+  ],
+  "boundary": {
+    "creates_canonical_core_geometry": false,
+    "creates_final_column_vertical_extent": false,
+    "enables_wall_handoff": false,
+    "enables_training": false
+  }
+}
