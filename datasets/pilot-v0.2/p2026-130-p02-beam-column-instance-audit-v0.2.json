@@ -1,0 +1,28 @@
+{
+  "audit_id": "p2026-130-p02-beam-column-instance-audit-v0.2",
+  "source_id": "src-p2026-130-260890-permit",
+  "page_id": "p02",
+  "sheet_id": "Mx101",
+  "project_group_id": "prj-p2026-130-260890",
+  "split": "train",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {"width_points":3456.0,"height_points":2592.0},
+  "vector_audit_sha": "c9a0c16a6d38cff3f93ff7799a9d193bad280a34",
+  "target_classes": ["column"],
+  "review_findings": [
+    "Mx101 is an anchor/foundation-context sheet with structural column evidence, but dense anchor, base-plate, dimension and reference graphics make per-instance column boundaries ambiguous without tight visual association.",
+    "Long/Prominent PDF vectors are not considered column or wall instances by themselves.",
+    "User-confirmed wall regions A-D and the two blue-marked regions are preserved as separate wall-semantic QA; E-F remain no-wall. None of this approves column boxes.",
+    "No detector box is promoted when the visible source-graphic instance cannot be separated from nearby anchor/dimension/detail graphics without speculation."
+  ],
+  "candidate_annotations_emitted": 0,
+  "negative_labels_created": false,
+  "disposition": "semantic-instance-review-complete-no-safe-bboxes",
+  "final_human_bbox_approval": "not-applicable-no-candidate-promoted",
+  "wall_semantics_preserved_separately": true,
+  "wall_handoff_enabled": false,
+  "engineering_geometry_created": false,
+  "canonical_members_created": false,
+  "handoff_enabled": false
+}
