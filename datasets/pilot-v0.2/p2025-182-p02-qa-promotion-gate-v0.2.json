@@ -9,30 +9,17 @@
   "spec_version": "0.2",
   "review_stream_sha": "51acc28d2bc5d77d77c0297288308a336a41d50b",
   "record_counts": {"total":8,"column":4,"beam":4},
-  "prior_human_review_evidence": {
-    "v0.1_review_log_sha": "dd69258016cb1d27cba38ed999b2ca19f9b3b332",
-    "column_semantics_confirmed": true,
-    "displayed_beam_candidate_semantics_confirmed": true,
-    "scope_limitation": "Prior human review confirmed class semantics only; final dataset approval remains separate."
-  },
-  "bbox_regression_evidence": {
-    "beam_audit_sha": "3405d6cc5fe4020b029aa2d572d3c1eccd6c4e9a",
-    "column_audit_sha": "07f305594f575969e3bbf87aab2bd8d650c863fe",
-    "beam_records": "4/4 pass",
-    "column_records": "4/4 pass",
-    "bbounding_box_tightness": "pass",
-    "source_page_serialization": "pass"
-  },
+  "automated_validation_evidence": {"audit_sha":"a5d016c3a87173d4bd0c2706ca18d6b87a03c183","result":"pass","failure_count":0,"records_checked":8},
   "promotion_checks": [
     {"check":"class-semantics","column":"pass-from-prior-human-review","beam":"pass-for-displayed-candidate-set-only"},
     {"check":"bounding-box-tightness","column":"pass","beam":"pass"},
-   {"check":"source-page-serialization","column":"pass","beam":"pass"},
-   {"check":"automated-validation","column":"pending-run","beam":"pending-run"},
-   {"check":"final-dataset-approval","column":"blocked", "beam":"blocked"}
+    {"check":"source-page-serialization","column":"pass","beam":"pass"},
+   {"check":"automated-validation","column":"pass","beam":"pass"},
+    {"check":"final-dataset-approval","column":"blocked","beam":"blocked"}
   ],
-  "promotion_status": "blocked-pending-automated-validation-and-final-human-approval",
+  "promotion_status": "blocked-only-by-final-human-approval",
   "training_ready_claim_allowed": false,
   "handoff_enabled": false,
   "engineering_geometry_created": false,
-  "note": "Both beam and column box tightness and source-page serialization regressions have passed for all 8 review-required records. Automated v0.2 validation and final human approval remain required. No Core engineering geometry or handoff is created."
+  "note": "All machine-checkable v0.2 gates have passed for the 8 review-required records on P2025-182 p02: class semantics within prior human-review scope, bounding-box tightness, source-page serialization, and automated validation. Final human dataset approval remains the only blocker."
 }
