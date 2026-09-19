@@ -1,0 +1,45 @@
+{
+  "batch_id": "pilot-annotation-batch-v0.2",
+  "dataset_id": "structural-detection-pilot-v0.2",
+  "status": "wall-qa-migration-in-progress",
+  "annotation_spec_version": "0.2",
+  "ontology_version": "0.2-candidate",
+  "coordinate_space": "source-page",
+  "allowed_classes": ["column", "beam", "wall"],
+  "record_format": "jsonl",
+  "output_path": "datasets/pilot-v0.2/annotations-review-required-v0.2.jsonl",
+  "parent_batch": "datasets/pilot-v0.1/annotation-batch-v0.1.json",
+  "mutate_parent_v0_1": false,
+  "page_coverage": {
+    "pilot_page_count": 14,
+    "review_every_included_page_for_walls": true,
+    "v0_1_missing_wall_label_is_negative": false
+  },
+  "class_migration": {
+    "column": {"source": "v0.1-baseline", "action": "preserve-and-revalidate"},
+    "beam": {"source": "v0.1-baseline", "action": "preserve-and-revalidate"},
+    "wall": {"source": "v0.2-wall-qa-migration", "action": "add-only-after-human-qa"}
+  },
+  "required_record_fields": ["annotation_id", "source_id", "page_id", "project_group_id", "class_name", "box", "coordinate_space", "spec_version", "qa_state"],
+  "qa_gates": [
+    "all records pass v0.2 annotation validation rules",
+    "all boxes are tight axis-aligned and in original source-page coordinates",
+    "no detail, legend, schedule, grid, text, leader, or user-qa markup graphics is included in a component box",
+    "blocking ambiguity flags cannot be approved",
+    "project_group_id is disjoint across train/validation/test",
+    "exact and near cross-split duplicates block release",
+    "new wall candidates require human QA before approved training or evaluation use"
+  ],
+  "compatibility": {
+    "active_handoff_contract": "contracts/structural-detection-evidence-v0.1.md",
+    "v0_1_allowed_classes": ["column", "beam"],
+    "wall_under_v0_1": "reject",
+    "wall_handoff_enabled": false
+  },
+  "blockers": [
+    "wall instance tight bbox QA not complete",
+    "remaining wall page adjudication not complete",
+    "v0.2 activation and GPT-6 consumer migration gates not complete"
+  ],
+  "note": "This is a candidate dataset batch for the wall migration. It does not activate ontology v0.2 or wall handoff. Detection boxes are source-page evidence only and are not canonical engineering geometry."
+}
