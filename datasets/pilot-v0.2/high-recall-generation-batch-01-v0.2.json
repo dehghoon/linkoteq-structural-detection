@@ -1,0 +1,50 @@
+{
+  "batch_id": "high-recall-generation-batch-01-v0.2",
+  "status": "generation-ready",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "source_of_truth": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "coverage_ledger_sha": "34950199721355bbbb8c63ce99ad02e017cec15",
+    "candidate_qa_gates_sha": "5026198b24fb6ade833f8d525697260ef591f74f",
+    "semantic_qa_regression_sha": "e693e7fb3674faa9050865135e9ea5f9b57bd96c",
+    "high_recall_plan_sha": "b5aea7100e0cc19fc5c026bda44429b2b3ef03d7"
+  },
+  "scope": {
+    "training_project_groups": ["prj-lacmark-242536","prj-p2026-024","prj-p2026-130-260890","prj-p2026-012"],
+    "validation_project_groups": ["prj-p2025-182"],
+    "excluded_from_generation": ["prj-p2026-115"],
+    "target_classes": ["column","beam","wall"]
+  },
+  "priority_queue": [
+    {"priority":1,"source_id":"src-lacmark-242536-str-2024","page_id":"p02","sheet_id":"Mx101","classes":["column","wall"],"reason":"train split; strong column semantics; human-confirmed structural-wall page semantics; per-instance boxes needed"},
+    {"priority":2,"source_id":"src-p2026-130-260890-permit","page_id":"p02","sheet_id":"Mx101","classes":["column","wall"],"reason":"train split; human-confirmed structural-wall page; regional wall semantics confirmed; per-instance boxes needed"},
+   {"priority":3,"source_id":"src-lacmark-242536-str-2024","page_id":"p04","sheet_id":"Mx201","classes":["beam","column"],"reason":"train split; strong W/C/P18 semantics; no-safe-box previous disposition must not become negative"},
+    {"priority":4,"source_id":"src-lacmark-242536-str-2024","page_id":"p05","sheet_id":"Mx401","classes":["beam","column"],"reason":"train split; structural legend and member designations present; joist/truss exclusions must remain active"},
+   {"priority":5,"source_id":"src-p2026-012-croquis","page_id":"p02","sheet_id":"EsMx401","classes":["beam","column"],"reason":"train split; roof plan with structural designations and load text; load text is not canonical load evidence in this batch"},
+    {"priority":6,"source_id":"src-p2026-024-croquis","page_id":"p02","sheet_id":"EsMx401","classes":["beam","column"],"reason":"train split; existing four beam candidates are seeds for repeated-family mining"},
+   {"priority":7,"source_id":"src-p2026-130-260890-permit","page_id":"p04","sheet_id":"Mx401","classes":["beam","column"],"reason":"train split; existing four beam candidates are seeds for repeated-family mining"},
+    {"priority":8,"source_id":"src-p2025-182-croquis","page_id":"p02","sheet_id":"EsMx201","classes":["column","beam"],"reason":"validation split; existing eight candidates may verify family generalization but must not influence training"},
+   {"priority":9,"source_id":"src-p2025-182-croquis","page_id":"p03","sheet_id":"EsMx401","classes":["beam","column"],"reason":"validation split; roof plan with F22/F28/P22 joist/truss-like semantics; must not silently relabel as beam"}
+  ],
+  "generation_rules": {
+    "goal": "high-recall",
+    "promotion": "high-precision after QA",
+    "missing_candidate_is_negative": false,
+    "no_safe_box_is_negative": false,
+    "cross_level_column_repetition_may_rank": true,
+    "cross_level_column_repetition_may_create": false,
+    "cross_level_column_discontinuity_requires_review": true,
+    "wall_requires_visible_structural_evidence": true,
+    "wall_requires_human_qa_before_promotion": true,
+    "validation_split_may_verify_but_not_train": true,
+    "held_out_test_split_touched": false
+  },
+  "execution_next": "Generate source-page candidates on priority 1-2 train pages first, then expand to remaining train pages; route semantic outliers to review and keep validation/test isolated.",
+  "boundary": {
+    "creates_engineering_geometry": false,
+    "enables_wall_handoff": false,
+    "enables_training": false
+  }
+}
