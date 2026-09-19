@@ -7,13 +7,13 @@
   "split": "validation",
   "coordinate_space": "source-page",
   "spec_version": "0.2",
-  "review_stream_sha": "51acc28d2bc5d77d77c0297288308a336a41d50b",
+  "review_stream_sha": "72ed6c42126907a9fc604ec825569ce2f154fb16",
   "record_counts": {"total":8,"column":4,"beam":4},
-  "automated_validation_evidence": {"audit_sha":"a5d016c3a87173d4bd0c2706ca18d6b87a03c183","result":"pass","failure_count":0,"records_checked":8},
+  "automated_validation_evidence": {"audit_sha":"a5d016c3a87173d4bd0c2706ca18d6b87a03c183","result":"pass","failure_count":0,"records_checked":8,"scope":"P2025-182 p02 subset","note":"This subset validation predates later review-stream additions; the subset records remain unchanged in the current 16-record stream."},
   "promotion_checks": [
     {"check":"class-semantics","column":"pass-from-prior-human-review","beam":"pass-for-displayed-candidate-set-only"},
     {"check":"bounding-box-tightness","column":"pass","beam":"pass"},
-    {"check":"source-page-serialization","column":"pass","beam":"pass"},
+   {"check":"source-page-serialization","column":"pass","beam":"pass"},
    {"check":"automated-validation","column":"pass","beam":"pass"},
     {"check":"final-dataset-approval","column":"blocked","beam":"blocked"}
   ],
@@ -21,5 +21,5 @@
   "training_ready_claim_allowed": false,
   "handoff_enabled": false,
   "engineering_geometry_created": false,
-  "note": "All machine-checkable v0.2 gates have passed for the 8 review-required records on P2025-182 p02: class semantics within prior human-review scope, bounding-box tightness, source-page serialization, and automated validation. Final human dataset approval remains the only blocker."
+  "note": "The 8 P2025-182 p02 review-required records remain present unchanged in the current 16-record v0.2 review stream. All machine-checkable gates have passed for this subset: class semantics within prior human-review scope, bounding-box tightness, source-page serialization, and automated validation. Final human dataset approval remains the only page-local promotion blocker. No qa_state is changed by this gate update."
 }
