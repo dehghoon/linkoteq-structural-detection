@@ -1,0 +1,33 @@
+{
+  "audit_id": "lacmark-p02-source-audit-v0.2",
+  "source_id": "src-lacmark-242536-str-2024",
+  "page_id": "p02",
+  "sheet_id": "Mx101",
+  "project_group_id": "prj-lacmark-242536",
+  "split": "train",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {"width":3456,"height":2592,"unit":"PDF-point"},
+  "pdf_page_number": 2,
+  "parser": "PyMuPDF",
+  "vector_drawing_count": 26851,
+  "target_classes": ["column"],
+  "source_identity_evidence": {
+    "plan_type": "anchor-foundation-plan",
+    "explicit_column_section_designations_present": true,
+    "example_column_designations": ["HSS8X8X1/4","HSS10X10X1/4","HSS5X5X3/16","HSS6X6X1/4","HSS8X8P3/8"],
+    "base_plate_designations_present": true,
+    "toc_elevation_notes_present": true,
+    "column_erection_warning_present": true,
+    "anchor_rod_notes_present": true,
+    "anchor_plan_legend_present": true
+  },
+  "candidate_annotations_emitted": 0,
+  "negative_label_created": false,
+  "disposition": "strong-column-page-evidence-instance-bbox-qa-required",
+  "qa_reason": "The source page contains explicit HSS column and base-plate designations and an explicit column-erection warning. Dense anchor-rolt, base-plate, dimension and detail references make heuristic vector-to-instance assignment unsafe without tight visual BBox QA.",
+  "engineering_geometry_created": false,
+  "canonical_members_created": false,
+  "handoff_enabled": false,
+  "note": "Source-evidence audit only. The detector target is visible column evidence in source-page space; TOC elevations, anchor rods, base plates and detail references are not converted into Core geometry or canonical engineering entities."
+}
