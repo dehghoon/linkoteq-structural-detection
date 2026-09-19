@@ -1,0 +1,137 @@
+{
+  "audit_id": "p2026-115-p06-p09-instance-audit-v0.2",
+  "source_id": "src-p2026-115-structural-60dd",
+  "project_group_id": "prj-p2026-115",
+  "split": "test",
+  "split_policy": "held-out-drafting-style-domain-shift",
+  "training_usage_prohibited": true,
+  "model_selection_usage_prohibited": true,
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {
+    "width_points": 3024.0,
+    "height_points": 2160.0
+  },
+  "render_verification": {
+    "renderer": "pdfs/render_pdf.py",
+    "dpi": 72,
+    "pixel_size": [
+      3024,
+      2160
+    ],
+    "rendered_and_verified": true
+  },
+  "pages": [
+    {
+      "page_id": "p06",
+      "sheet_id": "S-201",
+      "pdf_page_number": 6,
+      "sheet_title": "OFFICE MEZZANINE FRAMING PLAN",
+      "vector_drawing_count": 185217,
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "observed_designations": {
+        "W_count": 98,
+        "W_examples": [
+          "W10X12",
+          "W12X19",
+          "W14X22",
+          "W16X36",
+          "W18X35",
+          "W21X50"
+        ],
+        "HSS_count": 7,
+        "HSS_examples": [
+          "HSS10X10X3/8",
+          "HSS10X6X1/4"
+        ]
+      },
+      "disposition": "strong-beam-column-evidence-instance-bbox-qa-required"
+    },
+    {
+      "page_id": "p07",
+      "sheet_id": "S-202",
+      "pdf_page_number": 7,
+      "sheet_title": "ROOF FRAMING PLAN",
+      "vector_drawing_count": 305820,
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "observed_designations": {
+        "W_count": 63,
+        "W_examples": [
+          "W12X19",
+          "W14X22",
+          "W16X31",
+          "W18X35",
+          "W21X44",
+          "W21X68"
+        ],
+        "HSS_count": 1,
+        "HSS_examples": [
+          "HSS12X6X1/4"
+        ]
+      },
+      "disposition": "strong-beam-column-evidence-instance-bbox-qa-required"
+    },
+    {
+      "page_id": "p08",
+      "sheet_id": "S-203",
+      "pdf_page_number": 8,
+      "sheet_title": "HIGH BAY ROOF FRAMING PLAN AND CRANE PLAN",
+      "vector_drawing_count": 3812,
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "observed_designations": {
+        "W_count": 38,
+        "W_examples": [
+          "W14x30",
+          "W16X67",
+          "W18X50",
+          "W30X116",
+          "W33X118"
+        ],
+        "HSS_count": 16,
+        "HSS_examples": [
+          "HSS12X6X1/4",
+          "HSS6X6X5/16",
+          "HSS8X8X5/16"
+        ]
+      },
+      "disposition": "strong-beam-column-evidence-instance-bbox-qa-required"
+    },
+    {
+      "page_id": "p09",
+      "sheet_id": "S-204",
+      "pdf_page_number": 9,
+      "sheet_title": "ROOF FRAMING PLAN / CONNECTOR BUILDING ROOF FRAMING PLAN / ENTRANCE ROOF ENLARGED FRAMING PLAN",
+      "vector_drawing_count": 112790,
+      "target_classes": [
+        "beam",
+        "column"
+      ],
+      "observed_designations": {
+        "W_count": 10,
+        "W_examples": [
+          "W12X19",
+          "W14X22",
+          "W16x26",
+          "W8x10"
+        ],
+        "HSS_count": 0
+      },
+      "disposition": "strong-beam-evidence-column-instances-not-confirmed-by-text-alone-instance-bbox-qa-required"
+    }
+  ],
+  "candidate_annotations_emitted": 0,
+  "negative_labels_created": false,
+  "evaluation_label_curation_allowed": true,
+  "engineering_geometry_created": false,
+  "handoff_enabled": false,
+  "note": "All four pages were rendered and verified at 72 DPI. Text designation counts are source-evidence triage only and are not serialized as detection boxes. This held-out project may be curated only for evaluation and must not be used for training or model selection."
+}
