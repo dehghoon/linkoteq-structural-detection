@@ -1,0 +1,22 @@
+{
+  "audit_id": "p2026-115-held-out-source-audit-v0.2",
+  "source_id": "src-p2026-115-structural-60dd",
+  "project_group_id": "prj-p2026-115",
+  "split": "test",
+  "split_policy": "held-out-drafting-style-domain-shift",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "pages": [
+    {"page_id":"p04","sheet_id":"S-100","title":"FOUNDATION PLAN","target_classes":["column"],"candidate_annotations_emitted":0,"disposition":"held-out-instance-qa-required"},
+    {"page_id":"p06","sheet_id":"S-201","title":"OFFICE MEZZANINE FRAMING PLAN","target_classes":["beam","column"],"candidate_annotations_emitted":0,"disposition":"held-out-instance-qa-required"},
+    {"page_id":"p07","sheet_id":"S-202","title":"LOW ROOF FRAMING PLAN","target_classes":["beam","column"],"candidate_annotations_emitted":0,"disposition":"held-out-instance-qa-required"},
+    {"page_id":"p08","sheet_id":"S-203","title":"HIGH ROOF FRAMING PLAN AND CRANE PLAN","target_classes":["beam","column"],"candidate_annotations_emitted":0,"disposition":"held-out-instance-qa-required"},
+    {"page_id":"p09","sheet_id":"S-204","title":"ROOF FRAMING PLAN","target_classes":["beam","column"],"candidate_annotations_emitted":0,"disposition":"held-out-instance-qa-required"}
+  ],
+  "page_count_audited": 5,
+  "training_usage_prohibited": true,
+  "negative_labels_created": false,
+  "engineering_geometry_created": false,
+  "handoff_enabled": false,
+  "note": "These five pages remain strictly in the held-out test project group. Curation of evaluation labels may proceed but no evidence from this group may be used for training or model selection. No speculative instance boxes are emitted by this source-audit."
+}
