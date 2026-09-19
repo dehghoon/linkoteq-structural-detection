@@ -6,23 +6,35 @@
   "source_of_truth": {
     "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
     "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
-    "wall_human_qa_sha": "24f89dc9848383e4981267411bd31046badd2441"
+    "wall_human_qa_sha": "24f89dc9848383e4981267411bd31046badd2441",
+    "candidate_qa_gates_sha": "5026198b24fb6ade833f8d525697260ef591f74f",
+    "semantic_qa_regression_sha": "e693e7fb3674faa9050865135e9ea5f9b57bd96c"
   },
   "active_production_ontology": "0.1",
   "candidate_dataset_ontology": "0.2",
   "target_classes": ["column", "beam", "wall"],
+  "semantic_qa_precondition": {
+    "contract": "contracts/structural-layout-context-v0.1.md",
+    "regressions": "contracts/semantic-qa-regression-cases-v0.2.json",
+    "rule": "Generation is high-recall, but promotion must not violate any semantic hard gate. Review-trigger scenarios remain review-required. Contextual priors can rank or route candidates but cannot create, delete, or relabel an element by themselves."
+  },
   "strategy": {
     "column": [
       "Generate candidates from visible plan-footprint graphics and repeated symbol families.",
-      "Use nearby structural designations and legend context as semantic evidence, not as a substitute for the visiba”e instance."
+      "Use grid alignment, regular spacing, beam framing and cross-level repetition only as contextual evidence.",
+      "Never create a column solely from a grid intersection, regular spacing, beam intersection, or because a matching column exists on another level.",
+      "Route cross-level disappearance, relocation, offset, or section/symbol change to review; do not force-snap or auto-continue."
     ],
     "beam": [
       "Generate candidates from visible framing graphics supported by W/C/other reliable structural designations and drawing context.",
+      "Beam-to-column, beam-to-wall and beam-to-beam relationships are contextual evidence only.",
       "Do not silently relabel joists, trusses, bracing, dimensions, grids, leaders, or slab edges as beam."
     ],
     "wall": [
-      "Start with the two human-confirmed positive pages and the regional semantics  already confirmed by the project user.",
+      "Start with the two human-confirmed positive pages and regional semantics already confirmed by the project user.",
       "Generate tight axis-aligned source-page boxes only around visible structural wall graphics.",
+      "Never use missing column, inside-bay location, perimeter/grid proximity, or wall-like graphics alone as proof of structural-wall status.",
+      "Internal shear/core walls remain valid counterexamples to automatic nonstructural classification.",
       "Never infer hidden continuation, bridge openings, or convert paired boundaries to engineering centerlines."
     ]
   },
@@ -33,16 +45,19 @@
     "bulk1rule_approval": "Allow only after a representative family has been human-reviewed and the rule is stable within the same drafting convention.",
     "ambiguous_is_not_background": true,
     "no_safe_bbox_is_not_negative": true,
-    "wall_candidates_require_human_qa_before_approval": true
+    "wall_candidates_require_human_qa_before_approval": true,
+    "cross_level_column_context_can_rank": true,
+    "cross_level_column_context_can_create": false
   },
   "scaling_loop": [
     "1. Generate many candidates per in-scope page.",
-    "2. Cluster candidates by drafting convention and visual/semantic family.",
-    "3. Human-review representative families rather than asking for every instance.",
-    "4. Bulk-apply a verified rule only within its verified drafting convention.",
-    "5. Route outliers and ambiguous cases back to human QA.",
-    "6. Run label-completeness and duplicate gates before training.",
-    "7. Train/evaluate only after class coverage and missing-label contamination gates pass."
+    "2. Apply semantic hard gates and route review-trigger cases before promotion.",
+    "3. Cluster candidates by drafting convention and visual/semantic family.",
+    "4. Human-review representative families rather than asking for every instance.",
+    "5. Bulk-apply a verified rule only within its verified drafting convention.",
+    "6. Route outliers and ambiguous cases back to human QA.",
+    "7. Run label-completeness and duplicate gates before training.",
+    "8. Train/evaluate only after class coverage and missing-label contamination gates pass."
   ],
   "future_extensibility": {
     "standardized_evidence_interface": true,
@@ -52,7 +67,7 @@
   },
   "boundary": {
     "gpt7_stops": "reviewed source-page detection evidence",
-    "gpt6_owns": "engineering geometry, transforms, scale, connectivity, topology, Core mapping and StructuralModel",
+    "gpt6_owns": "engineering geo[etry, transforms, scale, connectivity, topology, Core mapping and StructuralModel",
     "creates_engineering_geometry": false,
     "enables_wall_handoff": false
   }
