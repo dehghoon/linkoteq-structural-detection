@@ -1,0 +1,25 @@
+{
+  "batch_id": "p2026-024-p02-beam-instance-candidates-v0.2",
+  "source_id": "src-p2026-024-croquis",
+  "page_id": "p02",
+  "sheet_id": "EsMx401",
+  "project_group_id": "prj-p2026-024",
+  "split": "train",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "source_page_geometry": {"width_points":3456.0,"height_points":2592.0},
+  "provenance": {"method":"PyMuPDF vector primitive inspection plus adjacent W label semantics","pdf_page_number":2,"source_audit_sha":"1d77fec9fb8a4c482e284a9cc7a784fa6d8c6724","coordinate_convention":"top-left; x right; y down"},
+  "stroke_width": 2.76,
+  "half_stroke": 1.38,
+  "candidates": [
+    {"annotation_id":"ann-p2026-024-p02-beam-001","class_name":"beam","box":{"xmin":1459.86,"ymin":1576.86,"xmax":1462.62,"ymax":1739.34},"vector_centerline":{"x":1461.24,"y1":1578.24,"y2":1737.96},"qa_state":"review-required","flags":[],"human_instance_approval":false},
+    {"annotation_id":"ann-p2026-024-p02-beam-002","class_name":"beam","box":{"xmin":1579.86,"ymin":1576.86,"xmax":1582.62,"ymax":1749.18},"vector_centerline":{"x":1581.24,"y1":1578.24,"y2":1747.8},"qa_state":"review-required","flags":[],"human_instance_approval":false},
+    {"annotation_id":"ann-p2026-024-p02-beam-003","class_name":"beam","box":{"xmin":1699.86,"ymin":1576.86,"xmax":1702.62,"ymax":1749.18},"vector_centerline":{"x":1701.24,"y1":1578.24,"y2":1747.8},"qa_state":"review-required","flags":[],"human_instance_approval":false},
+    {"annotation_id":"ann-p2026-024-p02-beam-004","class_name":"beam","box":{"xmin":1819.98,"ymin":1576.98,"xmax":1822.74,"ymax":1739.34},"vector_centerline":{"x":1821.36,"y1":1578.36,"y2":1737.96},"qa_state":"review-required","flags":[],"human_instance_approval":false}
+  ],
+  "candidate_count": 4,
+  "negative_label_created": false,
+  "canonical_engineering_geometry_created": false,
+  "handoff_enabled": false,
+  "note": "Four conservative plan-region W-labeled vector strokes are serialized as tight painted-extent beam candidates. They remain review-required and are not yet final dataset evidence."
+}
