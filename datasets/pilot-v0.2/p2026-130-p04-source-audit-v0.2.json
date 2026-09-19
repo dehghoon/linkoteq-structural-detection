@@ -1,0 +1,31 @@
+{
+  "audit_id": "p2026-130-p04-source-audit-v0.2",
+  "source_id": "src-p2026-130-260890-permit",
+  "page_id": "p04",
+  "sheet_id": "Mx401",
+  "project_group_id": "prj-p2026-130-260890",
+  "split": "train",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {"width": 3456, "height": 2592, "unit": "PDF-point"},
+  "parser": "PyMuPDF",
+  "pdf_page_number": 4,
+  "vector_drawing_count": 12757,
+  "source_identity_evidence": {
+    "roof_plan_legend_present": true,
+    "column_legend_present": true,
+    "beam_framing_designations_observed": ["W360X33","W460X52","W460X60","W200X27","W200X15","C380X50","C310X31"],
+    "joist_and_joist_girder_designations_observed": true,
+    "existing_and_new_framing_notes_present": true,
+    "panel_column_references_present": true
+  },
+  "target_classes": ["beam","column"],
+  "candidate_annotations_emitted": 0,
+  "negative_label_created": false,
+  "disposition": "strong-beam-column-page-evidence-instance-bbox-qa-required",
+  "qa_reason": "Page contains dense mixed joist, girder, beam, channel, panel-column, existing and new framing evidence. Text or long vector strokes alone are not sufficient to serialize tight beam/column boxes without instance-visual QA.",
+  "engineering_geometry_created": false,
+  "canonical_members_created": false,
+  "handoff_enabled": false,
+  "note": "This is a source-evidence audit only. Joist and joist-girder designations are not added to ontology v0.2. No engineering endpoints, topology, or Core Members are created."
+}
