@@ -1,0 +1,42 @@
+{
+  "audit_id": "p2026-115-p06-p07-instance-segmentation-audit-v0.2",
+  "source_id": "src-p2026-115-structural-60dd",
+  "project_group_id": "prj-p2026-115",
+  "split": "test",
+  "split_policy": "held-out-drafting-style-domain-shift",
+  "training_usage_prohibited": true,
+  "model_selection_usage_prohibited": true,
+  "evaluation_label_curation_allowed": true,
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {"width_points":3024.0,"height_points":2160.0},
+  "pages": [
+    {
+      "page_id": "p06",
+      "sheet_id": "S-201",
+      "sheet_title": "OFFICE MEZZANINE FRAMING PLAN",
+      "vector_drawing_count": 185217,
+      "target_classes": ["beam","column"],
+      "source_evidence": {"W_count":98,"HSS_count":7,"W_examples":["W10X12","W12X19","W14X22","W16X36","W18X35","W21X50"],"HSS_examples":["HSS10X10X3/8","HSS10X6X1/4"]},
+      "review_findings":["Repeated W-section designations support strong beam class presence.","HSS designations support structural column context.","The framing plan is dense and contains overlapping linework, notes, and member designations; text proximity alone is not sufficient to serialize tight per-instance boxes."],
+      "candidate_annotations_emitted":0,
+      "negative_labels_created":false,
+      "disposition":"semantic-instance-review-complete-no-safe-bboxes"
+    },
+    {
+      "page_id": "p07",
+      "sheet_id": "S-202",
+      "sheet_title": "ROOF FRAMING PLAN",
+      "vector_drawing_count": 305820,
+      "target_classes": ["beam","column"],
+      "source_evidence": {"W_count":63,"HSS_count":1,"W_examples":["W12X19","W14X22","W16X31","W19X35","W21X44","W21X68"],"HSS_examples":["HSS12X6X1/4"]},
+      "review_findings":["Visible W-section designations support strong beam class presence.","The sheet also contains joist/framing graphics that must not be relabeled as beam under ontology v0.2.","The single observed HSS designation supports column context but does not by itself define a tight column box."],,
+      "candidate_annotations_emitted":0,
+      "negative_labels_created":false,
+      "disposition":"semantic-instance-review-complete-no-safe-bboxes"
+    }
+  ],
+  "note": "Both pages are conservatively closed at instance-semantic review without promoting unambiguous boxes. This is not a negative label. Held-out split isolation remains in force.",
+  "engineering_geometry_created": false,
+  "handoff_enabled": false
+}
