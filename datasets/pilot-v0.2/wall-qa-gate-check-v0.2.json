@@ -1,0 +1,44 @@
+{
+  "check_id": "wall-qa-gate-check-v0.2-2026-09-18",
+  "dataset_id": "structural-detection-pilot-v0.2",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "target_classes": ["column", "beam","wall"],
+  "page_review": {
+    "total_pilot_pages": 14,
+    "recorded_dispositions": 14,
+    "coverage_complete": true
+  },
+  "human_semantics": {
+    "confirmed_pages": ["lacmark-242536-p02-Mx101", "p2026-130-p02.Mx101"],
+    "p2026_130_p02_region_review": {"A": "wall-present", "B": "wall-present", "C": "wall-present", "D": "wall-present", "E": "no-wall", "F": "no-wall"}
+  },
+  "instance_bbox_gate": {
+    "requires": ["tight-axis-aligned-source-page-box", "positive-area", "within-source-page-bounds","human-qa-before-approved-use"],
+    "status": "blocked",
+    "reason": "Tight wall instance boxes are not yet human-approved."
+  },
+  "adjudication_gate": {
+    "status": "blocked",
+    "reason": "Remaining pages have needs-adjudication dispositions; absence of v0.1 wall labels is not a valid negative."
+  },
+  "split_gate": {
+    "project_group_isolation_required": true,
+    "exact_and_near_cross_split_duplicate_checks_required": true,
+    "status": "pending-final-annotations"
+  },
+  "compatibility": {
+    "v0_1_allowed_classes": ["column", "beam"],
+    "wall_under_v0_1": "reject",
+    "v0_2_candidate_classes": ["column","beam","wall"]
+  },
+  "overall_wall_qa_status": "in-progress",
+  "completion_criteria": [
+    "all-14-pages-have-final-per-page-wall-disposition",
+    "all-promotable-wall-instances-have-human-approved-tight-bboxes",
+    "no-blocking-ambiguity-flags-remain-on-approved-annotations",
+    "project-group-split-isolation-passes",
+    "exact-and-near-cross-split-duplicate-gates-pass"
+  ],
+  "note": "This check does not activate wall handoff. Detection boxes remain source-page evidence only and are not engineering wall geometry."
+}
