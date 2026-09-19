@@ -13,7 +13,7 @@
     {"source_id":"src-lacmark-242536-str-2024","page_id":"p02","sheet_id":"Mx101","split":"train","target_classes":["column"],"status":"source-audit-complete"},
     {"source_id":"src-lacmark-242536-str-2024","page_id":"p04","sheet_id":"Mx201","split":"train","target_classes":["beam","column"],"status":"source-audit-complete"},
     {"source_id":"src-lacmark-242536-str-2024","page_id":"p05","sheet_id":"Mx401","split":"train","target_classes":["beam","column"],"status":"source-audit-complete"},
-    {"source_id":"src-p2026-024-croquis","page_id":"p02","sheet_id":"EsMx401","split":"train","target_classes":["beam","column"],"status":"source-audit-complete"},
+    {"source_id":"src-p2026-024-croquis","page_id":"p02","sheet_id":"EsMx401","split":"train","target_classes":["beam","column"],"status":"candidate-records-machine-qa-pass","record_count":4,"bbox_regression":"4/4 pass","automated_validation":"pass","final_human_approval":"pending"},
     {"source_id":"src-p2026-115-structural-60dd","page_id":"p04","sheet_id":"S-100","split":"test","target_classes":["column"],"status":"source-audit-complete"},
     {"source_id":"src-p2026-115-structural-60dd","page_id":"p06","sheet_id":"S-201","split":"test","target_classes":["beam","column"],"status":"source-audit-complete"},
     {"source_id":"src-p2026-115-structural-60dd","page_id":"p07","sheet_id":"S-202","split":"test","target_classes":["beam","column"],"status":"source-audit-complete"},
@@ -25,23 +25,8 @@
     {"source_id":"src-p2025-182-croquis","page_id":"p03","sheet_id":"EsMx401","split":"validation","target_classes":["beam","column"],"status":"semantic-instance-review-complete-no-safe-bboxes"},
     {"source_id":"src-p2026-012-croquis","page_id":"p02","sheet_id":"EsMx401","split":"train","target_classes":["beam","column"],"status":"source-audit-complete"}
   ],
-  "summary": {
-    "pages_accounted_for": 14,
-    "source_audit_complete": 11,
-    "candidate_record_pages": 0,
-    "machine_qa_pass_pages": 2,
-    "semantic_instance_review_complete_no_safe_bboxes": 1,
-    "pages_with_bbox_regression_pass": 2,
-    "bbox_regression_records_passed": 12,
-    "automated_validation_records_passed": 12,
-    "finally_approved_annotation_pages": 0,
-    "beam_column_coverage_complete": false
-  },
-  "split_isolation": {
-    "project_group_disjoint_required": true,
-    "p2026_115_held_out_test_not_for_training": true
-  },
-  "wall_handoff_enabled": false,
-  "engineering_geometry_created": false,
-  "note": "All 14 pilot pages are accounted for. P2025-182 p02 has 8 review-required candidates with all machine-checkable gates passed. P2026-130 p04 has 4 review-required beam candidates with 4/4 BBox regression and v0.2 automated validation passed. Final human approval remains pending on both candidate pages. No negative label is inferred from unannotated pages. Dataset is not training-ready."
-}
+  "summary":{"pages_accounted_for":14,"source_audit_complete":10,"candidate_record_pages":0,"machine_qa_pass_pages":3,"semantic_instance_review_complete_no_safe_bboxes":1,"pages_with_bbox_regression_pass":3,"bbox_regression_records_passed":16,"automated_validation_records_passed":16,"finally_approved_annotation_pages":0,"beam_column_coverage_complete":false},
+  "split_isolation":{"project_group_disjoint_required":true,"p2026_115_held_out_test_not_for_training":true},
+  "wall_handoff_enabled":false,
+  "engineering_geometry_created":false,
+  "note":"All 14 pilot pages are accounted for. Three pages now have review-required beam/column candidates with bbox regression and automated v0.2 validation passed: P2025-182 p02 (8 records), P206-130 p04 (4 records), and P2026-024 p02 (4 records). Final human approval remains pending on all three. No negative label is inferred from unannotated pages. Dataset is not training-ready."}
