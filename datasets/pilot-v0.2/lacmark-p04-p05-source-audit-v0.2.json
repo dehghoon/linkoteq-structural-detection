@@ -1,0 +1,34 @@
+{
+  "audit_id": "lacmark-p04-p05-source-audit-v0.2",
+  "source_id": "src-lacmark-242536-str-2024",
+  "project_group_id": "prj-lacmark-242536",
+  "split": "train",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "pages": [
+    {
+      "page_id": "p04",
+      "sheet_id": "Mx201",
+      "source_page_geometry": {"width_points": 3456.0, "height_points": 2592.0},
+      "vector_drawing_count": 19141,
+      "strong_source_semantics": ["Mezzanine structural plan", "Wx-series beam designations", "C-series channel designations", "COL = Colonne legend", "axial seismic/wind source annotations"],
+      "example_source_text": ["W14X82", "W16X26","W12X19","W8X10", "C15X33.9 x 11'-0\""],
+      "candidate_annotations_emitted": 0,
+      "disposition": "strong-beam-column-page-evidence-instance-bbox-qa-required"
+    },
+    {
+      "page_id": "p05",
+      "sheet_id": "Mx401",
+      "source_page_geometry": {"width_points": 3456.0, "height_points": 2592.0},
+      "vector_drawing_count": 51039,
+      "strong_source_semantics": ["Roof structural plan", "COL = Colonne legend", "joist/truss/attachment legend", "seismic/wind axial source annotations"],
+      "candidate_annotations_emitted": 0,
+      "disposition": "strong-beam-column-page-evidence-instance-bbox-qa-required"
+    }
+  ],
+  "negative_labels_created": false,
+  "canonical_loads_created": false,
+  "engineering_geometry_created": false,
+  "handoff_enabled": false,
+  "note": "Both pages have strong structural semantics, but long vector strokes and labels are not sufficient by themselves for tight instance bounding boxes. No speculative annotations are promoted."
+}
