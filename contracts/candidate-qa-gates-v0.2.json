@@ -1,0 +1,37 @@
+{
+  "contract_id": "candidate-qa-gates-v0.2",
+  "status": "candidate-dataset-only",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "allowed_candidate_classes": ["column","beam","wall"],
+  "note": "This is an internal candidate/QA stage contract. It does not activate ontology v0.2 or wall handoff.",
+  "gates": [
+    {"id":"G1-schema","control":"required-fields, finite values, version, allowed class and QA-state are valid","blocking":true},
+    {"id":"G2-source-geometry","control":"box has positive area, is within source-page bounds, and coordinate_space is explicit source-page","blocking":true},
+    {"id":"G3-class-semantics","control":"visible drawing evidence supports the proposed class; beam must not be joist/truss/grid/dimension/note, column must not be mere text/grid/symbol without a column instance, wall must have reliable structural semantics","blocking":true},
+    {"id":"G4-instance-boundary","control":"box is tight around the visible target instance; does not include unrelated text/dimensions/grids and does not infer hidden continuation", "blocking":true},
+    {"id":"G5-ambiguity","control":"ambiguous-class, ambiguous-presence or overlap-ambiguous blocks promotion; no-safe-bbox is not a negative label","blocking":true},
+   {"id":"G6-deduplication-split","control":"no duplicate instance and no exact/near-duplicate leakage across project-group train/validation/test splits","blocking":true},
+    {"id":"G7-provenance-review","control":"stable candidate ID, source/page/project-group, candidate generator version, evidence/reason and review state are preserved; human QA is required when the annotation spec requires it","blocking":true}
+  ],
+  "promotion_rules": {
+    "all_blocking_gates_must_pass": true,
+    "candidate_never_equals_ground_truth": true,
+    "wall_human_qa_required": true,
+    "missing_candidate_never_automatically_becomes_background": true,
+    "approved_candidate_may_become_annotation": true,
+    "training_eligible_only_after_dataset_completeness_and_split_gates": true
+  },
+  "wall_specific_rules": {
+    "visible_only": true,
+    "structural_semantics_required": true,
+    "tight_axir_aligned_source_page_box": true,
+    "infer_hidden_continuation": false,
+    "ambiguous_wall_class": false
+  },
+  "boundary": {
+    "emits_canonical_engineering_geometry": false,
+    "enables_wall_handoff": false,
+    "enables_training": false
+  }
+}
