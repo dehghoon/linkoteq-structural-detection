@@ -1,0 +1,31 @@
+{
+  "audit_id": "p2025-182-p02-column-bbox-regression-v0.2",
+  "source_id": "src-p2025-182-croquis",
+  "page_id": "p02",
+  "sheet_id": "EsMx201",
+  "project_group_id": "prj-p2025-182",
+  "split": "validation",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {"width_points":2592.0,"height_points":1728.0},
+  "regression_method": "PyMuPDF vector square stroke extent verification against v0.2 review stream",
+  "coordinate_convention": "top-left; x increases right; y increases down",
+  "stroke_width_points": 1.32,
+  "columns": [
+    {"annotation_id":"ann-p2025-182-p02-column-001","vector_square_center":[931.68,795.48],"vector_squarecenterline_box":[929.28,793.08,934.08,797.88],"serialized_outer_stroke_box":[928.62,792.42,934.74,798.54],"expected_outer_stroke_box":[928.62,792.42,934.74,798.54],"exact_match":true},
+    {"annotation_id":"ann-p2025-182-p02-column-002","vector_square_center":[1039.68,795.48],"vector_square_centerline_box":[1037.28,793.08,1042.08,797.88],"serialized_outer_stroke_box":[1036.62,792.42,1042.74,798.54],"expected_outer_stroke_box":[1036.62,792.42,1042.74,798.54],"exact_match":true},
+   {"annotation_id":"ann-p2025-182-p02-column-003","vector_square_center":[1147.56,795.48],"vector_square_centerline_box":[1145.16,793.08,1149.96,797.88],"serialized_outer_stroke_box":[1144.5,792.42,1150.62,798.54],"expected_outer_stroke_box":[1144.5,792.42,1150.62,798.54],"exact_match":true},
+    {"annotation_id":"ann-p2025-182-p02-column-004","vector_square_center":[1039.68,932.28],"vector_square_centerline_box":[1037.28,929.88,1042.08,934.68],"serialized_outer_stroke_box":[1036.62,929.22,1042.74,935.34],"expected_outer_stroke_box":[1036.62,929.22,1042.74,935.34],"exact_match":true}
+  ],
+  "result": {
+    "column_records_checked": 4,
+    "exact_stroke_extent_matches": 4,
+    "source_page_serialization_regression": "pass",
+    "bbox_tightness_vector_extent_check": "pass",
+    "human_final_approval": "pending",
+    "qa_state_changed": false
+  },
+  "engineering_geometry_created": false,
+  "handoff_enabled": false,
+  "note": "The four migrated column boxes exactly match the outer extents of the 1.32-pt stroked 4.8-x-4.8 source-page square graphics. This is detection-evidence BBox verification only; no Core Node/Member or engineering geometry is created."
+}
