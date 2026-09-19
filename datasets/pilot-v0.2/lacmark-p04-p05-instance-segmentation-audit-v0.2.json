@@ -1,0 +1,57 @@
+{
+  "audit_id": "lacmark-p04-p05-instance-segmentation-audit-v0.2",
+  "source_id": "src-lacmark-242536-str-2024",
+  "project_group_id": "prj-lacmark-242536",
+  "split": "train",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_audit_sha": "53b14d8a803062c7296cf6ebc21b1351e37d12a5",
+  "pages": [
+    {
+      "page_id": "p04",
+      "sheet_id": "Mx201",
+      "source_page_geometry": {"width_points":3456.0,"height_points":2592.0},
+      "vector_drawing_count": 19141,
+      "target_classes": ["beam","column"],
+      "source_evidence": {
+        "structural_plan_context": "mezzanine",
+        "beam_designation_examples": ["W14X82","W16X26","W12X19","W8X10"],
+        "additional_structural_designation_examples": ["C15X33.9 x 11'-0\""],
+        "column_legend_present": true
+      },
+      "review_findings": [
+        "W-section designations support strong beam class presence in the mezzanine plan.",
+        "The COL = Colonne legend supports column semantics, but labels and long vector strokes do not uniquely define tight per-instance column boxes.",
+        "No long vector stroke is promoted to a beam box without unreliable instance association."
+      ],
+      "candidate_annotations_emitted": 0,
+      "negative_labels_created": false,
+      "disposition": "semantic-instance-review-complete-no-safe-bboxes"
+    },
+    {
+      "page_id": "p05",
+      "sheet_id": "Mx401",
+      "source_page_geometry": {"width_points":3456.0,"height_points":2592.0},
+      "vector_drawing_count": 51039,
+      "target_classes": ["beam","column"],
+      "source_evidence": {
+        "structural_plan_context": "roof",
+        "column_legend_present": true,
+        "joist_truss_attachment_legend_present": true
+      },
+      "review_findings": [
+        "The roof plan contains strong structural context and explicit column legend evidence.",
+        "Joist/truss/attachment graphics are distinct from the v0.2 beam class and are not relabeled as beams.",
+        "The dense framing graphics do not provide unreliable tight per-instance beam/column boundaries without further human instance QA."
+      ],
+      "candidate_annotations_emitted": 0,
+      "negative_labels_created": false,
+      "disposition": "semantic-instance-review-complete-no-safe-bboxes"
+    }
+  ],
+  "final_human_bbox_approval": "not-applicable-no-candidate-promoted",
+  "canonical_loads_created": false,
+  "engineering_geometry_created": false,
+  "handoff_enabled": false,
+  "note": "Both pages are closed conservatively at instance-semantic review. Structural class presence is strong, but the source eridence does not support safe tight boxes without speculation."
+}
