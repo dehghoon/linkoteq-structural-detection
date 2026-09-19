@@ -1,0 +1,41 @@
+{
+  "audit_id": "p2026-115-p08-instance-segmentation-audit-v0.2",
+  "source_id": "src-p2026-115-structural-60dd",
+  "page_id": "p08",
+  "sheet_id": "S-203",
+  "project_group_id": "prj-p2026-115",
+  "split": "test",
+  "split_policy": "held-out-drafting-style-domain-shift",
+  "training_usage_prohibited": true,
+  "model_selection_usage_prohibited": true,
+  "evaluation_label_curation_allowed": true,
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {
+    "width_points": 3024.0,
+    "height_points": 2160.0
+  },
+  "inspection": {
+    "pdf_page_number": 8,
+    "parser": "PyMuPDF",
+    "vector_drawing_count": 3812,
+    "rendered_and_visually_verified": true,
+    "render_dpi": 72
+  },
+  "target_classes": [
+    "beam",
+    "column"
+  ],
+  "review_findings": [
+    "Visible W-section beam semantics are confirmed in the framing plan, including repeated W18X50 and W14x30 designations.",
+    "The dense bay contains many thin joist graphics; joists are outside ontology v0.2 and must not be relabeled as beam.",
+    "Repeated W labels occur along continuous/overlapping framing graphics. Source evidence is sufficient for class presence but not for unambiguous per-instance segmentation without a human instance-boundary review.",
+    "HSS designations provide structural column context, but text labels alone are not serialized as column boxes."
+  ],
+  "candidate_annotations_emitted": 0,
+  "negative_labels_created": false,
+  "disposition": "semantic-instance-review-complete-no-safe-bboxes",
+  "reason": "Class semantics are clear, but per-instance beam/column boundaries are not unambiguous enough for tight axis-aligned source-page boxes under the v0.2 annotation rules. Conservative no-promotion disposition; not a negative label.",
+  "engineering_geometry_created": false,
+  "handoff_enabled": false
+}
