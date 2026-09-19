@@ -11,18 +11,42 @@
     "parser": "PyMuPDF",
     "pdf_page_number": 3,
     "vector_drawing_count": 2143,
-    "render_verification_scale_px_per_point": 2.0,
-   "source_text_identity": "CROQUIS PRELIMINAIRE - PLAN DE TOIT / EsMx401"
+    "rend_verification_scale_px_per_point": 2.0,
+    "source_text_identity": "CROQUIS PRELIMINAIRE - PLAN DE TOIT / EsMx401",
+    "visual_render_reviewed": true
   },
-  "source_evidence_notes": [
-    "The page contains a repeated structural plan pattern and repeated small rectangular marks at framing intersections.",
-    "The page text includes designations such as F22, F28 and P22 and spacing notes.",
-    "Long/repeated vector strokes are not sufficient by themselves to assign a beam or column class."
-  ],
+  "semantic_instance_audit": {
+    "observed_designations": {
+      "P22": 6,
+      "F28": 4,
+      "F22": 1
+    },
+    "p22_text_boxes_source_page": [
+      [951.24,808.624,968.249,819.338],
+      [1167.121,808.624,1184.13,819.338],
+      [951.24,988.5,968.249,999.215],
+      [1167.121,988.5,1184.13,999.215],
+      [951.24,1168.38,968.249,1179.094],
+      [1167.121,1168.38,1184.13,1179.094]
+    ],
+    "f28_text_boxes_source_page": [
+      [1054.862,549.765,1065.576,566.153],
+      [1054.862,726.046,1065.576,742.434],
+      [1054.862,905.923,1065.576,922.311],
+      [1054.862,1085.8,1065.576,1102.188]
+    ],
+    "f22_text_boxes_source_page": [[1054.862,1244.08,1065.576,1260.469]],
+    "review_findings": [
+      "Render review shows the roof plan is dominated by repeated P22 and F28/F22 framing designations rather than explicit W-section beam designations.",
+      "The P22 and F28/F22 labels are not treated as beam class proxies: the current v0.2 ontology must not be silently expanded to joist/truss classes.",
+      "Small square/intersection marks are not promoted to column without reliable column semantics; the annotation spec excludes unresolved symbols."
+    ]
+  },
   "candidate_annotations_emitted": 0,
-  "disposition": "needs-semantic-instance-review",
-  "blocking_reason": "The vector pattern and sheet text do not yet support tight instance-level beam/column boxes without risking class semantic confusion with other structural framing evidence.",
+  "negative_label_created": false,
+  "disposition": "semantic-instance-review-complete-no-safe-beam-column-bboxes",
+  "blocking_reason": "Visual and text-instance review did not provide reliable v0.2 beam or column instance semantics. P22 and F28/F22 framing evidence is preserved as source emidence only, not remapped to beam.",
   "engineering_geometry_created": false,
   "handoff_enabled": false,
-  "note": "This audit is a conservative source-page screening artifact. It does not claim that the page contains no beams/columns and does not make a negative label."
+  "note": "This review does not create a negative beam/column label. It records that no safe positive v0.2 beam/column BBox can be promoted from this page under the current spec without inventing joist/truss ontology semantics."
 }
