@@ -1,0 +1,36 @@
+{
+  "audit_id": "p2026-115-p09-instance-segmentation-audit-v0.2",
+  "source_id": "src-p2026-115-structural-60dd",
+  "page_id": "p09",
+  "sheet_id": "S-204",
+  "project_group_id": "prj-p2026-115",
+  "split": "test",
+  "split_policy": "held-out-drafting-style-domain-shift",
+  "training_usage_prohibited": true,
+  "model_selection_usage_prohibited": true,
+  "evaluation_label_curation_allowed": true,
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {"width_points":3024.0,"height_points":2160.0},
+  "source_evidence": {
+    "pdf_page_number": 9,
+    "sheet_title": "ROOF FRAMING PLAN / CONNECTOR BUILDING ROOF FRAMING PLAN / ENTRANCE ROOF ENLARGED FRAMING PLAN",
+    "vector_drawing_count": 112790,
+    "observed_W_designation_count": 10,
+    "observed_W_examples": ["W12X19","W14X22","W16x26","W8x10"],
+    "observed_HSS_designation_count": 0
+  },
+  "target_classes": ["beam","column"],
+  "review_findings": [
+    "Visible W-section designations provide strong source-drawing beam semantics.",
+    "The sheet contains multiple roof plan regions and enlarged framing regions; text designations do not by themselves define unabiguous tight beam instance boundaries.",
+    "No HSS designations were observed in the source-audit evidence; this is not treated as a negative column label.",
+    "Conservative evaluation curation requires per-instance boundaries to be clear before any bbox is promoted."
+  ],
+  "candidate_annotations_emitted": 0,
+  "negative_labels_created": false,
+  "disposition": "semantic-instance-review-complete-no-safe-bboxes",
+  "reason": "Beam class presence is supported by visible W-sections , but safe per-instance tight boxes are not supported by the current evidence. Column absence is not inferred from missing HSS text.",
+  "engineering_geometry_created": false,
+  "handoff_enabled": false
+}
