@@ -1,30 +1,60 @@
 {
-  "audit_id":"pilot-v0.2-baseline-migration-audit",
-  "status":"in-progress-baseline-completion",
-  "source_manifest":"datasets/pilot-v0.1/manifest.json",
-  "source_annotations":"datasets/pilot-v0.1/annotations-review-required-v0.1.jsonl",
-  "target_annotations":"datasets/pilot-v0.2/annotations-review-required-v0.2.jsonl",
-  "source_v0_1_annotation_records":4,
-  "source_v0_1_class_counts":{"column":4,"beam":0},
-  "v0_2_review_stream":{
-    "records":12,
-    "class_counts":{"column":4,"beam":8,"wall":0},
-    "qa_state_counts":{"review-required":12},
-    "approved_records":0,
-    "stream_sha":"03f767950f969d433ae58f1d08dcdf840752c6bf",
-    "note":"Four column records are preserved from the v0.1 review-required stream. Eight beam records are new v0.2 vector-assisted candidates: four on P2025-182 p02/EsMx201 and four on P2026-130 p04/Mx401. They are not finally approved. P2026-024 p02 has a separate 4-candidate batch with bbox regression and record-level v0.2 validation passed, but those 4 candidates have not yet been merged into this canonical review stream."
+  "audit_id": "pilot-v0.2-baseline-migration-audit",
+  "status": "in-progress-baseline-completion",
+  "source_manifest": "datasets/pilot-v0.1/manifest.json",
+  "source_annotations": "datasets/pilot-v0.1/annotations-review-required-v0.1.jsonl",
+  "target_annotations": "datasets/pilot-v0.2/annotations-review-required-v0.2.jsonl",
+  "source_v0_1_annotation_records": 4,
+  "source_v0_1_class_counts": {
+    "column": 4,
+    "beam": 0
   },
-  "machine_qa_summary":{
-    "pages_passed":3,
-    "candidate_records_passed":16,
-    "passed_pages":["P2025-182 p02/EsMx201","P2026-130 p04/Mx401","P2026-024 p02/EsMx401"],
-    "final_human_approval":"pending-all",
-    "note":"The canonical v0.2 review stream currently contains 12 of the 16 machine-Q5A-pass candidates. The four P2026-024 candidates remain in a separate candidate batch pending canonical review-stream merge and final human approval."
+  "v0_2_review_stream": {
+    "records": 16,
+    "class_counts": {
+      "column": 4,
+      "beam": 12,
+      "wall": 0
+    },
+    "qa_state_counts": {
+      "review-required": 16
+    },
+    "approved_records": 0,
+    "stream_sha": "72ed6c42126907a9fc604ec825569ce2f154fb16",
+    "note": "Four v0.1 column records are preserved. Twelve beam records are new v0.2 vector-assisted review-required candidates: four on P2025-182 p02/EsMx201, four on P2026-130 p04/Mx401, and four on P2026-024 p02/EsMx401. None is finally approved."
   },
-  "preservation_checks":{"stable_column_annotation_ids":"preserved","column_boxes":"preserved-exactly","coordinate_space":"source-page","v0_2_qa_state":"review-required"},
-  "manifest_expectation":{"pilot_page_count":14,"target_classes":["column","beam"],"beam_targeted_pages_present":true},
-  "gap":{"code":"pilot-baseline-still-incomplete","description":"All 14 pilot pages are accounted for, but final human instance approval is complete on none of the candidate pages. The canonical v0.2 review stream contains 12 review-required records and P2026-024 adds 4 separate machine-Q5A-pass candidates pending merge. Remaining pages still require page-local instance QA or a conservative no-safe-bbox disposition.", "action":"Merge the validated P2026-024 candidates into the canonical review stream, continue instance QA across remaining pages, and obtain final human approval before benchmark/training release claims"},
-  "wall_migration_status":"separate-qa-in-progress",
-  "handoff_enabled":false,
-  "engineering_geometry_created":false,
-  "note":"This audit keeps v0.1 source baseline coverage separate from new v0.2 candidates. It does not create engineering geometry or enable wall handoff."}
+  "machine_qa_summary": {
+    "pages_passed": 3,
+    "candidate_records_passed": 16,
+    "passed_pages": [
+      "P2025-182 p02/EsMx201",
+      "P2026-130 p04/Mx401",
+      "P2026-024 p02/EsMx401"
+    ],
+    "final_human_approval": "pending-all",
+    "note": "All 16 canonical review-stream records have machine-checkable v0.2 validation and source-page bbox regression evidence. Final human instance approval remains separate."
+  },
+  "preservation_checks": {
+    "stable_column_annotation_ids": "preserved",
+    "column_boxes": "preserved-exactly",
+    "coordinate_space": "source-page",
+    "v0_2_qa_state": "review-required"
+  },
+  "manifest_expectation": {
+    "pilot_page_count": 14,
+    "target_classes": [
+      "column",
+      "beam"
+    ],
+    "beam_targeted_pages_present": true
+  },
+  "gap": {
+    "code": "pilot-baseline-still-incomplete",
+    "description": "All 14 pilot pages are accounted for and three pages contain 16 machine-QA-pass review-required beam/column candidates. Final human instance approval is complete on none of the candidate pages; remaining pages require page-local instance QA or conservative no-safe-bbox disposition.",
+    "action": "Continue instance QA across remaining pages and obtain final human approval before benchmark/training release claims."
+  },
+  "wall_migration_status": "separate-qa-in-progress",
+  "handoff_enabled": false,
+  "engineering_geometry_created": false,
+  "note": "This audit keeps v0.1 source baseline coverage separate from new v0.2 candidates. It does not create engineering geometry or enable wall handoff."
+}
