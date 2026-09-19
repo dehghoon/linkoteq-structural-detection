@@ -1,0 +1,30 @@
+{
+  "audit_id": "p2026-024-p02-source-audit-v0.2",
+  "source_id": "src-p2026-024-croquis",  "page_id": "p02",
+  "sheet_id": "EsMx401",
+  "project_group_id": "prj-p2026-024",
+  "split": "train",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {"width_points": 3456.0, "height_points": 2592.0},
+  "inspection": {
+    "parser": "PyMuPDF",
+    "pdf_page_number": 2,
+    "vector_drawing_count": 6340,
+    "sheet_text_identity": "CROQUIS PRELIMINAIRE - PLAN DE TOIT / EsMx401"
+  },
+  "source_evidence": {
+    "structural_designations_observed": ["F44", "P18", "P26", "W", "C", "G", "L4X4X1/4"],
+    "explicit_broken_beam_note_present": true,
+    "roof_load_text_present": true,
+    "wind_uplift_diagram_present": true,
+    "note": "Source text includes explicit structural roof-plan designations and a POUTRE CASSÉE note. This supports page-level stuctural semantics but does not by default define tight instance bounding boxes."
+  },
+  "candidate_annotations_emitted": 0,
+  "disposition": "strong-page-level-beam-column-evidence-instance-bbox-qa-required",
+  "ngative_label_created": false,
+  "engineering_geometry_created": false,
+  "canonical_load_created": false,
+  "handoff_enabled": false,
+  "note": "Conservative source-page audit. Load values and structural designations are preserved only as source-drawing evidence. No Core Member, Surface, LoadCase or canonical load is created by GPT-7."
+}
