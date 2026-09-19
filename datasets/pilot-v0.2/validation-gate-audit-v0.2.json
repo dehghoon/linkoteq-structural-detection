@@ -1,0 +1,45 @@
+{
+  "audit_id": "pilot-v0.2-validation-gate-audit-01",
+  "status": "in-progress",
+  "core_contract": {
+    "version": "0.5",
+    "sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b"
+  },
+  "detection_project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+  "validator": {
+    "path": "tools/validate_annotations.py",
+    "sha": "f88f4a7881441be059ed1aed1ae600dbf0529c46",
+    "supported_spec_versions": ["0.1", "0.2"]
+  },
+  "regression_test_audit": {
+    "path": "tests/test_validate_annotations.py",
+    "sha": "b3110628bd0d72b95f5fd086889c8b04a9d6bd72",
+    "verified_cases": [
+      "v0.1 column allowed",
+      "v0.1 beam allowed",
+      "v0.1 wall rejected",
+      "v0.2 wall valid candidate allowed",
+      "v0.2 column and beam allowed",
+      "non-source-page coordinate rejected",
+      "non-positive box rejected",
+      "out-of-bounds box rejected",
+      "unknown QA state rejected",
+      "unknown flag rejected",
+      "approved record with blocking flag rejected",
+      "source/page geometry indexing"
+    ],
+    "note": "This audit confirms that the required regression cases are present in the repository test suite. It does not claim a new CI run."
+  },
+  "v0_1_manifest_audit": {
+    "path": "datasets/pilot-v0.1/manifest.json",
+    "sha": "6de93f5ac133c5e309eeb5fc25faefa481b0195e",
+    "p2025_182_p03_page_id_key": "page_id",
+    "previous_errata_typo_present_in_canonical_manifest": false,
+    "note": "The current canonical v0.1 manifest already uses page_id for P2025-182 p03/EsMx401. No manifest edit is required for the old Pae_id erratum issue."
+  },
+  "v0_2_activation": {
+    "wall_handoff_enabled": false,
+    "reason": "Ontology v0.2 remains a candidate migration and migration gates are not complete."
+  },
+  "engineering_geometry_created": false
+}
