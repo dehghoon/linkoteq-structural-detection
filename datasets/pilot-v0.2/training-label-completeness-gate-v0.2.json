@@ -6,34 +6,65 @@
   "source_of_truth": {
     "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
     "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
-    "manifest_sha": "26553c64e923b0ab86f3edc6dbbfbca09610e488",
-    "annotation_spec_sha": "d27d364842e375148ea116dbda9d29d3b9ddd394"
+    "prior_gate_sha": "1d6946a4edd111a70464949ee9ea6ecf805c0aed",
+    "high_recall_review_stream_sha": "7b1f4ff6b0ee8eef412691c14ae998d528d6c118",
+    "execution_09_sha": "2c446d07dcca116afa9ea13b28dcb3a75b0214ca",
+    "execution_10_sha": "0600cdc327442a338117f488e4ac20c68fd637be"
   },
-  "target_classes": ["column", "beam", "wall"],
+  "target_classes": [
+    "column",
+    "beam",
+    "wall"
+  ],
   "rules": {
     "missing_v0_1_wall_label_is_not_a_negative": true,
     "no_wall_capable_training_with_zero_approved_wall_instances": true,
     "no_training_page_may_treat_unreviewed_target_class_pixels_as_background": true,
-    "no_safe-bbox_page_disposition_is_not_a_negative_label": true,
+    "no_safe_bbox_page_disposition_is_not_a_negative_label": true,
     "every_new_wall_candidate_requires_human_qa": true,
     "wall_annotations_must_be_visible_only_tight_axis_aligned_source_page_boxes": true,
     "preserve_project_group_split_isolation": true
   },
+  "current_review_inventory": {
+    "baseline_review_stream": {
+      "records": 16,
+      "column": 4,
+      "beam": 12,
+      "wall": 0,
+      "final_human_approval_pending": 16
+    },
+    "high_recall_batch_01_addition": {
+      "records": 13,
+      "column": 0,
+      "beam": 13,
+      "wall": 0,
+      "page": "src-lacmark-242536-str-2024/p04/Mx201",
+      "qa_state": "review-required",
+      "human_instance_approvals_recorded": 0
+    },
+    "combined_known_review_records": 29,
+    "combined_by_class": {
+      "column": 4,
+      "beam": 25,
+      "wall": 0
+    },
+    "approved_for_training_from_these_review_streams": 0,
+    "note": "Counts are review inventory, not ground truth. The 13 high-recall records passed mechanical/source-geometry/provenance gates but remain blocked by human instance QA."
+  },
   "current_blockers": [
-    "Wall QA is in progress: 14/14 pilot pages have page-level review, but instance bbox QA is not complete.",
-    "Only two pilot pages have human-confirmed structural-wall semantics, and their wall instance boxes are still pending.",
-    "The current 16-record review stream contains 4 column and 12 beam candidates but 0 wall records; this stream must not be used to train a three-class detector.",
-    "Final human approval of the 16 beam/column candidates remains pending."
+    "Wall QA remains incomplete at instance-bbox level: 14/14 pilot pages have page-level review, but the two human-confirmed structural-wall-positive pages still need reviewed wall instance boxes.",
+    "The combined known review inventory is 29 records (4 column, 25 beam, 0 wall); zero wall records means it cannot train a three-class detector.",
+    "Final human approval remains pending for the 16 baseline beam/column candidates and all 13 high-recall Lacmark Mx201 beam candidates.",
+    "Unreviewed or no-safe-box target-class regions must not be converted to background/negative labels."
   ],
   "required_before_wall_capable_training": [
-    "Create and review tight source-page wall instance candidates on the human-confirmed wall-positive pages.",
-    "Re-review training pages so unlabeled column, beam or wall instances are not silently treated as background.",
-    "Keep ambiguous instances out of negative labels and route them to QA.",
-    "Complete human QA for new wall candidates and final human approval for promotable beam/column candidates.",
-    "Run validation, cross-split duplicate, provenance and source-page regressions before dataset release."
+    "Create and human-review tight source-page wall instance candidates on the confirmed wall-positive pages.",
+    "Complete human instance QA for promotable beam/column review candidates, including the 13 Lacmark Mx201 candidates.",
+    "Re-review training pages for unlabeled column/beam/wall instances before background eligibility.",
+    "Run validation, cross-split duplicate, provenance, and source-page regressions before dataset release."
   ],
   "training_ready": false,
   "wall_handoff_enabled": false,
   "engineering_geometry_created": false,
-  "note": "This gate is a dataset/training-safety artifact. It does not activate ontology v0.2, does not approve wall handoff, and does not create Core entities or engineering geometry."
+  "note": "This gate is a dataset/training-safety artifact only. It does not activate ontology v0.2, approve wall handoff, or create Core entities/engineering geometry."
 }
