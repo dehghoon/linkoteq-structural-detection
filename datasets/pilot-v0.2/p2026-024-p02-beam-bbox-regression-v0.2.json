@@ -1,0 +1,28 @@
+{
+  "audit_id": "p2026-024-p02-beam-bbox-regression-v0.2",
+  "source_id":"src-p2026-024-croquis",
+  "page_id":"p02",
+  "sheet_id":"EsMx401",
+  "project_group_id":"prj-p2026-024",
+  "split":"train",
+  "spec_version":"0.2",
+  "coordinate_space":"source-page",
+  "source_page_geometry":{"width_points":3456.0,"height_points":2592.0},
+  "candidate_batch_sha":"66355ec5d269283fd726fac279f6b3336f90dfbc",
+  "stroke_width":2.76,
+  "half_stroke":1.38,
+  "records":[
+    {"annotation_id":"ann-p2026-024-p02-beam-001","centerline":{"x":1461.24,"y1":1578.24,"y2":1737.96},"expected_painted_extent":{"xmin":1459.86,"ymin":1576.86,"xmax":1462.62,"ymax":1739.34},"serialized_box_exact_match":true},
+    {"annotation_id":"ann-p2026-024-p02-beam-002","centerline":{"x":1581.24,"y1":1578.24,"y2":1747.8},"expected_painted_extent":{"xmin":1579.86,"ymin":1576.86,"xmax":1582.62,"ymax":1749.18},"serialized_box_exact_match":true},
+    {"annotation_id":"ann-p2026-024-p02-beam-003","centerline":{"x":1701.24,"y1":1578.24,"y2":1747.8},"expected_painted_extent":{"xmin":1699.86,"ymin":1576.86,"xmax":1702.62,"ymax":1749.18},"serialized_box_exact_match":true},
+    {"annotation_id":"ann-p2026-024-p02-beam-004","centerline":{"x":1821.36,"y1":1578.36,"y2":1737.96},"expected_painted_extent":{"xmin":1819.98,"ymin":1576.98,"xmax":1822.74,"ymax":1739.34},"serialized_box_exact_match":true}
+  ],
+  "records_checked":4,
+  "exact_stroke_extent_matches":4,
+  "bbox_tightness_vector_extent_check":"pass",
+  "source_page_serialization_regression":"pass",
+  "final_human_approval":"pending",
+  "qa_state_changed":false,
+  "engineering_geometry_created":false,
+  "handoff_enabled":false
+}
