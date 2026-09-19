@@ -7,40 +7,25 @@
   "split": "test",
   "split_policy": "held-out-drafting-style-domain-shift",
   "training_usage_prohibited": true,
+  "model_selection_usage_prohibited": true,
+  "evaluation_label_curation_allowed": true,
   "coordinate_space": "source-page",
   "spec_version": "0.2",
   "source_page_geometry": {"width_points":3024.0,"height_points":2160.0},
-  "inspection": {
-    "pdf_page_number": 4,
-    "parser": "PyMuPDF",
-    "vector_drawing_count": 206067,
-    "render_verification_scale_px_per_point": 1.0,
-    "render_size_px": [3024,2160],
-    "visual_render_reviewed": true
-  },
+  "inspection": {"pdf_page_number":4,"parser":"PyMuPDF"},
   "target_classes": ["column"],
-  "source_evidence": {
-    "sheet_is_foundation_plan": true,
-    "foundation_callouts_present": true,
-    "cmu_wall_note_present": true,
-    "hss/column_section_text_cot_promoted_by_itself": true,
-    "hss_designation_count": 78,
-    "hss-designation_examples": ["HSS8X8X5/16","HSS5X5X5/16","HSS6X6X5/16","HSS12X12X5/8"],
-    "w_designation_count": 23,
-    "w_designation_examples": ["W14X48","W12x40"]
-  },
+  "source_evidence": {"sheet_is_foundation_plan":true,"hss_designation_count":78,"hss_designation_examples":["HSS8X8X5/16","HSS5X5X5/16","HSS6X6X5/16","HSS12X12X5/8"],"w_designation_count":23},
   "semantic_findings": [
-    "The page has strong structural column context and repeated HSS designations.",
-    "Beam designations are also present on the foundation sheet, but the pilot manifest target for S-100 is column only; this audit does not expand the page's target label role.",
-    "Text designations and dence vector graphics are not sufficient to create tight column BBoxes without per-instance graphic QA."
+    "Strong structural column context and repeated HSS designations are present.",
+    "The pilot manifest target for S-100 is column only; beam text on the sheet does not expand the target role.",
+    "Per-instance column graphic boundaries remain ambiguous in the dense foundation graphics; no tight bbox is promoted."
   ],
   "candidate_annotations_emitted": 0,
-  "negative_label_created": false,
-  "disposition": "held-out-column-evidence-confirmed-instance-bbox-qa-required",
-  "evaluation_label_curation_allowed": true,
+  "negative_labels_created": false,
+  "disposition": "semantic-instance-review-complete-no-safe-boxes",
+  "final_human_bbox_approval": "not-applicable-no-candidate-promoted",
   "model_training_allowed": false,
   "model_selection_allowed": false,
   "engineering_geometry_created": false,
-  "handoff_enabled": false,
-  "note": "Held-out evaluation curation only. No record from prj-p2026-115 may be used for training or model selection. No Core engineering geometry is created."
+  "handoff_enabled": false
 }
