@@ -1,0 +1,74 @@
+{
+  "execution_id": "high-recall-batch-01-execution-13-v0.2",
+  "status": "executed-wall-adjudication-inputs-frozen",
+  "spec_version": "0.2",
+  "activates_v0_2": false,
+  "source_of_truth": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "wall_instance_adjudication_queue_sha": "4db56b10041507c60523721480d33f9ec81cbb4d",
+    "lacmark_direct_audit_sha": "1823eb4e93a7ffa80868fb8ad721f0394d8be39e",
+    "p2026_130_direct_audit_sha": "78b6b8b9ba3f4abab704176d1c003791183629c"
+  },
+  "frozen_adjudication_scope": {
+    "wall_positive_pages": 2,
+    "pending_regions": 7,
+    "pages": [
+      {
+        "source_id": "src-lacmark-242536-str-2024",
+        "page_id": "p02",
+        "sheet_id": "Mx101",
+        "project_group_id": "prj-lacmark-242536",
+        "split": "train",
+        "pending_regions": ["lacmark-mx101-wall-region-01"]
+      },
+      {
+        "source_id": "src-p2026-130-260890-permit",
+        "page_id": "p02",
+        "sheet_id": "Mx101",
+        "project_group_id": "prj-p2026-130-260890",
+        "split": "train",
+        "pending_regions": [
+          "p2026-130-mx101-wall-A",
+          "p2026-130-mx101-wall-B",
+          "p2026-130-mx101-wall-C",
+          "p2026-130-mx101-wall-D",
+          "p2026-130-mx101-wall-upper-right",
+          "p2026-130-mx101-wall-lower-anchor"
+        ]
+      }
+    ]
+  },
+  "promotion_invariants": {
+    "require_human_instance_boundary_approval": true,
+    "require_visible_structural_wall_graphic": true,
+    "require_tight_axis_aligned_source_page_bbox": true,
+    "forbid_hidden_continuation": true,
+    "forbid_architectural_partition_only": true,
+    "forbid_slab_or_foundation_edge_only": true,
+    "semantic_note_alone_is_not_instance_geometry": true,
+    "missing_candidate_is_not_negative": true,
+    "no_safe_box_is_not_negative": true
+  },
+  "pre_adjudication_checks": {
+    "source_page_coordinate_space_preserved": true,
+    "project_group_split_isolation_preserved": true,
+    "duplicate_candidate_region_ids": [],
+    "automatic_wall_promotions": 0,
+    "new_negative_labels": 0
+  },
+  "result": {
+    "queue_ready_for_human_instance_adjudication": true,
+    "automatically_approved_wall_instances": 0,
+    "training_ready": false,
+    "wall_handoff_enabled": false
+  },
+  "next_execution": "Record human instance-boundary decisions against the seven frozen region IDs. Only accepted visible structural-wall instances may become reviewed source-page boxes.",
+  "boundary": {
+    "creates_canonical_Core_entities": false,
+    "creates_engineering_geometry": false,
+    "enables_v0_2": false,
+    "enables_training": false,
+    "enables_wall_handoff": false
+  }
+}
