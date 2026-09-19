@@ -1,0 +1,35 @@
+{
+  "audit_id": "lacmark-p02-instance-segmentation-audit-v0.2",
+  "source_id": "src-lacmark-242536-str-2024",
+  "page_id": "p02",
+  "sheet_id": "Mx101",
+  "project_group_id": "prj-lacmark-242536",
+  "split": "train",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {"width_points":3456.0,"height_points":2592.0},
+  "source_audit_sha": "2d177583dba9146769b759514eb0b8beb4398a17",
+  "target_classes": ["column"],
+  "instance_review_evidence": {
+    "vector_drawing_count": 26851,
+    "plan_type": "anchor-foundation-plan",
+    "explicit_column_section_designations_present": true,
+    "example_column_designations": ["HSS8X8X1/4","HSS10X10X1/4","HSS5X5X3/16","HSS6X6X1/4","HSS8X8P3/8"],
+    "base_plate_designations_present": true,
+    "anchor_plan_legend_present": true
+  },
+  "review_findings": [
+    "Explicit HSS designations, base-plate designations and column-erection context provide strong column class presence.",
+    "Dense anchor-rod, base-plate, dimension and detail-reference graphics do not uniquely define tight per-instance column boundaries.",
+    "No vector primitive or text label is promoted to a column box without unreliable instance association.",
+    "Previously confirmed wall semantics on this sheet remain separate from this beam/column review and do not activate wall handoff."
+  ],
+  "candidate_annotations_emitted": 0,
+  "negative_labels_created": false,
+  "disposition": "semantic-instance-review-complete-no-safe-boxes",
+  "final_human_bbox_approval": "not-applicable-no-candidate-promoted",
+  "wall_handoff_enabled": false,
+  "engineering_geometry_created": false,
+  "canonical_members_created": false,
+  "handoff_enabled": false
+}
