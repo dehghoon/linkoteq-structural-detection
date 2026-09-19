@@ -1,0 +1,41 @@
+{
+  "audit_id": "p2025-182-p02-automated-validation-v0.2",
+  "source_id": "src-p2025-182-croquis",
+  "page_id": "p02",
+  "sheet_id": "EsMx201",
+  "project_group_id": "prj-p2025-182",
+  "split": "validation",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "review_stream_sha": "51acc28d2bc5d77d77c0297288308a336a41d50b",
+  "validation_rules_sha": "52f82f7335594da1938587fc840a4f2f264b36c9",
+  "validator_sha": "f88f4a7881441be059ed1aed1ae600dbf0529c46",
+  "source_page_geometry": {
+    "width_points": 2592.0,
+    "height_points": 1728.0
+  },
+  "records_checked": 8,
+  "class_counts": {
+    "column": 4,
+    "beam": 4,
+    "wall": 0
+  },
+  "checks": {
+    "required_fields": "pass",
+    "allowed_classes": "pass",
+    "qa_states": "pass",
+    "coordinate_space": "pass",
+    "box_finite": "pass",
+    "box_positive_area": "pass",
+    "box_within_source_page_bounds": "pass",
+    "flags": "pass",
+    "unique_annotation_ids": "pass"
+  },
+  "failure_count": 0,
+  "result": "pass",
+  "scope_note": "Validation of the current 8-record P2025-182 p02 subset against v0.2 rules and 2592x1728 source-page geometry. This is not final human approval or full-14-page dataset release validation.",
+  "final_human_approval": "pending",
+  "training_ready": false,
+  "handoff_enabled": false,
+  "engineering_geometry_created": false
+}
