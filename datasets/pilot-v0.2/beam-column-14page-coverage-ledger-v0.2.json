@@ -5,7 +5,7 @@
   "review_stream_sha": "72ed6c42126907a9fc604ec825569ce2f154fb16",
   "total_pilot_pages": 14,
   "pages": [
-    {"source_id":"src-lacmark-242536-str-2024","page_id":"p02","sheet_id":"Mx101","split":"train","status":"source-audit-complete"},
+    {"source_id":"src-lacmark-242536-str-2024","page_id":"p02","sheet_id":"Mx101","split":"train","status":"semantic-instance-review-complete-no-safe-bboxes"},
     {"source_id":"src-lacmark-242536-str-2024","page_id":"p04","sheet_id":"Mx201","split":"train","status":"semantic-instance-review-complete-no-safe-boxes"},
     {"source_id":"src-lacmark-242536-str-2024","page_id":"p05","sheet_id":"Mx401","split":"train","status":"semantic-instance-review-complete-no-safe-boxes"},
     {"source_id":"src-p2026-024-croquis","page_id":"p02","sheet_id":"EsMx401","split":"train","status":"candidate-records-machine-qa-pass","record_count":4,"final_human_approval":"pending"},
@@ -14,14 +14,14 @@
     {"source_id":"src-p2026-115-structural-60dd","page_id":"p07","sheet_id":"S-202","split":"test","status":"semantic-instance-review-complete-no-safe-boxes","training_usage_prohibited":true},
     {"source_id":"src-p2026-115-structural-60dd","page_id":"p08","sheet_id":"S-203","split":"test","status":"semantic-instance-review-complete-no-safe-bboxes","training_usage_prohibited":true},
     {"source_id":"src-p2026-115-structural-60dd","page_id":"p09","sheet_id":"S-204","split":"test","status":"semantic-instance-review-complete-no-safe-boxes","training_usage_prohibited":true},
-    {"source_id":"src-p2026-130-260890-permit","page_id":"p02","sheet_id":"Mx101","split":"train","status":"source-audit-complete"},
+    {"source_id":"src-p2026-130-260890-permit","page_id":"p02","sheet_id":"Mx101","split":"train","status":"semantic-instance-review-complete-no-safe-boxes"},
     {"source_id":"src-p2026-130-260890-permit","page_id":"p04","sheet_id":"Mx401","split":"train","status":"candidate-records-machine-qa-pass","record_count":4,"final_human_approval":"pending"},
     {"source_id":"src-p2025-182-croquis","page_id":"p02","sheet_id":"EsMx201","split":"validation","status":"candidate-records-machine-qa-pass","record_count":8,"final_human_approval":"pending"},
-    {"source_id":"src-p2025-182-croquis","page_id":"p03","sheet_id":"EsMx401","split":"validation","status":"semantic-instance-review-complete-no-safe-boxes"},
+    {"source_id":"src-p2025-182-croquis","page_id":"p03","sheet_id":"EsMx401","split":"validation","status":"semantic-instance-review-complete-no-safe-bboxes"},
     {"source_id":"src-p2026-012-croquis","page_id":"p02","sheet_id":"EsMx401","split":"train","status":"semantic-instance-review-complete-no-safe-bboxes"}
   ],
-  "summary":{"pages_accounted_for":14,"machine_qa_pass_pages":3,"semantic_instance_review_complete_no_safe_bboxes":9,"source_audit_only_pages":2,"bbox_regression_records_passed":16,"automated_validation_records_passed":16,"finally_approved_annotation_pages":0,"beam_column_coverage_complete":false},
+  "summary":{"pages_accounted_for":14,"instance_review_coverage_complete":true,"machine_qa_pass_pages":3,"semantic_instance_review_complete_no_safe_bboxes":11,"source_audit_only_pages":0,"bbox_regression_records_passed":16,"automated_validation_records_passed":16,"finally_approved_annotation_pages":0,"beam_column_coverage_complete":true,"dataset_training_ready":false},
   "split_isolation":{"project_group_disjoint_required":true,"p2026_115_held_out_test_not_for_training":true},
   "wall_handoff_enabled":false,
   "engineering_geometry_created":false,
-  "note":"All 14 pilot pages are accounted for. Three pages have 16 review-required candidates with machine QA pass. Nine pages have completed conservative instance-level review without safe per-instance boxes. Only Lacmark p02 and P2026-130 p02 remain source-audit-only. No negative label is inferred from unannotated pages. Final human approval remains pending on all candidate pages. Dataset is not training-ready."}
+  "note":"All 14 pilot pages have completed beam/column instance-level review. Three pages have 16 review-required candidates with machine QA pass; 11 pages were conservatively closed without safe per-instance boxes and without creating negative labels. Coverage complete does not mean dataset approval or training readiness. Final human approval remains pending on the 16 candidate records."}
