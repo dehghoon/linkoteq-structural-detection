@@ -1,0 +1,40 @@
+{
+  "audit_id": "review-stream-validation-gate-v0.2",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "source_of_truth": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "validator_sha": "f88f4a7881441be059ed1ed1ae600dbf0529c46",
+    "validation_rules_sha": "52f82f7335594da1938587fc840a4f2f264b36c9",
+    "review_stream_sha": "72ed6c42126907a9fc604ec825569ce2f154fb16"
+  },
+  "stream_summary": {
+    "records": 16,
+    "class_counts": {"column":4,"beam":12,"wall":0},
+    "qa_state_counts": {"review-required":16},
+    "source_pages": [
+      {"source_id":"src-p2025-182-croquis","page_id":"p02","width_points":2592,"height_points":1728,"records":8},
+      {"source_id":"src-p2026-130-260890-permit","page_id":"p04","width_points":3456,"height_points":2592,"records":4},
+      {"source_id":"src-p2026-024-croquis","page_id":"p02","width_points":3456,"height_points":2592,"records":4}
+    ]
+  },
+  "validation_gate": {
+    "required_fields": "pass",
+    "allowed_classes": "pass",
+    "qa_states": "pass",
+    "coordinate_space": "pass",
+    "box_finite": "pass",
+    "box_positive_area": "pass",
+    "box_within_source_page_bounds": "pass",
+    "flags": "pass",
+    "unique_annotation_ids": "pass",
+    "failure_count": 0,
+    "result": "pass"
+  },
+  "execution_note": "Gate pins the exact current GitHub validator, rules and review-stream SHAs and the validation-relevant full-stream result. This artifact does not claim a GitHub Actions run.",
+  "final_human_approval": "pending-16-records",
+  "dataset_training_ready": false,
+  "wall_handoff_enabled": false,
+  "engineering_geometry_created": false
+}
