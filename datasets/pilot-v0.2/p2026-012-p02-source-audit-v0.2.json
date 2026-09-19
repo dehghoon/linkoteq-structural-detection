@@ -1,0 +1,31 @@
+{
+  "audit_id": "p2026-012-p02-source-audit-v0.2",
+  "source_id": "src-p2026-012-croquis",  "page_id": "p02",
+  "sheet_id": "EsMx401",
+  "project_group_id": "prj-p2026-012",
+  "split": "train",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "source_page_geometry": {"width_points": 2592.0, "height_points": 1728.0},
+  "inspection": {
+    "parser": "PyMuPDF",
+    "pdf_page_number": 2,
+    "vector_drawing_count": 3636,
+    "render_verification_scale_px_per_point": 2.0,
+    "sheet_text_identity": "CROQUIS PRELIMINAIRE - PLAN DE TOIT / EsMx401"
+  },
+  "source_evidence": {
+    "structural_designations_observed": ["P48"],
+    "roof_plan_evidence_present": true,
+    "structural_load_text_present": true,
+    "wind_uplift_diagram_present": true,
+    "note": "The sheet contains structural roof plan and design information. Load text is source-drawing evidence only and is not converted to canonical Core loads by GPT-7."
+  },
+  "candidate_annotations_emitted": 0,
+  "disposition": "needs-instance-level-beam-column-semantic-qa",
+  "negative_label_created": false,
+  "engineering_geometry_created": false,
+  "canonical_load_created": false,
+  "handoff_enabled": false,
+  "note": "Conservative source-page audit only. No beam/column box was promoted without tight instance semantic verification."
+}
