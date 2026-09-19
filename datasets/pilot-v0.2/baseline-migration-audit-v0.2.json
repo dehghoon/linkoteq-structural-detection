@@ -1,0 +1,30 @@
+{
+  "audit_id": "pilot-v0.2-baseline-migration-audit",
+  "status": "blocked-on-incomplete-v0.1-annotation-baseline",
+  "source_manifest": "datasets/pilot-v0.1/manifest.json",
+  "source_annotations": "datasets/pilot-v0.1/annotations-review-required-v0.1.jsonl",
+  "target_annotations": "datasets/pilot-v0.2/annotations-review-required-v0.2.jsonl",
+  "source_annotation_records": 4,
+  "source_class_counts": {"column":4,"beam":0},
+  "migrated_records": 4,
+  "migrated_class_counts": {"column":4,"beam":0,"wall":0},
+  "preservation_checks": {
+    "stable_annotation_ids": "preserved",
+    "column_boxes": "preserved-exactly",
+    "coordinate_space": "source-page",
+    "v0_2_qa_state": "review-required"
+  },
+  "manifest_expectation": {
+    "pilot_page_count": 14,
+    "target_classes": ["column","beam"],
+    "beam_targeted_pages_present": true
+  },
+  "gap": {
+    "code": "v0.1-baseline-annotations-incomplete",
+    "description": "The v0.1 manifest defines beam as a target class on multiple pilot pages, but the current v0.1 review-required annotation artifact contains no beam records. Therefore beam baseline annotations cannot be migrated or presumed.",
+    "action": "complete and QA the missing column/beam v0.1 baseline evidence from source-page drawings before claiming three-class dataset completeness"
+  },
+  "wall_migration_status": "separate-qa-in-progress",
+  "handoff_enabled": false,
+  "note": "This audit does not create or infer any missing beam/column well or engineering geometry. It records the dataset coverage gap so the next annotation pass can close it."
+}
