@@ -1,0 +1,56 @@
+{
+  "artifact_id": "lacmark-p05-source-evidence-v0.2",
+  "status": "direct-source-audit-no-safe-instance-boxes",
+  "source_of_truth": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "execution_01_sha": "eb0d40a6b6a63ffa80c0c2be0078ebcacc7e212e"
+  },
+  "source": {
+    "source_id": "src-lacmark-242536-str-2024",
+    "page_id": "p05",
+    "pdf_page_index": 4,
+    "sheet_id": "Mx401",
+    "split": "train",
+    "source_page": [
+      3456,
+      2592
+    ],
+    "coordinate_space": "source-page",
+    "drawing_primitives": 51039,
+    "ocr_used": false
+  },
+  "exact_w_section_designations": [
+    "W8X18",
+    "W8X10",
+    "W8X18",
+    "W8X10",
+    "W10X12",
+    "W8X10",
+    "W8X10",
+    "W8X18",
+    "W8X10",
+    "W24X55",
+    "W18X35",
+    "W8X21"
+  ],
+  "correction": {
+    "execution_01_bad_token": "W8X10_",
+    "verified_source_token": "W8X10",
+    "semantic_count_unchanged": 12
+  },
+  "machine_result": {
+    "new_beam_boxes": 0,
+    "new_column_boxes": 0,
+    "new_negatives": 0,
+    "no_safe_box": true,
+    "reason": "Dense Mx401 sheet contains section semantics but direct text/vector association does not establish uniquely traceable tight instance boundaries; designation text alone is not a detection instance."
+  },
+  "guardrails": {
+    "human_instance_review_required": true,
+    "no_safe_box_is_not_negative": true,
+    "training_ready": false,
+    "wall_handoff_enabled": false,
+    "canonical_engineering_geometry_created": false
+  }
+}
