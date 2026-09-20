@@ -1,0 +1,82 @@
+{
+  "artifact_id": "human-qa-wall-boundary-approval-lacmark-p02-v0.2",
+  "date": "2026-09-20",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "source_id": "src-lacmark-242536-str-2024",
+  "page_id": "p02",
+  "sheet_id": "Mx101",
+  "project_group_id": "prj-lacmark-242536",
+  "semantic_class": "wall",
+  "reviewer": "user-human-reviewer",
+  "review_basis": "User explicitly approved the v0.5 source-PDF vector trace with: تایید. درست است",
+  "semantic_interpretation": "one continuous rectangular main-building perimeter wall system represented for detection annotation by four tight axis-aligned visible-run boxes; boxes are not four independent engineering walls",
+  "boxes": [
+    {
+      "id": "lacmark-mx101-wall-R1-top",
+      "bbox": [
+        467.0,
+        461.0,
+        2268.5,
+        481.0
+      ]
+    },
+    {
+      "id": "lacmark-mx101-wall-R2-right",
+      "bbox": [
+        2252.0,
+        467.0,
+        2272.0,
+        1818.5
+      ]
+    },
+    {
+      "id": "lacmark-mx101-wall-R3-bottom",
+      "bbox": [
+        467.0,
+        1802.0,
+        2268.5,
+        1822.5
+      ]
+    },
+    {
+      "id": "lacmark-mx101-wall-R4-left",
+      "bbox": [
+        463.0,
+        467.0,
+        483.5,
+        1818.5
+      ]
+    }
+  ],
+  "validation": {
+    "page_size": [
+      3456,
+      2592
+    ],
+    "positive_area": true,
+    "within_source_page": true,
+    "visible_trace_only": true,
+    "human_boundary_approved": true,
+    "hidden_continuation_inferred": false,
+    "G1_schema": "pass",
+    "G2_source_geometry": "pass",
+    "G3_class_semantics": "pass-human-confirmed",
+    "G4_instance_boundary": "pass-human-confirmed",
+    "G5_ambiguity": "pass",
+    "G6_deduplication_split": "pending-dataset-wide-check",
+    "G7_provenance_review": "pass"
+  },
+  "review_state": "human-approved-boundary-pending-dataset-wide-dedup-split",
+  "guardrails": {
+    "canonical_engineering_geometry": false,
+    "wall_handoff_enabled": false,
+    "activates_v0.2": false,
+    "training_ready": false
+  },
+  "provenance": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "qa_visual": "Linkoteq_Lacmark_Mx101_Perimeter_Wall_QA_v0.5.pdf"
+  }
+}
