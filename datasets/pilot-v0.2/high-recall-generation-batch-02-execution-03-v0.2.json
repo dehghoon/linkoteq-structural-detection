@@ -1,6 +1,6 @@
 {
   "execution_id": "high-recall-batch-02-execution-03-v0.2",
-  "status": "executed-priority-06-reconciled-existing-beams-no-new-boxes",
+  "status": "executed-priority-06-direct-source-pdf-audit-reconciled-existing-beams-no-new-boxes",
   "spec_version": "0.2",
   "activates_v0_2": false,
   "source_of_truth": {
@@ -15,26 +15,62 @@
     "pdf_page_index": 1,
     "sheet_id": "EsMx401",
     "split": "train",
-    "source_page": [3456, 2592],
-    "coordinate_space": "source-page",
-    "drawing_objects": 6340
+    "source_page": [
+      3456,
+      2592
+    ],
+    "coordinate_space": "source-page"
   },
-  "semantic_inventory": {
-    "w_sections_present": true,
-    "c_sections_present": true,
-    "l414_present": true,
-    "f44_present": true,
-    "p18_present": true,
-    "p26_present": true,
-    "poutre_cassee_text_present": true
+  "source_pdf_audit": {
+    "method": "direct-pdf-text-vector-and-native-render-verification",
+    "drawing_primitives": 6340,
+    "source_page_verified": [
+      3456,
+      2592
+    ],
+    "ocr_used": false,
+    "observed_text": {
+      "F44": 1,
+      "P18": 2,
+      "P26": 4,
+      "L4X4X1/4": 43,
+      "POUTRE_CASSEE": 2,
+      "W_section_designations": 0,
+      "C_section_designations": 0
+    },
+    "single_letter_tokens": {
+      "W": "present-repeated",
+      "C": "present-repeated"
+    },
+    "correction": "Earlier semantic inventory described W/C sections as present. Direct source-PDF parsing finds repeated standalone W/C tokens but zero explicit W-section or C-section designations; this audit supersedes that wording."
   },
   "reconciliation": {
     "existing_beam_review_records": 4,
     "existing_beam_boxes": [
-      [1459.86, 1576.86, 1462.62, 1739.34],
-      [1579.86, 1576.86, 1582.62, 1749.18],
-      [1699.86, 1576.86, 1702.62, 1749.18],
-      [1819.98, 1576.98, 1822.74, 1739.34]
+      [
+        1459.86,
+        1576.86,
+        1462.62,
+        1739.34
+      ],
+      [
+        1579.86,
+        1576.86,
+        1582.62,
+        1749.18
+      ],
+      [
+        1699.86,
+        1576.86,
+        1702.62,
+        1749.18
+      ],
+      [
+        1819.98,
+        1576.98,
+        1822.74,
+        1739.34
+      ]
     ],
     "existing_record_state": "review-required",
     "human_instance_approval": false,
@@ -45,12 +81,7 @@
     "new_column_review_boxes_emitted": 0,
     "negative_labels_emitted": 0,
     "no_safe_new_box": true,
-    "reason": "Four defensible vertical beam review boxes are already present in the baseline review stream. Remaining W/C/L414 and roof F44/P18/P26/POUTRE CASSEE cues do not provide an additional uniquely defensible tight beam or column instance boundary."
-  },
-  "exclusions": {
-    "f44_p18_p26_as_beam_labels": true,
-    "text_glyph_outlines": true,
-    "canonical_endpoints": true
+    "reason": "Direct PDF audit preserves the four existing beam review boxes. F44/P18/P26, repeated L4X4X1/4, standalone W/C tokens and POUTRE CASSEE context do not justify an additional uniquely traceable tight beam/column instance box without human adjudication."
   },
   "qa": {
     "missing_candidate_is_negative": false,
@@ -64,5 +95,5 @@
     "wall_handoff_enabled": false,
     "canonical_engineering_geometry_created": false
   },
-  "note": "Priority-06 P2026-024 p02/EsMx401 was reconciled against the frozen baseline. No duplicate candidates and no false negatives were created."
+  "note": "Priority-06 was re-audited directly from P2026-024 Croquis.pdf. This corrects the earlier W/C-section wording while leaving candidate inventory unchanged."
 }
