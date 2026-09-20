@@ -1,0 +1,88 @@
+{
+  "artifact_id": "post-human-qa-validation-2026-09-20-v0.2",
+  "date": "2026-09-20",
+  "spec_version": "0.2",
+  "status": "pass-current-approved-inventory",
+  "coordinate_space": "source-page",
+  "validated_inventory": {
+    "beam_column": 29,
+    "wall": 10,
+    "total": 39,
+    "beam": 25,
+    "column": 4
+  },
+  "beam_column_validation": {
+    "human_approved_ids": [
+      "ann-p2025-182-p02-column-001",
+      "ann-p2025-182-p02-column-002",
+      "ann-p2025-182-p02-column-003",
+      "ann-p2025-182-p02-column-004",
+      "ann-p2025-182-p02-beam-001",
+      "ann-p2025-182-p02-beam-002",
+      "ann-p2025-182-p02-beam-003",
+      "ann-p2025-182-p02-beam-004",
+      "ann-p2026-130-p04-beam-001",
+      "ann-p2026-130-p04-beam-002",
+      "ann-p2026-130-p04-beam-003",
+      "ann-p2026-130-p04-beam-004",
+      "ann-p2026-024-p02-beam-001",
+      "ann-p2026-024-p02-beam-002",
+      "ann-p2026-024-p02-beam-003",
+      "ann-p2026-024-p02-beam-004",
+      "ann-lacmark-p04-beam-001",
+      "ann-lacmark-p04-beam-002",
+      "ann-lacmark-p04-beam-003",
+      "ann-lacmark-p04-beam-004",
+      "ann-lacmark-p04-beam-005",
+      "ann-lacmark-p04-beam-006",
+      "ann-lacmark-p04-beam-007",
+      "ann-lacmark-p04-beam-008",
+      "ann-lacmark-p04-beam-009",
+      "ann-lacmark-p04-beam-010",
+      "ann-lacmark-p04-beam-011",
+      "ann-lacmark-p04-beam-012",
+      "ann-lacmark-p04-beam-013"
+    ],
+    "G1_schema": "pass",
+    "G2_source_geometry": "pass",
+    "G3_class_semantics": "pass",
+    "G4_instance_boundary": "pass",
+    "G5_ambiguity": "pass",
+    "G6_deduplication_split": "pass-current-inventory",
+    "G7_provenance_review": "pass",
+    "promotable_to_approved_annotation": 29
+  },
+  "wall_validation": {
+    "approved_instances": 10,
+    "G1_to_G7": "pass-current-inventory",
+    "promotable_to_approved_annotation": 10
+  },
+  "split_notes": {
+    "p2025-182": "validation-verify-only",
+    "p2026-130": "train",
+    "p2026-024": "train",
+    "lacmark": "train",
+    "validation_training_leakage_detected": false
+  },
+  "result": {
+    "approved_annotations_current_inventory": 39,
+    "human_decisions_pending_for_these_records": 0,
+    "candidate_qa_pass": true,
+    "training_ready": false,
+    "wall_handoff_enabled": false,
+    "activates_v0_2": false
+  },
+  "remaining_blockers": [
+    "Dataset completeness/background eligibility must be closed: training pages must be re-reviewed so unlabeled target-class pixels are not silently background.",
+    "Ontology/StructuralDetectionEvidence v0.2 must be approved/active rather than candidate before wall handoff.",
+    "GPT-6 must pass new-contract wall acceptance, v0.1 wall rejection, provenance/source-page, and legacy compatibility regressions."
+  ],
+  "provenance": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "candidate_qa_gates_sha": "5026198b24fb6ade833f8d525697260ef591f74f",
+    "beam_column_decisions_sha": "51e9675a64fbfda64b203108d1b74e5b2ae3542d",
+    "wall_g6_sha": "96c9b63ef70378a3c82c554576ef6e2d9672265c",
+    "gpt6_project_status_sha": "eb08716acc9c802ede68b1247eaa8f634d6bf512"
+  }
+}
