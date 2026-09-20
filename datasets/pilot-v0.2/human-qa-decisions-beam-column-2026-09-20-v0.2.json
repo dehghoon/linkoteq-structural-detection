@@ -1,0 +1,180 @@
+{
+  "artifact_id": "human-qa-decisions-beam-column-2026-09-20-v0.2",
+  "status": "human-decisions-recorded-awaiting-post-qa-validation",
+  "activates_v0_2": false,
+  "source_of_truth": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "master_ledger_sha": "39d657ed75772a55825c8f75af9b24780bb35196",
+    "worklist_sha": "059af7b15d1bbdca7bdd71893db6b817f6d2ce9"
+  },
+  "human_review_provenance": {
+    "channel": "ChatGPT conversation",
+    "reviewer_identity": "user-human-reviewer",
+    "reviewer_statement": "تا صفحه ۳۰ تایید است تیرها و ستونها و دیوارها مشخص نشدند",
+    "interpretation": "Packet page 1 is cover; packet pages 2-30 correspond to all 29 beam/column candidates and are approved. Wall pages were explicitly not approved because wall regions were not visibly marked.",
+    "decision_date": "2026-09-20"
+  },
+  "decisions": [
+    {
+      "candidate_id": "ann-p2025-182-p02-column-001",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2025-182-p02-column-002",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2025-182-p02-column-003",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2025-182-p02-column-004",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2025-182-p02-beam-001",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2025-182-p02-beam-002",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2025-182-p02-beam-003",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2025-182-p02-beam-004",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2026-130-p04-beam-001",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2026-130-p04-beam-002",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2026-130-p04-beam-003",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2026-130-p04-beam-004",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2026-024-p02-beam-001",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2026-024-p02-beam-002",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2026-024-p02-beam-003",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-p2026-024-p02-beam-004",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-001",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-002",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-003",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-004",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-005",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-006",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-007",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-008",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-009",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-010",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-011",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-012",
+      "decision": "approve",
+      "review_state": "human-approved"
+    },
+    {
+      "candidate_id": "ann-lacmark-p04-beam-013",
+      "decision": "approve",
+      "review_state": "human-approved"
+    }
+  ],
+  "summary": {
+    "beam_column_decisions_recorded": 29,
+    "approved": 29,
+    "rejected": 0,
+    "no_safe_box": 0,
+    "wall_decisions_recorded": 0,
+    "wall_decisions_pending": 7
+  },
+  "guardrails": {
+    "wall_approval_inferred": false,
+    "training_ready": false,
+    "wall_handoff_enabled": false,
+    "canonical_engineering_geometry_created": false,
+    "post_qa_validation_required": true
+  }
+}
