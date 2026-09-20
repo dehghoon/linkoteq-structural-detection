@@ -1,0 +1,49 @@
+{
+  "artifact_id": "dataset-wide-g6-dedup-split-check-2026-09-20-v0.2",
+  "date": "2026-09-20",
+  "spec_version": "0.2",
+  "status": "pass-for-current-human-approved-wall-instances",
+  "scope": {
+    "wall_instances_checked": 10,
+    "projects_checked": 2,
+    "p2026_130_p02_instances": 6,
+    "lacmark_p02_instances": 4
+  },
+  "split_assignment": {
+    "src-p2026-130-260890-permit": "train",
+    "src-lacmark-242536-str-2024": "train"
+  },
+  "checks": {
+    "stable_ids_unique": true,
+    "within_page_duplicate_boxes": false,
+    "cross_source_exact_bbox_duplicate_as_identity": false,
+    "project_group_split_isolation_preserved": true,
+    "cross_split_duplicate_leakae_detected": false,
+    "same_page_corner_overlap_is_not_duplicate": true
+  },
+  "result": {
+    "G6_deduplication_split": "pass",
+    "approved_wall_instances_after_G6": 10,
+    "note": "All 10 human-approved wall boxes are independent wall instances per reviewer correction. Adjacent wall boxes may overlap at corners; that adjacency does not merge instances and is not treated as a duplicate."
+  },
+  "guardrails": {
+    "training_ready": false,
+    "wall_handoff_enabled": false,
+    "activates_v0.2": false,
+    "canonical_engineering_geometry_created": false
+  },
+  "remaining_training_gate_work": [
+    "Post-QA validate/promote the 29 human-approved beam/column candidates.",
+    "Re-review training pages for unlabeled target-class instances before any pixels become background.",
+    "Recompute completeness gate after validated annotation inventory is assembled.",
+    "Run v0.1 compatibility and GPT-6 consumer regressions before wall handoff."
+  ],
+  "provenance": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "p2026_130_wall_approval_sha": "15fc3c8720d5c894d3401c97b9c4a04f3c78413e",
+    "lacmark_wall_approval_sha": "0fc468b4a49cb5db09e295bc351b62f84e26fea6",
+    "beam_column_human_decisions_sha": "51e9675a64fbfda64b203108d1b74e5b2ae3542d",
+    "prior_training_gate_sha": "4a02e66abf226fbb1895fd9bda1d6021bf26b532"
+  }
+}
