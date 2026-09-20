@@ -1,0 +1,174 @@
+{
+  "artifact_id": "p2025-182-p02-baseline-source-evidence-v0.2",
+  "status": "machine-source-evidence-ready-for-human-qa-validation-verify-only",
+  "activates_v0_2": false,
+  "source_of_truth": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "candidate_stream_sha": "72ed6c42126907a9fc604ec825569ce2f154fb16"
+  },
+  "source": {
+    "source_id": "src-p2025-182-croquis",
+    "project_group_id": "prj-p2025-182",
+    "page_id": "p02",
+    "pdf_page_index": 1,
+    "sheet_id": "EsMx201",
+    "split": "validation",
+    "source_page": [
+      2592,
+      1728
+    ],
+    "coordinate_space": "source-page",
+    "drawing_primitives": 871,
+    "ocr_used": false
+  },
+  "method": "direct source-PDF word/vector inspection; 3-point expanded candidate-box vector proximity; nearest extracted source word audit",
+  "candidates": [
+    {
+      "annotation_id": "ann-p2025-182-p02-column-001",
+      "class": "column",
+      "bbox": [
+        928.62,
+        792.42,
+        934.74,
+        798.54
+      ],
+      "nearby_vector_paths": 0,
+      "nearest_structural_word": "W",
+      "nearest_word_distance_pt": 46.15,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "preserve-review-required-column-box-source-evidence-insufficient-for-human-approval"
+    },
+    {
+      "annotation_id": "ann-p2025-182-p02-column-002",
+      "class": "column",
+      "bbox": [
+        1036.62,
+        792.42,
+        1042.74,
+        798.54
+      ],
+      "nearby_vector_paths": 0,
+      "nearest_structural_word": "W",
+      "nearest_word_distance_pt": 46.03,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "preserve-review-required-column-box-source-evidence-insufficient-for-human-approval"
+    },
+    {
+      "annotation_id": "ann-p2025-182-p02-column-003",
+      "class": "column",
+      "bbox": [
+        1144.5,
+        792.42,
+        1150.62,
+        798.54
+      ],
+      "nearby_vector_paths": 0,
+      "nearest_structural_word": "W",
+      "nearest_word_distance_pt": 46.66,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "preserve-review-required-column-box-source-evidence-insufficient-for-human-approval"
+    },
+    {
+      "annotation_id": "ann-p2025-182-p02-column-004",
+      "class": "column",
+      "bbox": [
+        1036.62,
+        929.22,
+        1042.74,
+        935.34
+      ],
+      "nearby_vector_paths": 0,
+      "nearest_structural_word": "P16",
+      "nearest_word_distance_pt": 56.72,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "preserve-review-required-column-box-source-evidence-insufficient-for-human-approval"
+    },
+    {
+      "annotation_id": "ann-p2025-182-p02-beam-001",
+      "class": "beam",
+      "bbox": [
+        829.86,
+        794.82,
+        923.22,
+        796.14
+      ],
+      "nearby_vector_paths": 1,
+      "nearest_structural_word": "W",
+      "nearest_word_distance_pt": 1.76,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "source-supported-beam-run-requires-human-instance-decision"
+    },
+    {
+      "annotation_id": "ann-p2025-182-p02-beam-002",
+      "class": "beam",
+      "bbox": [
+        940.26,
+        794.82,
+        1031.22,
+        796.14
+      ],
+      "nearby_vector_paths": 1,
+      "nearest_structural_word": "W",
+      "nearest_word_distance_pt": 1.76,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "source-supported-beam-run-requires-human-instance-decision"
+    },
+    {
+      "annotation_id": "ann-p2025-182-p02-beam-003",
+      "class": "beam",
+      "bbox": [
+        1048.14,
+        794.82,
+        1139.1,
+        796.14
+      ],
+      "nearby_vector_paths": 1,
+      "nearest_structural_word": "W",
+      "nearest_word_distance_pt": 1.76,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "source-supported-beam-run-requires-human-instance-decision"
+    },
+    {
+      "annotation_id": "ann-p2025-182-p02-beam-004",
+      "class": "beam",
+      "bbox": [
+        1156.02,
+        794.82,
+        1249.38,
+        796.14
+      ],
+      "nearby_vector_paths": 1,
+      "nearest_structural_word": "W",
+      "nearest_word_distance_pt": 1.76,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "source-supported-beam-run-requires-human-instance-decision"
+    }
+  ],
+  "summary": {
+    "audited": 8,
+    "beam_candidates": 4,
+    "column_candidates": 4,
+    "beam_boxes_with_local_vector_and_W_support": 4,
+    "column_boxes_machine_approved": 0,
+    "human_approved": 0,
+    "automatic_promotions": 0
+  },
+  "validation_guardrails": {
+    "validation_split_verify_only": true,
+    "training_leakage_allowed": false,
+    "human_instance_approval_required": true,
+    "missing_candidate_is_not_negative": true,
+    "canonical_engineering_geometry_created": false,
+    "training_ready": false,
+    "wall_handoff_enabled": false
+  }
+}
