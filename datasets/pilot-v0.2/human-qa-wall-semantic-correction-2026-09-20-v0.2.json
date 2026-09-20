@@ -1,0 +1,32 @@
+{
+  "artifact_id": "human-qa-wall-semantic-correction-2026-09-20-v0.2",
+  "date": "2026-09-20",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "reviewer": "user-human-reviewer",
+  "source_id": "src-p2026-130-260890-permit",
+  "page_id": "p02",
+  "sheet_id": "Mx101",
+  "human_statement": "ايها غلط هستند از نظر من دو دو دار پلان ��"شکل دیوار پیوسته وجود دارد",
+  "interpretation": "The reviewer corrects the previous W1-W7 segmentation for P2026-130 Mx101. The human semantic intent is a continuous structural wall around the full perimeter of the L-shaped main-building plan.",
+  "supersedes": {
+    "previous_qa_box_interpretation": "W1-W7-as-discrete-wall-instances",
+    "status": "rejected-by-human-reviewer"
+  },
+  "human_semantic_decision": {
+    "class": "wall",
+    "visible_structural_wall_semantics": "confirmed",
+    "topology_descriptor": "continuous-L-shaped-perimeter",
+    "instance_count": null,
+    "tight_source_page_bbox_approved": false,
+    "review_state": "semantics-approved-boundary-drafting-pending"
+  },
+  "guardrails": {
+    "do_not_infer_hidden_continuation": true,
+    "do not_create_canonical_engineering_geometry": true,
+    "training_ready": false,
+    "wall_handoff_enabled": false,
+    "activates_v0.2": false
+  },
+  "note": "The user-provided blue/markup images are treated as human semantic QA context, not as automatically approved tight source-page boxes. The next detection task is to draft visible-trace-only source-page boxes along the confirmed L-shaped perimeter and return them for human boundary QA."
+}
