@@ -1,19 +1,26 @@
 {
   "ledger_id": "post-batch-02-human-qa-master-ledger-v0.2",
-  "status": "frozen-ready-for-human-qa",
+  "status": "frozen-ready-for-human-qa-source-audit-reconciled",
   "activates_v0_2": false,
   "source_of_truth": {
     "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
     "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
     "prior_ledger_sha": "51b7d94fcee4b3e82e6cff071c2e19d1a46827b2",
-    "batch_02_closure_sha": "b5df34a2b3deed1d41c0d65e05c50c66d507e91a"
+    "batch_02_closure_sha": "e7d8b27d0f5c09c084fae2ccd19b68267fca97be",
+    "priority_08_source_audit_sha": "05315bbe21abf21e85d9fdf9c9edcbe81f6caad7",
+    "priority_09_source_audit_sha": "805bd08a1d86c8192b4f767435853aaf1577febf"
   },
   "reconciliation": {
     "batch_02_pages_audited": 6,
+    "direct_pdf_source_audit_pages": [
+      "P2025-182 p02/EsMx201",
+      "P2025-182 p03/EsMx401"
+    ],
     "new_review_records": 0,
     "new_negatives": 0,
     "duplicates_created": 0,
-    "prior_frozen_inventory_unchanged": true
+    "prior_frozen_inventory_unchange": true,
+    "source_audit_outcome_changed_inventory": false
   },
   "inventory": {
     "total_decisions": 36,
@@ -39,11 +46,21 @@
     "coordinate_space": "source-page",
     "wall_hidden_continuation_forbidden": true
   },
+  "release_blockers": {
+    "human_qa_decisions_pending": 36,
+    "wall_instance_boxes_approved": 0,
+    "training_completeness_gate_status": "blocked",
+    "candidate_qa_regressionS_required": true,
+    "cross_split_duplicate_regression_required": true,
+    "source_page_provenance_regression_required": true,
+    "v0_1_compatibility_required": true,
+    "gpt6_consumer_regression_before_wall_handoff": true
+  },
   "result": {
     "training_ready": false,
     "wall_handoff_enabled": false,
     "v0_2_active": false,
     "canonical_engineering_geometry_created": false
   },
-  "note": "Batch-02 closure added no review records, negatives, or duplicates. The 36-decision human-QA inventory remains unchanged; no approval is inferred."
+  "note": "Post-Batch-02 ledger reconciled to the source-audited Batch-02 closure. Direct PDF audits of P2025-182 p02 and p03 changed no candidate counts, negatives, or duplicates. The 36-decision human-QA inventory remains frozen and no approval is inferred."
 }
