@@ -1,0 +1,103 @@
+{
+  "artifact_id": "human-qa-wall-boundary-approval-p2026-130-p02-v0.2",
+  "date": "2026-09-20",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "source_id": "src-p2026-130-260890-permit",
+  "page_id": "p02",
+  "sheet_id": "Mx101",
+  "project_group_id": "prj-p2026-130-260890",
+  "semantic_class": "wall",
+  "reviewer": "user-human-reviewer",
+  "review_basis": "User explicitly confirmed the v0.4 source-PDF vector trace with: دقیقا درسته",
+  "semantic_interpretation": "one continuous L-shaped perimeter wall system represented for detection annotation by six tight axis-aligned visible-run boxes; boxes are not six independent engineering walls",
+  "boxes": [
+    {
+      "id": "p2026-130-mx101-wall-L1-top",
+      "bbox": [
+        411.0,
+        322.0,
+        1955.5,
+        337.5
+      ]
+    },
+    {
+      "id": "p2026-130-mx101-wall-L2-right",
+      "bbox": [
+        1939.0,
+        327.0,
+        1956.0,
+        918.0
+      ]
+    },
+    {
+      "id": "p2026-130-mx101-wall-L3-notch-top",
+      "bbox": [
+        999.0,
+        907.0,
+        1950.0,
+        919.0
+      ]
+    },
+    {
+      "id": "p2026-130-mx101-wall-L4-notch-left",
+      "bbox": [
+        989.0,
+        912.0,
+        1002.0,
+        2339.5
+      ]
+    },
+    {
+      "id": "p2026-130-mx101-wall-L5-bottom",
+      "bbox": [
+        411.0,
+        2324.0,
+        1001.0,
+        2340.0
+      ]
+    },
+    {
+      "id": "p2026-130-mx101-wall-L6-left",
+      "bbox": [
+        410.0,
+        322.0,
+        427.0,
+        2335.0
+      ]
+    }
+  ],
+  "validation": {
+    "page_size": [
+      3456,
+      2592
+    ],
+    "positive_area": true,
+    "within_source_page": true,
+    "visible_trace_only": true,
+    "human_boundary_approved": true,
+    "hidden_continuation_inferred": false,
+    "architectural_partition_only": false,
+    "slab_or_foundation_edge_only": false,
+    "G1_schema": "pass",
+    "G2_source_geometry": "pass",
+    "G3_class_semantics": "pass-human-confirmed",
+    "G4_instance_boundary": "pass-human-confirmed",
+    "G5_ambiguity": "pass",
+    "G7_provenance_review": "pass",
+    "G6_deduplication_split": "pending-dataset-wide-check"
+  },
+  "review_state": "human-approved-boundary-pending-dataset-wide-dedup-split",
+  "guardrails": {
+    "canonical_engineering_geometry": false,
+    "wall_handoff_enabled": false,
+    "activates_v0.2": false,
+    "training_ready": false
+  },
+  "provenance": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "candidate_qa_gates_sha": "5026198b24fb6ade833f8d525697260ef591f74f",
+    "qa_visual": "Linkoteq_P2026-130_L_Perimeter_Wall_QA_v0.4.pdf"
+  }
+}
