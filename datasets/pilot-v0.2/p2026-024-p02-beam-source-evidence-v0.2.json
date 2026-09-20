@@ -1,0 +1,134 @@
+{
+  "artifact_id": "p2026-024-p02-beam-source-evidence-v0.2",
+  "status": "machine-source-evidence-ready-for-human-qa",
+  "activates_v0_2": false,
+  "source_of_truth": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09"
+  },
+  "source": {
+    "source_id": "src-p2026-024-croquis",
+    "page_id": "p02",
+    "pdf_page_index": 1,
+    "sheet_id": "EsMx401",
+    "split": "train",
+    "source_page": [
+      3456,
+      2592
+    ],
+    "coordinate_space": "source-page",
+    "drawing_primitives": 6340,
+    "ocr_used": false
+  },
+  "source_observations": {
+    "explicit_w_section_designations_matching_W_number_X_number": 0,
+    "standalone_W_tokens": 32,
+    "F44": 1,
+    "P18": 2,
+    "P26": 4,
+    "POUTRE_CASSEE": 2,
+    "note": "Standalone W tokens are local supporting text only; they are not section designations and cannot independently approve beam instances."
+  },
+  "method": "direct source-PDF text/vector inspection after PDF-skill render-first workflow; vector count uses candidate bbox expanded by 3 source-page points",
+  "candidates": [
+    {
+      "annotation_id": "ann-p2026-024-p02-beam-001",
+      "class": "beam",
+      "bbox": [
+        1459.86,
+        1576.86,
+        1462.62,
+        1739.34
+      ],
+      "nearest_standalone_W_bbox": [
+        1439.14,
+        1651.84,
+        1448.75,
+        1660.92
+      ],
+      "W_distance_pt": 11.11,
+      "nearby_vector_paths": 12,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "local-source-supported-but-no-explicit-section-designation-requires-human-instance-decision"
+    },
+    {
+      "annotation_id": "ann-p2026-024-p02-beam-002",
+      "class": "beam",
+      "bbox": [
+        1579.86,
+        1576.86,
+        1582.62,
+        1749.18
+      ],
+      "nearest_standalone_W_bbox": [
+        1569.46,
+        1656.88,
+        1579.07,
+        1665.96
+      ],
+      "W_distance_pt": 0.79,
+      "nearby_vector_paths": 10,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "local-source-supported-but-no-explicit-section-designation-requires-human-instance-decision"
+    },
+    {
+      "annotation_id": "ann-p2026-024-p02-beam-003",
+      "class": "beam",
+      "bbox": [
+        1699.86,
+        1576.86,
+        1702.62,
+        1749.18
+      ],
+      "nearest_standalone_W_bbox": [
+        1689.58,
+        1656.88,
+        1699.19,
+        1665.96
+      ],
+      "W_distance_pt": 0.67,
+      "nearby_vector_paths": 10,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "local-source-supported-but-no-explicit-section-designation-requires-human-instance-decision"
+    },
+    {
+      "annotation_id": "ann-p2026-024-p02-beam-004",
+      "class": "beam",
+      "bbox": [
+        1819.98,
+        1576.98,
+        1822.74,
+        1739.34
+      ],
+      "nearest_standalone_W_bbox": [
+        1809.58,
+        1651.84,
+        1819.19,
+        1660.92
+      ],
+      "W_distance_pt": 0.79,
+      "nearby_vector_paths": 10,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "local-source-supported-but-no-explicit-section-designation-requires-human-instance-decision"
+    }
+  ],
+  "summary": {
+    "audited": 4,
+    "local_standalone_W_supported": 4,
+    "local_vector_supported": 4,
+    "explicit_W_section_designation_supported": 0,
+    "human_approved": 0,
+    "automatic_promotions": 0
+  },
+  "guardrails": {
+    "standalone_W_is_not_section_identity": true,
+    "missing_candidate_is_not_negative": true,
+    "canonical_engineering_geometry_created": false,
+    "training_ready": false,
+    "wall_handoff_enabled": false
+  }
+}
