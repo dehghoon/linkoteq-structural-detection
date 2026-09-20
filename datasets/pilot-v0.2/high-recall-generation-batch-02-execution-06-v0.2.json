@@ -1,6 +1,6 @@
 {
   "execution_id": "high-recall-batch-02-execution-06-v0.2",
-  "status": "executed-priority-09-validation-no-safe-box",
+  "status": "executed-priority-09-validation-source-audit-no-safe-box",
   "spec_version": "0.2",
   "activates_v0_2": false,
   "source_of_truth": {
@@ -14,10 +14,36 @@
     "pdf_page_index": 2,
     "sheet_id": "EsMx401",
     "split": "validation",
+    "source_page": [
+      2592,
+      1728
+    ],
     "coordinate_space": "source-page"
   },
+  "source_pdf_audit": {
+    "method": "direct-pdf-text-vector-and-native-render-verification",
+    "drawing_primitives": 2143,
+    "source_page_verified": [
+      2592,
+      1728
+    ],
+    "observed_designations": {
+      "F22": 1,
+      "F28": 4,
+      "P22": 6,
+      "W_section": 0,
+      "C_section": 0,
+      "HSS": 0,
+      "COL": 0
+    },
+    "ocr_used": false
+  },
   "semantic_audit": {
-    "roof_framing_designations": ["F22","F28","P22"],
+    "roof_framing_designations": [
+      "F22",
+      "F28",
+      "P22"
+    ],
     "interpretation": "joist/truss-like-roof-framing-context",
     "approved_beam_or_column_designations": [],
     "repeated_structural_context_alone_is_insufficient": true
@@ -33,19 +59,12 @@
     "column_review_boxes_emitted": 0,
     "negative_labels_emitted": 0,
     "no_safe_box": true,
-    "reason": "F22/F28/P22 are roof joist/truss-like cues in this source context and do not provide a uniquely traceable tight beam or column instance boundary. They are not promoted as beam labels."
+    "reason": "Direct source-PDF audit found F22/F28/P22 framing cues but no W/C/HSS/COL designation and no uniquely traceable tight beam/column instance boundary."
   },
   "qa": {
     "missing_candidate_is_negative": false,
     "no_safe_box_is_negative": false,
     "validation_leakage_blocked": true
-  },
-  "batch_02_planned_page_sweep": {
-    "priorities_completed": [4,5,6,7,8,9],
-    "priorities_remaining": [],
-    "new_review_records": 0,
-    "new_negatives": 0,
-    "existing_review_records_preserved": 12
   },
   "result": {
     "training_ready": false,
@@ -53,5 +72,5 @@
     "v0_2_active": false,
     "canonical_engineering_geometry_created": false
   },
-  "note": "Priority-09 P2025-182 p03/EsMx401 was audited as validation-only. The planned Priority-04 through -09 sweep is now complete without fabricating new instance boxes or negative labels."
+  "note": "Priority-09 was re-audited directly from P2025-182 Croquis.pdf. No positive or negative annotation is fabricated from the validation sheet."
 }
