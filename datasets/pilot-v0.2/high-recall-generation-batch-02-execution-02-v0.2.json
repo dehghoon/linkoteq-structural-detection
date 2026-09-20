@@ -1,6 +1,6 @@
 {
   "execution_id": "high-recall-batch-02-execution-02-v0.2",
-  "status": "executed-priority-05-source-audit-no-safe-boxes",
+  "status": "executed-priority-05-direct-source-pdf-audit-verified-no-safe-box",
   "spec_version": "0.2",
   "activates_v0_2": false,
   "source_of_truth": {
@@ -15,33 +15,42 @@
     "sheet_id": "EsMx401",
     "split": "train",
     "source_page": [2592, 1728],
-    "coordinate_space": "source-page",
-    "drawing_objects": 3636
+    "coordinate_space": "source-page"
   },
-  "semantic_inventory": {
-    "p48_tokens": 1,
-    "w_section_designations": 0,
-    "c_section_designations": 0,
-    "hss_tokens": 0,
-    "col_tokens": 0,
-    "roof_jooist_context": true,
-    "roof_load_context": true
+  "source_pdf_audit": {
+    "method": "direct-pdf-text-vector-and-native-render-verification",
+    "source_page_verified": [2592, 1728],
+    "drawing_primitives": 3636,
+    "ocr_used": false,
+    "observed_designations": {
+      "P48": 1,
+      "W_section": 0,
+      "C_section": 0,
+      "HSS": 0,
+      "COL": 0
+    },
+    "additional_source_context": [
+      "roof-plan",
+      "wind-uplift-diagram",
+      "roof-load-data",
+      "joist-like-framing-context"
+    ]
   },
   "vector_audit": {
     "p48_text_bbox_source_page": [722.1, 868.9, 731.7, 885.8],
     "nearby_long_vertical_runs_examples": [
-     {"box": [736.4, 658.3, 736.4, 1096.2], "stroke_width_pt": 0.6, "distance_from_p48_bbox_pt": 9.4},
-    {"box": [691.9, 658.3, 691.9, 1096.2], "stroke_width_pt": 0.6, "distance_from_p48_bbox_pt": 35.1},
-     {"bbox": [781.0, 658.3, 781.0, 1096.2], "stroke_width_pt": 0.6, "distance_from_p48_bbox_pt": 54.0}
+      {"bbox":[736.4,658.3,736.4,1096.2],"stroke_width_pt":0.6,"distance_from_p48_bbox_pt":9.4},
+      {"bbox":[691.9,658.3,691.9,1096.2],"stroke_width_pt":0.6,"distance_from_p48_bbox_pt":35.1},
+      {"bbox":[781.0,658.3,781.0,1096.2],"stroke_width_pt":0.6,"distance_from_p48_bbox_pt":54.0}
     ],
-    "assessment": "P48 is additionally adjacent to repeated long vector runs, but the source sheet presents roof/joist and load context and does not provide a unique member-semantic link sufficient for beam or column instance promotion."
+    "assessment": "P48 is additionally adjacent to repeated long vector runs, but the source sheet presents roof/joist/load context and does not provide a unique member-semantic link sufficient for beam or column instance promotion."
   },
   "mining_result": {
     "beam_review_boxes_emitted": 0,
     "column_review_boxes_emitted": 0,
     "negative_labels_emitted": 0,
     "no_safe_box": true,
-    "reason": "P48 is not an approved beam/colum designation in this context. Nearby vector runs are not uniquely traceable to a beam or column instance."
+    "reason": "Direct source-PDF audit confirms P48 but no explicit W/C/HSS/COL designation. Nearby vector runs are not uniquely traceable to a beam or column instance."
   },
   "qa": {
     "human_instance_review_required": true,
@@ -54,5 +63,5 @@
     "wall_handoff_enabled": false,
     "canonical_engineering_geometry_created": false
   },
-  "note": "Priority-05 P2026-012 p02/EsMx401 was directly mined from the source PDF. The audit preserves the P48/roof joist cue but does not fabricate a beam or column box or a negative label."
+  "note": "Priority-05 P2026-012 p02/EsMx401 was re-audited directly from the source PDF and natively rendered. The audit preserves the P48/roof-joist cue but does not fabricate a beam or column box or a negative label."
 }
