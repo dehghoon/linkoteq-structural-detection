@@ -1,5 +1,5 @@
 {
-  "artifact_id": "human-qa-wall-boundary-approval-lacmark-p02-v0.2",
+  "artifact_id": "human-qa-wall-instance-correction-src-lacmark-242536-str-2024-p02-v0.2",
   "date": "2026-09-20",
   "spec_version": "0.2",
   "coordinate_space": "source-page",
@@ -9,44 +9,56 @@
   "project_group_id": "prj-lacmark-242536",
   "semantic_class": "wall",
   "reviewer": "user-human-reviewer",
-  "review_basis": "User explicitly approved the v0.5 source-PDF vector trace with: تایید. درست است",
-  "semantic_interpretation": "one continuous rectangular main-building perimeter wall system represented for detection annotation by four tight axis-aligned visible-run boxes; boxes are not four independent engineering walls",
-  "boxes": [
+  "review_basis": "User correction: در هردو نمونه که تایید کردم دیوارها روی هر ضلع مسقل هستند نمونه پلان L شکل باید ۶ دیوار مسقل ثبت کنی و نمونه پلان مربع چهار  دیوار مستقل صحیح است.",
+  "instance_semantics": {
+    "instance_count": 4,
+    "rule": "each visible straight side/run is a separate wall instance",
+    "plan_shape": "rectangular"
+  },
+  "instances": [
     {
       "id": "lacmark-mx101-wall-R1-top",
+      "class": "wall",
       "bbox": [
         467.0,
         461.0,
         2268.5,
         481.0
-      ]
+      ],
+      "review_state": "human-approved"
     },
     {
       "id": "lacmark-mx101-wall-R2-right",
+      "class": "wall",
       "bbox": [
         2252.0,
         467.0,
         2272.0,
         1818.5
-      ]
+      ],
+      "review_state": "human-approved"
     },
     {
       "id": "lacmark-mx101-wall-R3-bottom",
+      "class": "wall",
       "bbox": [
         467.0,
         1802.0,
         2268.5,
         1822.5
-      ]
+      ],
+      "review_state": "human-approved"
     },
     {
       "id": "lacmark-mx101-wall-R4-left",
+      "class": "wall",
       "bbox": [
         463.0,
         467.0,
         483.5,
         1818.5
-      ]
+      ],
+      "review_state": "human-approved"
     }
   ],
   "validation": {
@@ -57,7 +69,7 @@
     "positive_area": true,
     "within_source_page": true,
     "visible_trace_only": true,
-    "human_boundary_approved": true,
+    "human_instance_and_boundary_approved": true,
     "hidden_continuation_inferred": false,
     "G1_schema": "pass",
     "G2_source_geometry": "pass",
@@ -67,7 +79,8 @@
     "G6_deduplication_split": "pending-dataset-wide-check",
     "G7_provenance_review": "pass"
   },
-  "review_state": "human-approved-boundary-pending-dataset-wide-dedup-split",
+  "review_state": "human-approved-instances-pending-dataset-wide-dedup-split",
+  "supersedes_interpretation": "continuous-perimeter-single-semantic-wall-instance",
   "guardrails": {
     "canonical_engineering_geometry": false,
     "wall_handoff_enabled": false,
