@@ -1,0 +1,128 @@
+{
+  "artifact_id": "p2026-130-p04-beam-source-evidence-v0.2",
+  "status": "machine-source-evidence-ready-for-human-qa",
+  "activates_v0_2": false,
+  "source_of_truth": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09"
+  },
+  "source": {
+    "source_id": "src-p2026-130",
+    "page_id": "p04",
+    "pdf_page_index": 3,
+    "sheet_id": "Mx401",
+    "split": "train",
+    "source_page": [
+      3456,
+      2592
+    ],
+    "coordinate_space": "source-page",
+    "drawing_primitives": 12757,
+    "ocr_used": false
+  },
+  "method": "direct source-PDF word/vector audit after native render verification; vector count uses candidate bbox expanded by 3 source-page points",
+  "candidates": [
+    {
+      "annotation_id": "ann-p2026-130-p04-beam-001",
+      "class": "beam",
+      "designation": "W360X33",
+      "bbox": [
+        997.74,
+        1366.14,
+        999.54,
+        1472.94
+      ],
+      "matching_text_bbox": [
+        1003.18,
+        1412.74,
+        1012.75,
+        1454.64
+      ],
+      "designation_distance_pt": 3.64,
+      "nearby_vector_paths": 31,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "source-supported-requires-human-instance-decision"
+    },
+    {
+      "annotation_id": "ann-p2026-130-p04-beam-002",
+      "class": "beam",
+      "designation": "W460X60",
+      "bbox": [
+        997.74,
+        1490.46,
+        999.54,
+        1757.34
+      ],
+      "matching_text_bbox": [
+        1003.18,
+        1616.98,
+        1012.75,
+        1658.88
+      ],
+      "designation_distance_pt": 3.64,
+      "nearby_vector_paths": 48,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "source-supported-requires-human-instance-decision"
+    },
+    {
+      "annotation_id": "ann-p2026-130-p04-beam-003",
+      "class": "beam",
+      "designation": "W460X60",
+      "bbox": [
+        997.74,
+        1774.74,
+        999.54,
+        2041.62
+      ],
+      "matching_text_bbox": [
+        1003.18,
+        1901.38,
+        1012.75,
+        1943.28
+      ],
+      "designation_distance_pt": 3.64,
+      "nearby_vector_paths": 42,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "source-supported-requires-human-instance-decision"
+    },
+    {
+      "annotation_id": "ann-p2026-130-p04-beam-004",
+      "class": "beam",
+      "designation": "W460X60",
+      "bbox": [
+        997.74,
+        2059.14,
+        999.54,
+        2314.5
+      ],
+      "matching_text_bbox": [
+        1003.18,
+        2179.9,
+        1012.75,
+        2221.8
+      ],
+      "designation_distance_pt": 3.64,
+      "nearby_vector_paths": 40,
+      "review_state": "review-required",
+      "human_instance_approval": false,
+      "machine_assessment": "source-supported-requires-human-instance-decision"
+    }
+  ],
+  "summary": {
+    "audited": 4,
+    "designation_supported": 4,
+    "local_vector_supported": 4,
+    "human_approved": 0,
+    "automatic_promotions": 0
+  },
+  "guardrails": {
+    "designation_text_alone_is_not_instance_approval": true,
+    "missing_candidate_is_not_negative": true,
+    "canonical_engineering_geometry_created": false,
+    "training_ready": false,
+    "wall_handoff_enabled": false
+  }
+}
