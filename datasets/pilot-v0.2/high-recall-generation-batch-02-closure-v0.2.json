@@ -1,0 +1,52 @@
+{
+  "closure_id": "high-recall-batch-02-closure-v0.2",
+  "status": "closed-guarded",
+  "activates_v0_2": false,
+  "source_of_truth": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "training_completeness_gate_sha": "4a02e66abf226fbb1895fd9bda1d6021bf26b532"
+  },
+  "executions": [
+    {"id":"b02-e01","priority":4,"page":"Lacmark p05/Mx401","result":"no-safe-new-box","new_records":0},
+    {"id":"b02-e02","priority":5,"page":"P2026-012 p02/EsMx401","result":"no-safe-new-box","new_records":0},
+    {"id":"b02-e03","priority":6,"page":"P2026-024 p02/EsMx401","result":"reconciled-existing-4-beams","new_records":0},
+    {"id":"b02-e04","priority":7,"page":"P2026-130 p04/Mx401","result":"reconciled-existing-4-beams","new_records":0},
+    {"id":"b02-e05","priority":8,"page":"P2025-182 p02/EsMx201","result":"validation-only-preserved-8-records","new_records":0},
+    {"id":"b02-e06","priority":9,"page":"P2025-182 p03/EsMx401","result":"validation-only-no-safe-box","new_records":0}
+  ],
+  "batch_summary": {
+    "priorities_completed": [4,5,6,7,8,9],
+    "pages_audited": 6,
+    "new_review_records": 0,
+    "new_negative_labels": 0,
+    "duplicates_created": 0,
+    "existing_review_records_preserved": 16,
+    "baseline_plus_high_recall_review_inventory_unchanged": true,
+    "beam_column_review_records_total": 29,
+    "human_decisions_pending": 36,
+  },
+  "safety": {
+    "missing_candidate_is_not_negative": true,
+    "no_safe_box_is_not_negative": true,
+    "validation_pages_verify_only": true,
+    "no_canonical_engineering_geometry": true,
+    "no_automatic_promotion": true
+  },
+  "blockers": {
+    "human_qa_decisions_pending": 36,
+    "wall_instance_boxes_approved": 0,
+    "candidate_qa_regressions_required": true,
+    "cross_split_duplicate_regression_required": true,
+    "source_page_provenance_regression_required": true,
+    "v0_1_compatibility_required": true,
+    "gpt6_consumer_regression_before_wall_handoff": true
+  },
+  "result": {
+    "training_ready": false,
+    "wall_handoff_enabled": false,
+    "v0_2_active": false,
+    "production_handoff_enabled": false
+  },
+  "note": "Batch-02 closes the planned priority-04 through -09 page sweep. It does not approve training, wall handoff, ontology v0.2 or engineering geometry."
+}
