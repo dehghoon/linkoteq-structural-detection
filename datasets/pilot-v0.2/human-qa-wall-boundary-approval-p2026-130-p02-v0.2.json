@@ -1,5 +1,5 @@
 {
-  "artifact_id": "human-qa-wall-boundary-approval-p2026-130-p02-v0.2",
+  "artifact_id": "human-qa-wall-instance-correction-src-p2026-130-260890-permit-p02-v0.2",
   "date": "2026-09-20",
   "spec_version": "0.2",
   "coordinate_space": "source-page",
@@ -9,62 +9,78 @@
   "project_group_id": "prj-p2026-130-260890",
   "semantic_class": "wall",
   "reviewer": "user-human-reviewer",
-  "review_basis": "User explicitly confirmed the v0.4 source-PDF vector trace with: دقیقا درسته",
-  "semantic_interpretation": "one continuous L-shaped perimeter wall system represented for detection annotation by six tight axis-aligned visible-run boxes; boxes are not six independent engineering walls",
-  "boxes": [
+  "review_basis": "User correction: در هردو نمونه که تایید کردم دیوارها روی هر ضلع مسقل هستند نمونه پلان L شکل باید ۶ دیوار مسقل ثبت کنی و نمونه پلان مربع چهار  دیوار مستقل صحیح است.",
+  "instance_semantics": {
+    "instance_count": 6,
+    "rule": "each visible straight side/run is a separate wall instance",
+    "plan_shape": "L-shaped"
+  },
+  "instances": [
     {
       "id": "p2026-130-mx101-wall-L1-top",
+      "class": "wall",
       "bbox": [
         411.0,
         322.0,
         1955.5,
         337.5
-      ]
+      ],
+      "review_state": "human-approved"
     },
     {
       "id": "p2026-130-mx101-wall-L2-right",
+      "class": "wall",
       "bbox": [
         1939.0,
         327.0,
         1956.0,
         918.0
-      ]
+      ],
+      "review_state": "human-approved"
     },
     {
       "id": "p2026-130-mx101-wall-L3-notch-top",
+      "class": "wall",
       "bbox": [
         999.0,
         907.0,
         1950.0,
         919.0
-      ]
+      ],
+      "review_state": "human-approved"
     },
     {
       "id": "p2026-130-mx101-wall-L4-notch-left",
+      "class": "wall",
       "bbox": [
         989.0,
         912.0,
         1002.0,
         2339.5
-      ]
+      ],
+      "review_state": "human-approved"
     },
     {
       "id": "p2026-130-mx101-wall-L5-bottom",
+      "class": "wall",
       "bbox": [
         411.0,
         2324.0,
         1001.0,
         2340.0
-      ]
+      ],
+      "review_state": "human-approved"
     },
     {
       "id": "p2026-130-mx101-wall-L6-left",
+      "class": "wall",
       "bbox": [
         410.0,
         322.0,
         427.0,
         2335.0
-      ]
+      ],
+      "review_state": "human-approved"
     }
   ],
   "validation": {
@@ -75,19 +91,18 @@
     "positive_area": true,
     "within_source_page": true,
     "visible_trace_only": true,
-    "human_boundary_approved": true,
+    "human_instance_and_boundary_approved": true,
     "hidden_continuation_inferred": false,
-    "architectural_partition_only": false,
-    "slab_or_foundation_edge_only": false,
     "G1_schema": "pass",
     "G2_source_geometry": "pass",
     "G3_class_semantics": "pass-human-confirmed",
     "G4_instance_boundary": "pass-human-confirmed",
     "G5_ambiguity": "pass",
-    "G7_provenance_review": "pass",
-    "G6_deduplication_split": "pending-dataset-wide-check"
+    "G6_deduplication_split": "pending-dataset-wide-check",
+    "G7_provenance_review": "pass"
   },
-  "review_state": "human-approved-boundary-pending-dataset-wide-dedup-split",
+  "review_state": "human-approved-instances-pending-dataset-wide-dedup-split",
+  "supersedes_interpretation": "continuous-perimeter-single-semantic-wall-instance",
   "guardrails": {
     "canonical_engineering_geometry": false,
     "wall_handoff_enabled": false,
@@ -97,7 +112,6 @@
   "provenance": {
     "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
     "project_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
-    "candidate_qa_gates_sha": "5026198b24fb6ade833f8d525697260ef591f74f",
     "qa_visual": "Linkoteq_P2026-130_L_Perimeter_Wall_QA_v0.4.pdf"
   }
 }
