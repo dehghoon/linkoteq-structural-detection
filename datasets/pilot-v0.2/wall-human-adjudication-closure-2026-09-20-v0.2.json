@@ -1,0 +1,62 @@
+{
+  "artifact_id": "wall-human-adjudication-closure-2026-09-20-v0.2",
+  "date": "2026-09-20",
+  "spec_version": "0.2",
+  "reviewer": "user-human-reviewer",
+  "human_decision": "All five remaining reviewed pages contain non-structural walls; no structural-wall annotation is approved on those pages.",
+  "pages": [
+    {
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p04",
+      "sheet_id": "Mx201",
+      "split": "train"
+    },
+    {
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p05",
+      "sheet_id": "Mx401",
+      "split": "train"
+    },
+    {
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p04",
+      "sheet_id": "S-100",
+      "split": "test"
+    },
+    {
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p04",
+      "sheet_id": "Mx401",
+      "split": "train"
+    },
+    {
+      "source_id": "src-p2026-012-croquis",
+      "page_id": "p02",
+      "sheet_id": "EsMx401",
+      "split": "train"
+    }
+  ],
+  "decision_per_page": {
+    "wall_review_disposition": "human-reviewed-no-structural-wall",
+    "semantic_state": "human-confirmed-non-structural-wall",
+    "approved_structural_wall_instances": 0
+  },
+  "closure": {
+    "remaining_human_wall_adjudication_pages": 0,
+    "wall_human_QA_blocker": false,
+    "approved_structural_wall_instances_elsewhere": 10
+  },
+  "important_distinction": "This closes structural-wall semantic adjudication. It does not by itself establish general beam/column/wall background completeness for training pixels.",
+  "guardrails": {
+    "training_ready": false,
+    "wall_handoff_enabled": false,
+    "activates_v0_2": false,
+    "canonical_geometry": false
+  },
+  "provenance": {
+    "core_contract_sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b",
+    "detection_status_sha": "8abe47cf39779bdfb43a19454ecaf1352be53f09",
+    "prior_wall_dispositions_sha": "6c195ef109bfb3adf35507d7ef6c9898021a61b6",
+    "human_review_basis": "User reviewed Linkoteq_Wall_Blocker_Semantic_Audit_v0.6.pdf and stated all five are non-structural walls."
+  }
+}
