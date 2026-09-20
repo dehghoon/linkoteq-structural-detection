@@ -1,6 +1,6 @@
 {
   "execution_id": "high-recall-batch-02-execution-05-v0.2",
-  "status": "executed-priority-08-validation-reconciled-no-new-boxes",
+  "status": "executed-priority-08-validation-source-audit-verified-no-new-boxes",
   "spec_version": "0.2",
   "activates_v0_2": false,
   "source_of_truth": {
@@ -15,30 +15,86 @@
     "pdf_page_index": 1,
     "sheet_id": "EsMx201",
     "split": "validation",
-    "source_page": [2592,1728],
+    "source_page": [
+      2592,
+      1728
+    ],
     "coordinate_space": "source-page"
+  },
+  "source_pdf_audit": {
+    "method": "direct-pdf-text-vector-and-native-render-verification",
+    "drawing_primitives": 871,
+    "source_page_verified": [
+      2592,
+      1728
+    ],
+    "observed_designations": {
+      "P16": true,
+      "W_tokens": 4
+    },
+    "ocr_used": false
   },
   "reconciliation": {
     "existing_column_review_records": 4,
     "existing_beam_review_records": 4,
     "existing_total": 8,
     "column_boxes": [
-      [928.62,792.42,934.74,798.54],
-      [1036.62,792.42,1042.74,798.54],
-      [1144.5,792.42,1150.62,798.54],
-      [1036.62,929.22,1042.74,935.34]
+      [
+        928.62,
+        792.42,
+        934.74,
+        798.54
+      ],
+      [
+        1036.62,
+        792.42,
+        1042.74,
+        798.54
+      ],
+      [
+        1144.5,
+        792.42,
+        1150.62,
+        798.54
+      ],
+      [
+        1036.62,
+        929.22,
+        1042.74,
+        935.34
+      ]
     ],
     "beam_boxes": [
-      [829.86,794.82,923.22,796.14],
-      [940.26,794.82,1031.22,796.14],
-      [1048.14,794.82,1139.1,796.14],
-      [1156.02,794.82,1249.38,796.14]
+      [
+        829.86,
+        794.82,
+        923.22,
+        796.14
+      ],
+      [
+        940.26,
+        794.82,
+        1031.22,
+        796.14
+      ],
+      [
+        1048.14,
+        794.82,
+        1139.1,
+        796.14
+      ],
+      [
+        1156.02,
+        794.82,
+        1249.38,
+        796.14
+      ]
     ],
     "duplicate_action": "preserve-existing-do-not-duplicate",
     "human_instance_approval": false
   },
   "validation_policy": {
-    "validation_split_use": "verify-only",
+    "split_use": "verify-only",
     "may_not_generate_training_positives": true,
     "may_not_be_used_for_active_learning": true,
     "may_not_adjust_detector_hyperparameters": true
@@ -47,7 +103,7 @@
     "new_beam_review_boxes_emitted": 0,
     "new_column_review_boxes_emitted": 0,
     "negative_labels_emitted": 0,
-    "reason": "The validation page is already covered by four column and four beam review-required candidates. Priority-08 is verify-only; no new training annotations, duplicates, or negatives are created."
+    "reason": "Direct source-PDF audit confirms the validation sheet and existing eight review-required candidates. No additional uniquely traceable tight beam/column instance boundary is promoted."
   },
   "qa": {
     "existing_records_remain_review_required": true,
@@ -61,5 +117,5 @@
     "wall_handoff_enabled": false,
     "canonical_engineering_geometry_created": false
   },
-  "note": "Priority-08 P2025-182 p02/EsMx201 was reconciled as a validation-only page. Eight existing candidates are preserved for pending human QA; the page is not used to expand training data."
+  "note": "Priority-08 was re-audited directly from P2025-182 Croquis.pdf; this update adds source-PDF audit evidence and does not convert validation evidence into training data."
 }
