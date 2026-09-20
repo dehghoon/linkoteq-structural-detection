@@ -25,13 +25,13 @@
     "ocr_used": false
   },
   "semantic_inventory": {
-    "w_section_designations": {"count":12,"values":["W8X18","W8X10","W8X18","W8X10","W10X12","W8X10","W8X10_","W8X18","W8X10","W24X55","W18X35","W8X21"]},
-    "c_section_designations": {"count":11,"values":["C6x8.2","C150x12","C8x11.5","C200x17","C12X20.7","C12X20.7","C12X20.7","C12X20.7","C6X9H.2","C8X11.5","C14X15.3"]},
+    "w_section_designations": {"count":12,"values":["W8X18","W8X10","W8X18","W8X10","W10X12","W8X10","W8X10","W8X18","W8X10","W24X55","W18X35","W8X21"]},
+    "c_section_designations": {"count":11,"values":["C6x8.2","C150x12","C8x11.5","C200x17","C12X20.7","C12X20.7","C12X20.7","C12X20.7","C6X8.2","C8X11.5","C10X15.3"]},
     "hss_tokens": 1,
     "col_tokens_broad_matches": 3,
     "f_truss_joist_designations": 19,
     "p_designations": {"count":5,"values":["P34","P34","P34","P34","P0000"]},
-    "correction": "The previous direct audit undercounted C-section-type designations by excluding C150x12 and C200x17. Direct source-PDF extraction returns 11 C-prefixed section designations. This correction does not change instance-box mining outcomes."
+    "correction": "Direct source-PDF verification confirms all 12 W-section tokens; the previous W3X10_ transcription is corrected to W8X10. C-prefixed inventory remains 11. This correction does not change instance-box mining outcomes."
   },
   "mining_result": {
     "beam_review_boxes_emitted": 0,
