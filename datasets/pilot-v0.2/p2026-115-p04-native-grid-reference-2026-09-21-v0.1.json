@@ -1,0 +1,35 @@
+{
+  "artifact_id": "p2026-115-p04-native-grid-reference-2026-09-21-v0.1",
+  "source_id": "P2026-115",
+  "page_id": "p04",
+  "sheet": "S-100",
+  "coordinate_space": "source-page",
+  "purpose": "Detection-QA reference only; not canonical GridLine or engineering geometry.",
+  "source_method": "native PDF text/graphics inspection; no OCR, no reconstructed image grid",
+  "horizontal_axis": {
+    "A": {"label_bbox": [176.0, 534.9, 189.7, 553.8], "reference_y": 544.4},
+    "A.2": {"reference_y": 591.9},
+    "A.6": {"reference_y": 674.2},
+    "A.8": {"label_bbox": [168.7, 706.6, 197.0, 725.6], "reference_y": 716.1},
+    "B": {"label_bbox": [176.6, 753.9, 189.2, 772.8], "reference_y": 763.4},
+    "C": {"label_bbox": [176.0, 801.6, 189.7, 820.5], "reference_y": 811.0},
+    "D": {"label_bbox": [176.0, 1045.3, 189.7, 1064.2], "reference_y": 1054.7},
+    "E": {"label_bbox": [176.6, 1091.4, 189.2, 1110.3], "reference_y": 1100.8},
+    "E.5": {"label_bbox": [168.7, 1170.9, 197.0, 1189.8], "reference_y": 1180.4},
+    "F": {"label_bbox": [177.0, 1263.6, 188.5, 1282.5], "reference_y": 1273.0},
+    "F.5": {"reference_y": 1330.0},
+    "G": {"label_bbox": [175.4, 1373.7, 190.1, 1392.6], "reference_y": 1383.2},
+    "G.1": {"label_bbox": [167.6, 1411.4, 182.3, 1430.3], "reference_y": 1420.9},
+    "H": {"reference_y": 1477.2},
+    "J": {"label_bbox": [178.1, 1512.9, 187.5, 1531.8], "reference_y": 1522.4}
+  },
+  "constraints": [
+    "B and C are distinct close axes in the native source.",
+    "D and E are distinct close axes in the native source.",
+    "Do not snap column footprints to these reference coordinates; tight bbox must follow the visible source footprint.",
+    "Do not deduplicate two visibly distinct column footprints at the expansion/separation joint."
+  ],
+  "human_layout_source": "p2026-115-p04-human-column-layout-approval-2026-09-21-v0.2",
+  "canonical_geometry": false,
+  "training_ready": false
+}
