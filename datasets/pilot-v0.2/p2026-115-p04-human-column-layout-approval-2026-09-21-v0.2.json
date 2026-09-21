@@ -1,0 +1,37 @@
+{
+  "artifact_id": "p2026-115-p04-human-column-layout-approval-2026-09-21-v0.2",
+  "source_id": "P2026-115",
+  "page_id": "p04",
+  "sheet": "S-100",
+  "coordinate_space": "source-page",
+  "review_basis": "human-approved column layout shown in final reviewed attachment 2026-09-21",
+  "review_state": "human-approved-column-layout; exact native-PDF tight-bbox reconciliation pending",
+  "axis_order_top_to_bottom": [
+    "A",
+    "A.2",
+    "A.6",
+    "A.8",
+    "B",
+    "C",
+    "D",
+    "E",
+    "E.5",
+    "F",
+    "F.5",
+    "G",
+    "G.1",
+    "H",
+    "J"
+  ],
+  "human_decisions": {
+    "approved_layout": "The column placement in the final reviewed attachment is approved.",
+    "grid_geometry": "Preserve original source drawing grid geometry. B and C are a close pair; D and E are a close pair. Do not reconstruct, move, or normalize grid axes.",
+    "grid_C": "Columns shown on the approved C row are structural columns; C remains immediately below B in the original drawing geometry.",
+    "grid_D_E": "The approved D and E rows are both retained as distinct nearby rows; do not deduplicate expansion/separation-joint column instances.",
+    "supersession": "Any prior QA overlay or generated/reconstructed image that conflicts with this approved layout is rejected as GT evidence."
+  },
+  "canonical_geometry": false,
+  "ground_truth_complete": false,
+  "training_ready": false,
+  "next_gate": "Map each human-approved column instance to the exact visible native-PDF source-page footprint bbox, then run full-page completeness and duplicate QA."
+}
