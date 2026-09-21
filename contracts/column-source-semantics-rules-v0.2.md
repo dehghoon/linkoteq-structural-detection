@@ -24,6 +24,13 @@ is strong source-space evidence for a column candidate. The annotation box MUST 
 
 Containment inside a footing/pedestal is a contextual prior, not sufficient evidence by itself. Ambiguous cases MUST be routed to QA rather than promoted automatically.
 
+## Shifted columns and expansion-joint clusters
+The grid-intersection rule is a strong spatial prior, but the visibe column footprint is the detection target. A column footprint MAY be locally shifted or ecchentric relative to the nominal grid intersection or to the center of its footing/pedestal. GPT-7 MUST NOT move the detection box back to the grid intersection; the tight box MUST follow the visible source-page column footprint.
+
+Closely spaced column footprints MUST NOT be automatically deduplicated. At a visible or otherwis defensible expansion/separation joint, two nearby columns may be distinct structural instances, including when they are associated with the same or nearby footing/pedestal context. Each visible column footprint MUST remain a separate candidate until review.
+
+Away from a defensible expansion/separation-joint context, very close column candidates are anomalous. As a domain prior from human review, ordinary columns in these plans typically have spacing of about 3 meters or more. This is not a hard geometric or engineering scale constraint: if drawing scale is not already approved by the downstream reconstruction process, GPT-7 MUST NOT convert source-page distances into engineering meters or use a 3 m threshold as a canonical distance. The spacing rule is a QA/candidate-ranking cue only.
+
 ## Human-review regression
 A reviewer rejection of a candidate because it is not at a defensible grid intersection MUST be preserved in the QA trail. Missing unmarked columns on a reviewed foundation plan MUST prevent page-completeness/background approval until grid-intersection plus footing/pedestal review has been completed.
 
