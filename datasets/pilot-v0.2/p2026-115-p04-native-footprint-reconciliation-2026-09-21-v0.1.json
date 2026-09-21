@@ -1,0 +1,28 @@
+{
+  "artifact_id": "p2026-115-p04-native-footprint-reconciliation-2026-09-21-v0.1",
+  "source_id": "P2026-115",
+  "page_id": "p04",
+  "sheet": "S-100",
+  "coordinate_space": "source-page",
+  "source": "native PDF page 4",
+  "human_layout_reference": "p2026-115-p04-human-column-layout-approval-2026-09-21-v0.2",
+  "native_grid_reference": "p2026-115-p04-native-grid-reference-2026-09-21-v0.1",
+  "row_reference_y": {"B": 763.4, "C": 811.0, "D": 1054.7, "E": 1100.8},
+  "findings": [
+    "Native PDF vector incspection confirms that the close rows B/C and D/E are distinct in source space.",
+    "Compact graphics near these rows are not represented consistently as one PDF rectangle per physical column.",
+    "Several locations in the D/E band contain multiple compact black vector primitives around one structural graphic. Primitive-count must not be used as instance-count.",
+    "At C row, native compact primitives are sparse/asymmetric relative to the human-approved column layout; therefore grid-nearest vector primitive selection is not safe for tight bboxes.",
+    "HSSS text or fixed text offsets remain secondary semantic evidence only and are not valid footprint coordinates."
+  ],
+  "promotion_rules": [
+    "One visible physical column footprint maps to one detection instance, regardless of how many PDF primitives form it.",
+    "Tight bbox must follow the visible source footprint, including any local eccentricity; never snap to grid or footing center.",
+    "Two close distinct visible footprints at an expansion/separation joint remain two instances.",
+    "No bbox is promoted to GT from this vector-mining pass alone."
+  ],
+  "review_state": "native-PDF-reconciliation-in-progress",
+  "ground_truth_complete": false,
+  "training_ready": false,
+  "next_gate": "Visually reconcile each human-approved instance to the native-PDF render and emit one tight source-page box per visible footprint; then run completeness and duplicate QA."
+}
