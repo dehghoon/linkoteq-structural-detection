@@ -1,0 +1,20 @@
+{
+  "artifact_id": "p2026-012-p02-human-negative-regions-2026-09-20-v0.1",
+  "source_id": "P2026-012",
+  "page_id": "p02",
+  "sheet": "EsMx401",
+  "coordinate_space": "source-page",
+  "review_state": "human-reviewed-negative-regions",
+  "regions": [
+    {"id": "A", "bbox": [500, 640, 980, 1120], "decision": "no structural beam or column"},
+    {"id": "B", "bbox": [1800, 770, 1960, 980], "decision": "no structural beam or column"},
+    {"id": "C", "bbox": [1570, 695, 1725, 760], "decision": "no structural beam or column"}
+  ],
+  "scope_note": "Human decisions apply only to the three reviewed regions. These regions must not be expanded into a whole-page negative or used to imply unreviewed pixels are background.",
+  "ground_truth_complete": false,
+  "training_ready": false,
+  "provenance": {
+    "decision_source": "human QA in ChatGPT",
+    "decision": "user responded ‘heid endarad’ (none exist) for regions A, B, C"
+  }
+}
