@@ -1,0 +1,19 @@
+{
+  "artifact_id": "p2026-115-p04-red-location-blue-bbox-adjudication-2026-09-21-v0.1",
+  "source_id": "P2026-115",
+  "page_id": "p04",
+  "sheet": "S-100",
+  "coordinate_space": "source-page",
+  "human_decision": {
+    "red_markers": "approved column locations",
+    "blue_v1_7": "rejected geometry",
+    "blue_v1_8": "rejected geometry",
+    "correction": "Previous human approval must not be interpreted as approval of the blue native-vector bbox proposals."
+  },
+  "approved_semantic_location_count": 89,
+  "prohibited_promotion": "Do not promote any v1.7 or v1.8 blue box to ground truth.",
+  "review_state": "human-approved-semantic-locations; tight native-PDF bbox reconciliation pending",
+  "ground_truth_complete": false,
+  "training_ready": false,
+  "next_gate": "Derive tight visible column footprint boundaries at the human-approved red locations; do not use nearest PDF rectangle."
+}
