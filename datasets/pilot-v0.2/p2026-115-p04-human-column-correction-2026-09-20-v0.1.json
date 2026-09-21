@@ -1,0 +1,22 @@
+{
+  "artifact_id": "p2026-115-p04-human-column-correction-2026-09-20-v0.1",
+  "source_id": "P2026-115",
+  "page_id": "p04",
+  "sheet": "S-100",
+  "coordinate_space": "source-page",
+  "review_basis": "human markup and explicit review comments",
+  "review_state": "human-approved-semantic-corrections; exact source-page bbox reconciliation pending",
+  "decisions": {
+    "remove_green_marked_locations": "No structural column exists at all reviewer green-marked locations.",
+    "shift_blue_marked_locations": "Columns at reviewer blue-marked locations exist, but prior candidate boxes are shifted; final detection box must follow the visible column footprint and must not snap to grid/HSS/text anchors.",
+    "add_red_marked_locations": "Reviewer red-marked locations are missed structural columns and must be added after exact source-page footprint reconciliation.",
+    "grid_C_expansion_joint": "All structural columns on grid C at the expansion/separation joint were missed; review must enumerate the visible distinct column footprints there, retaining separate nearby columns rather than deduplicating them."
+  },
+  "supersedes_for_gt": [
+    "p2026-115-p04-column-footprint-review-v0.7",
+    "p2026-115-p04-column-small-square-review-v0.1"
+  ],
+  "ground_truth_complete": false,
+  "training_ready": false,
+  "next_gate": "Reconcile each approved correction against the original p04 PDF and produce tight source-page column boxes; then run completeness QA."
+}
