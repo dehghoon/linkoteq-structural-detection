@@ -5,6 +5,7 @@ on:
     paths:
       - "contracts/**"
       - "datasets/pilot-v0.2/**"
+      - "benchmarks/yolo-v0.2/**"
       - "tools/**"
       - "tests/**"
       - "project-status.json"
@@ -18,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python: "3.11"
+          python-version: "3.11"
       - name: Validate contract JSON
         run: python -m json.tool contracts/annotation-validation-rules-v0.2.json > /dev/null
       - name: Validate pilot dataset manifest JSON
@@ -28,13 +29,25 @@ jobs:
           python -m json.tool contracts/migration-v0.1-to-v0.2-verification-2026-09-21.json > /dev/null
           python -m json.tool contracts/candidate-qa-gates-v0.2.json > /dev/null
           python -m json.tool datasets/pilot-v0.2/cross-split-duplicate-report-v0.2.json > /dev/null
+      - name: Validate benchmark readiness plan
+        run: |
+          python -m json.tool benchmarks/yolo-v0.2/benchmark-plan.json > /dev/null
+          python - <<'PY'
+          import json
+          with open("benchmarks/yolo-v0.2/benchmark-plan.json", encoding="utf-8") as f:
+              p = json.load(f)
+          assert p["evidence_contract"] == "0.2"
+          assert p["coordinate_space"] == "source-page"
+          assert p["classes"] == ["column", "beam", "wall"]
+          assert p["current_evidence"]["training_enabled"] is False
+          assert p["promotion_boundary"]["emits_canonical_engineering_geometry"] is False
+          gates = p["training_readiness_gates"]
+          assert [g["id"] for g in gates] == [f"TR{i}" for i in range(1, 8)]
+          assert all(g["status"] == "BLOCKED" for g in gates)
+          PY
       - name: Validate exact and near cross-split duplicates
         run: |
-          python tools/validate_cross_split_duplicates.py \
-            --manifest datasets/pilot-v0.2/manifest.json \
-            --fingerprints datasets/pilot-v0.2/page-fingerprints-v0.2.jsonl \
-            --near-threshold 8 \
-            --report /tmp/cross-split-duplicate-report.json
+          python tools/validate_cross_split_duplicates.py             --manifest datasets/pilot-v0.2/manifest.json             --fingerprints datasets/pilot-v0.2/page-fingerprints-v0.2.jsonl             --near-threshold 8             --report /tmp/cross-split-duplicate-report.json
           grep -q '"status": "PASS"' /tmp/cross-split-duplicate-report.json
       - name: Run repository tests
-        run: python -m unittest discover -s  tests -p "test_*.py" -v
+        run: python -m unittest discover -s tests -p "test_*.py" -v
