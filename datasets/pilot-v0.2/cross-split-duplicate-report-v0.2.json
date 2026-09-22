@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.2",
+  "dataset_id": "structural-detection-pilot-v0.2",
+  "manifest_git_blob_sha": "26553c64e923b0ab86f3edc6dbbfbca09610e488",
+  "fingerprint_method": {
+    "exact": "SHA-256 over width/height/colorspace header plus raw RGB raster bytes",
+    "near": "64-bit perceptual hash from 32x32 grayscale Lanczos image and 2D DCT; low 8x8 coefficients thresholded at median",
+    "render_engine": "PyMuPDF",
+    "render_dpi": 150,
+    "near_hamming_threshold": 8
+  },
+  "scope": {
+    "page_count": 14,
+    "splits": ["train", "validation", "test"],
+    "project_group_count": 6
+  },
+  "project_group_split_conflicts": [],
+  "exact_cross_split_duplicates": [],
+  "near_cross_split_duplicates": [],
+  "nearest_cross_split_pair": {
+    "hamming_distance": 18,
+    "a": {"source_id": "src-p2025-182-croquis", "page_id": "p02", "split": "validation"},
+    "b": {"source_id": "src-p2026-012-croquis", "page_id": "p02", "split": "train"}
+  },
+  "status": "PASS",
+  "provenance": {
+    "source": "six user-supplied source PDFs corresponding to pilot-v0.1 manifest sources",
+    "fingerprints_artifact": "datasets/pilot-v0.2/page-fingerprints-v0.2.jsonl",
+    "validator": "tools/validate_cross_split_duplicates.py"
+  }
+}
