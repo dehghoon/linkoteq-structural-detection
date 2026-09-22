@@ -1,10 +1,10 @@
 {
   "contract_id": "candidate-qa-gates-v0.2",
-  "status": "candidate-dataset-only",
+  "status": "active-v0.2-evidence-handoff-training-blocked",
   "spec_version": "0.2",
   "coordinate_space": "source-page",
   "allowed_candidate_classes": ["column","beam","wall"],
-  "note": "This is an internal candidate/QA stage contract. It does not activate ontology v0.2 or wall handoff.",
+  "note": "Internal candidate/QA stage contract. Ontology v0.2 and StructuralDetectionEvidence v0.2 handoff are active. Candidates still require all promotion gates; this contract does not make candidates ground truth or activate training readiness.",
   "semantic_context_contract": {
     "path": "contracts/structural-layout-context-v0.1.md",
     "sha": "de08b3037a1a3f12d026298fd671072ec0009b12",
@@ -41,9 +41,18 @@
     "infer_hidden_continuation": false,
     "ambiguous_wall_class": false
   },
+  "activation_evidence": {
+    "migration_verification": "contracts/migration-v0.1-to-v0.2-verification-2026-09-21.json",
+    "duplicate_report": "datasets/pilot-v0.2/cross-split-duplicate-report-v0.2.json",
+    "duplicate_report_git_blob_sha": "cd5f293510acf17d1e21b6f2247610df601850b7",
+    "detection_ci_run_id": 35688458443,
+    "detection_ci_tested_commit": "a8fd4d27886ece4e1b2e8babe69b14b8e28b29cf",
+    "gpt6_consumer_ci_run_id": 35687979404,
+    "gpt6_consumer_commit": "ee9ee5db6d5c382b9eb72d0b3c399de4947987b1"
+  },
   "boundary": {
     "emits_canonical_engineering_geometry": false,
-    "enables_wall_handoff": false,
+    "enables_wall_handoff": true,
     "enables_training": false
   }
 }
