@@ -1,0 +1,75 @@
+{
+  "artifact_id": "approved-column-beam-candidate-sets-2026-09-22",
+  "status": "human-approved-registration-deterministic",
+  "annotation_spec_version": "0.2",
+  "ontology_version": "0.2",
+  "coordinate_space": "source-page",
+  "review_date": "2026-09-22",
+  "source_reference": {
+    "path": "datasets/pilot-v0.2/qa/page-class-approval-2026-09-22.json",
+    "git_blob_sha": "f7d773c5eb432daf422c92780217a2521072798c",
+    "candidate_array_field": "machine_extraction.pages[].candidate_boxes_xywh",
+    "note": "The approval below binds to the exact candidate arrays in the referenced immutable Git blob; no candidate may be added or removed during registration."
+  },
+  "human_approved_sets": [
+    {
+      "reference_pdf_page": 1,
+      "approved_subset_pdf_page": 1,
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p02",
+      "project_group_id": "prj-lacmark-242536",
+      "class_name": "column",
+      "candidate_count": 33,
+      "disposition": "approved"
+    },
+    {
+      "reference_pdf_page": 4,
+      "approved_subset_pdf_page": 2,
+      "source_id": "src-p2026-024-croquis",
+      "page_id": "p02",
+      "project_group_id": "prj-p2026-024",
+      "class_name": "column",
+      "candidate_count": 18,
+      "disposition": "approved"
+    },
+    {
+      "reference_pdf_page": 4,
+      "approved_subset_pdf_page": 2,
+      "source_id": "src-p2026-024-croquis",
+      "page_id": "p02",
+      "project_group_id": "prj-p2026-024",
+      "class_name": "beam",
+      "candidate_count": 27,
+      "disposition": "approved"
+    },
+    {
+      "reference_pdf_page": 5,
+      "approved_subset_pdf_page": 3,
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p04",
+      "project_group_id": "prj-p2026-115",
+      "class_name": "column",
+      "candidate_count": 86,
+      "disposition": "approved"
+    }
+  ],
+  "source_page_registration": {
+    "source_page_size_pt": [792.0, 612.0],
+    "method": "deterministic raster-to-source-page scaling per recorded raster_size",
+    "formula": {
+      "x_source": "x_raster * 792 / raster_width",
+      "y_source": "y_raster * 612 / raster_height",
+      "xmax_source": "(x_raster + w_raster) * 792 / raster_width",
+      "ymax_source": "(y_raster + h_raster) * 612 / raster_height"
+    },
+    "rotation": 0,
+    "note": "Registration converts approved detector boxes only; it does not infer engineering scale, centerlines, endpoints, or topology."
+  },
+  "qa_boundary": {
+    "approved_candidate_count": 164,
+    "unapproved_regions_are_background": false,
+    "emits_canonical_engineering_geometry": false,
+    "training_enabled": false,
+    "note": "This records human approval of the exact column/beam candidate sets. A versioned training release, split/leakage validation, export, and evaluation gates remain required before training."
+  }
+}
