@@ -1,0 +1,26 @@
+{
+  "benchmark_id": "yolo-v0.2",
+  "status": "in-progress",
+  "evidence_contract": "0.2",
+  "coordinate_space": "source-page",
+  "classes": ["column", "beam", "wall"],
+  "qbasis": {
+    "physical_sheets": 4,
+    "class_sheet_approvals": 5,
+    "approved_units": [
+      {"order":1,"source":"Lacmark","page":2,"sheet":"Mx101","class":"column"},
+      {"order":5,"source":"P2026-115","page":4,"sheet":"S-100","class":"column"},
+      {"order":4,"source":"P2026-024","page":2,"sheet":"EsMx401","class":"column"},
+      {"order":4,"source":"P2026-024","page":2,"sheet":"EsMx401","class":"beam"},
+      {"order":10,"source":"P2026-130","page":2,"sheet":"Mx101","class":"wall"}
+    ]
+  },
+  "dataset_policy": {
+    "unapproved_sheets": "excluded",
+    "missing_label_is_background": false,
+    "project_group_split_isolation": true,
+    "duplicate_gates": true
+  },
+  "yolo_representation": "axis-aligned source-page boxes",
+  "next_phases": ["validate tight source-page boxes", "export YOLO dataset", "run baseline", "per-class precision-recall", "active learning"]
+}
