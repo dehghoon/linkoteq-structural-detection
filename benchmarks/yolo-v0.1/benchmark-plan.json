@@ -1,0 +1,35 @@
+{
+  "benchmark_id": "yolo-v0.1",
+  "status": "in-progress",
+  "started_from_human_qa": true,
+  "coordinate_space": "source-page",
+  "approved_class_sheet_units": [
+    {"order": 1, "source": "Lacmark", "page": 2, "sheet": "Mx101", "class": "column"},
+    {"order": 5, "source": "P2026-115", "page": 4, "sheet": "S-100", "class": "column"},
+    {"order": 4,"source": "P2026-024","page": 2,"sheet": "EsMx401","class": "column"},
+    {"order": 4,"source": "P2026-024","page": 2,"sheet": "EsMx401","class": "beam"},
+    {"order": 10,"source": "P2026-130","page": 2,"sheet": "Mx101","class": "wall"}
+  ],
+  "physical_sheets": 4,
+  "class_sheet_approvals": 5,
+  "excluded_from_training": "all other unapproved pilot sheets and classes",
+  "yolo_format": "axis-aligned bounding boxes",
+  "preflight_gates": [
+    "Register all human approvals with provenance.",
+    "Verify tight visible source-page boxes before YOLO export.",
+    "For P2026-024, register/verify the approved visual layout against the original source page; do not train from a generated raster.",
+    "Do not treat missing labels on unapproved sheets as background.",
+    "Preserve project-group split isolation and duplicate gates."
+  ],
+  "ontology_guard": {
+    "active_v0_1_classes": ["column", "beam"],
+    "wall": "Retained as approved QA for the candidate v0.2 track only; do not emit wall under v0.1."
+  },
+  "next_phases": [
+    "source-page annotation preflight",
+    "YOLO dataset export",
+    "baseline benchmark",
+    "per-class precision-recall error analysis",
+    "active learning expansion"
+  ]
+}
