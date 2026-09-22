@@ -39,10 +39,10 @@ A candidate MUST NOT automatically replace the production model. Promotion requi
 
 1. applicable annotation and evidence contract validation;
 2. project-group split isolation and duplicate/leakage gates;
-3. evaluation on a frozen regression set  plus the new QA challenge set;
+3. evaluation on a frozen regression set plus the new QA challenge set;
 4. per-class evaluation for all active classes;
-. no unresolved critical regression in known failure modes;
-. admin approval of the candidate for production promotion.
+5. no unresolved critical regression in known failure modes;
+6. admin approval of the candidate for production promotion.
 
 Per-class metrics MUST include at least precision and recall. Additional metrics may be versioned by the benchmark specification.
 
