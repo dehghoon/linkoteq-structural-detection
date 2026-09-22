@@ -1,6 +1,6 @@
 {
   "migration": "StructuralDetectionEvidence v0.1 -> v0.2",
-  "status": "passed",
+  "status": "blocked-pending-activation-gate-reconciliation",
   "verified_at": "2026-09-21",
   "core_contract": {
     "version": "0.5",
@@ -8,18 +8,27 @@
   },
   "gpt6": {
     "implementation_sha": "15bd7b0f4ae12ab41d07a029fe54d8db44fb97c6",
-    "regression_test_sha": "8d10bdb32851d74f307ba9e202458a0fb374d868"
+    "regression_test_sha": "8d10bdb32851d74f307ba9e202458a0fb374d868",
+    "consumer_support_inspection": "v0.2 column/beam/wall acceptance is implemented; v0.1 wall rejection is covered by committed tests."
   },
-  "gates": {
-    "v0.2_accepts_wall": "passed",
-    "v0.1_rejects_wall": "passed",
-    "legacy_v0.1_column_beam": "passed",
-    "source_page_only": "passed",
-    "provenance_required": "passed",
-    "detector_cannot_write_core_geometry": "passed",
-    "human_qa_scope": "passed-by-owner-approval",
-    "cross_split_duplicate_policy": "preserved"
+  "verified_gates": {
+    "v0.2_accepts_wall_code_and_test_present": "passed-by-inspection",
+    "v0.1_rejects_wall_test_present": "passed-by-inspection",
+    "legacy_v0.1_column_beam_test_present": "passed-by-inspection",
+    "source_page_only_test_present": "passed-by-inspection",
+    "provenance_required_test_present": "passed-by-inspection",
+    "detector_cannot_write_core_geometry_test_present": "passed-by-inspection",
+    "wall_page_re_review_coverage": "passed-14-of-14",
+    "wall_human_adjudication": "passed-no-remaining-human-wall-adjudication-pages"
   },
-  "verification_method": "Committed GPT-6 implementation/test inspection plus local execution of the six contract behaviors. GitHub Actions API was unavailable, so this record does not claim a CI run.",
-  "activation_decision": "v0.2 is the active detector evidence handoff contract; v0.1 remains compatibility-only."
+  "remaining_activation_blockers": [
+    "contracts/label-ontology-v0.2.md still declares itself Candidate and does not activate v0.2",
+    "contracts/annotation-spec-v0.2.md still declares v0.1 active until the migration gate passes",
+    "contracts/structural-detection-evidence-v0.2.md still declares itself Candidate and v0.1 active until the migration gate is satisfied",
+    "datasets/pilot-v0.2/manifest.json still has activation_gate.status blocked and wall QA fields that predate the human adjudication closure",
+    "exact and near cross-split duplicate gate pass has not been re-verified from an authoritative artifact in this reconciliation",
+    "GitHub Actions CI pass has not been verified by this reconciliation"
+  ],
+  "correction": "The prior record incorrectly stated that v0.2 was active while the controlling v0.2 contracts and dataset manifest still explicitly blocked activation. This record corrects that contradiction.",
+  "activation_decision": "v0.1 remains the active production handoff contract. v0.2 consumer code may remain prepared for compatibility, but wall handoff MUST NOT be enabled until the remaining gates are verified and the controlling contracts/manifest are updated consistently."
 }
