@@ -1,31 +1,27 @@
 {
   "schema_version": "0.2",
   "dataset_id": "structural-detection-pilot-v0.2",
-  "manifest_git_blob_sha": "26553c64e923b0ab86f3edc6dbbfbca09610e488",
-  "fingerprint_method": {
-    "exact": "SHA-256 over width/height/colorspace header plus raw RGB raster bytes",
-    "near": "64-bit perceptual hash from 32x32 grayscale Lanczos image and 2D DCT; low 8x8 coefficients thresholded at median",
-    "render_engine": "PyMuPDF",
-    "render_dpi": 150,
-    "near_hamming_threshold": 8
-  },
+  "manifest_git_blob_sha": "cb1440cf4b52dea0fcd094415685e42e664c389c",
+  "manifest_sha256": "94bca467b74664f0c2633eadeb70ba97ce1ace44fe3b0985127273a424ec84c",
+  "fingerprints_git_blob_sha": "d5eaa4752cee02762ded51187050d8ca3c8b4b15",
+  "validator_git_blob_sha": "c1182c2f80685cf4e183b7613b8ad1ef91706104",
+  "fingerprint_repair_commit_sha": "98ebcdf1d359f43d88d23f0e0506f6608741ea1c",
+  "near_hamming_threshold": 8,
   "scope": {
     "page_count": 14,
     "splits": ["train", "validation", "test"],
     "project_group_count": 6
   },
   "project_group_split_conflicts": [],
+  "invalid_fingerprint_records": [],
   "exact_cross_split_duplicates": [],
   "near_cross_split_duplicates": [],
-  "nearest_cross_split_pair": {
-    "hamming_distance": 18,
-    "a": {"source_id": "src-p2025-182-croquis", "page_id": "p02", "split": "validation"},
-    "b": {"source_id": "src-p2026-012-croquis", "page_id": "p02", "split": "train"}
-  },
+  "exact_gate": "PASS",
+  "near_gate": "PASS",
   "status": "PASS",
   "provenance": {
-    "source": "six user-supplied source PDFs corresponding to pilot-v0.1 manifest sources",
     "fingerprints_artifact": "datasets/pilot-v0.2/page-fingerprints-v0.2.jsonl",
-    "validator": "tools/validate_cross_split_duplicates.py"
+    "validator": "tools/validate_cross_split_duplicates.py",
+    "command": "python tools/validate_cross_split_duplicates.py --manifest datasets/pilot-v0.2/manifest.json --fingerprints datasets/pilot-v0.2/page-fingerprints-v0.2.jsonl --near-threshold 8 --report /tmp/cross-split-duplicate-report.json"
   }
 }
