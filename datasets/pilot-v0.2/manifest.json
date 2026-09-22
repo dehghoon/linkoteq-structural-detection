@@ -1,6 +1,6 @@
 {
   "dataset_id": "structural-detection-pilot-v0.2",
-  "status": "wall-qa-migration-in-progress",
+  "status": "wall-qa-complete-activation-blocked",
   "purpose": "Wall-capable migration pilot for column, beam, and wall detection.",
   "parent_dataset_id": "structural-detection-pilot-v0.1",
   "parent_manifest_sha": "6de93f5ac133c5e309eeb5fc25faefa481b0195e",
@@ -9,7 +9,11 @@
   "validation_rules_version": "0.2",
   "evidence_contract_version": "0.2",
   "coordinate_space": "source-page",
-  "target_classes": ["column", "beam", "wall"],
+  "target_classes": [
+    "column",
+    "beam",
+    "wall"
+  ],
   "migration_policy": {
     "mutate_parent_v0_1": false,
     "rereview_every_included_page_for_walls": true,
@@ -22,9 +26,18 @@
   "splits": {
     "status": "migration-draft",
     "group_key": "project_group_id",
-    "train": ["prj-lacmark-242536", "prj-p2026-024", "prj-p2026-130-260890", "prj-p2026-012"],
-    "validation": ["prj-p2025-182"],
-    "test": ["prj-p2026-115"],
+    "train": [
+      "prj-lacmark-242536",
+      "prj-p2026-024",
+      "prj-p2026-130-260890",
+      "prj-p2026-012"
+    ],
+    "validation": [
+      "prj-p2025-182"
+    ],
+    "test": [
+      "prj-p2026-115"
+    ],
     "release_gate": "Exact and near cross-split duplicate checks, wall page re-review, and annotation QA must pass."
   },
   "source_inheritance": {
@@ -35,21 +48,29 @@
     "page_scope": "All 14 v0.1 pilot pages are in scope for v0.2 wall re-review. Existing column/beam annotations remain baseline references until v0.2 page QA is complete."
   },
   "wall_qa": {
-    "status": "in-progress",
+    "status": "complete",
     "pages_reviewed": 14,
     "pages_total": 14,
     "page_review_coverage_complete": true,
     "human_semantics_confirmed_pages": 2,
-    "instance_bbox_qa_complete": false,
-    "adjudication_remains": true,
-    "required_per_page_dispositions": ["wall-reviewed-none", "wall-candidates-review", "needs-adjudication"],
+    "instance_bbox_qa_complete": true,
+    "adjudication_remains": false,
+    "required_per_page_dispositions": [
+      "wall-reviewed-none",
+      "wall-candidates-review",
+      "needs-adjudication"
+    ],
     "review_artifacts": [
       "datasets/pilot-v0.2/wall-14page-review-checkpoint-v0.2.jsonl",
       "datasets/pilot-v0.2/wall-page-review-dispositions-v0.2.jsonl",
       "datasets/pilot-v0.2/wall-human-qa-v0.2.jsonl",
-      "datasets/pilot-v0.2/wall-bbox-review-queue-v0.2.jsonl"
+      "datasets/pilot-v0.2/wall-bbox-review-queue-v0.2.jsonl",
+      "datasets/pilot-v0.2/wall-approved-annotations-v0.2.jsonl",
+      "datasets/pilot-v0.2/wall-qa-closure-v0.2.json"
     ],
-    "approval_gate": "Every included page must have a recorded wall re-review disposition. Every wall candidate must have human QA before approved training/evaluation use."
+    "approval_gate": "PASSED: all 14 included pages have final wall disposition; 10 approved wall boxes on 2 pages are human-approved source-page evidence.",
+    "approved_wall_instance_count": 10,
+    "approved_wall_page_count": 2
   },
   "activation_gate": {
     "status": "blocked",
