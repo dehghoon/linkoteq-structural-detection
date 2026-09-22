@@ -1,7 +1,7 @@
-# Structural Detection Label Ontology v0.2 — Candidate
+# Structural Detection Label Ontology v0.2 — Active
 
 ## Status
-Candidate for coordinated wall migration. This file does not activate v0.2 until the migration gate is satisfied.
+Active for the coordinated StructuralDetectionEvidence v0.2 handoff. Legacy v0.1 remains compatible for `column` and `beam`; `wall` is invalid under v0.1.
 
 ## Version
 - ontology_name: `linkoteq-structural-detection-labels`
@@ -10,7 +10,7 @@ Candidate for coordinated wall migration. This file does not activate v0.2 until
 - core_reference: `Linkoteq Structural Core v0.5`
 
 ## Labels
-The exact proposed label set is:
+The exact active label set is:
 - `column`
 - `beam`
 - `wall`
@@ -19,15 +19,15 @@ The exact proposed label set is:
 
 `wall` means visible source-drawing evidence whose primary semantic intent is a structural wall. It is detector evidence only, not a canonical Core `Surface` and not proof of engineering centerline, boundary, thickness, endpoints, openings, elevation, vertical extent, connectivity, or topology.
 
-Exclude architectural partitions without reliable structural semantics, slab/foundation edges that are not wall graphics, grids, dimensions, leaders, notes, cut lines, ambiguous hatch regions, inferred continuation, and walls inferred only from schedules, other pages, or engineering assumptions. Route unresolved structural-vs-nonstructural cases to QA.
+Exclude architectural partitions without reliable structural semantics, slab/foundation edges that are not wall graphics, grids, dimensions, leaders, notes, cut lines, ambiguous hatch regions, inferred continuation, and walls inferred only from schedules/other pages. Route unresolved cases to QA.
 
 Do not create `ambiguous-wall`; ambiguity is QA metadata.
 
 ## Boundary
-GPT-7 emits reviewed source-page detection evidence only. GPT-6 owns deterministic transforms, scale, geometry-semantic fusion, engineering reconstruction, wall centerline/boundary/thickness/openings, vertical extent, connectivity/topology, Core mapping, StructuralModel, and downstream 3D integration.
+GPT-7 emits reviewed source-page detection evidence only. GPT-6 owns transforms, scale, geometry-semantic fusion, engineering reconstruction, wall centerline/boundary/thickness/openings/vertical extent, connectivity/topology, Core mapping, StructuralModel, and downstream 3D integration.
 
 ## Compatibility
 v0.1 remains exactly `column` and `beam`. A `wall` record claiming v0.1 semantics is invalid.
 
-## Activation gate
-Do not activate v0.2 until annotation rules, validation rules, StructuralDetectionEvidence v0.2, wall-capable dataset migration, GPT-6 consumer regression, legacy v0.1 compatibility regression, provenance checks, and `source-page` checks are approved and passing.
+## Activation evidence
+Activation prerequisites are recorded in `contracts/migration-v0.1-to-v0.2-verification-2026-09-21.json`. Detection CI run #8 / run ID 35688458443 succeeded for commit `a8fd4d27886ece4e1b2e8babe69b14b8e28b29cf`; GPT-6 consumer CI run #119 / run ID 35687979404 succeeded for commit `ee9ee5db6d5c382b9eb72d0b3c399de4947987b1`.
