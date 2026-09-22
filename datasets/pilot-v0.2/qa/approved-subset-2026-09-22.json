@@ -1,0 +1,51 @@
+{
+  "artifact_id": "approved-subset-2026-09-22",
+  "status": "human-approved-page-class-subset",
+  "annotation_spec_version": "0.2",
+  "ontology_version": "0.2",
+  "coordinate_space": "source-page",
+  "approval_date": "2026-09-22",
+  "approved_pages": [
+    {
+      "original_pdf_page": 1,
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p02",
+      "project_group_id": "prj-lacmark-242536",
+      "approved_classes": ["column"]
+    },
+    {
+      "original_pdf_page": 4,
+      "source_id": "src-p2026-024-croquis",
+      "page_id": "p02",
+      "project_group_id": "prj-p2026-024",
+      "approved_classes": ["beam", "column"]
+    },
+    {
+      "original_pdf_page": 5,
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p04",
+      "project_group_id": "prj-p2026-115",
+      "approved_classes": ["column"]
+    },
+    {
+      "original_pdf_page": 10,
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "project_group_id": "prj-p2026-130-260890",
+      "approved_classes": ["wall"]
+    }
+  ],
+  "excluded_pdf_pages": [2, 3, 6, 7, 8, 9, 11, 12, 13, 14],
+  "qa_policy": {
+    "page_class_selection_is_human_approved": true,
+    "machine_extracted_boxes_require_human_box_qa": true,
+    "excluded_or_unreviewed_regions_are_not_background": true,
+    "training_enabled": false,
+    "next_gate": "human instance-box QA in original source-page coordinates"
+  },
+  "boundary": {
+    "emits_canonical_engineering_geometry": false,
+    "infers_scale": false,
+    "infers_topology": false
+  }
+}
