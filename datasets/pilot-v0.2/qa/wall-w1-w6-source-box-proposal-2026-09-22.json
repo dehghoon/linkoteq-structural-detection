@@ -1,0 +1,175 @@
+{
+  "artifact_id": "wall-w1-w6-source-box-proposal-2026-09-22",
+  "status": "review-required",
+  "source_pdf": {
+    "filename": "Linkoteq_QA_14_Pages_v1.2_REFERENCE_PRESERVED.pdf",
+    "page": 10,
+    "page_size_source_page": [
+      792.0,
+      612.0
+    ],
+    "rotation": 0
+  },
+  "human_semantic_decision": {
+    "instance_count": 6,
+    "instance_labels": [
+      "W1",
+      "W2",
+      "W3",
+      "W4",
+      "W5",
+      "W6"
+    ],
+    "decision_artifact": "datasets/pilot-v0.2/qa/human-instance-qa-decision-2026-09-22.json"
+  },
+  "extraction": {
+    "method": "green wall boundary projection on original PDF page render; markup attachment used only for W1-W6 semantic correspondence",
+    "render_size": [
+      1800,
+      1350
+    ],
+    "mapping_to_source_page": {
+      "x_scale": 0.44,
+      "y_scale": 0.4533333333333333
+    },
+    "hidden_continuation_inferred": false
+  },
+  "annotations": [
+    {
+      "annotation_id": "src-p2026-130-260890-permit-p02-wall-w1",
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "project_group_id": "prj-p2026-130-260890",
+      "class_name": "wall",
+      "instance_label": "W1",
+      "box": {
+        "xmin": 109.56,
+        "ymin": 539.92,
+        "xmax": 238.92,
+        "ymax": 544.0
+      },
+      "coordinate_space": "source-page",
+      "spec_version": "0.2",
+      "qa_state": "review-required",
+      "annotator": "machine-assisted-source-page-registration",
+      "reviewer": "pending-human-box-review",
+      "disposition": "source-box-proposal",
+      "flags": []
+    },
+    {
+      "annotation_id": "src-p2026-130-260890-permit-p02-wall-w2",
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "project_group_id": "prj-p2026-130-260890",
+      "class_name": "wall",
+      "instance_label": "W2",
+      "box": {
+        "xmin": 235.4,
+        "ymin": 232.107,
+        "xmax": 238.92,
+        "ymax": 544.0
+      },
+      "coordinate_space": "source-page",
+      "spec_version": "0.2",
+      "qa_state": "review-required",
+      "annotator": "machine-assisted-source-page-registration",
+      "reviewer": "pending-human-box-review",
+      "disposition": "source-box-proposal",
+      "flags": []
+    },
+    {
+      "annotation_id": "src-p2026-130-260890-permit-p02-wall-w3",
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "project_group_id": "prj-p2026-130-260890",
+      "class_name": "wall",
+      "instance_label": "W3",
+      "box": {
+        "xmin": 235.4,
+        "ymin": 232.107,
+        "xmax": 445.72,
+        "ymax": 235.733
+      },
+      "coordinate_space": "source-page",
+      "spec_version": "0.2",
+      "qa_state": "review-required",
+      "annotator": "machine-assisted-source-page-registration",
+      "reviewer": "pending-human-box-review",
+      "disposition": "source-box-proposal",
+      "flags": []
+    },
+    {
+      "annotation_id": "src-p2026-130-260890-permit-p02-wall-w4",
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "project_group_id": "prj-p2026-130-260890",
+      "class_name": "wall",
+      "instance_label": "W4",
+      "box": {
+        "xmin": 441.32,
+        "ymin": 105.173,
+        "xmax": 445.72,
+        "ymax": 235.733
+      },
+      "coordinate_space": "source-page",
+      "spec_version": "0.2",
+      "qa_state": "review-required",
+      "annotator": "machine-assisted-source-page-registration",
+      "reviewer": "pending-human-box-review",
+      "disposition": "source-box-proposal",
+      "flags": []
+    },
+    {
+      "annotation_id": "src-p2026-130-260890-permit-p02-wall-w5",
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "project_group_id": "prj-p2026-130-260890",
+      "class_name": "wall",
+      "instance_label": "W5",
+      "box": {
+        "xmin": 109.56,
+        "ymin": 105.173,
+        "xmax": 447.48,
+        "ymax": 109.253
+      },
+      "coordinate_space": "source-page",
+      "spec_version": "0.2",
+      "qa_state": "review-required",
+      "annotator": "machine-assisted-source-page-registration",
+      "reviewer": "pending-human-box-review",
+      "disposition": "source-box-proposal",
+      "flags": []
+    },
+    {
+      "annotation_id": "src-p2026-130-260890-permit-p02-wall-w6",
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "project_group_id": "prj-p2026-130-260890",
+      "class_name": "wall",
+      "instance_label": "W6",
+      "box": {
+        "xmin": 109.56,
+        "ymin": 105.173,
+        "xmax": 113.96,
+        "ymax": 544.0
+      },
+      "coordinate_space": "source-page",
+      "spec_version": "0.2",
+      "qa_state": "review-required",
+      "annotator": "machine-assisted-source-page-registration",
+      "reviewer": "pending-human-box-review",
+      "disposition": "source-box-proposal",
+      "flags": []
+    }
+  ],
+  "training_policy": {
+    "ground_truth": false,
+    "training_enabled": false,
+    "required_next_gate": "human review of the six proposed tight source-page boxes; approved or corrected-approved disposition required before training/evaluation promotion"
+  },
+  "boundary": {
+    "emits_canonical_engineering_geometry": false,
+    "infers_scale": false,
+    "infers_topology": false
+  }
+}
