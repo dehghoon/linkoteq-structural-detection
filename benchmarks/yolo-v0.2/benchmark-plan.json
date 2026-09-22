@@ -1,26 +1,105 @@
 {
   "benchmark_id": "yolo-v0.2",
-  "status": "in-progress",
+  "status": "planning-ready-data-export-blocked",
   "evidence_contract": "0.2",
   "coordinate_space": "source-page",
-  "classes": ["column", "beam", "wall"],
-  "qbasis": {
-    "physical_sheets": 4,
-    "class_sheet_approvals": 5,
-    "approved_units": [
-      {"order":1,"source":"Lacmark","page":2,"sheet":"Mx101","class":"column"},
-      {"order":5,"source":"P2026-115","page":4,"sheet":"S-100","class":"column"},
-      {"order":4,"source":"P2026-024","page":2,"sheet":"EsMx401","class":"column"},
-      {"order":4,"source":"P2026-024","page":2,"sheet":"EsMx401","class":"beam"},
-      {"order":10,"source":"P2026-130","page":2,"sheet":"Mx101","class":"wall"}
+  "classes": [
+    "column",
+    "beam",
+    "wall"
+  ],
+  "dataset": {
+    "id": "structural-detection-pilot-v0.2",
+    "manifest_path": "datasets/pilot-v0.2/manifest.json",
+    "manifest_git_blob_sha": "84c03e0b10548815063ace42d26454ae15fd2e83",
+    "role": "migration/QA pilot; not yet authorized as a training-ready release",
+    "project_group_split_isolation": true,
+    "exact_and_near_duplicate_gates_required": true,
+    "missing_or_unreviewed_labels_are_not_background": true
+  },
+  "current_evidence": {
+    "pilot_pages_reviewed_for_walls": 14,
+    "approved_wall_instances": 10,
+    "approved_wall_pages": 2,
+    "wall_handoff_active": true,
+    "training_enabled": false
+  },
+  "benchmark_protocol": {
+    "representation": "tight axis-aligned source-page boxes",
+    "candidate_family": "YOLO baseline",
+    "required_active_classes": [
+      "column",
+      "beam",
+      "wall"
+    ],
+    "required_metrics_per_class": [
+      "precision",
+      "recall"
+    ],
+    "evaluation_sets": [
+      "frozen regression set",
+      "new human-approved QA challenge set"
+    ],
+    "record": [
+      "base model version",
+      "dataset version",
+      "split manifest",
+      "training configuration",
+      "artifact identity",
+      "per-class metrics",
+      "regression results"
     ]
   },
-  "dataset_policy": {
-    "unapproved_sheets": "excluded",
-    "missing_label_is_background": false,
-    "project_group_split_isolation": true,
-    "duplicate_gates": true
+  "training_readiness_gates": [
+    {
+      "id": "TR1",
+      "requirement": "versioned training dataset release distinct from released baselines",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "TR2",
+      "requirement": "complete human-approved labels for every training/evaluation region; unapproved regions ignored/excluded",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "TR3",
+      "requirement": "frozen project-group train/validation/test split manifest",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "TR4",
+      "requirement": "exact and near cross-split duplicate/leakage gates pass for the training release",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "TR5",
+      "requirement": "deterministic YOLO export with class mapping column=0, beam=1, wall=2 and source-page provenance",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "TR6",
+      "requirement": "frozen regression set and human-approved QA challenge set defined",
+      "status": "BLOCKED"
+    },
+    {
+      "id": "TR7",
+      "requirement": "training run configuration and artifact/registry identity defined",
+      "status": "BLOCKED"
+    }
+  ],
+  "next_actions": [
+    "complete and freeze a training-capable v0.2 dataset version without mutating pilot-v0.1 or pilot-v0.2",
+    "export deterministic YOLO dataset only from human-approved evidence",
+    "rerun split and duplicate/leakage validation on the frozen training release",
+    "define frozen regression and QA challenge sets",
+    "only then run a versioned Candidate baseline"
+  ],
+  "promotion_boundary": {
+    "candidate_is_production": false,
+    "admin_approval_required": true,
+    "rollback_required": true,
+    "emits_canonical_engineering_geometry": false
   },
-  "yolo_representation": "axis-aligned source-page boxes",
-  "next_phases": ["validate tight source-page boxes", "export YOLO dataset", "run baseline", "per-class precision-recall", "active learning"]
+  "continuous_improvement_contract": "contracts/detector-continuous-improvement-v0.1.md",
+  "note": "The active v0.2 evidence handoff does not imply training readiness. No training run is authorized by this plan."
 }
