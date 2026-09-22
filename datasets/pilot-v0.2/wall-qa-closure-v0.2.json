@@ -1,0 +1,24 @@
+{
+  "artifact_id": "wall-qa-closure-v0.2-2026-09-22",
+  "dataset_id": "structural-detection-pilot-v0.2",
+  "coordinate_space": "source-page",
+  "spec_version": "0.2",
+  "status": "wall-qa-complete",
+  "human_review_basis": "Linkoteq_Final_Consolidated_Human_QA_Packet_v0.1",
+  "pages_reviewed": 14,
+  "approved_wall_pages": 2,
+  "approved_wall_instances": 10,
+  "approved_instance_artifact": "datasets/pilot-v0.2/wall-approved-annotations-v0.2.jsonl",
+  "approved_counts": {
+    "src-lacmark-242536-str-2024:p02": 4,
+    "src-p2026-130-260890-permit:p02": 6
+  },
+  "non_promotable_wall_pages": 12,
+  "rules": [
+    "Only visible page-local structural-wall graphics are promoted.",
+    "Boxes are tight axis-aligned source-page detection evidence only.",
+    "No hidden continuation is inferred.",
+    "No engineering centerline, boundary, thickness, endpoint, opening, elevation, vertical extent, connectivity, topology, Core Surface, or StructuralModel is created."
+  ],
+  "activation_effect": "This closes wall annotation/instance-bbox QA only. It does not by itself activate ontology v0.2 or wall handoff."
+}
