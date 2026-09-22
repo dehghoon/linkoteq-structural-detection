@@ -8,7 +8,7 @@ def hamming_hex(a, b):
         return None
     try:
         return (int(a, 16) ^ int(b, 16)).bit_count()
-    except ValueError:
+    except (ValueError, TypeError):
         return None
 
 
@@ -40,16 +40,19 @@ def main():
         if line.strip()
     ]
     required = {"source_id", "page_id", "project_group_id", "sha256", "phash"}
-    bad = [
-        (i, sorted(required - set(record)))
-        for i, record in enumerate(records, 1)
-        if required - set(record)
-    ]
+    bad = []
+    valid_records = []
+    for i, record in enumerate(records, 1):
+        missing = sorted(required - set(record))
+        if missing:
+            bad.append({"line": i, "missing": missing})
+        else:
+            valid_records.append(record)
 
     exact, near = [], []
-    for i, x in enumerate(records):
+    for i, x in enumerate(valid_records):
         sx = assignments.get(x["project_group_id"])
-        for y in records[i + 1:]:
+        for y in valid_records[i + 1:]:
             sy = assignments.get(y["project_group_id"])
             if not sx or not sy or sx == sy:
                 continue
