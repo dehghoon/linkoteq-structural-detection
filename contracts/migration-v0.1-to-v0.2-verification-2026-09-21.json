@@ -1,34 +1,50 @@
 {
   "migration": "StructuralDetectionEvidence v0.1 -> v0.2",
-  "status": "blocked-pending-activation-gate-reconciliation",
-  "verified_at": "2026-09-21",
-  "core_contract": {
-    "version": "0.5",
-    "sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b"
+  "status": "activation-prerequisites-passed",
+  "verified_at": "2026-09-22",
+  "core_contract": {"version":"0.5","sha":"5b88c1c5c3049f81915f4772b94e8e617989f05b"},
+  "detection_ci": {
+    "workflow": "v0.2 migration validation",
+    "run_number": 8,
+    "run_id": 35688458443,
+    "tested_commit_sha": "a8fd4d27886ece4e1b2e8babe69b14b8e28b29cf",
+    "result": "SUCCESS"
+  },
+  "duplicate_gate": {
+    "artifact": "datasets/pilot-v0.2/cross-split-duplicate-report-v0.2.json",
+    "artifact_git_blob_sha": "cd5f293510acf17d1e21b6f2247610df601850b7",
+    "exact_cross_split_duplicates": 0,
+    "near_cross_split_duplicates": 0,
+    "near_hamming_threshold": 8,
+    "exact_gate": "PASS",
+    "near_gate": "PASS",
+    "status": "PASS"
   },
   "gpt6": {
-    "implementation_sha": "15bd7b0f4ae12ab41d07a029fe54d8db44fb97c6",
-    "regression_test_sha": "8d10bdb32851d74f307ba9e202458a0fb374d868",
-    "consumer_support_inspection": "v0.2 column/beam/wall acceptance is implemented; v0.1 wall rejection is covered by committed tests."
+    "consumer_commit_sha": "ee9ee5db6d5c382b9eb72d0b3c399de4947987b1",
+    "actions_run_number": 119,
+    "actions_run_id": 35687979404,
+    "actions_result": "SUCCESS",
+    "v0_2_wall_acceptance": "PASS",
+    "v0_1_wall_rejection": "PASS",
+    "legacy_v0_1_column_beam": "PASS",
+    "source_page_required": true,
+    "provenance_required": true
   },
   "verified_gates": {
-    "v0.2_accepts_wall_code_and_test_present": "passed-by-inspection",
-    "v0.1_rejects_wall_test_present": "passed-by-inspection",
-    "legacy_v0.1_column_beam_test_present": "passed-by-inspection",
-    "source_page_only_test_present": "passed-by-inspection",
-    "provenance_required_test_present": "passed-by-inspection",
-    "detector_cannot_write_core_geometry_test_present": "passed-by-inspection",
-    "wall_page_re_review_coverage": "passed-14-of-14",
-    "wall_human_adjudication": "passed-no-remaining-human-wall-adjudication-pages"
+    "ontology_v0_2": "PASS",
+    "annotation_spec_v0_2": "PASS",
+    "validation_rules_v0_2": "PASS",
+    "wall_page_re_review": "PASS-14-of-14",
+    "wall_human_adjudication": "PASS",
+    "approved_wall_boxes": 10,
+    "exact_cross_split_duplicate": "PASS",
+    "near_cross_split_duplicate": "PASS",
+    "detection_ci": "PASS",
+    "gpt6_consumer_regression": "PASS",
+    "legacy_v0_1_compatibility": "PASS",
+    "provenance_and_source_page": "PASS"
   },
-  "remaining_activation_blockers": [
-    "contracts/label-ontology-v0.2.md still declares itself Candidate and does not activate v0.2",
-    "contracts/annotation-spec-v0.2.md still declares v0.1 active until the migration gate passes",
-    "contracts/structural-detection-evidence-v0.2.md still declares itself Candidate and v0.1 active until the migration gate is satisfied",
-    "datasets/pilot-v0.2/manifest.json still has activation_gate.status blocked and wall QA fields that predate the human adjudication closure",
-    "exact and near cross-split duplicate gate pass has not been re-verified from an authoritative artifact in this reconciliation",
-    "GitHub Actions CI pass has not been verified by this reconciliation"
-  ],
-  "correction": "The prior record incorrectly stated that v0.2 was active while the controlling v0.2 contracts and dataset manifest still explicitly blocked activation. This record corrects that contradiction.",
-  "activation_decision": "v0.1 remains the active production handoff contract. v0.2 consumer code may remain prepared for compatibility, but wall handoff MUST NOT be enabled until the remaining gates are verified and the controlling contracts/manifest are updated consistently."
+  "remaining_activation_blockers": [],
+  "activation_decision": "GPT-7-owned activation prerequisites are evidenced as passing. Coordinated v0.2 contract/manifest reconciliation is authorized. Training readiness is not activated."
 }
