@@ -1,0 +1,25 @@
+{
+  "migration": "StructuralDetectionEvidence v0.1 -> v0.2",
+  "status": "passed",
+  "verified_at": "2026-09-21",
+  "core_contract": {
+    "version": "0.5",
+    "sha": "5b88c1c5c3049f81915f4772b94e8e617989f05b"
+  },
+  "gpt6": {
+    "implementation_sha": "15bd7b0f4ae12ab41d07a029fe54d8db44fb97c6",
+    "regression_test_sha": "8d10bdb32851d74f307ba9e202458a0fb374d868"
+  },
+  "gates": {
+    "v0.2_accepts_wall": "passed",
+    "v0.1_rejects_wall": "passed",
+    "legacy_v0.1_column_beam": "passed",
+    "source_page_only": "passed",
+    "provenance_required": "passed",
+    "detector_cannot_write_core_geometry": "passed",
+    "human_qa_scope": "passed-by-owner-approval",
+    "cross_split_duplicate_policy": "preserved"
+  },
+  "verification_method": "Committed GPT-6 implementation/test inspection plus local execution of the six contract behaviors. GitHub Actions API was unavailable, so this record does not claim a CI run.",
+  "activation_decision": "v0.2 is the active detector evidence handoff contract; v0.1 remains compatibility-only."
+}
