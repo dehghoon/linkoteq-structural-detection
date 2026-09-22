@@ -2,23 +2,41 @@
   "project": "Linkoteq Structural Detection",
   "repository": "dehghoon/linkoteq-structural-detection",
   "overallStatus": "in-progress",
-  "currentStage": "dataset-pilot",
+  "currentStage": "detector-benchmark",
   "stages": {
-    "detection-contract": "in-progress",
+    "detection-contract": "complete",
     "annotation-specification": "complete",
-    "dataset-pilot": "in-progress",
+    "dataset-pilot": "complete",
     "detector-benchmark": "not-started",
     "training-and-evaluation": "not-started",
     "model-registry": "not-started",
     "inference-adapter": "not-started",
-    "gpt6-handoff-verification": "not-started",
+    "gpt6-handoff-verification": "complete",
     "production-verification": "not-started"
   },
-  "handoffTarget": "dehghoon/linkoteq-drawing-reconstruction",
-  "handoffContract": "contracts/structural-detection-evidence-v0.1.md",
+  "handoffarget": "dehghoon/linkoteq-drawing-reconstruction",
+  "handoffContract": "contracts/structural-detection-evidence-v0.2.md",
+  "handoffStatus": "active",
+  "activeClasses": ["column","beam","wall"],
+  "coordinateSpace": "source-page",
+  "migrationEvendence": {
+    "path": "contracts/migration-v0.1-to-v0.2-verification-2026-09-21.json",
+    "detectionCiRunId": 35688458443,
+    "detectionCiTestedCommit": "a8fd4d27886ece4e1b2e8babe69b14b8e28b29cf",
+    "gpt6ConsumerCiRunId": 35687979404,
+    "gpt6ConsumerCommit": "ee9ee5db6d5c382b9eb72d0b3c399de4947987b1",
+    "duplicateReport": "datasets/pilot-v0.2/cross-split-duplicate-report-v0.2.json",
+    "duplicateReportGitBlobSha": "cd5f293510acf17d1e21b6f2247610df601850b7"
+  },
+  "boundary": {
+    "emitsCanonicalEngineeringGeometry": false,
+    "enablesTraining": false,
+    "legacyV0_1Compatibility": true,
+    "v0_1WallRejection": true
+  },
   "securityOwner": "GPT-5",
   "detectionOwner": "GPT-7",
   "reconstructionOwner": "GPT-6",
-  "orchestructionOwner": "GPT-4",
+  "orchestrationOwner": "GPT-4",
   "orchestrator": "GPT-4"
 }
