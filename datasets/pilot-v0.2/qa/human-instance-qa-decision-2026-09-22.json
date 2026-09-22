@@ -1,0 +1,87 @@
+{
+  "artifact_id": "human-instance-qa-decision-2026-09-22",
+  "status": "human-instance-candidates-approved-wall-source-box-registration-pending",
+  "annotation_spec_version": "0.2",
+  "ontology_version": "0.2",
+  "coordinate_space": "source-page",
+  "review_date": "2026-09-22",
+  "supersedes_wall_interpretation": {
+    "artifact": "datasets/pilot-v0.2/qa/page-class-approval-2026-09-22.json",
+    "previous_page_10_machine_review_region_is_instance_box": false,
+    "human_decision": "page 10 contains exactly six approved visible wall instances W1-W6"
+  },
+  "human_approvals": [
+    {
+      "pdf_page": 1,
+      "source_id": "src-lacmark-242536-str-2024",
+      "page_id": "p02",
+      "class_name": "column",
+      "candidate_set": "previously presented red column candidates",
+      "disposition": "approved"
+    },
+    {
+      "pdf_page": 4,
+      "source_id": "src-p2026-024-croquis",
+      "page_id": "p02",
+      "class_name": "column",
+      "candidate_set": "previously presented red column candidates",
+      "disposition": "approved"
+    },
+    {
+      "pdf_page": 4,
+      "source_id": "src-p2026-024-croquis",
+      "page_id": "p02",
+      "class_name": "beam",
+      "candidate_set": "previously presented blue beam candidates",
+      "disposition": "approved"
+    },
+    {
+      "pdf_page": 5,
+      "source_id": "src-p2026-115-structural-60dd",
+      "page_id": "p04",
+      "class_name": "column",
+      "candidate_set": "previously presented red column candidates",
+      "disposition": "approved"
+    },
+    {
+      "pdf_page": 10,
+      "source_id": "src-p2026-130-260890-permit",
+      "page_id": "p02",
+      "class_name": "wall",
+      "instance_ids": [
+        "W1",
+        "W2",
+        "W3",
+        "W4",
+        "W5",
+        "W6"
+      ],
+      "instance_count": 6,
+      "disposition": "approved",
+      "visible_only": true,
+      "infer_hidden_continuation": false
+    }
+  ],
+  "wall_review_reference": {
+    "user_attachment_sha256": "4f49b6c0bfc775c6e1a86ba8217d734b3f4bb8ce54c11f3982447caf989efb03",
+    "attachment_pixel_size": [
+      1394,
+      1536
+    ],
+    "purpose": "human semantic instance separation reference for W1-W6 only",
+    "is_source_page_coordinate_authority": false
+  },
+  "qa_boundary": {
+    "human_semantic_instance_approval_complete": true,
+    "wall_instance_separation_complete": true,
+    "tight_source_page_boxes_for_W1_W6_complete": false,
+    "reason": "the attached markup establishes six wall identities but is not registered to the original source-page coordinate system; tight source-page boxes must be extracted from the original source page without using markup strokes as wall geometry",
+    "unreviewed_or_unregistered_regions_are_background": false,
+    "training_enabled": false
+  },
+  "boundary": {
+    "emits_canonical_engineering_geometry": false,
+    "infers_scale": false,
+    "infers_topology": false
+  }
+}
