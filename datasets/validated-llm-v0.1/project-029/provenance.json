@@ -1,0 +1,25 @@
+{
+  "project_id": "project-029",
+  "review_batch": "013-032",
+  "building": "Multnomah Station Apartments",
+  "status": "sheets_identified",
+  "plans": [
+    "S101 FOUNDATION PLAN",
+    "S102A 2ND FLOOR TENDON PLAN",
+    "S102B 2ND FLOOR REBAR PLAN",
+    "S102C 2ND FLOOR SHEAR WALLS",
+    "S103 3RD FLOOR FRAMING PLAN",
+    "S104 4TH FLOOR FRAMING PLAN",
+    "S105 ROOF FRAMING PLAN"
+  ],
+  "elevations_sections": [
+    "A301 BUILDING ELEVATIONS",
+    "A302 BUILDING ELEVATIONS",
+    "A401 BUILDING SECTIONS",
+    "S304 EXTERIOR BUILDING ELEVATIONS"
+  ],
+  "legacy_selection_rejected": true,
+  "materialized": false,
+  "visual_qa_passed": false,
+  "note": "Strong multi-story structural candidate."
+}
