@@ -39,8 +39,8 @@ for idx,u in enumerate(seen,1):
     pdf=pdir/"source.pdf"
     try:
         req=urllib.request.Request(u,headers={"User-Agent":"Mozilla/5.0"})
-        with urllib.request.urlopen(req,timeout=35) as r:
-            data=r.read(80_000_000)
+        with urllib.request.urlopen(req,timeout=10) as r:
+            data=r.read(45_000_000)
         if not data.startswith(b"%PDF"): raise ValueError("not direct PDF")
         pdf.write_bytes(data)
     except Exception as e:
