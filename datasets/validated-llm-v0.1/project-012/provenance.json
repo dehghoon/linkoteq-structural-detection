@@ -1,0 +1,40 @@
+{
+  "project_id": "project-012",
+  "source_url": "https://www.sanibelfire.com/files/d6cc0d1ed/SFRD+%23172_BID+SET+-+Architectural+Set_2024.01.05.pdf",
+  "building": "Sanibel Fire and Rescue Station 172",
+  "status": "sheets_identified",
+  "plans": [
+    {
+      "sheet": "S100",
+      "title": "FOUNDATION AND APPARATUS FLOOR PLAN"
+    },
+    {
+      "sheet": "S101",
+      "title": "FIRST FLOOR PLAN"
+    },
+    {
+      "sheet": "S121",
+      "title": "SECOND FLOOR AND LOW ROOF FRAMING PLAN"
+    },
+    {
+      "sheet": "S131",
+      "title": "MAIN ROOF AND TOWER ROOF FRAMING PLANS"
+    }
+  ],
+  "elevations_sections": [
+    {
+      "sheet": "A201",
+      "title": "EXTERIOR ELEVATIONS"
+    },
+    {
+      "sheet": "A202",
+      "title": "EXTERIOR ELEVATIONS"
+    },
+    {
+      "sheet": "A301-A305",
+      "title": "BUILDING SECTIONS"
+    }
+  ],
+  "legacy_selection_rejected": true,
+  "materialized": false
+}
