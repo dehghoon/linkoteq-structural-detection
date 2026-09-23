@@ -1,0 +1,18 @@
+{
+  "project_id": "project-032",
+  "review_batch": "013-032",
+  "building": "197 Grove Street",
+  "status": "sheets_identified",
+  "plans": [
+    "S1 PROPOSED FOUNDATION PLAN"
+  ],
+  "elevations_sections": [
+    "A2 PROPOSED FRONT ELEVATION",
+    "A2.1 PROPOSED EXTERIOR ELEVATIONS",
+    "A7 PROPOSED SECTION A-A AND FRONT GABLE SECTION B-B"
+  ],
+  "legacy_selection_rejected": true,
+  "materialized": false,
+  "visual_qa_passed": false,
+  "note": "Index shows S2/S3/S4 without titles; do not infer their roles until source pages are checked."
+}
