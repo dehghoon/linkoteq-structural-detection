@@ -1,0 +1,12 @@
+{
+  "project_id": "project-027",
+  "review_batch": "013-032",
+  "building": "Austin document 370579",
+  "status": "hold_source_or_sheet_verification",
+  "plans": [],
+  "elevations_sections": [],
+  "legacy_selection_rejected": true,
+  "materialized": false,
+  "visual_qa_passed": false,
+  "note": "Exact sheet identities not sufficiently resolved in this batch. Hold."
+}
