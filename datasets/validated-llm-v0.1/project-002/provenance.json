@@ -1,0 +1,28 @@
+{
+  "project_id": "project-002",
+  "source_url": "https://resources.finalsite.net/images/v1702662401/tulsaschoolsorg/gnzaaar02cqliciw6qti/Addendum1_11.pdf",
+  "building": "Tulsa Public Schools Maintenance Facility",
+  "status": "sheets_identified",
+  "plans": [
+    {
+      "sheet": "S101",
+      "title": "FOUNDATION PLAN"
+    },
+    {
+      "sheet": "S102",
+      "title": "ROOF FRAMING PLAN"
+    }
+  ],
+  "elevations_sections": [
+    {
+      "sheet": "A201",
+      "title": "BUILDING ELEVATIONS"
+    },
+    {
+      "sheet": "A211",
+      "title": "BUILDING SECTIONS"
+    }
+  ],
+  "legacy_selection_rejected": true,
+  "materialized": false
+}
