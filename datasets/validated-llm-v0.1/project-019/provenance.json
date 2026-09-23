@@ -1,0 +1,12 @@
+{
+  "project_id": "project-019",
+  "review_batch": "013-032",
+  "building": "Mountain Line Campus Bus Storage Phase 1",
+  "status": "hold_source_or_sheet_verification",
+  "plans": [],
+  "elevations_sections": [],
+  "legacy_selection_rejected": true,
+  "materialized": false,
+  "visual_qa_passed": false,
+  "note": "Source is schematic-design/RFP material; exact structural sheet identities not established in this batch. Hold."
+}
