@@ -1,0 +1,3 @@
+source_url=https://cityofdawson.ca/Home/DownloadMeeting/5845cbcc-1500-4045-859b-000d97200f28?isEnglish=True
+plan_page=40
+elevation_page=40

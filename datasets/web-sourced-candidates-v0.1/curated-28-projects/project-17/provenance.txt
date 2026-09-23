@@ -1,0 +1,3 @@
+source_url=https://www.hgtc.edu/documents/procurement/h59-n269-cb-drawings.pdf
+plan_page=1
+elevation_page=1

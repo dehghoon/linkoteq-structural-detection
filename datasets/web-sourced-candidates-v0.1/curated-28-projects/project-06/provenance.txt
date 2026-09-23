@@ -1,0 +1,3 @@
+source_url=https://www.surrey.ca/sites/default/files/media/tender_docs/221028_CBRCE_Phase_2_-_Issued_for_Review_-_Structural.pdf
+plan_page=1
+elevation_page=4
