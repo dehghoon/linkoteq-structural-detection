@@ -1,0 +1,26 @@
+{
+  "project_id": "project-026",
+  "review_batch": "013-032",
+  "building": "Mirran Travis Heights",
+  "status": "sheets_identified",
+  "plans": [
+    "S1 FOUNDATION REINFORCEMENT - ENTRY & GUEST",
+    "S1.1 FOUNDATION REINFORCEMENT - LIVING & KITCHEN",
+    "S1.2 FOUNDATION REINFORCEMENT - BEDROOM SUITE",
+    "S4 LEVEL 1 CEILING FRAMING PLAN - ENTRY & GUEST",
+    "S4.1 LEVEL 1 CEILING FRAMING PLAN - LIVING & KITCHEN",
+    "S4.2 LEVEL 1 CEILING FRAMING PLAN - BEDROOM SUITE",
+    "S8 ROOF FRAMING PLAN - ENTRY & GUEST",
+    "S8.1 ROOF FRAMING PLAN - LIVING & KITCHEN",
+    "S8.2 ROOF FRAMING PLAN - BEDROOM SUITE"
+  ],
+  "elevations_sections": [
+    "A203 EXTERIOR ELEVATIONS - MAIN HOUSE",
+    "A204 EXTERIOR ELEVATIONS - GUEST HOUSE",
+    "A301-A306 BUILDING SECTIONS"
+  ],
+  "legacy_selection_rejected": true,
+  "materialized": false,
+  "visual_qa_passed": false,
+  "note": "Large residential structural set; legacy page 1/1 invalid."
+}
