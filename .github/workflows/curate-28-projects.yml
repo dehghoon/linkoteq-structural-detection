@@ -1,4 +1,5 @@
 name: Curate 28 paired structural projects
+# rerun trigger: partial-results fix
 on:
   workflow_dispatch:
   push:
