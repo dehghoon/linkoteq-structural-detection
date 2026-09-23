@@ -1,0 +1,17 @@
+{
+  "project_id": "project-031",
+  "review_batch": "013-032",
+  "building": "511 Brick Kiln Rd",
+  "status": "sheets_identified",
+  "plans": [
+    "S1 FOUNDATION PLAN"
+  ],
+  "elevations_sections": [
+    "A3/A3.1 EXTERIOR ELEVATIONS",
+    "A7 BUILDING SECTIONS A-A & B-B"
+  ],
+  "legacy_selection_rejected": true,
+  "materialized": false,
+  "visual_qa_passed": false,
+  "note": "Architectural package refers to separate engineering booklet; only S1 foundation plan explicitly present in fetched index."
+}
