@@ -1,0 +1,19 @@
+{
+  "project_id": "project-021",
+  "review_batch": "013-032",
+  "building": "Porterville Multifamily Pre-Approved Housing Plan 2",
+  "status": "sheets_identified",
+  "plans": [
+    "S-201 FOUNDATION PLAN",
+    "S-202 FLOOR FRAMING PLAN",
+    "S-203 ROOF FRAMING PLAN"
+  ],
+  "elevations_sections": [
+    "A-201 EXTERIOR ELEVATIONS",
+    "A-301 BUILDING SECTIONS"
+  ],
+  "legacy_selection_rejected": true,
+  "materialized": false,
+  "visual_qa_passed": false,
+  "note": "Clear 46-sheet indexed set."
+}
