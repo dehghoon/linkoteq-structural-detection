@@ -32,3 +32,17 @@ These findings supersede the old auto-selected page pairs.
 
 ### Systemic QA observation
 The audit confirms two separate failure classes: (1) wrong sheet selection inside otherwise useful construction sets, and (2) completely wrong source documents admitted as projects. Both must be checked before any PDF is copied into the validated dataset.
+
+
+## Legacy web-sourced audit — projects 006–012
+
+- project-006 — DDC Teslin structural drawings: **legacy page 1/page 1 rejected pending direct visual/index verification.** Source fetch timed out in this audit, so no unsupported replacement sheet is asserted.
+- project-007 — Kirkland permit set: **legacy pages 7/20 not admitted yet.** Source fetch timed out in this audit. Keep candidate only until the actual sheet identities are verified from the drawing set.
+- project-008 — HGTC Building 500 Exterior Renovation: source index confirms **S1.01 Foundation Plan** and **A2.02 Proposed Exterior Elevations**; A3.01/A3.02 are Building Sections. The legacy page 1/page 1 pair is rejected. Correct target identities are S1.01 + A2.02 (with A3.01/A3.02 optional vertical context).
+- project-009 — Bronx Park Community Centre / Good Neighbours Senior Centre: the URL is a City of Winnipeg bid-opportunity/specification package. The fetched material does not establish legacy PDF pages 31/30 as the required structural plan/elevation pair. **Reject legacy selection; candidate requires drawing-specific verification before admission.**
+- project-010 — City of Bondurant Public Works Facility: source index confirms **S100 Foundation Plan**, **S200 Framing Plan**, **A300 Exterior Elevations**, **A400 Building Sections**. The legacy page 1/page 1 selection is rejected. Correct targets: S100 + S200 for structural plans and A300/A400 for vertical context.
+- project-011 — Tuscaloosa County DHR: source index confirms **S2.01 Floor and Foundation Plan**, **S2.02 Roof Framing Plan**, **A4.01 Exterior Elevations**, and **S3.01/S3.02 Sections**. Legacy page 2/page 2 is rejected. Correct targets are S2.01 + S2.02 and A4.01 (S3.01/S3.02 optional vertical structural context).
+- project-012 — Sanibel Fire & Rescue Station 172: source index confirms structural plans **S100 Foundation and Apparatus Floor Plan**, **S101 First Floor Plan**, **S121 Second Floor and Low Roof Framing Plan**, **S131 Main Roof and Tower Roof Framing Plans**; architectural vertical context is **A201/A202 Exterior Elevations** and A301–A305 Building Sections. Legacy page 1/page 1 is rejected.
+
+### Audit status after project-012
+Projects 001–012 have now been re-reviewed at source/sheet-index level. No legacy auto-selected page pair should be considered validated merely because clean/original PDFs exist in `curated-100-projects`. The validated set must be rebuilt from explicit sheet identities after source verification.
