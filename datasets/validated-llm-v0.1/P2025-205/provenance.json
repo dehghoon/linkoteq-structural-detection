@@ -1,0 +1,32 @@
+{
+  "project_id": "P2025-205",
+  "source_file": "P2025-205_2025-12-05 - 287 Main St Selkirk CRU - STRUCT.pdf",
+  "status": "materialized_visual_qa_pending_final",
+  "selected": [
+    {
+      "source_page": 3,
+      "role": "plan",
+      "name": "S2.1_foundation_plan",
+      "output": "plans/S2.1_foundation_plan_no_titleblock.pdf"
+    },
+    {
+      "source_page": 4,
+      "role": "plan",
+      "name": "S2.2_roof_framing_plan",
+      "output": "plans/S2.2_roof_framing_plan_no_titleblock.pdf"
+    },
+    {
+      "source_page": 5,
+      "role": "vertical",
+      "name": "S5.1_sections",
+      "output": "elevations-sections/S5.1_sections_no_titleblock.pdf"
+    },
+    {
+      "source_page": 6,
+      "role": "vertical",
+      "name": "S5.2_sections",
+      "output": "elevations-sections/S5.2_sections_no_titleblock.pdf"
+    }
+  ],
+  "title_block_method": "page-specific right-side crop after contact-sheet visual review; original selected pages preserved"
+}

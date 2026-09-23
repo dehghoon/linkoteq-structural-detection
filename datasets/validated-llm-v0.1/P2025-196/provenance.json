@@ -1,0 +1,32 @@
+{
+  "project_id": "P2025-196",
+  "source_file": "P2025-196 R1 Croquis.pdf",
+  "status": "materialized_visual_qa_pending_final",
+  "selected": [
+    {
+      "source_page": 2,
+      "role": "plan",
+      "name": "sheet2_plan",
+      "output": "plans/sheet2_plan_no_titleblock.pdf"
+    },
+    {
+      "source_page": 3,
+      "role": "plan",
+      "name": "sheet3_roof_plan",
+      "output": "plans/sheet3_roof_plan_no_titleblock.pdf"
+    },
+    {
+      "source_page": 3,
+      "role": "vertical",
+      "name": "sheet3_elevation",
+      "output": "elevations-sections/sheet3_elevation_no_titleblock.pdf"
+    },
+    {
+      "source_page": 4,
+      "role": "vertical",
+      "name": "sheet4_elevations",
+      "output": "elevations-sections/sheet4_elevations_no_titleblock.pdf"
+    }
+  ],
+  "title_block_method": "page-specific right-side crop after contact-sheet visual review; original selected pages preserved"
+}

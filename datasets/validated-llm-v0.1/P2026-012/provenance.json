@@ -1,0 +1,20 @@
+{
+  "project_id": "P2026-012",
+  "source_file": "P2026-012 Croquis.pdf",
+  "status": "materialized_visual_qa_pending_final",
+  "selected": [
+    {
+      "source_page": 2,
+      "role": "plan",
+      "name": "EsMx401_roof_plan",
+      "output": "plans/EsMx401_roof_plan_no_titleblock.pdf"
+    },
+    {
+      "source_page": 3,
+      "role": "vertical",
+      "name": "EsMx501_elevations",
+      "output": "elevations-sections/EsMx501_elevations_no_titleblock.pdf"
+    }
+  ],
+  "title_block_method": "page-specific right-side crop after contact-sheet visual review; original selected pages preserved"
+}

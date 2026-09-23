@@ -1,0 +1,32 @@
+{
+  "project_id": "P2025-151",
+  "source_file": "P2025-151 R2 Croquis.pdf",
+  "status": "materialized_visual_qa_pending_final",
+  "selected": [
+    {
+      "source_page": 2,
+      "role": "plan",
+      "name": "Mx101_anchor_plan",
+      "output": "plans/Mx101_anchor_plan_no_titleblock.pdf"
+    },
+    {
+      "source_page": 3,
+      "role": "plan",
+      "name": "Mx401_roof_plan",
+      "output": "plans/Mx401_roof_plan_no_titleblock.pdf"
+    },
+    {
+      "source_page": 4,
+      "role": "vertical",
+      "name": "Mx501_elevations",
+      "output": "elevations-sections/Mx501_elevations_no_titleblock.pdf"
+    },
+    {
+      "source_page": 5,
+      "role": "vertical",
+      "name": "Mx502_elevation_wall_section",
+      "output": "elevations-sections/Mx502_elevation_wall_section_no_titleblock.pdf"
+    }
+  ],
+  "title_block_method": "page-specific right-side crop after contact-sheet visual review; original selected pages preserved"
+}

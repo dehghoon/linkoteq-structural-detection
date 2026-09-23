@@ -1,0 +1,38 @@
+{
+  "project_id": "P2025-177",
+  "source_file": "P2025-177 R3 Croquis.pdf",
+  "status": "materialized_visual_qa_pending_final",
+  "selected": [
+    {
+      "source_page": 2,
+      "role": "plan",
+      "name": "EsMx201_mezzanine_plans",
+      "output": "plans/EsMx201_mezzanine_plans_no_titleblock.pdf"
+    },
+    {
+      "source_page": 3,
+      "role": "plan",
+      "name": "EsMx401_roof_mezzanine_plan",
+      "output": "plans/EsMx401_roof_mezzanine_plan_no_titleblock.pdf"
+    },
+    {
+      "source_page": 4,
+      "role": "vertical",
+      "name": "EsMx501_elevations_wall_sections",
+      "output": "elevations-sections/EsMx501_elevations_wall_sections_no_titleblock.pdf"
+    },
+    {
+      "source_page": 5,
+      "role": "vertical",
+      "name": "EsMx502_elevations",
+      "output": "elevations-sections/EsMx502_elevations_no_titleblock.pdf"
+    },
+    {
+      "source_page": 6,
+      "role": "vertical",
+      "name": "EsMx503_sections",
+      "output": "elevations-sections/EsMx503_sections_no_titleblock.pdf"
+    }
+  ],
+  "title_block_method": "page-specific right-side crop after contact-sheet visual review; original selected pages preserved"
+}

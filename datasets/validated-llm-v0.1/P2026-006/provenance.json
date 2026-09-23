@@ -1,0 +1,26 @@
+{
+  "project_id": "P2026-006",
+  "source_file": "P2026-006 Croquis.pdf",
+  "status": "materialized_visual_qa_pending_final",
+  "selected": [
+    {
+      "source_page": 2,
+      "role": "plan",
+      "name": "EsMx101_anchor_plan",
+      "output": "plans/EsMx101_anchor_plan_no_titleblock.pdf"
+    },
+    {
+      "source_page": 3,
+      "role": "plan",
+      "name": "EsMx401_roof_plan",
+      "output": "plans/EsMx401_roof_plan_no_titleblock.pdf"
+    },
+    {
+      "source_page": 4,
+      "role": "vertical",
+      "name": "EsMx501_elevation_wall_section",
+      "output": "elevations-sections/EsMx501_elevation_wall_section_no_titleblock.pdf"
+    }
+  ],
+  "title_block_method": "page-specific right-side crop after contact-sheet visual review; original selected pages preserved"
+}
