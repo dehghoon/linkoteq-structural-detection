@@ -1,0 +1,3 @@
+source_url=https://purchasing.uky.edu/sites/default/files/2021-09/cck-2568-22add4.pdf
+plan_page=15
+elevation_page=17

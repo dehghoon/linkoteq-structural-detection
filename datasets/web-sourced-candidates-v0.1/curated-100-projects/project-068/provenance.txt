@@ -1,0 +1,3 @@
+source_url=https://assets.habitat.ca/southeast-bc/images/C21001-022-Habitat-for-Humanity-Fourplex-New-Concept-For-Building-Permit-Feb-22ND-2022-Copy.pdf
+plan_page=1
+elevation_page=4

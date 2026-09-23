@@ -1,0 +1,3 @@
+source_url=https://solicitations.thorntonco.gov/files/filerecords/view/vendorattachment/21942/tfm---complete-drawing-set_addendum--4---05-01-25.pdf
+plan_page=1
+elevation_page=1

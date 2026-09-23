@@ -1,0 +1,3 @@
+source_url=https://ci.excelsior.mn.us/DocumentCenter/View/2408/FULL-ARCHITECTURAL-PLANS
+plan_page=1
+elevation_page=1

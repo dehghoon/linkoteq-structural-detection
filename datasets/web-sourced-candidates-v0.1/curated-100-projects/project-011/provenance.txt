@@ -1,0 +1,3 @@
+source_url=https://dominguezdesign-build.com/wp-content/uploads/2024/10/Drawings-Vol.-1-Tuscaloosa-DHR-Building-1.pdf
+plan_page=2
+elevation_page=2

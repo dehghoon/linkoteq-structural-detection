@@ -1,0 +1,3 @@
+source_url=https://www.biglakemn.org/AgendaCenter/ViewFile/Agenda/_02182026-1219
+plan_page=25
+elevation_page=13

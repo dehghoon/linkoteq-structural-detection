@@ -1,0 +1,3 @@
+source_url=https://mjdixon.ca/wp-content/uploads/2023/07/PRS-32-Structural-Drawings-IFC.pdf
+plan_page=1
+elevation_page=8

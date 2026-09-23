@@ -1,0 +1,3 @@
+source_url=https://media-003-ca.cdn.govstack.com/midland-ca/media/shufh5zn/elevations-b1.pdf
+plan_page=1
+elevation_page=1

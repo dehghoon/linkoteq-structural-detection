@@ -1,0 +1,3 @@
+source_url=https://www.cityoftalent.org/sites/g/files/vyhlif13561/files/media/development/file/13431/hodson_1_-_units_a_b_construction_plans.pdf
+plan_page=1
+elevation_page=1

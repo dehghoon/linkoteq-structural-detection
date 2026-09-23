@@ -1,0 +1,3 @@
+source_url=https://www.ci.sandy.or.us/sites/default/files/architectural_plans_24x36_6.26.237032.pdf
+plan_page=1
+elevation_page=1

@@ -1,0 +1,3 @@
+source_url=https://ddc-teslin.com/wp-content/uploads/2024/12/Structural-Drawings-250131.pdf
+plan_page=1
+elevation_page=1

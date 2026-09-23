@@ -1,0 +1,3 @@
+source_url=https://img1.wsimg.com/blobby/go/7cc1da32-08e8-4e18-b2e4-7bf39fe46894/downloads/251%20W%20Hazel%20-%202022.7.26-%20Bid%20Drawings.pdf?ver=1759496744705
+plan_page=1
+elevation_page=1

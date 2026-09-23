@@ -1,0 +1,3 @@
+source_url=https://ashlandoregon.gov/DocumentCenter/View/2939/ARU-Plans_The-Dogwood
+plan_page=1
+elevation_page=1

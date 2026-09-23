@@ -1,0 +1,3 @@
+source_url=https://stgenpln.blob.core.windows.net/document/PLN14_10687_Plans.pdf
+plan_page=1
+elevation_page=1

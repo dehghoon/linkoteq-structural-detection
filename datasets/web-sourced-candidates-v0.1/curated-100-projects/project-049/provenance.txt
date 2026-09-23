@@ -1,0 +1,3 @@
+source_url=https://resources.finalsite.net/images/v1704816174/lodiusdnet/ax6ad2rop773tmyxjz3r/02-121945_DWG_A.pdf
+plan_page=1
+elevation_page=1

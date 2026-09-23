@@ -1,0 +1,3 @@
+source_url=https://jgrarchitects.com/wp-content/uploads/2025/08/Carter-Lake-STRUCT-Permit-Set-8-1-2025.pdf
+plan_page=1
+elevation_page=15

@@ -1,0 +1,3 @@
+source_url=https://www.gramoll.com/wp-content/uploads/2018/10/UofU-CVRTI_BID-DRAWINGS_22-01-31.pdf
+plan_page=2
+elevation_page=2

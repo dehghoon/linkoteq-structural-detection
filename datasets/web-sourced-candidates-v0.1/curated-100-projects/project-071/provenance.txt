@@ -1,0 +1,3 @@
+source_url=https://lumber-one.com/wp-content/uploads/2024/09/Structural-Plan-Set-8.23.24.pdf
+plan_page=3
+elevation_page=3

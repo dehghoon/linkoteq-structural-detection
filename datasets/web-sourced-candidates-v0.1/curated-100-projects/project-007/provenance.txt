@@ -1,0 +1,3 @@
+source_url=https://permits.kirklandwa.gov/WebDocs/2018060177/c6288449-587a-445a-97b7-7249e80c06ba.pdf
+plan_page=7
+elevation_page=20
