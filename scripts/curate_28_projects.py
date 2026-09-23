@@ -31,7 +31,7 @@ def mask_title(im):
 
 accepted=0
 manifest=[]
-EXISTING_MANIFEST=ROOT/"curated-28-projects-manifest.tsv"\nexisting=[]\nif EXISTING_MANIFEST.exists():\n    existing=[x for x in EXISTING_MANIFEST.read_text(errors="ignore").splitlines() if x.strip()]\nexisting_urls={x.split("\\t")[1] for x in existing if "\\t" in x}\naccepted=len(existing)\nmanifest=list(existing)\n\nfor idx,u in enumerate(seen,1):\n    if u in existing_urls: continue
+EXISTING_MANIFEST=ROOT/"curated-28-projects-manifest.tsv"\nexisting=[]\nif EXISTING_MANIFEST.exists():\n    existing=[x for x in EXISTING_MANIFEST.read_text(errors="ignore").splitlines() if x.strip()]\nexisting_urls={x.split("\\t")[1] for x in existing if "\\t" in x}\naccepted=len(existing)\nmanifest=list(existing)\n\nfor idx,u in enumerate(seen,1):\n    if u in existing_urls:\n        continue
     if accepted>=28: break
     pid=f"project-{accepted+1:02d}"
     pdir=OUT/pid
