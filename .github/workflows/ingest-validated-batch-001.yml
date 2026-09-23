@@ -1,0 +1,44 @@
+name: Ingest validated batch 001
+on:
+  push:
+    paths:
+      - '.github/workflows/ingest-validated-batch-001.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Extract validated batch
+        run: |
+          set -euo pipefail
+          test -f Linkoteq_validated_batch_10_projects_001.zip
+          mkdir -p /tmp/batch001
+          unzip -q Linkoteq_validated_batch_10_projects_001.zip -d /tmp/batch001
+          echo "Archive contents:"
+          find /tmp/batch001 -maxdepth 3 -type f | sort
+          mkdir -p datasets/validated-llm-v0.1
+          shopt -s dotglob nullglob
+          top=(/tmp/batch001/*)
+          if [ "${#top[@]}" -eq 1 ] && [ -d "${top[0]}" ]; then
+            cp -a "${top[0]}"/. datasets/validated-llm-v0.1/
+          else
+            cp -a /tmp/batch001/. datasets/validated-llm-v0.1/
+          fi
+          rm -f Linkoteq_validated_batch_10_projects_001.zip
+      - name: Commit extracted PDFs
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A datasets/validated-llm-v0.1 Linkoteq_validated_batch_10_projects_001.zip
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Ingest validated LLM batch 001 PDFs"
+          git push
