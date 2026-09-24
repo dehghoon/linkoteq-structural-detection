@@ -1,0 +1,55 @@
+{
+  "project_id": "Landings-Aberdare-Building-1",
+  "source_url": "https://media-003-ca.cdn.govstack.com/midland-ca/media/shufh5zn/elevations-b1.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S1.1",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S1.1_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S1.1_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S1.2",
+      "title": "ENTRANCE LEVEL FRAMING PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S1.2_ENTRANCE_LEVEL_FRAMING_PLAN.pdf",
+      "image": "plans/images/S1.2_ENTRANCE_LEVEL_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "S2.1",
+      "title": "1ST FLOOR FRAMING PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S2.1_1ST_FLOOR_FRAMING_PLAN.pdf",
+      "image": "plans/images/S2.1_1ST_FLOOR_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "S6.1",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S6.1_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S6.1_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A4.0",
+      "title": "BUILDING ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 1,
+      "pdf": "elevations-sections/A4.0_BUILDING_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A4.0_BUILDING_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A4.1",
+      "title": "BUILDING ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 1,
+      "pdf": "elevations-sections/A4.1_BUILDING_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A4.1_BUILDING_ELEVATIONS.png"
+    }
+  ]
+}

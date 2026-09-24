@@ -1,0 +1,31 @@
+{
+  "project_id": "ECISD-Robert-Vela-Multiuse",
+  "source_url": "https://www.ecisd.us/ourpages/auto/2025/5/16/37264332/Robert%20Vela%20High%20School%20Drawings.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S2.0",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 8,
+      "pdf": "plans/S2.0_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S2.0_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S3.0",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 9,
+      "pdf": "plans/S3.0_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S3.0_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A3.0",
+      "title": "EXTERIOR ELEVATIONS BASE BID",
+      "role": "elevations-sections",
+      "source_page": 21,
+      "pdf": "elevations-sections/A3.0_EXTERIOR_ELEVATIONS_BASE_BID.pdf",
+      "image": "elevations-sections/images/A3.0_EXTERIOR_ELEVATIONS_BASE_BID.png"
+    }
+  ]
+}

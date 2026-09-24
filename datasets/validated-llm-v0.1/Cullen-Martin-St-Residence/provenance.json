@@ -1,0 +1,7 @@
+{
+  "project_id": "Cullen-Martin-St-Residence",
+  "source_url": "https://www.hamiltonma.gov/wp-content/uploads/2025/09/20260305-Cullen-CD-COMPLETE.pdf",
+  "status": "source_download_failed_image_capture_required",
+  "selected_sheets": [],
+  "error": "Command '['pdfinfo', '/tmp/tmp3vahcfit/source.pdf']' returned non-zero exit status 1."
+}

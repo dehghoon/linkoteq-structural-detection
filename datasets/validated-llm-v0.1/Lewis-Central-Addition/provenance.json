@@ -1,0 +1,31 @@
+{
+  "project_id": "Lewis-Central-Addition",
+  "source_url": "https://lewiscentral.org/files/bid_notices/project_drawings_122553.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S2-1",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 22,
+      "pdf": "plans/S2-1_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S2-1_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S2-2",
+      "title": "ADDITION ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 23,
+      "pdf": "plans/S2-2_ADDITION_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S2-2_ADDITION_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A2-1",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 14,
+      "pdf": "elevations-sections/A2-1_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A2-1_EXTERIOR_ELEVATIONS.png"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "project_id": "Bondurant-Public-Works",
+  "source_url": "https://iisc.uiowa.edu/sites/iisc.uiowa.edu/files/2024-05/Final%20Designs%20-%20Bondurant%20Public%20Works%20Building.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S100",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 3,
+      "pdf": "plans/S100_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S100_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S200",
+      "title": "FRAMING PLAN",
+      "role": "plans",
+      "source_page": 4,
+      "pdf": "plans/S200_FRAMING_PLAN.pdf",
+      "image": "plans/images/S200_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A300",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 7,
+      "pdf": "elevations-sections/A300_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A300_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A400",
+      "title": "BUILDING SECTIONS",
+      "role": "elevations-sections",
+      "source_page": 10,
+      "pdf": "elevations-sections/A400_BUILDING_SECTIONS.pdf",
+      "image": "elevations-sections/images/A400_BUILDING_SECTIONS.png"
+    }
+  ]
+}

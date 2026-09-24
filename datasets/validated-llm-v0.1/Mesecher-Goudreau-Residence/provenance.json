@@ -1,0 +1,47 @@
+{
+  "project_id": "Mesecher-Goudreau-Residence",
+  "source_url": "https://mylesmckenzie.com/project_files/20220809-Mesecher-Goudreau-Residence-REV1.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S1",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 23,
+      "pdf": "plans/S1_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S1_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S2",
+      "title": "FRAMING PLAN 2ND FLOOR LOWER ROOF",
+      "role": "plans",
+      "source_page": 16,
+      "pdf": "plans/S2_FRAMING_PLAN_2ND_FLOOR_LOWER_ROOF.pdf",
+      "image": "plans/images/S2_FRAMING_PLAN_2ND_FLOOR_LOWER_ROOF.png"
+    },
+    {
+      "sheet": "S4",
+      "title": "FRAMING PLAN UPPER ROOF",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S4_FRAMING_PLAN_UPPER_ROOF.pdf",
+      "image": "plans/images/S4_FRAMING_PLAN_UPPER_ROOF.png"
+    },
+    {
+      "sheet": "A6",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 9,
+      "pdf": "elevations-sections/A6_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A6_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A7",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 9,
+      "pdf": "elevations-sections/A7_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A7_EXTERIOR_ELEVATIONS.png"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "project_id": "Huber-Heights-Governance-Senior-Center",
+  "source_url": "https://arconbuilders.com/wp-content/uploads/2024/05/Plans-Civil-Arch-Structrual.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S101",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 6,
+      "pdf": "plans/S101_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S101_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S301",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 26,
+      "pdf": "plans/S301_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S301_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A301",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 36,
+      "pdf": "elevations-sections/A301_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A301_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A302",
+      "title": "BUILDING SECTIONS",
+      "role": "elevations-sections",
+      "source_page": 40,
+      "pdf": "elevations-sections/A302_BUILDING_SECTIONS.pdf",
+      "image": "elevations-sections/images/A302_BUILDING_SECTIONS.png"
+    }
+  ]
+}
