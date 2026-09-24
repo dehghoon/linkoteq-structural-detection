@@ -1,0 +1,47 @@
+{
+  "project_id": "Hodson-Residence-2",
+  "source_url": "https://www.cityoftalent.org/sites/g/files/vyhlif13561/files/media/development/file/13436/hodson_2_-_units_c_d_construction_plans.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S1",
+      "title": "CORE STRUCTURAL FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S1_CORE_STRUCTURAL_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S1_CORE_STRUCTURAL_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S1.1",
+      "title": "CORE STRUCTURAL 2ND FLOOR LOW ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S1.1_CORE_STRUCTURAL_2ND_FLOOR_LOW_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S1.1_CORE_STRUCTURAL_2ND_FLOOR_LOW_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "S1.2",
+      "title": "CORE STRUCTURAL HIGH ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S1.2_CORE_STRUCTURAL_HIGH_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S1.2_CORE_STRUCTURAL_HIGH_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A1",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 4,
+      "pdf": "elevations-sections/A1_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A1_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A6",
+      "title": "BUILDING SECTION A",
+      "role": "elevations-sections",
+      "source_page": 13,
+      "pdf": "elevations-sections/A6_BUILDING_SECTION_A.pdf",
+      "image": "elevations-sections/images/A6_BUILDING_SECTION_A.png"
+    }
+  ]
+}

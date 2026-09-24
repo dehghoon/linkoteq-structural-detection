@@ -1,0 +1,47 @@
+{
+  "project_id": "Eng-Family-Homestead-Seattle",
+  "source_url": "https://www.seattle.gov/documents/Departments/Neighborhoods/HistoricPreservation/HistoricDistricts/InternationalDistrict/2024%20Agendas%20and%20Minutes/ISRD031224_EngPlanSet.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S2.00",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 19,
+      "pdf": "plans/S2.00_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S2.00_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S2.01",
+      "title": "LOWER ROOF FLOOR FRAMING",
+      "role": "plans",
+      "source_page": 20,
+      "pdf": "plans/S2.01_LOWER_ROOF_FLOOR_FRAMING.pdf",
+      "image": "plans/images/S2.01_LOWER_ROOF_FLOOR_FRAMING.png"
+    },
+    {
+      "sheet": "S2.02",
+      "title": "UPPER ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 21,
+      "pdf": "plans/S2.02_UPPER_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S2.02_UPPER_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A3.00",
+      "title": "EXTERIOR ELEVATIONS SOUTH AND EAST",
+      "role": "elevations-sections",
+      "source_page": 12,
+      "pdf": "elevations-sections/A3.00_EXTERIOR_ELEVATIONS_SOUTH_AND_EAST.pdf",
+      "image": "elevations-sections/images/A3.00_EXTERIOR_ELEVATIONS_SOUTH_AND_EAST.png"
+    },
+    {
+      "sheet": "A3.01",
+      "title": "EXTERIOR ELEVATIONS NORTH AND WEST",
+      "role": "elevations-sections",
+      "source_page": 13,
+      "pdf": "elevations-sections/A3.01_EXTERIOR_ELEVATIONS_NORTH_AND_WEST.pdf",
+      "image": "elevations-sections/images/A3.01_EXTERIOR_ELEVATIONS_NORTH_AND_WEST.png"
+    }
+  ]
+}

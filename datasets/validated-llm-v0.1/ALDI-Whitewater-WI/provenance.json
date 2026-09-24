@@ -1,0 +1,7 @@
+{
+  "project_id": "ALDI-Whitewater-WI",
+  "source_url": "https://whitewaterwise.com/wp-content/uploads/2024/02/DIS-062328290_ALDI-Whitewater-WI_Building-Set-Conditionally-Approved.pdf",
+  "status": "source_download_failed_image_capture_required",
+  "selected_sheets": [],
+  "error": "Command '['pdfinfo', '/tmp/tmpff4qpo55/source.pdf']' returned non-zero exit status 1."
+}

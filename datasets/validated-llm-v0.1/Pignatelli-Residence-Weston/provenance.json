@@ -1,0 +1,39 @@
+{
+  "project_id": "Pignatelli-Residence-Weston",
+  "source_url": "https://www.westonma.gov/DocumentCenter/View/35365/20230316---Pignatelli---Revised-Permit-Set",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "A3.1",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 10,
+      "pdf": "plans/A3.1_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/A3.1_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "A3.2",
+      "title": "FIRST FLOOR FRAMING PLAN",
+      "role": "plans",
+      "source_page": 11,
+      "pdf": "plans/A3.2_FIRST_FLOOR_FRAMING_PLAN.pdf",
+      "image": "plans/images/A3.2_FIRST_FLOOR_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A3.3",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 12,
+      "pdf": "plans/A3.3_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/A3.3_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A1.0",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 1,
+      "pdf": "elevations-sections/A1.0_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A1.0_EXTERIOR_ELEVATIONS.png"
+    }
+  ]
+}

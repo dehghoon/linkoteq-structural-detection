@@ -1,0 +1,47 @@
+{
+  "project_id": "Juneau-USE23-13",
+  "source_url": "https://juneau.org/wp-content/uploads/2023/09/USE23-13_Plans.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S2",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 23,
+      "pdf": "plans/S2_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S2_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S3",
+      "title": "FIRST FLOOR FRAMING PLAN",
+      "role": "plans",
+      "source_page": 24,
+      "pdf": "plans/S3_FIRST_FLOOR_FRAMING_PLAN.pdf",
+      "image": "plans/images/S3_FIRST_FLOOR_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "S4",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 25,
+      "pdf": "plans/S4_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S4_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A3.0",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 10,
+      "pdf": "elevations-sections/A3.0_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A3.0_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A4.0",
+      "title": "BUILDING SECTIONS",
+      "role": "elevations-sections",
+      "source_page": 15,
+      "pdf": "elevations-sections/A4.0_BUILDING_SECTIONS.pdf",
+      "image": "elevations-sections/images/A4.0_BUILDING_SECTIONS.png"
+    }
+  ]
+}

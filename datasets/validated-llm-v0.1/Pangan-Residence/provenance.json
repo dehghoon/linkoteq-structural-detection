@@ -1,0 +1,31 @@
+{
+  "project_id": "Pangan-Residence",
+  "source_url": "https://stgenpln.blob.core.windows.net/document/PLN14_10687_Plans.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S2.1",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S2.1_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S2.1_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S2.2",
+      "title": "2ND FLOOR FRAMING PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S2.2_2ND_FLOOR_FRAMING_PLAN.pdf",
+      "image": "plans/images/S2.2_2ND_FLOOR_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "S2.3",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S2.3_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S2.3_ROOF_FRAMING_PLAN.png"
+    }
+  ]
+}

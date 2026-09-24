@@ -1,0 +1,31 @@
+{
+  "project_id": "Detroit-Minock-Addition",
+  "source_url": "https://detroitmi.gov/sites/detroitmi.localhost/files/hdc-submitted-materials/2023-01/15083%20MINOCK%20site%20plan.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "A-00",
+      "title": "FOUNDATION PLANS AND DETAILS",
+      "role": "plans",
+      "source_page": 2,
+      "pdf": "plans/A-00_FOUNDATION_PLANS_AND_DETAILS.pdf",
+      "image": "plans/images/A-00_FOUNDATION_PLANS_AND_DETAILS.png"
+    },
+    {
+      "sheet": "S-10",
+      "title": "FRAMING PLANS",
+      "role": "plans",
+      "source_page": 5,
+      "pdf": "plans/S-10_FRAMING_PLANS.pdf",
+      "image": "plans/images/S-10_FRAMING_PLANS.png"
+    },
+    {
+      "sheet": "A-30",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 4,
+      "pdf": "elevations-sections/A-30_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A-30_EXTERIOR_ELEVATIONS.png"
+    }
+  ]
+}

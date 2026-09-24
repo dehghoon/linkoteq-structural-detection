@@ -1,0 +1,39 @@
+{
+  "project_id": "Post-Farm-Seed-Storage",
+  "source_url": "https://www.montana.edu/pdc/projects/25-1282%20Post%20Farm%20Seed%20Storage%20Expansion%20Project%20Manual%20Final.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S1.0",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 3,
+      "pdf": "plans/S1.0_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S1.0_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S2.0",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 3,
+      "pdf": "plans/S2.0_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S2.0_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A2.01",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 3,
+      "pdf": "elevations-sections/A2.01_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A2.01_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A3.01",
+      "title": "SECTIONS AND DETAILS",
+      "role": "elevations-sections",
+      "source_page": 3,
+      "pdf": "elevations-sections/A3.01_SECTIONS_AND_DETAILS.pdf",
+      "image": "elevations-sections/images/A3.01_SECTIONS_AND_DETAILS.png"
+    }
+  ]
+}

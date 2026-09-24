@@ -1,0 +1,7 @@
+{
+  "project_id": "Chase-Lees-Summit-Pryor-Lowenstein",
+  "source_url": "https://devservices.cityofls.net/Permit/GetFile/713175",
+  "status": "source_download_failed_image_capture_required",
+  "selected_sheets": [],
+  "error": "HTTP Error 500: Internal Server Error"
+}
