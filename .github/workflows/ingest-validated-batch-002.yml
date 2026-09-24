@@ -1,0 +1,40 @@
+name: Ingest validated batch 002
+on:
+  push:
+    paths:
+      - '.github/workflows/ingest-validated-batch-002.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Extract validated batch 002
+        run: |
+          set -euo pipefail
+          ZIP=Linkoteq_validated_batch_8_projects_002.zip
+          test -f "$ZIP"
+          rm -rf /tmp/batch002
+          mkdir -p /tmp/batch002 datasets/validated-llm-v0.1
+          unzip -q "$ZIP" -d /tmp/batch002
+          shopt -s dotglob nullglob
+          top=(/tmp/batch002/*)
+          if [ "${#top[@]}" -eq 1 ] && [ -d "${top[0]}" ]; then
+            cp -a "${top[0]}"/. datasets/validated-llm-v0.1/
+          else
+            cp -a /tmp/batch002/. datasets/validated-llm-v0.1/
+          fi
+          rm -f "$ZIP"
+      - name: Commit extracted PDFs
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Ingest validated LLM batch 002 PDFs"
+          git push
