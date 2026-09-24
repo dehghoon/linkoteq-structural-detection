@@ -1,0 +1,59 @@
+name: Ingest all pending ZIPs and render images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ingest-all-pending-zips-and-render-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ingest-and-render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PDF renderer
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Extract all pending structural batches
+        shell: bash
+        run: |
+          set -euo pipefail
+          dest="datasets/validated-llm-v0.1"
+          mkdir -p "$dest"
+          shopt -s nullglob
+          zips=(
+            Linkoteq_validated_batch_003_part*.zip
+            Linkoteq_remaining_structural_projects_part*.zip
+            Linkoteq_additional_uploaded_files_part*.zip
+            Linkoteq_new_projects_090_098.zip
+            Linkoteq_projects_104_142_with_json_txt.zip
+          )
+          for z in "${zips[@]}"; do
+            [ -f "$z" ] || continue
+            echo "Extracting $z"
+            unzip -o "$z" -d "$dest"
+            rm "$z"
+          done
+      - name: Render selected plan/elevation PDFs to PNG
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="datasets/validated-llm-v0.1"
+          find "$root" -type f -name '*.pdf' \( -path '*/plans/*' -o -path '*/elevations-sections/*' \) -print0 |
+          while IFS= read -r -d '' pdf; do
+            parent="$(dirname "$pdf")"
+            mkdir -p "$parent/images"
+            stem="$(basename "$pdf" .pdf)"
+            rm -f "$parent/images/$stem"-*.png
+            pdftoppm -png -r 200 "$pdf" "$parent/images/$stem"
+          done
+      - name: Commit ingested projects and PNGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Ingest pending structural batches and render sheet images"
+          git push
