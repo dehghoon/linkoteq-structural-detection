@@ -1,0 +1,26 @@
+name: Ingest projects 090-098
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Linkoteq_new_projects_090_098.zip'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract projects
+        run: |
+          mkdir -p datasets/validated-llm-v0.1
+          unzip -o Linkoteq_new_projects_090_098.zip -d datasets/validated-llm-v0.1
+          rm Linkoteq_new_projects_090_098.zip
+      - name: Commit extracted projects
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Ingest structural projects P2026-090 through P2026-098"
+          git push
