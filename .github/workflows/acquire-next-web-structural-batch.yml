@@ -25,15 +25,14 @@ jobs:
           root="datasets/validated-llm-v0.1"
           tmp="$(mktemp -d)"
           # project|url|plan sheet labels|elevation sheet labels
-          cat > "$tmp/projects.tsv" <<'EOF'
-TAPS-Admin-Operations	https://tapsbus.com/wp-content/uploads/2024/03/2024-0325_TAPS_IFB-Construction-Documents2.pdf	S-101	A-201,A-301
-Ken-Freiberg-Fire-Museum	https://solicitations.thorntonco.gov/files/filerecords/view/vendorattachment/21942/tfm---complete-drawing-set_addendum--4---05-01-25.pdf	S-101,S-102,S-103	A-201,A-301,S-301,S-302
-Sedalia-House-A	https://www.sedalia.com/wp-content/uploads/0602_2025-City-of-Sedalia-Housing-Plan-A.pdf	S1.01,S1.02	A2.01,A3.01
-Porterville-Plan-2	https://cms9files.revize.com/PortervilleCA/Plan-2.pdf	S-201,S-202,S-203	A-201,A-301
-Multnomah-Station-Apartments	https://www.portlandoregon.gov/bds/appeals/index.cfm?action=getfile&appeal_id=18228&file_id=21985	S101,S102A,S102B,S102C,S103,S104,S105	A301,A302,A401,S304
-Hallmark-Residence	https://services.austintexas.gov/edims/document.cfm?id=369868	S1,S2,S3,S5	A4.1,A4.2
-Grove-197	https://braintreema.gov/DocumentCenter/View/7882/197-Grove-Architectural-Set	S1	A2,A2.1,A7
-EOF
+          : > "$tmp/projects.tsv"
+          printf '%s\t%s\t%s\t%s\n' "TAPS-Admin-Operations" "https://tapsbus.com/wp-content/uploads/2024/03/2024-0325_TAPS_IFB-Construction-Documents2.pdf" "S-101" "A-201,A-301" >> "$tmp/projects.tsv"
+          printf '%s\t%s\t%s\t%s\n' "Ken-Freiberg-Fire-Museum" "https://solicitations.thorntonco.gov/files/filerecords/view/vendorattachment/21942/tfm---complete-drawing-set_addendum--4---05-01-25.pdf" "S-101,S-102,S-103" "A-201,A-301,S-301,S-302" >> "$tmp/projects.tsv"
+          printf '%s\t%s\t%s\t%s\n' "Sedalia-House-A" "https://www.sedalia.com/wp-content/uploads/0602_2025-City-of-Sedalia-Housing-Plan-A.pdf" "S1.01,S1.02" "A2.01,A3.01" >> "$tmp/projects.tsv"
+          printf '%s\t%s\t%s\t%s\n' "Porterville-Plan-2" "https://cms9files.revize.com/PortervilleCA/Plan-2.pdf" "S-201,S-202,S-203" "A-201,A-301" >> "$tmp/projects.tsv"
+          printf '%s\t%s\t%s\t%s\n' "Multnomah-Station-Apartments" "https://www.portlandoregon.gov/bds/appeals/index.cfm?action=getfile&appeal_id=18228&file_id=21985" "S101,S102A,S102B,S102C,S103,S104,S105" "A301,A302,A401,S304" >> "$tmp/projects.tsv"
+          printf '%s\t%s\t%s\t%s\n' "Hallmark-Residence" "https://services.austintexas.gov/edims/document.cfm?id=369868" "S1,S2,S3,S5" "A4.1,A4.2" >> "$tmp/projects.tsv"
+          printf '%s\t%s\t%s\t%s\n' "Grove-197" "https://braintreema.gov/DocumentCenter/View/7882/197-Grove-Architectural-Set" "S1" "A2,A2.1,A7" >> "$tmp/projects.tsv"
           while IFS=$'\t' read -r id url plans elevs; do
             d="$root/$id"; mkdir -p "$d/plans/images" "$d/elevations-sections/images" "$d/originals"
             pdf="$tmp/$id.pdf"
