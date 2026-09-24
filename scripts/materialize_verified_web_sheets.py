@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# DEPRECATED FOR PAGE SELECTION: do not use choose()/text scoring to select dataset sheets.
+# LLM/vision must provide explicit visually reviewed source page numbers; scripts may only materialize those decisions.
 import argparse, json, os, re, subprocess, urllib.request
 
 def norm(s): return re.sub(r'[^A-Z0-9]+',' ',s.upper()).strip()
