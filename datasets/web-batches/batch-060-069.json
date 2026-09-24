@@ -1,0 +1,242 @@
+[
+  {
+    "id": "GovNav-24-0395",
+    "url": "https://media.governmentnavigator.com/media/bid/1731528520_11-13-2024_24-0395-11-15-09.pdf",
+    "sheets": [
+      {
+        "sheet": "S201",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S301",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2.0",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Mount-Crest-Accessory-Storage",
+    "url": "https://www.gdpm.org/wp-content/uploads/2026/03/2026-02-27-MC-Storage-Bid-Specs.pdf",
+    "sheets": [
+      {
+        "sheet": "A1.1",
+        "title": "FOUNDATION PLAN FLOOR PLAN ROOF FRAMING PLAN ROOF PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2.1",
+        "title": "EXTERIOR ELEVATIONS SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Oak-Brook-Central-Park-Support",
+    "url": "https://www.obparks.org/sites/default/files/bid-rfp/specifications-plans/Restroom-concession%20support%20building%20technical%20specs_0.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.0",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.1",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A3.1",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A4.1",
+        "title": "BUILDING SECTIONS DETAILS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Hodson-Residence-1",
+    "url": "https://www.cityoftalent.org/sites/g/files/vyhlif13561/files/media/development/file/13431/hodson_1_-_units_a_b_construction_plans.pdf",
+    "sheets": [
+      {
+        "sheet": "S1",
+        "title": "CORE STRUCTURAL FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.1",
+        "title": "CORE STRUCTURAL 2ND FLOOR LOW ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.2",
+        "title": "CORE STRUCTURAL ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A1",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A6",
+        "title": "BUILDING SECTION A",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Pole-Barn-Sample",
+    "url": "https://jacksonmetalroof.com/wp-content/uploads/2023/11/engineered-drawings-sample.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.0",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.0",
+        "title": "ROOF FRAMING PLAN TYPICAL WALL SECTION",
+        "role": "plans"
+      },
+      {
+        "sheet": "A1.0",
+        "title": "ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "S2.2",
+        "title": "FRAMING ELEVATION",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Fort-Myers-Multiunit-Residential",
+    "url": "https://www.essianconstruction.com/wp-content/uploads/2019/05/Permit_Submitted_Drawings.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.01",
+        "title": "BUILDING TYPE 1 FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.02",
+        "title": "BUILDING TYPE 1 2ND FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.04",
+        "title": "BUILDING TYPE 1 ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A4.01",
+        "title": "BUILDING TYPE 1 ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Talbot-Addition",
+    "url": "https://talbot-md.granicus.com/MetaViewer.php?clip_id=1303&meta_id=109763&view_id=4",
+    "sheets": [
+      {
+        "sheet": "A1",
+        "title": "FOUNDATION PLAN NOTES DETAILS",
+        "role": "plans"
+      },
+      {
+        "sheet": "A6",
+        "title": "FIRST FLOOR ROOF FRAMING PLAN NOTES DETAILS",
+        "role": "plans"
+      },
+      {
+        "sheet": "A4",
+        "title": "EXTERIOR ELEVATIONS NOTES DETAILS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A5",
+        "title": "BUILDING SECTIONS NOTES DETAILS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "ProRFx-CDS-250783A",
+    "url": "https://prorfx.com/Storage/110S34471_051/ProRFx/Upload/Attachments/General/Exhibit%20C%20-%20Building%20Plans._2ef14314.pdf",
+    "sheets": [
+      {
+        "sheet": "S101",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S102",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A-201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A-301",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Connect-Home-PLN18-11191",
+    "url": "https://stgenpln.blob.core.windows.net/document/PLN18_11191_MOD3_Plans.pdf",
+    "sheets": [
+      {
+        "sheet": "S-2.0",
+        "title": "STRUCTURAL PLANS OVERALL",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-2.3",
+        "title": "STRUCTURAL PLANS OVERALL ROOF",
+        "role": "plans"
+      },
+      {
+        "sheet": "L-3.0",
+        "title": "SITE EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "L-3.2",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Lodi-02-121896",
+    "url": "https://resources.finalsite.net/images/v1740498875/lodiusdnet/l5heswxdetax6lcyixkr/02-121896_DWG_A.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.01",
+        "title": "PARTIAL FOUNDATION PLANS",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.02",
+        "title": "PARTIAL ROOF FRAMING PLANS",
+        "role": "plans"
+      }
+    ]
+  }
+]
