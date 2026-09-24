@@ -1,0 +1,40 @@
+name: Render validated sheet images
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'datasets/validated-llm-v0.1/**/plans/*.pdf'
+      - 'datasets/validated-llm-v0.1/**/elevations-sections/*.pdf'
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PDF renderer
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Render plan and elevation/section PDFs to PNG
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="datasets/validated-llm-v0.1"
+          find "$root" -type f -name '*.pdf' \( -path '*/plans/*' -o -path '*/elevations-sections/*' \) -print0 |
+          while IFS= read -r -d '' pdf; do
+            parent="$(dirname "$pdf")"
+            mkdir -p "$parent/images"
+            stem="$(basename "$pdf" .pdf)"
+            # Render every page at 200 DPI; selected-sheet PDFs are normally one page.
+            pdftoppm -png -r 200 "$pdf" "$parent/images/$stem"
+          done
+      - name: Commit rendered images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datasets/validated-llm-v0.1
+          git diff --cached --quiet || git commit -m "Render validated plan and elevation images"
+          git push
