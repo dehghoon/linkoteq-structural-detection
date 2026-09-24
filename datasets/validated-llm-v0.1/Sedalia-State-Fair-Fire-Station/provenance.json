@@ -1,0 +1,47 @@
+{
+  "project_id": "Sedalia-State-Fair-Fire-Station",
+  "source_url": "https://oa.mo.gov/sites/default/files/bid-opportunities/_F2405-01Final%20Bid%20Plans.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S-200",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 54,
+      "pdf": "plans/S-200_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S-200_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S-300",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S-300_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S-300_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "S-300A",
+      "title": "SHEAR WALL PLAN",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/S-300A_SHEAR_WALL_PLAN.pdf",
+      "image": "plans/images/S-300A_SHEAR_WALL_PLAN.png"
+    },
+    {
+      "sheet": "A-201",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 1,
+      "pdf": "elevations-sections/A-201_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A-201_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A-301",
+      "title": "BUILDING SECTIONS AND DETAILS",
+      "role": "elevations-sections",
+      "source_page": 1,
+      "pdf": "elevations-sections/A-301_BUILDING_SECTIONS_AND_DETAILS.pdf",
+      "image": "elevations-sections/images/A-301_BUILDING_SECTIONS_AND_DETAILS.png"
+    }
+  ]
+}

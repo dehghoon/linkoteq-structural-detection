@@ -1,0 +1,39 @@
+{
+  "project_id": "Edinburg-Fire-Station-5",
+  "source_url": "https://cms7files.revize.com/edinburgtx/Finance/BIDS/03%20SPECIFICATIONS%20-%20RFP%202019-20%20-FIRE%20STATION%205.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S2.1",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 7,
+      "pdf": "plans/S2.1_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S2.1_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S3.1",
+      "title": "FRAMING PLAN",
+      "role": "plans",
+      "source_page": 7,
+      "pdf": "plans/S3.1_FRAMING_PLAN.pdf",
+      "image": "plans/images/S3.1_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A2.0",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 7,
+      "pdf": "elevations-sections/A2.0_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A2.0_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A5.0",
+      "title": "BUILDING SECTION",
+      "role": "elevations-sections",
+      "source_page": 7,
+      "pdf": "elevations-sections/A5.0_BUILDING_SECTION.pdf",
+      "image": "elevations-sections/images/A5.0_BUILDING_SECTION.png"
+    }
+  ]
+}

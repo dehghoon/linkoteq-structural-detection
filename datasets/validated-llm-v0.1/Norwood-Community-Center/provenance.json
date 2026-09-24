@@ -1,0 +1,39 @@
+{
+  "project_id": "Norwood-Community-Center",
+  "source_url": "https://www.annistonhousing.org/wp-content/uploads/2023/11/Plans-Norwood-Community-Center-Anniston-TDA445.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "A1",
+      "title": "FOUNDATION PLAN FLOOR PLAN SCHEDULES",
+      "role": "plans",
+      "source_page": 9,
+      "pdf": "plans/A1_FOUNDATION_PLAN_FLOOR_PLAN_SCHEDULES.pdf",
+      "image": "plans/images/A1_FOUNDATION_PLAN_FLOOR_PLAN_SCHEDULES.png"
+    },
+    {
+      "sheet": "A4",
+      "title": "FRAMING PLANS AND NOTES",
+      "role": "plans",
+      "source_page": 12,
+      "pdf": "plans/A4_FRAMING_PLANS_AND_NOTES.pdf",
+      "image": "plans/images/A4_FRAMING_PLANS_AND_NOTES.png"
+    },
+    {
+      "sheet": "A2",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 10,
+      "pdf": "elevations-sections/A2_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A2_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A5",
+      "title": "SECTIONS AND DETAILS",
+      "role": "elevations-sections",
+      "source_page": 14,
+      "pdf": "elevations-sections/A5_SECTIONS_AND_DETAILS.pdf",
+      "image": "elevations-sections/images/A5_SECTIONS_AND_DETAILS.png"
+    }
+  ]
+}

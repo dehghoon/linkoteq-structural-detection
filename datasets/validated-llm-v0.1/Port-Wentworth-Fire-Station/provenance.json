@@ -1,0 +1,47 @@
+{
+  "project_id": "Port-Wentworth-Fire-Station",
+  "source_url": "https://portwentworthga.gov/wp-content/uploads/2023/12/Port-Wentworth-Submittal.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S-101",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 9,
+      "pdf": "plans/S-101_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S-101_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S-120",
+      "title": "SECOND LEVEL APPARATUS ROOF FRAMING",
+      "role": "plans",
+      "source_page": 117,
+      "pdf": "plans/S-120_SECOND_LEVEL_APPARATUS_ROOF_FRAMING.pdf",
+      "image": "plans/images/S-120_SECOND_LEVEL_APPARATUS_ROOF_FRAMING.png"
+    },
+    {
+      "sheet": "S-151",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 11,
+      "pdf": "plans/S-151_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S-151_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A-201",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 32,
+      "pdf": "elevations-sections/A-201_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A-201_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A-202",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 32,
+      "pdf": "elevations-sections/A-202_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A-202_EXTERIOR_ELEVATIONS.png"
+    }
+  ]
+}

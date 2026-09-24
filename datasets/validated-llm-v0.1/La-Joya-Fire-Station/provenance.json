@@ -1,0 +1,47 @@
+{
+  "project_id": "La-Joya-Fire-Station",
+  "source_url": "https://www.cityoflajoya.com/wp-content/uploads/2023/01/2022-016-LA-JOYA-FIRE-STATION-DESIGN-DEVELOPMENT.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S2.1",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 21,
+      "pdf": "plans/S2.1_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S2.1_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S3.1",
+      "title": "SCHEMATIC ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 25,
+      "pdf": "plans/S3.1_SCHEMATIC_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S3.1_SCHEMATIC_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A2.01",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 37,
+      "pdf": "elevations-sections/A2.01_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A2.01_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A2.02",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 38,
+      "pdf": "elevations-sections/A2.02_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A2.02_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A3.01",
+      "title": "BUILDING SECTIONS",
+      "role": "elevations-sections",
+      "source_page": 39,
+      "pdf": "elevations-sections/A3.01_BUILDING_SECTIONS.pdf",
+      "image": "elevations-sections/images/A3.01_BUILDING_SECTIONS.png"
+    }
+  ]
+}

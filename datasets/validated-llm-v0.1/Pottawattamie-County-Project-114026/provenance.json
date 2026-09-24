@@ -1,0 +1,39 @@
+{
+  "project_id": "Pottawattamie-County-Project-114026",
+  "source_url": "https://www.pottcounty-ia.gov/files/bid_notices/114026.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S1.1",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 26,
+      "pdf": "plans/S1.1_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S1.1_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S1.2",
+      "title": "SECOND FLOOR FRAMING PLAN",
+      "role": "plans",
+      "source_page": 27,
+      "pdf": "plans/S1.2_SECOND_FLOOR_FRAMING_PLAN.pdf",
+      "image": "plans/images/S1.2_SECOND_FLOOR_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "S1.3",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 28,
+      "pdf": "plans/S1.3_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S1.3_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A2.1",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 10,
+      "pdf": "elevations-sections/A2.1_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A2.1_EXTERIOR_ELEVATIONS.png"
+    }
+  ]
+}

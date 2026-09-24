@@ -1,0 +1,31 @@
+{
+  "project_id": "Dade-City-New-Restrooms",
+  "source_url": "https://cms9files.revize.com/dadecityfl/~FINAL%20SET_Dade%20City%20RR_Permit%20Set_10-19-23.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S1.00",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 26,
+      "pdf": "plans/S1.00_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S1.00_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S1.10",
+      "title": "FRAMING PLAN",
+      "role": "plans",
+      "source_page": 27,
+      "pdf": "plans/S1.10_FRAMING_PLAN.pdf",
+      "image": "plans/images/S1.10_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A-201",
+      "title": "EXTERIOR ELEVATION",
+      "role": "elevations-sections",
+      "source_page": 1,
+      "pdf": "elevations-sections/A-201_EXTERIOR_ELEVATION.pdf",
+      "image": "elevations-sections/images/A-201_EXTERIOR_ELEVATION.png"
+    }
+  ]
+}
