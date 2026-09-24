@@ -1,0 +1,39 @@
+name: Build four-project visual review contact sheets
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - datasets/web-batches/.trigger-contact-sheets-4
+permissions: {contents: write}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y imagemagick
+      - name: Make numbered contact sheets
+        shell: bash
+        run: |
+          set -euo pipefail
+          for id in Tuscaloosa-DHR-Building-1 Cullen-Martin-St-Residence Mesecher-Goudreau-Residence Port-Wentworth; do
+            d="datasets/pending-llm-review/$id/page-renders"
+            out="datasets/pending-llm-review/$id/contact-sheets"
+            rm -rf "$out"; mkdir -p "$out"
+            i=0; batch=1; files=()
+            while IFS= read -r f; do
+              files+=("$f"); i=$((i+1))
+              if [ "$i" -eq 12 ]; then
+                montage "${files[@]}" -thumbnail 700x500 -tile 3x4 -geometry +12+12 -pointsize 28 -set label '%f' "$out/contact-$(printf '%02d' "$batch").jpg"
+                files=(); i=0; batch=$((batch+1))
+              fi
+            done < <(find "$d" -maxdepth 1 -name 'page-*.jpg' | sort)
+            if [ "${#files[@]}" -gt 0 ]; then
+              montage "${files[@]}" -thumbnail 700x500 -tile 3x4 -geometry +12+12 -pointsize 28 -set label '%f' "$out/contact-$(printf '%02d' "$batch").jpg"
+            fi
+          done
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datasets/pending-llm-review
+          git diff --cached --quiet || (git commit -m "Add four-project visual review contact sheets" && git push)
