@@ -1,0 +1,267 @@
+[
+  {
+    "id": "Eng-Family-Homestead-Seattle",
+    "url": "https://www.seattle.gov/documents/Departments/Neighborhoods/HistoricPreservation/HistoricDistricts/InternationalDistrict/2024%20Agendas%20and%20Minutes/ISRD031224_EngPlanSet.pdf",
+    "sheets": [
+      {
+        "sheet": "S2.00",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.01",
+        "title": "LOWER ROOF FLOOR FRAMING",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.02",
+        "title": "UPPER ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A3.00",
+        "title": "EXTERIOR ELEVATIONS SOUTH AND EAST",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A3.01",
+        "title": "EXTERIOR ELEVATIONS NORTH AND WEST",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Hodson-Residence-2",
+    "url": "https://www.cityoftalent.org/sites/g/files/vyhlif13561/files/media/development/file/13436/hodson_2_-_units_c_d_construction_plans.pdf",
+    "sheets": [
+      {
+        "sheet": "S1",
+        "title": "CORE STRUCTURAL FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.1",
+        "title": "CORE STRUCTURAL 2ND FLOOR LOW ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.2",
+        "title": "CORE STRUCTURAL HIGH ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A1",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A6",
+        "title": "BUILDING SECTION A",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Pangan-Residence",
+    "url": "https://stgenpln.blob.core.windows.net/document/PLN14_10687_Plans.pdf",
+    "sheets": [
+      {
+        "sheet": "S2.1",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.2",
+        "title": "2ND FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.3",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      }
+    ]
+  },
+  {
+    "id": "Juneau-USE23-13",
+    "url": "https://juneau.org/wp-content/uploads/2023/09/USE23-13_Plans.pdf",
+    "sheets": [
+      {
+        "sheet": "S2",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S3",
+        "title": "FIRST FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S4",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A3.0",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A4.0",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "ALDI-Whitewater-WI",
+    "url": "https://whitewaterwise.com/wp-content/uploads/2024/02/DIS-062328290_ALDI-Whitewater-WI_Building-Set-Conditionally-Approved.pdf",
+    "sheets": [
+      {
+        "sheet": "S-101",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-111",
+        "title": "ROOF FRAMING PLANS",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-112",
+        "title": "HIGH ROOF CANOPY FRAMING PLANS",
+        "role": "plans"
+      },
+      {
+        "sheet": "A-201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A-202",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Detroit-Minock-Addition",
+    "url": "https://detroitmi.gov/sites/detroitmi.localhost/files/hdc-submitted-materials/2023-01/15083%20MINOCK%20site%20plan.pdf",
+    "sheets": [
+      {
+        "sheet": "A-00",
+        "title": "FOUNDATION PLANS AND DETAILS",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-10",
+        "title": "FRAMING PLANS",
+        "role": "plans"
+      },
+      {
+        "sheet": "A-30",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Pignatelli-Residence-Weston",
+    "url": "https://www.westonma.gov/DocumentCenter/View/35365/20230316---Pignatelli---Revised-Permit-Set",
+    "sheets": [
+      {
+        "sheet": "A3.1",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A3.2",
+        "title": "FIRST FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A3.3",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A1.0",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Post-Farm-Seed-Storage",
+    "url": "https://www.montana.edu/pdc/projects/25-1282%20Post%20Farm%20Seed%20Storage%20Expansion%20Project%20Manual%20Final.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.0",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.0",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2.01",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A3.01",
+        "title": "SECTIONS AND DETAILS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Chase-Lees-Summit-Pryor-Lowenstein",
+    "url": "https://devservices.cityofls.net/Permit/GetFile/713175",
+    "sheets": [
+      {
+        "sheet": "S1.0",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.0",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2.1",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A2.2",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Wendys-Encinitas-Refresh",
+    "url": "https://encinitas.granicus.com/MetaViewer.php?clip_id=2096&meta_id=109003&view_id=5",
+    "sheets": [
+      {
+        "sheet": "S1.0",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.0",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2.2",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  }
+]
