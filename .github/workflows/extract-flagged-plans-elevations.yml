@@ -1,6 +1,9 @@
 name: Separate reviewed plans and elevations
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - datasets/web-batches/.trigger-separate-4-flagged
 permissions: {contents: write}
 jobs:
   separate:
