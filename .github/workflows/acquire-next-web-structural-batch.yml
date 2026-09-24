@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/acquire-next-web-structural-batch.yml'
+      - '.github/web-batch-trigger'
   workflow_dispatch:
 
 permissions:
