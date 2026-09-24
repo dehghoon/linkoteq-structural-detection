@@ -5,6 +5,7 @@ on:
     paths:
       - 'datasets/web-batches/batch-050-059.json'
       - 'scripts/materialize_verified_web_sheets.py'
+      - 'datasets/web-batches/.trigger-050-059'
   workflow_dispatch:
 permissions:
   contents: write
