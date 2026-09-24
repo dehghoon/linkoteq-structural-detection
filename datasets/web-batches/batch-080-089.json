@@ -1,0 +1,267 @@
+[
+  {
+    "id": "Tuscaloosa-County-DHR-Building-1",
+    "url": "https://dominguezdesign-build.com/wp-content/uploads/2024/10/Drawings-Vol.-1-Tuscaloosa-DHR-Building-1.pdf",
+    "sheets": [
+      {
+        "sheet": "S2.01",
+        "title": "FLOOR AND FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.02",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A4.01",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Port-Wentworth-Fire-Station",
+    "url": "https://portwentworthga.gov/wp-content/uploads/2023/12/Port-Wentworth-Submittal.pdf",
+    "sheets": [
+      {
+        "sheet": "S-101",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-120",
+        "title": "SECOND LEVEL APPARATUS ROOF FRAMING",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-151",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A-201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A-202",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Cook-Inlet-Garden-Style-Apartments",
+    "url": "https://www.cookinlethousing.org/wp-content/uploads/2023/02/2023.02.01_CIHA-SE-P2-Vol-2-Garden-A-BID-DOCUMENTS_FULL.pdf",
+    "sheets": [
+      {
+        "sheet": "S2.00",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.20",
+        "title": "2ND FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.30",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2.00",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A3.00",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Lewis-Central-HS-Entry-Addition",
+    "url": "https://lewiscentral.org/files/bid_notices/project_drawings_122553.pdf",
+    "sheets": [
+      {
+        "sheet": "S2-1",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2-2",
+        "title": "ADDITION ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2-1",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Dade-City-New-Restrooms",
+    "url": "https://cms9files.revize.com/dadecityfl/~FINAL%20SET_Dade%20City%20RR_Permit%20Set_10-19-23.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.00",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.10",
+        "title": "FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A-201",
+        "title": "EXTERIOR ELEVATION",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "La-Joya-Fire-Station",
+    "url": "https://www.cityoflajoya.com/wp-content/uploads/2023/01/2022-016-LA-JOYA-FIRE-STATION-DESIGN-DEVELOPMENT.pdf",
+    "sheets": [
+      {
+        "sheet": "S2.1",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S3.1",
+        "title": "SCHEMATIC ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2.01",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A2.02",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A3.01",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Edinburg-Fire-Station-5",
+    "url": "https://cms7files.revize.com/edinburgtx/Finance/BIDS/03%20SPECIFICATIONS%20-%20RFP%202019-20%20-FIRE%20STATION%205.pdf",
+    "sheets": [
+      {
+        "sheet": "S2.1",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S3.1",
+        "title": "FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2.0",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A5.0",
+        "title": "BUILDING SECTION",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Sedalia-State-Fair-Fire-Station",
+    "url": "https://oa.mo.gov/sites/default/files/bid-opportunities/_F2405-01Final%20Bid%20Plans.pdf",
+    "sheets": [
+      {
+        "sheet": "S-200",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-300",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-300A",
+        "title": "SHEAR WALL PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A-201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A-301",
+        "title": "BUILDING SECTIONS AND DETAILS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Norwood-Community-Center",
+    "url": "https://www.annistonhousing.org/wp-content/uploads/2023/11/Plans-Norwood-Community-Center-Anniston-TDA445.pdf",
+    "sheets": [
+      {
+        "sheet": "A1",
+        "title": "FOUNDATION PLAN FLOOR PLAN SCHEDULES",
+        "role": "plans"
+      },
+      {
+        "sheet": "A4",
+        "title": "FRAMING PLANS AND NOTES",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A5",
+        "title": "SECTIONS AND DETAILS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Pottawattamie-County-Project-114026",
+    "url": "https://www.pottcounty-ia.gov/files/bid_notices/114026.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.1",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.2",
+        "title": "SECOND FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.3",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2.1",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  }
+]
