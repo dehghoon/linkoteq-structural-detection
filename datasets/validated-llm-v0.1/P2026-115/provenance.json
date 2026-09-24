@@ -1,0 +1,27 @@
+{
+  "project": "P2026-115",
+  "source_file": "P2026-115 - 03. 60_ Structural_5.18.26.pdf",
+  "status": "sheets_identified_materialized",
+  "selected": [
+    {
+      "page": 5,
+      "role": "plans",
+      "label": "S101-slab-on-grade"
+    },
+    {
+      "page": 6,
+      "role": "plans",
+      "label": "S201-mezzanine-framing"
+    },
+    {
+      "page": 7,
+      "role": "plans",
+      "label": "S202-roof-framing"
+    },
+    {
+      "page": 10,
+      "role": "elevations-sections",
+      "label": "S600-framing-elevations"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "project": "P2026-130",
+  "source_file": "P2026-130 - 260890 - Mx for Permit 2026-06-12-COPIE-TO-SL.pdf",
+  "status": "sheets_identified_materialized",
+  "selected": [
+    {
+      "page": 4,
+      "role": "plans",
+      "label": "structural-expansion-plan"
+    },
+    {
+      "page": 6,
+      "role": "elevations-sections",
+      "label": "structural-elevation"
+    }
+  ]
+}

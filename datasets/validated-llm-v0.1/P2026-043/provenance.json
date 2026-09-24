@@ -1,0 +1,22 @@
+{
+  "project": "P2026-043",
+  "source_file": "P2026-043 - Croquis.pdf",
+  "status": "sheets_identified_materialized",
+  "selected": [
+    {
+      "page": 2,
+      "role": "plans",
+      "label": "EsMx101-anchor"
+    },
+    {
+      "page": 3,
+      "role": "plans",
+      "label": "EsMx201-mezzanine"
+    },
+    {
+      "page": 5,
+      "role": "elevations-sections",
+      "label": "EsMx501-elevations"
+    }
+  ]
+}

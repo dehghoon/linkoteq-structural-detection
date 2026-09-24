@@ -1,0 +1,17 @@
+{
+  "project": "P2026-142",
+  "source_file": "P2026-142 Sketch.pdf",
+  "status": "sheets_identified_materialized",
+  "selected": [
+    {
+      "page": 2,
+      "role": "plans",
+      "label": "EsMx401-roof"
+    },
+    {
+      "page": 3,
+      "role": "elevations-sections",
+      "label": "EsMx501-elevation-section"
+    }
+  ]
+}

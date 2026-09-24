@@ -1,0 +1,29 @@
+{
+  "project": "ParkLawn-GO",
+  "source_file": "20241202_PARKLAWNGO_STRUCTURAL_BUILDING PERMIT_B&W_Final.pdf",
+  "status": "visual_qa_passed",
+  "selection_method": "LLM/visual + sheet-title/content review",
+  "selected": [
+    {
+      "source_page": 32,
+      "role": "plans",
+      "label": "floor-framing-plan",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    },
+    {
+      "source_page": 33,
+      "role": "plans",
+      "label": "roof-framing-plan",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    },
+    {
+      "source_page": 36,
+      "role": "elevations-sections",
+      "label": "cross-section",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    }
+  ]
+}

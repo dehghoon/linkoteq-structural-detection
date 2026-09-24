@@ -1,0 +1,36 @@
+{
+  "project": "Lacmark-242536",
+  "source_file": "JP 242536 - Nouvelle usine Lacmark inc._STR 2024(3).pdf",
+  "status": "visual_qa_passed",
+  "selection_method": "LLM/visual + sheet-title/content review",
+  "selected": [
+    {
+      "source_page": 2,
+      "role": "plans",
+      "label": "Mx101-anchor",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.86
+    },
+    {
+      "source_page": 4,
+      "role": "plans",
+      "label": "Mx201-mezzanine",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.86
+    },
+    {
+      "source_page": 5,
+      "role": "plans",
+      "label": "Mx401-roof",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.86
+    },
+    {
+      "source_page": 7,
+      "role": "elevations-sections",
+      "label": "Mx501-elevations",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.86
+    }
+  ]
+}

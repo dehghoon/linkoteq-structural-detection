@@ -1,0 +1,17 @@
+{
+  "project": "P2026-048",
+  "source_file": "P2026-048 Croquis.pdf",
+  "status": "sheets_identified_materialized",
+  "selected": [
+    {
+      "page": 2,
+      "role": "plans",
+      "label": "EsMx401-roof"
+    },
+    {
+      "page": 3,
+      "role": "elevations-sections",
+      "label": "EsMx501-elevations"
+    }
+  ]
+}

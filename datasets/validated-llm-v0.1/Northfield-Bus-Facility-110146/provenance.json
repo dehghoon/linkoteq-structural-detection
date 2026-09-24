@@ -1,0 +1,27 @@
+{
+  "project": "Northfield-Bus-Facility-110146",
+  "source_file": "Dec 6.pdf",
+  "status": "sheets_identified_materialized",
+  "selected": [
+    {
+      "page": 10,
+      "role": "plans",
+      "label": "S1000-foundation-overall"
+    },
+    {
+      "page": 23,
+      "role": "plans",
+      "label": "S2202-mezzanine"
+    },
+    {
+      "page": 24,
+      "role": "plans",
+      "label": "S3000-roof-overall"
+    },
+    {
+      "page": 30,
+      "role": "elevations-sections",
+      "label": "S4001-elevations"
+    }
+  ]
+}

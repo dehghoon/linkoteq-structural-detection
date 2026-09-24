@@ -1,0 +1,35 @@
+{
+  "project": "P2026-045",
+  "identity": "SmartStop Self Storage - Building 1, Edmonton, Alberta",
+  "source_file": "P2026-045 Sketch.pdf",
+  "new_distinct_project": true,
+  "selected_sheets": [
+    {
+      "page": 2,
+      "sheet": "EsMx201",
+      "title": "2ND FLOOR AND CANOPIES PLAN"
+    },
+    {
+      "page": 3,
+      "sheet": "EsMx202",
+      "title": "3RD & 4TH FLOOR PLAN"
+    },
+    {
+      "page": 4,
+      "sheet": "EsMx401",
+      "title": "ROOF PLAN"
+    },
+    {
+      "page": 5,
+      "sheet": "EsMx501",
+      "title": "ELEVATIONS"
+    },
+    {
+      "page": 6,
+      "sheet": "EsMx502",
+      "title": "ELEVATIONS & SECTIONS"
+    }
+  ],
+  "title_block_removal": "page-specific right-side title-block strip removed after visual layout inspection",
+  "status": "materialized"
+}

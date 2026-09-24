@@ -1,0 +1,29 @@
+{
+  "project": "New-Orchard-Station",
+  "source_file": "60%-EJV-S2STNE-STR-DWG-0000PKG.B.CTR.B.01.pdf",
+  "status": "visual_qa_passed",
+  "selection_method": "LLM/visual + sheet-title/content review",
+  "selected": [
+    {
+      "source_page": 29,
+      "role": "plans",
+      "label": "roof-framing-plan",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    },
+    {
+      "source_page": 31,
+      "role": "plans",
+      "label": "foundation-plan",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    },
+    {
+      "source_page": 34,
+      "role": "elevations-sections",
+      "label": "cross-section",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    }
+  ]
+}

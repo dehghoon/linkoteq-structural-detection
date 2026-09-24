@@ -1,0 +1,29 @@
+{
+  "project": "RavenCreek",
+  "source_file": "RavenCreek_Struct_Tender_20230210.pdf",
+  "status": "visual_qa_passed",
+  "selection_method": "LLM/visual + sheet-title/content review",
+  "selected": [
+    {
+      "source_page": 17,
+      "role": "plans",
+      "label": "foundation-plan",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    },
+    {
+      "source_page": 33,
+      "role": "plans",
+      "label": "roof-framing-plan",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    },
+    {
+      "source_page": 44,
+      "role": "elevations-sections",
+      "label": "building-section",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    }
+  ]
+}

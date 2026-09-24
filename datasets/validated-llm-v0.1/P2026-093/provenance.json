@@ -1,0 +1,22 @@
+{
+  "project_id": "P2026-093",
+  "source_file": "P2026-093 Croquis.pdf",
+  "source_pages": 3,
+  "selected_sheets": [
+    {
+      "page": 2,
+      "sheet": "EsMx401",
+      "role": "plans",
+      "file": "EsMx401_roof_selected.pdf"
+    },
+    {
+      "page": 3,
+      "sheet": "EsMx501",
+      "role": "elevations-sections",
+      "file": "EsMx501_elevations_selected.pdf"
+    }
+  ],
+  "status": "sheets_identified_materialized",
+  "title_block_status": "pending_page_specific_visual_crop_qa",
+  "notes": "Selection made from actual sheet content/title. 3D/general-detail sheets excluded from selected training sheets."
+}

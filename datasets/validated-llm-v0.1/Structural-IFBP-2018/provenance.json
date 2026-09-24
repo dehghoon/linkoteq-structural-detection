@@ -1,0 +1,29 @@
+{
+  "project": "Structural-IFBP-2018",
+  "source_file": "STRUCTURAL_ISSUED FOR BUILDING PERMIT_MARCH 05, 2018.pdf",
+  "status": "visual_qa_passed",
+  "selection_method": "LLM/visual + sheet-title/content review",
+  "selected": [
+    {
+      "source_page": 10,
+      "role": "plans",
+      "label": "structural-plan-1",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.94
+    },
+    {
+      "source_page": 16,
+      "role": "plans",
+      "label": "structural-framing-plan",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.94
+    },
+    {
+      "source_page": 26,
+      "role": "elevations-sections",
+      "label": "structural-elevation",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.94
+    }
+  ]
+}

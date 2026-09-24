@@ -1,0 +1,36 @@
+{
+  "project": "TTC-Jane-Station",
+  "source_file": "Jane_Station_Structural_Drawings_2023-3.pdf",
+  "status": "visual_qa_passed",
+  "selection_method": "LLM/visual + sheet-title/content review",
+  "selected": [
+    {
+      "source_page": 7,
+      "role": "plans",
+      "label": "street-level-plan-1",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.9
+    },
+    {
+      "source_page": 10,
+      "role": "plans",
+      "label": "roof-plan-1",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.9
+    },
+    {
+      "source_page": 15,
+      "role": "elevations-sections",
+      "label": "S301-section",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.9
+    },
+    {
+      "source_page": 18,
+      "role": "elevations-sections",
+      "label": "S321-elevation",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.9
+    }
+  ]
+}

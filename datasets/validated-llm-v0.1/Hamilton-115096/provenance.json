@@ -1,0 +1,29 @@
+{
+  "project": "Hamilton-115096",
+  "source_file": "115096-Hamilton_Building Permit Revision_2020-03-17_Str.pdf",
+  "status": "visual_qa_passed",
+  "selection_method": "LLM/visual + sheet-title/content review",
+  "selected": [
+    {
+      "source_page": 15,
+      "role": "plans",
+      "label": "foundation-plan",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    },
+    {
+      "source_page": 26,
+      "role": "plans",
+      "label": "roof-framing-plan",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    },
+    {
+      "source_page": 55,
+      "role": "elevations-sections",
+      "label": "structural-section",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    }
+  ]
+}

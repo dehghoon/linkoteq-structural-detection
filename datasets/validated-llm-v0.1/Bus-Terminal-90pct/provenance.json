@@ -1,0 +1,29 @@
+{
+  "project": "Bus-Terminal-90pct",
+  "source_file": "Bus Terminal 90% R2.pdf",
+  "status": "visual_qa_passed",
+  "selection_method": "LLM/visual + sheet-title/content review",
+  "selected": [
+    {
+      "source_page": 1,
+      "role": "plans",
+      "label": "foundation-plan-1",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.9
+    },
+    {
+      "source_page": 9,
+      "role": "plans",
+      "label": "roof-plan-1",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.9
+    },
+    {
+      "source_page": 14,
+      "role": "elevations-sections",
+      "label": "cross-section",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.9
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "project": "TTC-Greenwood-Drawing-20220527",
+  "source_file": "Drawing 20220527.pdf",
+  "status": "visual_qa_passed",
+  "selection_method": "LLM/visual + sheet-title/content review",
+  "selected": [
+    {
+      "source_page": 1,
+      "role": "plans",
+      "label": "roof-framing-01",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    },
+    {
+      "source_page": 2,
+      "role": "plans",
+      "label": "roof-framing-02",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    },
+    {
+      "source_page": 4,
+      "role": "elevations-sections",
+      "label": "structural-section",
+      "titleblock_crop": "source-specific inspected right-side strip",
+      "crop_fraction_x": 0.91
+    }
+  ]
+}

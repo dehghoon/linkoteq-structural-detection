@@ -1,0 +1,28 @@
+{
+  "project_id": "P2026-095",
+  "source_file": "P2026-095_Preliminary sketch.pdf",
+  "source_pages": 4,
+  "selected_sheets": [
+    {
+      "page": 2,
+      "sheet": "EsMx401",
+      "role": "plans",
+      "file": "EsMx401_roof_selected.pdf"
+    },
+    {
+      "page": 3,
+      "sheet": "EsMx501",
+      "role": "elevations-sections",
+      "file": "EsMx501_elevations_selected.pdf"
+    },
+    {
+      "page": 4,
+      "sheet": "EsMx502",
+      "role": "elevations-sections",
+      "file": "EsMx502_elevation_wall_section_selected.pdf"
+    }
+  ],
+  "status": "sheets_identified_materialized",
+  "title_block_status": "pending_page_specific_visual_crop_qa",
+  "notes": "Selection made from actual sheet content/title. 3D/general-detail sheets excluded from selected training sheets."
+}
