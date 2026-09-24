@@ -1,0 +1,13 @@
+{
+  "source": "P2026-079 R1 Sketch.pdf",
+  "status": "visual_qa_passed",
+  "plans_pages_1_based": [
+    2
+  ],
+  "vertical_pages_1_based": [
+    3,
+    4
+  ],
+  "titleblock_removal": "right-side vertical title block removed after contact-sheet visual inspection; 88% page width retained",
+  "note": "3D/general first sheet excluded where present."
+}
