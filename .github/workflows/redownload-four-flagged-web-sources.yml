@@ -1,0 +1,36 @@
+name: Re-download four flagged web sources
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - datasets/web-batches/.trigger-redownload-4-flagged
+permissions:
+  contents: write
+jobs:
+  redownload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download original sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          download() {
+            id="$1"; url="$2"
+            d="datasets/pending-llm-review/$id/originals"
+            mkdir -p "$d"
+            curl -L --fail --retry 3 --retry-delay 2 -A "Mozilla/5.0" "$url" -o "$d/source-redownload.pdf"
+            file "$d/source-redownload.pdf"
+          }
+          download "Tuscaloosa-DHR-Building-1" "https://dominguezdesign-build.com/wp-content/uploads/2024/10/Drawings-Vol.-1-Tuscaloosa-DHR-Building-1.pdf"
+          download "Cullen-Martin-St-Residence" "https://www.hamiltonma.gov/wp-content/uploads/2025/09/20260305-Cullen-CD-COMPLETE.pdf"
+          download "Mesecher-Goudreau-Residence" "https://mylesmckenzie.com/project_files/20220809-Mesecher-Goudreau-Residence-REV1.pdf"
+          download "Port-Wentworth" "https://portwentworthga.gov/wp-content/uploads/2023/12/Port-Wentworth-Submittal.pdf"
+      - name: Commit sources for LLM visual review
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datasets/pending-llm-review
+          git diff --cached --quiet && exit 0
+          git commit -m "Re-download four flagged web sources for LLM visual review"
+          git push
