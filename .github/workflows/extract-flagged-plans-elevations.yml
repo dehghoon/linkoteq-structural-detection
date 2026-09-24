@@ -1,0 +1,22 @@
+name: Extract flagged plans and elevations
+on:
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Extract explicit sheets
+        shell: bash
+        run: |
+          set -euo pipefail
+          one(){ id="$1"; page="$2"; role="$3"; name="$4"; src="datasets/pending-llm-review/$id/originals/source-redownload.pdf"; dst="datasets/pending-llm-review/$id/$role"; mkdir -p "$dst/images"; pdfseparate -f "$page" -l "$page" "$src" "$dst/tmp-%d.pdf"; mv "$dst/tmp-$page.pdf" "$dst/$name.pdf"; pdftoppm -f 1 -singlefile -png -r 160 "$dst/$name.pdf" "$dst/images/$name"; }
+          # Tuscaloosa exact pages will be populated only after visual review.
+          # Do not auto-select via text.
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datasets/pending-llm-review
+          git diff --cached --quiet || (git commit -m "Extract LLM-reviewed flagged plans and elevations" && git push)
