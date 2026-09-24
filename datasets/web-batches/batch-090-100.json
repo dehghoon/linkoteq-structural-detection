@@ -1,0 +1,348 @@
+[
+  {
+    "id": "Edmond-YMCA-Library",
+    "url": "https://public.destinyhosted.com/edmondocs/2024/CC/20240708_30039/20007_Edmond_YMCA__Library_-_GMP_1.pdf",
+    "sheets": [
+      {
+        "sheet": "S100",
+        "title": "FOUNDATION PLAN OVERALL",
+        "role": "plans"
+      },
+      {
+        "sheet": "S103",
+        "title": "SECOND FLOOR FRAMING PLAN AREA B",
+        "role": "plans"
+      },
+      {
+        "sheet": "S110",
+        "title": "ROOF FRAMING PLAN OVERALL",
+        "role": "plans"
+      },
+      {
+        "sheet": "A201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A301",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Cornish-Library-Community-Center",
+    "url": "https://www.cornishnh.net/wp-content/uploads/2025/07/21-886-Cornish-Library-and-Community-Center_CD-Specifications_7-2-2025.pdf",
+    "sheets": [
+      {
+        "sheet": "S100",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S101",
+        "title": "FIRST FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S102",
+        "title": "SECOND FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S103",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A300",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Elmira-EHS-2025-Capital-Improvements",
+    "url": "http://www.saifileshare.com/Download/Estimating/Elmira-CSD-EHS-2025-Capital-Improvements/DRAWINGS-COMBINED.pdf",
+    "sheets": [
+      {
+        "sheet": "HS-S1.1",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "HS-S1.2",
+        "title": "SECOND FLOOR LOW ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "HS-S1.3",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "HS-A3.1",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "HS-A3.6",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Hastings-City-Hall-Renovation",
+    "url": "https://www.cityofhastings.org/assets/site/bids/2024/0-2024-07-26%20BID%20SET.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.00",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.01",
+        "title": "FIRST FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.02",
+        "title": "SECOND FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.03",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A3.00",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A4.00",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Thornton-Fire-Museum",
+    "url": "https://solicitations.thorntonco.gov/files/filerecords/view/vendorattachment/21942/tfm---complete-drawing-set_addendum--4---05-01-25.pdf",
+    "sheets": [
+      {
+        "sheet": "S-101",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-102",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A-201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "S-301",
+        "title": "FRAMING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Maysville-Fire-Station",
+    "url": "https://www.danddcc.com/wp-content/uploads/2025/05/250430-Maysville-Fire-Station_CDS_Dwgs_Combined-1.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.01",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.02",
+        "title": "MEZZANINE FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.03",
+        "title": "SECOND FLOOR CEILING FRAMING AND ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2.01",
+        "title": "EXTERIOR ELEVATION",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A2.10",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Madison-Reindahl-Imagination-Center",
+    "url": "https://www.cityofmadison.com/business/pw/contracts/documents/9610%20Exhibit-B_specifications.pdf",
+    "sheets": [
+      {
+        "sheet": "S100",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S101",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A200",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Leach-School-Delaware",
+    "url": "https://bidcondocs.delaware.gov/COL/COL2623-LEACHSCH-specVol1.pdf",
+    "sheets": [
+      {
+        "sheet": "S-101",
+        "title": "OVERALL FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-102",
+        "title": "OVERALL LOW ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-103",
+        "title": "OVERALL HIGH ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A-201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A-301",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Kauai-Hospital-Project",
+    "url": "https://kauai.hhsc.org/wp-content/uploads/RFP-26-02-Reference-for-RFI-Addendum-1-Question-21A.pdf",
+    "sheets": [
+      {
+        "sheet": "S101",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S102",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S103",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A301",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Abernathy-MS-Admin-Auditorium",
+    "url": "https://henthorncommercialconstruction.com/download/abernathy-middle-school-admin-addition-and-auditorium-renovation/?filename=05_ARCHITECTURAL.pdf&ind=1750861939827&refresh=68644f3f34eaa1751404351&wpdmdl=9555",
+    "sheets": [
+      {
+        "sheet": "S100",
+        "title": "AUDITORIUM FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S101",
+        "title": "MIDDLE SCHOOL ADMIN ADDITION FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S301",
+        "title": "AUDITORIUM STORAGE ADDITION ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S302",
+        "title": "MIDDLE SCHOOL ADMIN ADDITION ROOF FRAMING PLANS",
+        "role": "plans"
+      },
+      {
+        "sheet": "A300",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "S500",
+        "title": "FRAMING ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Sunnyside-Intermediate-School",
+    "url": "https://bidcondocs.delaware.gov/SSD/SSD22004-NC_NEWIS-specs1.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.10",
+        "title": "OVERALL FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.10",
+        "title": "OVERALL SECOND FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S3.10",
+        "title": "OVERALL ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A20.01",
+        "title": "EXTERIOR ELEVATIONS OVERALL",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A30.01",
+        "title": "BUILDING SECTIONS OVERALL",
+        "role": "elevations-sections"
+      }
+    ]
+  }
+]
