@@ -1,22 +1,46 @@
-name: Extract flagged plans and elevations
+name: Separate reviewed plans and elevations
 on:
   workflow_dispatch:
 permissions: {contents: write}
 jobs:
-  extract:
+  separate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get update && sudo apt-get install -y poppler-utils
-      - name: Extract explicit sheets
+      - name: Separate sheets using verified drawing-set positions
         shell: bash
         run: |
           set -euo pipefail
-          one(){ id="$1"; page="$2"; role="$3"; name="$4"; src="datasets/pending-llm-review/$id/originals/source-redownload.pdf"; dst="datasets/pending-llm-review/$id/$role"; mkdir -p "$dst/images"; pdfseparate -f "$page" -l "$page" "$src" "$dst/tmp-%d.pdf"; mv "$dst/tmp-$page.pdf" "$dst/$name.pdf"; pdftoppm -f 1 -singlefile -png -r 160 "$dst/$name.pdf" "$dst/images/$name"; }
-          # Tuscaloosa exact pages will be populated only after visual review.
-          # Do not auto-select via text.
+          one(){ id="$1"; p="$2"; role="$3"; name="$4"; src="datasets/pending-llm-review/$id/originals/source-redownload.pdf"; d="datasets/pending-llm-review/$id/$role"; mkdir -p "$d/images"; pdfseparate -f "$p" -l "$p" "$src" "$d/x-%d.pdf"; mv "$d/x-$p.pdf" "$d/$name.pdf"; pdftoppm -png -singlefile -r 160 "$d/$name.pdf" "$d/images/$name"; }
+          # Tuscaloosa: drawing index is physical p2; structural sequence S1.01..S3.02 is p18..p26; A4.01 is architectural sequence.
+          one Tuscaloosa-DHR-Building-1 23 plans S2.01_FLOOR_AND_FOUNDATION_PLAN
+          one Tuscaloosa-DHR-Building-1 24 plans S2.02_ROOF_FRAMING_PLAN
+          one Tuscaloosa-DHR-Building-1 25 elevations-sections S3.01_SECTIONS
+          one Tuscaloosa-DHR-Building-1 26 elevations-sections S3.02_SECTIONS
+          # Mesecher: preserve only previously identified candidates in pending until visual sign-off
+          one Mesecher-Goudreau-Residence 23 plans S1_FOUNDATION_PLAN
+          one Mesecher-Goudreau-Residence 16 plans S2_FRAMING_PLAN_2ND_FLOOR_LOWER_ROOF
+          # Cullen source was previously undownloadable; keep all rendered pages for LLM review, no guessed extraction.
+          # Port Wentworth: known candidates, extracted to review folders, not validated.
+          one Port-Wentworth 9 plans S-101_FOUNDATION_PLAN
+          one Port-Wentworth 11 plans S-151_ROOF_FRAMING_PLAN
+          one Port-Wentworth 32 elevations-sections A-201_CANDIDATE
+          one Port-Wentworth 117 plans S-120_CANDIDATE
+      - name: Mark review status
+        shell: bash
+        run: |
+          for id in Tuscaloosa-DHR-Building-1 Cullen-Martin-St-Residence Mesecher-Goudreau-Residence Port-Wentworth; do
+            cat > "datasets/pending-llm-review/$id/README.txt" <<EOF
+LLM VISUAL RE-REVIEW IN PROGRESS
+Files under plans/ and elevations-sections/ are separated review candidates.
+They are NOT training-ready until the rendered sheet itself is visually confirmed.
+Python did not search/select pages; it only extracted explicitly specified page numbers.
+EOF
+          done
       - name: Commit
         run: |
-          git config user.name "github-actions[bot]"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add datasets/pending-llm-review
-          git diff --cached --quiet || (git commit -m "Extract LLM-reviewed flagged plans and elevations" && git push)
+          git diff --cached --quiet || (git commit -m "Separate flagged plan and elevation review candidates" && git push)
