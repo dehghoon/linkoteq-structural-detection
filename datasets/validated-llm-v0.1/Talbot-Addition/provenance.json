@@ -1,0 +1,39 @@
+{
+  "project_id": "Talbot-Addition",
+  "source_url": "https://talbot-md.granicus.com/MetaViewer.php?clip_id=1303&meta_id=109763&view_id=4",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "A1",
+      "title": "FOUNDATION PLAN NOTES DETAILS",
+      "role": "plans",
+      "source_page": 1,
+      "pdf": "plans/A1_FOUNDATION_PLAN_NOTES_DETAILS.pdf",
+      "image": "plans/images/A1_FOUNDATION_PLAN_NOTES_DETAILS.png"
+    },
+    {
+      "sheet": "A6",
+      "title": "FIRST FLOOR ROOF FRAMING PLAN NOTES DETAILS",
+      "role": "plans",
+      "source_page": 9,
+      "pdf": "plans/A6_FIRST_FLOOR_ROOF_FRAMING_PLAN_NOTES_DETAILS.pdf",
+      "image": "plans/images/A6_FIRST_FLOOR_ROOF_FRAMING_PLAN_NOTES_DETAILS.png"
+    },
+    {
+      "sheet": "A4",
+      "title": "EXTERIOR ELEVATIONS NOTES DETAILS",
+      "role": "elevations-sections",
+      "source_page": 7,
+      "pdf": "elevations-sections/A4_EXTERIOR_ELEVATIONS_NOTES_DETAILS.pdf",
+      "image": "elevations-sections/images/A4_EXTERIOR_ELEVATIONS_NOTES_DETAILS.png"
+    },
+    {
+      "sheet": "A5",
+      "title": "BUILDING SECTIONS NOTES DETAILS",
+      "role": "elevations-sections",
+      "source_page": 8,
+      "pdf": "elevations-sections/A5_BUILDING_SECTIONS_NOTES_DETAILS.pdf",
+      "image": "elevations-sections/images/A5_BUILDING_SECTIONS_NOTES_DETAILS.png"
+    }
+  ]
+}

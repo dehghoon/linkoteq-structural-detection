@@ -1,0 +1,23 @@
+{
+  "project_id": "Lodi-02-121896",
+  "source_url": "https://resources.finalsite.net/images/v1740498875/lodiusdnet/l5heswxdetax6lcyixkr/02-121896_DWG_A.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S1.01",
+      "title": "PARTIAL FOUNDATION PLANS",
+      "role": "plans",
+      "source_page": 30,
+      "pdf": "plans/S1.01_PARTIAL_FOUNDATION_PLANS.pdf",
+      "image": "plans/images/S1.01_PARTIAL_FOUNDATION_PLANS.png"
+    },
+    {
+      "sheet": "S1.02",
+      "title": "PARTIAL ROOF FRAMING PLANS",
+      "role": "plans",
+      "source_page": 31,
+      "pdf": "plans/S1.02_PARTIAL_ROOF_FRAMING_PLANS.pdf",
+      "image": "plans/images/S1.02_PARTIAL_ROOF_FRAMING_PLANS.png"
+    }
+  ]
+}

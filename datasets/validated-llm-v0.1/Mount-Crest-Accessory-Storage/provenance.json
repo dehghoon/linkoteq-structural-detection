@@ -1,0 +1,23 @@
+{
+  "project_id": "Mount-Crest-Accessory-Storage",
+  "source_url": "https://www.gdpm.org/wp-content/uploads/2026/03/2026-02-27-MC-Storage-Bid-Specs.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "A1.1",
+      "title": "FOUNDATION PLAN FLOOR PLAN ROOF FRAMING PLAN ROOF PLAN",
+      "role": "plans",
+      "source_page": 3,
+      "pdf": "plans/A1.1_FOUNDATION_PLAN_FLOOR_PLAN_ROOF_FRAMING_PLAN_ROOF_PLAN.pdf",
+      "image": "plans/images/A1.1_FOUNDATION_PLAN_FLOOR_PLAN_ROOF_FRAMING_PLAN_ROOF_PLAN.png"
+    },
+    {
+      "sheet": "A2.1",
+      "title": "EXTERIOR ELEVATIONS SECTIONS",
+      "role": "elevations-sections",
+      "source_page": 3,
+      "pdf": "elevations-sections/A2.1_EXTERIOR_ELEVATIONS_SECTIONS.pdf",
+      "image": "elevations-sections/images/A2.1_EXTERIOR_ELEVATIONS_SECTIONS.png"
+    }
+  ]
+}

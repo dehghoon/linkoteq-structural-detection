@@ -1,0 +1,7 @@
+{
+  "project_id": "Pole-Barn-Sample",
+  "source_url": "https://jacksonmetalroof.com/wp-content/uploads/2023/11/engineered-drawings-sample.pdf",
+  "status": "source_download_failed_image_capture_required",
+  "selected_sheets": [],
+  "error": "Command '['pdfinfo', '/tmp/tmpk95rc_46/source.pdf']' returned non-zero exit status 1."
+}

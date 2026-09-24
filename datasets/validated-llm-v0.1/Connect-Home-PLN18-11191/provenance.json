@@ -1,0 +1,39 @@
+{
+  "project_id": "Connect-Home-PLN18-11191",
+  "source_url": "https://stgenpln.blob.core.windows.net/document/PLN18_11191_MOD3_Plans.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S-2.0",
+      "title": "STRUCTURAL PLANS OVERALL",
+      "role": "plans",
+      "source_page": 37,
+      "pdf": "plans/S-2.0_STRUCTURAL_PLANS_OVERALL.pdf",
+      "image": "plans/images/S-2.0_STRUCTURAL_PLANS_OVERALL.png"
+    },
+    {
+      "sheet": "S-2.3",
+      "title": "STRUCTURAL PLANS OVERALL ROOF",
+      "role": "plans",
+      "source_page": 57,
+      "pdf": "plans/S-2.3_STRUCTURAL_PLANS_OVERALL_ROOF.pdf",
+      "image": "plans/images/S-2.3_STRUCTURAL_PLANS_OVERALL_ROOF.png"
+    },
+    {
+      "sheet": "L-3.0",
+      "title": "SITE EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 1,
+      "pdf": "elevations-sections/L-3.0_SITE_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/L-3.0_SITE_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "L-3.2",
+      "title": "BUILDING SECTIONS",
+      "role": "elevations-sections",
+      "source_page": 1,
+      "pdf": "elevations-sections/L-3.2_BUILDING_SECTIONS.pdf",
+      "image": "elevations-sections/images/L-3.2_BUILDING_SECTIONS.png"
+    }
+  ]
+}

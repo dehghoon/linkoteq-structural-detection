@@ -1,0 +1,39 @@
+{
+  "project_id": "Oak-Brook-Central-Park-Support",
+  "source_url": "https://www.obparks.org/sites/default/files/bid-rfp/specifications-plans/Restroom-concession%20support%20building%20technical%20specs_0.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S1.0",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 3,
+      "pdf": "plans/S1.0_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S1.0_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S1.1",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 3,
+      "pdf": "plans/S1.1_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S1.1_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A3.1",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 3,
+      "pdf": "elevations-sections/A3.1_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A3.1_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A4.1",
+      "title": "BUILDING SECTIONS DETAILS",
+      "role": "elevations-sections",
+      "source_page": 3,
+      "pdf": "elevations-sections/A4.1_BUILDING_SECTIONS_DETAILS.pdf",
+      "image": "elevations-sections/images/A4.1_BUILDING_SECTIONS_DETAILS.png"
+    }
+  ]
+}

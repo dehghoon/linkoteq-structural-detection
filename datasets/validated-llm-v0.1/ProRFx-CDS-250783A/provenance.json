@@ -1,0 +1,39 @@
+{
+  "project_id": "ProRFx-CDS-250783A",
+  "source_url": "https://prorfx.com/Storage/110S34471_051/ProRFx/Upload/Attachments/General/Exhibit%20C%20-%20Building%20Plans._2ef14314.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S101",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 19,
+      "pdf": "plans/S101_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S101_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S102",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 20,
+      "pdf": "plans/S102_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S102_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A-201",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 1,
+      "pdf": "elevations-sections/A-201_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A-201_EXTERIOR_ELEVATIONS.png"
+    },
+    {
+      "sheet": "A-301",
+      "title": "BUILDING SECTIONS",
+      "role": "elevations-sections",
+      "source_page": 9,
+      "pdf": "elevations-sections/A-301_BUILDING_SECTIONS.pdf",
+      "image": "elevations-sections/images/A-301_BUILDING_SECTIONS.png"
+    }
+  ]
+}

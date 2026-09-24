@@ -1,0 +1,31 @@
+{
+  "project_id": "GovNav-24-0395",
+  "source_url": "https://media.governmentnavigator.com/media/bid/1731528520_11-13-2024_24-0395-11-15-09.pdf",
+  "status": "materialized_exact_sheet_match",
+  "selected_sheets": [
+    {
+      "sheet": "S201",
+      "title": "FOUNDATION PLAN",
+      "role": "plans",
+      "source_page": 16,
+      "pdf": "plans/S201_FOUNDATION_PLAN.pdf",
+      "image": "plans/images/S201_FOUNDATION_PLAN.png"
+    },
+    {
+      "sheet": "S301",
+      "title": "ROOF FRAMING PLAN",
+      "role": "plans",
+      "source_page": 14,
+      "pdf": "plans/S301_ROOF_FRAMING_PLAN.pdf",
+      "image": "plans/images/S301_ROOF_FRAMING_PLAN.png"
+    },
+    {
+      "sheet": "A2.0",
+      "title": "EXTERIOR ELEVATIONS",
+      "role": "elevations-sections",
+      "source_page": 23,
+      "pdf": "elevations-sections/A2.0_EXTERIOR_ELEVATIONS.pdf",
+      "image": "elevations-sections/images/A2.0_EXTERIOR_ELEVATIONS.png"
+    }
+  ]
+}
