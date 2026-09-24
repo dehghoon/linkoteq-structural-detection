@@ -41,30 +41,22 @@ jobs:
               ok=true
               cp "$pdf" "$d/originals/source.pdf"
               pdftotext -layout "$pdf" "$tmp/$id.txt" || true
-              python3 - "$pdf" "$tmp/$id.txt" "$d" "$plans" "$elevs" <<'PY'
-import sys,re,subprocess,os,json
-pdf,txt,out,plans,elevs=sys.argv[1:]
-labels=[(x.strip(),'plans') for x in plans.split(',') if x.strip()]+[(x.strip(),'elevations-sections') for x in elevs.split(',') if x.strip()]
-raw=open(txt,errors='ignore').read()
-pages=raw.split('\f')
-found=[]
-for label,role in labels:
-    # exact-ish sheet token; inspect extracted page text, never use first generic keyword
-    pat=re.compile(r'(?<![A-Za-z0-9])'+re.escape(label)+r'(?![A-Za-z0-9])',re.I)
-    hits=[i+1 for i,p in enumerate(pages) if pat.search(p)]
-    # Prefer page where label is accompanied by expected title terms.
-    terms=('FOUNDATION','FRAMING','PLAN') if role=='plans' else ('ELEVATION','SECTION')
-    ranked=sorted(hits,key=lambda n:sum(t in pages[n-1].upper() for t in terms),reverse=True)
-    if not ranked: continue
-    p=ranked[0]
-    base=re.sub(r'[^A-Za-z0-9_.-]+','_',label)
-    outpdf=f"{out}/{role}/{base}.pdf"
-    subprocess.run(['pdfseparate','-f',str(p),'-l',str(p),pdf,outpdf],check=True)
-    prefix=f"{out}/{role}/images/{base}"
-    subprocess.run(['pdftoppm','-f','1','-singlefile','-png','-r','200',outpdf,prefix],check=True)
-    found.append({'sheet':label,'role':role,'source_page':p,'pdf':os.path.relpath(outpdf,out),'image':os.path.relpath(prefix+'.png',out)})
-json.dump({'project_id':os.path.basename(out),'source_url':sys.argv[0] if False else None,'status':'materialized_from_verified_web_source','selected_sheets':found},open(f"{out}/provenance.partial.json",'w'),indent=2)
-PY
+              # Extract pages by verified sheet labels. Keep logic in shell to avoid YAML heredoc indentation issues.
+              IFS=',' read -ra plan_arr <<< "$plans"
+              IFS=',' read -ra elev_arr <<< "$elevs"
+              for role in plans elevations-sections; do
+                if [ "$role" = "plans" ]; then arr=( "${plan_arr[@]}" ); else arr=( "${elev_arr[@]}" ); fi
+                for label in "${arr[@]}"; do
+                  label="$(echo "$label" | xargs)"
+                  [ -n "$label" ] || continue
+                  page="$(awk -v RS='\f' -v s="$label" 'index(toupper($0),toupper(s)){print NR; exit}' "$tmp/$id.txt" || true)"
+                  [ -n "$page" ] || continue
+                  safe="$(echo "$label" | sed 's/[^A-Za-z0-9_.-]/_/g')"
+                  outpdf="$d/$role/$safe.pdf"
+                  pdfseparate -f "$page" -l "$page" "$pdf" "$outpdf"
+                  pdftoppm -f 1 -singlefile -png -r 200 "$outpdf" "$d/$role/images/$safe"
+                done
+              done
             fi
             jq -n --arg id "$id" --arg url "$url" --argjson downloaded "$ok" --arg plans "$plans" --arg elevs "$elevs"               '{project_id:$id,source_url:$url,pdf_downloaded:$downloaded,expected_plan_sheets:$plans,expected_elevation_section_sheets:$elevs,status:(if $downloaded then "source_downloaded_selected_sheets_materialized" else "source_download_failed_image_capture_required" end)}' > "$d/provenance.json"
             rm -f "$d/provenance.partial.json"
