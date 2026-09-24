@@ -1,0 +1,272 @@
+[
+  {
+    "id": "Bondurant-Public-Works",
+    "url": "https://iisc.uiowa.edu/sites/iisc.uiowa.edu/files/2024-05/Final%20Designs%20-%20Bondurant%20Public%20Works%20Building.pdf",
+    "sheets": [
+      {
+        "sheet": "S100",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S200",
+        "title": "FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A300",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A400",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Huber-Heights-Governance-Senior-Center",
+    "url": "https://arconbuilders.com/wp-content/uploads/2024/05/Plans-Civil-Arch-Structrual.pdf",
+    "sheets": [
+      {
+        "sheet": "S101",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S301",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A301",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A302",
+        "title": "BUILDING SECTIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Mesecher-Goudreau-Residence",
+    "url": "https://mylesmckenzie.com/project_files/20220809-Mesecher-Goudreau-Residence-REV1.pdf",
+    "sheets": [
+      {
+        "sheet": "S1",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2",
+        "title": "FRAMING PLAN 2ND FLOOR LOWER ROOF",
+        "role": "plans"
+      },
+      {
+        "sheet": "S4",
+        "title": "FRAMING PLAN UPPER ROOF",
+        "role": "plans"
+      },
+      {
+        "sheet": "A6",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A7",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Cullen-Martin-St-Residence",
+    "url": "https://www.hamiltonma.gov/wp-content/uploads/2025/09/20260305-Cullen-CD-COMPLETE.pdf",
+    "sheets": [
+      {
+        "sheet": "A-1.0",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-1.0",
+        "title": "FIRST FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-1.1",
+        "title": "SECOND FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-1.3",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A-2.0",
+        "title": "FRONT SIDE ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A-2.1",
+        "title": "REAR SIDE ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Federal-Way-OMF",
+    "url": "https://www.federalwaywa.gov/sites/default/files/2024-05/City%20of%20Federal%20Way%20OMF%20-%20Vol%201%20-%20Plans-Bid%20Set%20051024-unofficial.pdf",
+    "sheets": [
+      {
+        "sheet": "SA101",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "SA201",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "AA300",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Port-Wentworth",
+    "url": "https://portwentworthga.gov/wp-content/uploads/2023/12/Port-Wentworth-Submittal.pdf",
+    "sheets": [
+      {
+        "sheet": "S-101",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-120",
+        "title": "SECOND LEVEL APPARATUS ROOF FRAMING",
+        "role": "plans"
+      },
+      {
+        "sheet": "S-151",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A-201",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A-202",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "ECISD-Robert-Vela-Multiuse",
+    "url": "https://www.ecisd.us/ourpages/auto/2025/5/16/37264332/Robert%20Vela%20High%20School%20Drawings.pdf",
+    "sheets": [
+      {
+        "sheet": "S2.0",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S3.0",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A3.0",
+        "title": "EXTERIOR ELEVATIONS BASE BID",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Lewis-Central-Addition",
+    "url": "https://lewiscentral.org/files/bid_notices/project_drawings_122553.pdf",
+    "sheets": [
+      {
+        "sheet": "S2-1",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2-2",
+        "title": "ADDITION ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A2-1",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Tuscaloosa-DHR-Building-1",
+    "url": "https://dominguezdesign-build.com/wp-content/uploads/2024/10/Drawings-Vol.-1-Tuscaloosa-DHR-Building-1.pdf",
+    "sheets": [
+      {
+        "sheet": "S2.01",
+        "title": "FLOOR AND FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.02",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A4.01",
+        "title": "EXTERIOR ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  },
+  {
+    "id": "Landings-Aberdare-Building-1",
+    "url": "https://media-003-ca.cdn.govstack.com/midland-ca/media/shufh5zn/elevations-b1.pdf",
+    "sheets": [
+      {
+        "sheet": "S1.1",
+        "title": "FOUNDATION PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S1.2",
+        "title": "ENTRANCE LEVEL FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S2.1",
+        "title": "1ST FLOOR FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "S6.1",
+        "title": "ROOF FRAMING PLAN",
+        "role": "plans"
+      },
+      {
+        "sheet": "A4.0",
+        "title": "BUILDING ELEVATIONS",
+        "role": "elevations-sections"
+      },
+      {
+        "sheet": "A4.1",
+        "title": "BUILDING ELEVATIONS",
+        "role": "elevations-sections"
+      }
+    ]
+  }
+]
