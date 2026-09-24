@@ -1,7 +1,7 @@
 {
   "project_id": "Tuscaloosa-DHR-Building-1",
   "source_url": "https://dominguezdesign-build.com/wp-content/uploads/2024/10/Drawings-Vol.-1-Tuscaloosa-DHR-Building-1.pdf",
-  "status": "materialized_exact_sheet_match",
+  "status": "QUARANTINED_LLM_VISUAL_REREVIEW_REQUIRED",
   "selected_sheets": [
     {
       "sheet": "S2.01",
@@ -27,5 +27,8 @@
       "pdf": "elevations-sections/A4.01_EXTERIOR_ELEVATIONS.pdf",
       "image": "elevations-sections/images/A4.01_EXTERIOR_ELEVATIONS.png"
     }
-  ]
+  ],
+  "training_ready": false,
+  "qa_failure": "Automated text scoring selected source page 2 (drawing index) for S2.01, S2.02 and A4.01. These extracted targets are invalid until replaced by LLM/vision-reviewed actual drawing pages.",
+  "selection_policy": "LLM/vision only; Python may materialize explicit reviewed page numbers but may not select pages."
 }
