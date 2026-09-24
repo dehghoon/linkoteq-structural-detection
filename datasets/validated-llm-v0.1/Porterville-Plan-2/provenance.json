@@ -1,0 +1,8 @@
+{
+  "project_id": "Porterville-Plan-2",
+  "source_url": "https://cms9files.revize.com/PortervilleCA/Plan-2.pdf",
+  "pdf_downloaded": true,
+  "expected_plan_sheets": "S-201,S-202,S-203",
+  "expected_elevation_section_sheets": "A-201,A-301",
+  "status": "source_downloaded_selected_sheets_materialized"
+}

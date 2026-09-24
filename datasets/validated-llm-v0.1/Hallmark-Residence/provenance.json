@@ -1,0 +1,8 @@
+{
+  "project_id": "Hallmark-Residence",
+  "source_url": "https://services.austintexas.gov/edims/document.cfm?id=369868",
+  "pdf_downloaded": true,
+  "expected_plan_sheets": "S1,S2,S3,S5",
+  "expected_elevation_section_sheets": "A4.1,A4.2",
+  "status": "source_downloaded_selected_sheets_materialized"
+}

@@ -1,0 +1,8 @@
+{
+  "project_id": "Sedalia-House-A",
+  "source_url": "https://www.sedalia.com/wp-content/uploads/0602_2025-City-of-Sedalia-Housing-Plan-A.pdf",
+  "pdf_downloaded": true,
+  "expected_plan_sheets": "S1.01,S1.02",
+  "expected_elevation_section_sheets": "A2.01,A3.01",
+  "status": "source_downloaded_selected_sheets_materialized"
+}

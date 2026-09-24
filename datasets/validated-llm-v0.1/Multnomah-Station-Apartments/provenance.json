@@ -1,0 +1,8 @@
+{
+  "project_id": "Multnomah-Station-Apartments",
+  "source_url": "https://www.portlandoregon.gov/bds/appeals/index.cfm?action=getfile&appeal_id=18228&file_id=21985",
+  "pdf_downloaded": true,
+  "expected_plan_sheets": "S101,S102A,S102B,S102C,S103,S104,S105",
+  "expected_elevation_section_sheets": "A301,A302,A401,S304",
+  "status": "source_downloaded_selected_sheets_materialized"
+}
