@@ -1,0 +1,31 @@
+name: Render four flagged sources for LLM review
+on:
+  workflow_dispatch:
+  push:
+    paths: [datasets/web-batches/.trigger-render-4-flagged]
+permissions: {contents: write}
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Render all source pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          for id in Tuscaloosa-DHR-Building-1 Cullen-Martin-St-Residence Mesecher-Goudreau-Residence Port-Wentworth; do
+            src="datasets/pending-llm-review/$id/originals/source-redownload.pdf"
+            out="datasets/pending-llm-review/$id/page-renders"
+            mkdir -p "$out"
+            pdfinfo "$src" > "$out/pdfinfo.txt"
+            pdftoppm -jpeg -r 90 -jpegopt quality=72 "$src" "$out/page"
+          done
+      - name: Commit renders
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datasets/pending-llm-review
+          git diff --cached --quiet && exit 0
+          git commit -m "Render four flagged sources for LLM visual review"
+          git push
