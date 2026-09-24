@@ -1,0 +1,19 @@
+Title:           
+Creator:         Adobe Acrobat (32-bit) 25.1.20997
+Producer:        Adobe PDF Library 18.0.4
+CreationDate:    Thu Mar  5 14:32:30 2026 UTC
+ModDate:         Thu Mar  5 14:32:30 2026 UTC
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            AcroForm
+JavaScript:      no
+Pages:           27
+Encrypted:       no
+Page size:       2592 x 1728 pts
+Page rot:        0
+File size:       9437641 bytes
+Optimized:       yes
+PDF version:     1.6

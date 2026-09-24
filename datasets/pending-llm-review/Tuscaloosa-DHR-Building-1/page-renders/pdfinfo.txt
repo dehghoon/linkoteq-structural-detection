@@ -1,0 +1,19 @@
+Author:          18504
+Creator:         Bluebeam Stapler 21.0.30.30
+Producer:        Bluebeam Brewery 5.0
+CreationDate:    Wed Oct  2 20:48:52 2024 UTC
+ModDate:         Wed Oct  2 20:48:54 2024 UTC
+Custom Metadata: no
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           32
+Encrypted:       no
+Page size:       3024 x 2160 pts
+Page rot:        0
+File size:       30033290 bytes
+Optimized:       no
+PDF version:     1.7

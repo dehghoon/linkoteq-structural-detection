@@ -1,0 +1,19 @@
+Author:          LeeC
+Creator:         Bluebeam Revu x64
+Producer:        Bluebeam PDF Library 20
+CreationDate:    Fri Sep  8 22:22:04 2023 UTC
+ModDate:         Tue Dec  5 02:14:24 2023 UTC
+Custom Metadata: no
+Metadata Stream: yes
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      yes
+Pages:           131
+Encrypted:       no
+Page size:       2448 x 1584 pts
+Page rot:        0
+File size:       25000408 bytes
+Optimized:       yes
+PDF version:     1.4
