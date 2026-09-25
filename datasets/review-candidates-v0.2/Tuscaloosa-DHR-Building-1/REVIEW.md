@@ -1,15 +1,19 @@
 # Tuscaloosa-DHR-Building-1 — human review staging
 
-Status: PENDING LLM VISUAL RESELECTION / NOT TRAINING READY
+Status: VISUALLY RESELECTED / HUMAN REVIEW PENDING / NOT TRAINING READY
 
-Source renders: `datasets/pending-llm-review/Tuscaloosa-DHR-Building-1/page-renders/`
+Source used for final reselection: Drawings Vol. 2. Selection is based on actual rendered content, not filename/title/index metadata.
 
-Do not reuse the prior automated selections. The prior failure selected the drawing index as S2.01/S2.02/A4.01.
+## Plans selected
+- S2.01 — Floor and Foundation Plan
+- S2.02 — Roof Framing Plan
 
-Required review output:
-- one or more plan-view sheets that visibly contain labelable structural columns, grids, beams/framing, or structural walls;
-- useful building/structural elevation or section when present;
-- actual physical source page and visible sheet number/title;
-- visible target families and reason for admission.
+## Elevations / sections selected
+- S3.02 — Structural Sections
 
-No candidate is approved merely from a title/index match.
+## Explicit reject
+- S3.01 — reject for this review set: visual content is predominantly local foundation/wall sections and details and does not provide sufficiently useful structural-level vertical geometry.
+
+Important: the previously staged S3.01/S3.02 files are not trusted; they came from the earlier incorrect extraction/classification and must be replaced from the visually verified Vol. 2 pages.
+
+No candidate becomes ground truth or training-ready by inclusion here.
