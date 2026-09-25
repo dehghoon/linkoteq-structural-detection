@@ -10,6 +10,15 @@
     "sha": "de08b3037a1a3f12d026298fd671072ec0009b12",
     "rule": "G3-class-semantics MUST apply this contract's hard gates, review triggers, and contextual priors; contextual priors are never sufficient alone for promotion."
   },
+  "drawing_selection_contract": {
+    "content_inspection_required": true,
+    "filename_or_sheet_title_is_authoritative": false,
+    "rule": "Candidate drawing type and suitability MUST be determined from the visible drawing content. File names, folder names, sheet numbers, title-block labels, and words such as PLAN, SECTION, or ELEVATION are metadata clues only and MUST NOT be trusted as classification evidence without visual-content confirmation.",
+    "plan": "Classify as plan when the principal useful view is a top/plan view. A file named SECTION or ELEVATION that visibly contains a plan MUST be classified as plan.",
+    "elevation": "Classify as elevation only when the visible content is an actual vertical elevation useful for structural detection.",
+    "section": "Structural sections are acceptable in the elevation/section review set when their visible content shows structural levels and useful structural geometry such as columns, beams, walls, braces, or their vertical relationships. Detail-only or assembly-only sections without useful structural-level geometry are not sufficient.",
+    "conflict_resolution": "When metadata and visible content disagree, visible content controls. If visible content is insufficient or ambiguous, route to human review rather than infer classification from the name."
+  },
   "gates": [
     {"id":"G1-schema","control":"required-fields, finite values, version, allowed class and QA-state are valid","blocking":true},
     {"id":"G2-source-geometry","control":"box has positive area, is within source-page bounds, and coordinate_space is explicit source-page","blocking":true},
@@ -17,7 +26,8 @@
     {"id":"G4-instance-boundary","control":"box is tight around the visible target instance; does not include unrelated text/dimensions/grids and does not infer hidden continuation","blocking":true},
     {"id":"G5-ambiguity","control":"ambiguous-class, ambiguous-presence or overlap-ambiguous blocks promotion; no-safe-box is not a negative label","blocking":true},
     {"id":"G6-deduplication-split","control":"no duplicate instance and no exact/near-duplicate leakage across project-group train/validation/test splits","blocking":true},
-    {"id":"G7-provenance-review","control":"stable candidate ID, source/page/project-group, candidate generator version, evidence/reason and review state are preserved; human QA is required when the annotation spec requires it","blocking":true}
+    {"id":"G7-provenance-review","control":"stable candidate ID, source/page/project-group, candidate generator version, evidence/reason and review state are preserved; human QA is required when the annotation spec requires it","blocking":true},
+    {"id":"G8-drawing-content-classification","control":"review-candidate drawing type and suitability are determined from visible drawing content; filename, folder, sheet number and title-block wording are non-authoritative metadata only; metadata/content conflicts are resolved in favor of visible content and ambiguity routes to human review","blocking":true}
   ],
   "semantic_qa_requirements": {
     "grid": "no-grid is valid; do not invent grids; grid alignment is context only; off-grid candidates are reviewed",
