@@ -1,9 +1,20 @@
 # Port-Wentworth — human review staging
 
-Status: PENDING LLM VISUAL RESELECTION / NOT TRAINING READY
+Status: VISUALLY RESELECTED / HUMAN REVIEW PENDING / NOT TRAINING READY
 
-Source renders: `datasets/pending-llm-review/Port-Wentworth/page-renders/`
+Selection basis: actual rendered sheet content; filenames, OCR, sheet titles and indexes are non-authoritative metadata.
 
-The earlier page candidates are not trusted. Re-review the rendered sheets and admit only plan views with visible, labelable structural column/grid/beam-framing/structural-wall geometry. Building/structural elevations or sections may be staged separately when they contain useful vertical structural/building geometry.
+## Plans selected
+- S-101 — Foundation Plan
+- S-120 — Second Level + Apparatus Roof Framing Plan
+- S-151 — Roof Framing Plan
 
-Do not infer correctness from sheet number, page order, OCR, filename, title, index, or keyword match.
+## Elevations / sections selected
+- A-201 — Exterior Elevations
+- A-202 — Exterior Elevations
+- A-301 — Building Sections
+- A-302 — Building Sections
+
+S-303 through S-305 are excluded from this review set because visual inspection shows predominantly local connection/detail sections rather than useful whole-building vertical geometry.
+
+No candidate becomes ground truth or training-ready by inclusion here.
