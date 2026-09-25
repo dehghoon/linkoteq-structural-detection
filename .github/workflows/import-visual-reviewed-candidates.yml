@@ -31,46 +31,65 @@ jobs:
           echo 'Archive contents:'
           find "$tmp" -type f -print | sort
 
-          # Locate the directory containing the four reviewed project folders.
-          src=''
-          while IFS= read -r d; do
-            if [ -d "$d/Cullen-Martin-St-Residence" ] && \
-               [ -d "$d/Mesecher-Goudreau-Residence" ] && \
-               [ -d "$d/Port-Wentworth" ] && \
-               [ -d "$d/Tuscaloosa-DHR-Building-1" ]; then
-              src="$d"
-              break
-            fi
-          done < <(find "$tmp" -type d -print)
-          test -n "$src"
-
+          # The reviewed archive is intentionally flat. Map each visually
+          # reviewed PDF explicitly; do not infer project/role from sheet title.
           projects=(
             Cullen-Martin-St-Residence
             Mesecher-Goudreau-Residence
             Port-Wentworth
             Tuscaloosa-DHR-Building-1
           )
-
-          # Preserve REVIEW.md, but replace candidate binary folders with the
-          # visually reviewed contents of the archive.
           for project in "${projects[@]}"; do
-            for role in plans elevations-sections; do
-              dest="$root/$project/$role"
-              rm -rf "$dest"
-              if [ -d "$src/$project/$role" ]; then
-                mkdir -p "$dest"
-                cp -a "$src/$project/$role/." "$dest/"
-              fi
-            done
+            rm -rf "$root/$project/plans" "$root/$project/elevations-sections"
+            mkdir -p "$root/$project/plans" "$root/$project/elevations-sections"
           done
 
-          # Guard against accidental nested project trees or non-PDF payloads.
+          put() {
+            project="$1"; role="$2"; file="$3"
+            test -f "$tmp/$file" || { echo "Missing reviewed file: $file"; exit 1; }
+            cp "$tmp/$file" "$root/$project/$role/$file"
+          }
+
+          # Cullen-Martin-St Residence
+          put Cullen-Martin-St-Residence plans 'S-1.0_First-Floor-Framing-Plan.pdf'
+          put Cullen-Martin-St-Residence plans 'S-1.1_Second-Floor-Framing-Plan.pdf'
+          put Cullen-Martin-St-Residence plans 'S-1.3_Roof-Framing-Plan.pdf'
+          put Cullen-Martin-St-Residence elevations-sections 'A-2.0_Exterior-Elevations.pdf'
+          put Cullen-Martin-St-Residence elevations-sections 'A-2.1_Exterior-Elevations.pdf'
+
+          # Mesecher-Goudreau Residence
+          put Mesecher-Goudreau-Residence plans 'S1_Foundation-Plan.pdf'
+          put Mesecher-Goudreau-Residence plans 'S2_2nd-Floor-Lower-Roof-Framing.pdf'
+          put Mesecher-Goudreau-Residence plans 'S3_Second-Floor-Ceiling-Framing.pdf'
+          put Mesecher-Goudreau-Residence plans 'S4_Upper-Roof-Framing.pdf'
+          put Mesecher-Goudreau-Residence elevations-sections 'A8_Building-Sections.pdf'
+
+          # Port Wentworth
+          put Port-Wentworth plans 'S-101_Foundation-Plan.pdf'
+          put Port-Wentworth plans 'S-120_Second-Level-Apparatus-Roof-Framing.pdf'
+          put Port-Wentworth plans 'S-151_Roof-Framing-Plan.pdf'
+          put Port-Wentworth elevations-sections 'A-201_Exterior-Elevations.pdf'
+          put Port-Wentworth elevations-sections 'A-202_Exterior-Elevations.pdf'
+          put Port-Wentworth elevations-sections 'A-301_Building-Sections.pdf'
+          put Port-Wentworth elevations-sections 'A-302_Building-Sections.pdf'
+
+          # Tuscaloosa DHR Building 1
+          put Tuscaloosa-DHR-Building-1 plans 'S2.01_Floor-and-Foundation-Plan.pdf'
+          put Tuscaloosa-DHR-Building-1 plans 'S2.02_Roof-Framing-Plan.pdf'
+          put Tuscaloosa-DHR-Building-1 elevations-sections 'A-3.0_Building-Section.pdf'
+          put Tuscaloosa-DHR-Building-1 elevations-sections 'A-3.1_Building-Section.pdf'
+          put Tuscaloosa-DHR-Building-1 elevations-sections 'S3.02_Structural-Sections.pdf'
+
+          # Exact archive and destination guards.
+          archive_count="$(find "$tmp" -type f -name '*.pdf' | wc -l)"
+          pdf_count="$(find "$root" \( -path '*/plans/*.pdf' -o -path '*/elevations-sections/*.pdf' \) -type f | wc -l)"
+          echo "Archive PDF count: $archive_count"
+          echo "Installed reviewed PDF count: $pdf_count"
+          test "$archive_count" -eq 22
+          test "$pdf_count" -eq 22
+
           bad="$(find "$root" \( -path '*/plans/*' -o -path '*/elevations-sections/*' \) -type f ! -name '*.pdf' -print)"
           test -z "$bad" || { echo "Unexpected non-PDF files:"; echo "$bad"; exit 1; }
-
-          pdf_count="$(find "$root" \( -path '*/plans/*.pdf' -o -path '*/elevations-sections/*.pdf' \) -type f | wc -l)"
-          echo "Reviewed PDF count: $pdf_count"
-          test "$pdf_count" -eq 22
 
           rm -f "$zip"
 
