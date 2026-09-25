@@ -1,0 +1,28 @@
+{
+  "contract": "STRUCTURAL_DRAWING_DATASET_ADMISSION_CONTRACT_v0.2",
+  "status": "ACTIVE",
+  "selection_authority": "LLM_VISUAL_ONLY",
+  "purpose": "YOLO structural detection candidate selection",
+  "positive_gate": {
+    "plan_view_required": true,
+    "must_visibly_contain_at_least_one": ["column", "structural_grid", "beam_or_framing", "structural_wall_or_shear_wall"],
+    "preferred": "multiple target families at labelable scale with clear plan relationships"
+  },
+  "hard_reject": [
+    "cover_or_index",
+    "general_notes_or_design_criteria",
+    "specifications_or_schedules",
+    "details_only_or_connection_details",
+    "isolated_sections_without_plan_geometry",
+    "civil_site_grading_utility_or_landscape_plan",
+    "architectural_plan_without_useful_structural_targets",
+    "roof_outline_without_structural_framing_targets",
+    "3d_render_or_isometric_only",
+    "blank_corrupt_wrong_or_unreadable_page",
+    "targets_too_small_or_fragmentary_for_labeling"
+  ],
+  "elevation_section_gate": "Actual building/structural elevation or section with useful vertical structural/building geometry; reject index, notes, schedules, and detail-only sheets.",
+  "automation_prohibition": "OCR/text/title/index/filename/keyword/Python may navigate but may never admit or select a sheet.",
+  "post_extraction_gate": "Extracted PDF/PNG must be visually reviewed again before validated or training_ready=true.",
+  "reviewer_output_required": ["physical_source_page", "sheet_number_if_legible", "sheet_title_if_legible", "role", "visible_target_families", "admit_or_reject", "reason"]
+}
