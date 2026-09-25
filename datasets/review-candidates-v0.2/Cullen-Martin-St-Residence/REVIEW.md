@@ -1,9 +1,20 @@
 # Cullen-Martin-St-Residence — human review staging
 
-Status: PENDING LLM VISUAL RESELECTION / NOT TRAINING READY
+Status: VISUALLY RESELECTED / HUMAN REVIEW PENDING / NOT TRAINING READY
 
-Source renders: `datasets/pending-llm-review/Cullen-Martin-St-Residence/page-renders/`
+Selection basis: actual rendered sheet content; filenames, OCR, sheet titles and indexes are non-authoritative metadata.
 
-Only actual rendered sheets may be admitted. Select plan views only when structural column/grid/beam-framing/structural-wall geometry is visibly useful at labeling scale. Select elevation/section only when it contributes useful building/structural vertical geometry.
+## Plans selected
+- S-1.0 — First Floor Framing Plan
+- S-1.1 — Second Floor Framing Plan
+- S-1.3 — Roof Framing Plan
 
-No candidate is approved from filename, OCR, title, index, or keyword matching.
+## Elevations / sections selected
+- A-2.0 — Exterior Elevations
+- A-2.1 — Exterior Elevations
+- A-3.0 — Building Section
+- A-3.1 — Building Section
+
+The framing plans visibly contain useful structural framing/post/wall geometry. The selected elevations/sections visibly show building vertical geometry and levels. Detail-only sheets are excluded.
+
+No candidate becomes ground truth or training-ready by inclusion here.
