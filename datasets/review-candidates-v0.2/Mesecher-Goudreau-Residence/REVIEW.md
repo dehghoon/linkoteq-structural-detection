@@ -1,11 +1,18 @@
 # Mesecher-Goudreau-Residence — human review staging
 
-Status: RESELECTION REQUIRED / NOT TRAINING READY
+Status: VISUALLY RESELECTED / HUMAN REVIEW PENDING / NOT TRAINING READY
 
-Source renders: `datasets/pending-llm-review/Mesecher-Goudreau-Residence/page-renders/`
+Selection basis: actual rendered sheet content; filenames, OCR, sheet titles and indexes are non-authoritative metadata.
 
-Confirmed rejects from the previous attempt:
-- saved `S1_FOUNDATION_PLAN` candidate: actually a details/sections sheet;
-- saved `S2_FRAMING_PLAN_2ND_FLOOR_LOWER_ROOF` candidate: actually structural design criteria / framing specifications.
+## Plans selected
+- S1 — Foundation Plan
+- S2 — Framing Plan, 2nd Floor & Lower Roof
+- S3 — Framing Plan, Second Floor Ceiling
+- S4 — Framing Plan, Upper Roof
 
-These must not be reused. A replacement plan candidate must visibly contain labelable structural columns, grid, beams/framing, or structural walls in plan view. If no such sheet exists, record `REJECT_NO_USEFUL_YOLO_STRUCTURAL_PLAN` rather than manufacturing a candidate.
+## Elevations / sections selected
+- A8 — Building Sections
+
+The four S sheets were visually confirmed as actual plan-view structural drawings. A8 visibly contains full building sections with multiple structural levels. Detail/specification sheets are excluded.
+
+No candidate becomes ground truth or training-ready by inclusion here.
