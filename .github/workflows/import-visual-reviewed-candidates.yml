@@ -1,0 +1,86 @@
+name: Import visual-reviewed candidate PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-visual-reviewed-candidates.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-reviewed-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract visually reviewed candidate archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          root='datasets/review-candidates-v0.2'
+          zip="$root/review-candidates-v0.2-visual-reviewed.zip"
+          test -f "$zip"
+
+          tmp="$(mktemp -d)"
+          unzip -q "$zip" -d "$tmp"
+          echo 'Archive contents:'
+          find "$tmp" -type f -print | sort
+
+          # Locate the directory containing the four reviewed project folders.
+          src=''
+          while IFS= read -r d; do
+            if [ -d "$d/Cullen-Martin-St-Residence" ] && \
+               [ -d "$d/Mesecher-Goudreau-Residence" ] && \
+               [ -d "$d/Port-Wentworth" ] && \
+               [ -d "$d/Tuscaloosa-DHR-Building-1" ]; then
+              src="$d"
+              break
+            fi
+          done < <(find "$tmp" -type d -print)
+          test -n "$src"
+
+          projects=(
+            Cullen-Martin-St-Residence
+            Mesecher-Goudreau-Residence
+            Port-Wentworth
+            Tuscaloosa-DHR-Building-1
+          )
+
+          # Preserve REVIEW.md, but replace candidate binary folders with the
+          # visually reviewed contents of the archive.
+          for project in "${projects[@]}"; do
+            for role in plans elevations-sections; do
+              dest="$root/$project/$role"
+              rm -rf "$dest"
+              if [ -d "$src/$project/$role" ]; then
+                mkdir -p "$dest"
+                cp -a "$src/$project/$role/." "$dest/"
+              fi
+            done
+          done
+
+          # Guard against accidental nested project trees or non-PDF payloads.
+          bad="$(find "$root" \( -path '*/plans/*' -o -path '*/elevations-sections/*' \) -type f ! -name '*.pdf' -print)"
+          test -z "$bad" || { echo "Unexpected non-PDF files:"; echo "$bad"; exit 1; }
+
+          pdf_count="$(find "$root" \( -path '*/plans/*.pdf' -o -path '*/elevations-sections/*.pdf' \) -type f | wc -l)"
+          echo "Reviewed PDF count: $pdf_count"
+          test "$pdf_count" -eq 22
+
+          rm -f "$zip"
+
+      - name: Commit reviewed candidate PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A datasets/review-candidates-v0.2
+          git diff --cached --quiet && { echo 'No candidate changes to commit.'; exit 0; }
+          git commit -m 'Import 22 visually reviewed plan and elevation candidates'
+          git push origin HEAD:main
