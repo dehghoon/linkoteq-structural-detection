@@ -1,0 +1,8 @@
+{
+  "project_group_id": "P2026-024",
+  "source_image_path": "datasets/validated-llm-v0.1/P2026-024/plans/images/EsMx401_no_titleblock-1.png",
+  "coordinate_space": "source-page",
+  "purpose": "YOLO candidate source image reference",
+  "copy_source_image_into_candidate": false,
+  "enablesTraining": false
+}
