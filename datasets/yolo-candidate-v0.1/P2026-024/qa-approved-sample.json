@@ -1,0 +1,30 @@
+{
+  "dataset_version": "yolo-candidate-v0.1",
+  "status": "candidate-dataset-evolution",
+  "enablesTraining": false,
+  "project_group_id": "P2026-024",
+  "source_plan": {
+    "path": "datasets/validated-llm-v0.1/P2026-024/plans/images/EsMx401_no_titleblock-1.png",
+    "coordinate_space": "source-page",
+    "review_state": "human-approved-qa-sample",
+    "approved_classes": ["column", "beam"],
+    "wall_policy": "only-when-visible-structural-wall-evidence-meets-annotation-spec-v0.2",
+    "annotation_serialization_state": "pending-exact-bbox-serialization-from-approved-qa-overlay"
+  },
+  "gpt6_elevation_context": {
+    "preserve_project_elevation_section_assets": true,
+    "assets": [
+      "datasets/validated-llm-v0.1/P2026-024/elevations-sections/EsMx501_no_titleblock.pdf",
+      "datasets/validated-llm-v0.1/P2026-024/elevations-sections/EsMx502_no_titleblock.pdf"
+    ],
+    "policy": "Elevation/section assets are preserved as source project context for GPT-6 level/elevation/vertical-extent reasoning. They are not automatically YOLO object-detection ground truth for column/beam/wall. Any GPT-7 label admitted from an elevation/section must independently satisfy the active annotation and adjudication contract."
+  },
+  "boundaries": {
+    "structural_detection_evidence": "v0.2",
+    "classes": ["column", "beam", "wall"],
+    "emitsCanonicalEngineeringGeometry": false,
+    "legacy_v0_1_wall_rejection": true,
+    "structural_layout_proposal_excluded_from_ground_truth": true
+  },
+  "note": "This record preserves the human-approved QA sample and project-level elevation context without mutating validated-llm-v0.1. Exact YOLO bbox txt must not be fabricated; it is committed only when exact source-page box coordinates from the approved QA overlay are available."
+}
