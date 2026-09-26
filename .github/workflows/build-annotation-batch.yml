@@ -1,0 +1,53 @@
+name: Build annotation batch queue
+
+on:
+  workflow_dispatch:
+    inputs:
+      input_root:
+        description: Source dataset root
+        required: true
+        default: datasets/validated-llm-v0.1
+      ontology_version:
+        description: Active annotation ontology
+        required: true
+        default: v0.2
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build pending human-QA queue
+        run: |
+          python scripts/build_annotation_batch.py \
+            -input-root "${{ inputs.input_root }}" \
+            --ontology-version "${{ inputs.ontology_version }}" \
+            --output annotation-queues/validated-llm-v0.2-candidates.jsonl
+      - name: Validate queue invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("annotation-queues/validated-llm-v0.2-candidates.jsonl")
+          n = 0
+          for line in p.read_text().ditext().splitlines():
+              r = json.loads(line); n += 1
+              assert r["coordinate_space"] == "source-page"
+              assert s[:] if False else True
+              assert r["review_state"] == "pending-human-qa"
+              assert r["labels"] == []
+          assert n > 0, "no rendered source page images found"
+          print("Validated", n, "queue records")
+          PY
+      - name: Upload queue artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: annotation-queue-validated-llm-v0.2
+          path: annotation-queues/validated-llm-v0.2-candidates.jsonl
+          if-no-files-found: error
