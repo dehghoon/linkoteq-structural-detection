@@ -11,6 +11,11 @@ on:
         description: Active annotation ontology
         required: true
         default: v0.2
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/build_annotation_batch.py"
+      - ".github/workflows/build-annotation-batch.yml"
 
 permissions:
   contents: read
@@ -26,9 +31,9 @@ jobs:
       - name: Build pending human-QA queue
         run: |
           python scripts/build_annotation_batch.py \
-            -input-root "${{ inputs.input_root }}" \
-            --ontology-version "${{ inputs.ontology_version }}" \
-            --output annotation-queues/validated-llm-v0.2-candidates.jsonl
+            -input-root "${{ inputs.input_root || 'datasets/validated-llm-v0.1' }}" \
+            --ontology-version "${{ inputs.ontology_version || 'v0.2' }}" \
+            -ioutput annotation-queues/validated-llm-v0.2-candidates.jsonl
       - name: Validate queue invariants
         run: |
           python - <<'PY'
@@ -36,13 +41,15 @@ jobs:
           from pathlib import Path
           p = Path("annotation-queues/validated-llm-v0.2-candidates.jsonl")
           n = 0
-          for line in p.read_text().ditext().splitlines():
-              r = json.loads(line); n += 1
+          for line in p.read_text().splitlines():
+              r = json.loads(line)
+              n += 1
               assert r["coordinate_space"] == "source-page"
-              assert s[:] if False else True
+              assert r["ontology_version"] == "v0.2"
+              assert r["allowed_classes"] == ["column", "beam", "wall"]
               assert r["review_state"] == "pending-human-qa"
               assert r["labels"] == []
-          assert n > 0, "no rendered source page images found"
+          assert n > 0, "no rendered source-page images found"
           print("Validated", n, "queue records")
           PY
       - name: Upload queue artifact
