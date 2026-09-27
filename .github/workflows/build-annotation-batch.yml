@@ -23,17 +23,27 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      INPUT_ROOT: ${{ github.event.inputs.input_root || 'datasets/validated-llm-v0.1' }}
+      ONTOLOGY_VERSION: ${{ github.event.inputs.ontology_version || 'v0.2' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Validate source root
+        run: |
+          test -d "$INPUT_ROOT"
+          test "$ONTOLOGY_VERSION" = "v0.2"
       - name: Build pending human-QA queue
         run: |
           python scripts/build_annotation_batch.py \
-            -input-root "${{ inputs.input_root || 'datasets/validated-llm-v0.1' }}" \
-            --ontology-version "${{ inputs.ontology_version || 'v0.2' }}" \
-            -ioutput annotation-queues/validated-llm-v0.2-candidates.jsonl
+            --input-root "$INPUT_ROOT" \
+            --ontology-version "$ONTOLOGY_VERSION" \
+            --output annotation-queues/validated-llm-v0.2-candidates.jsonl
       - name: Validate queue invariants
         run: |
           python - <<'PY'
@@ -41,16 +51,18 @@ jobs:
           from pathlib import Path
           p = Path("annotation-queues/validated-llm-v0.2-candidates.jsonl")
           n = 0
-          for line in p.read_text().splitlines():
+          projects = set()
+          for line in p.read_text(encoding="utf-8").splitlines():
               r = json.loads(line)
               n += 1
+              projects.add(r["project_id"])
               assert r["coordinate_space"] == "source-page"
               assert r["ontology_version"] == "v0.2"
               assert r["allowed_classes"] == ["column", "beam", "wall"]
               assert r["review_state"] == "pending-human-qa"
               assert r["labels"] == []
           assert n > 0, "no rendered source-page images found"
-          print("Validated", n, "queue records")
+          print(f"Validated {n} queue records across {len(projects)} projects")
           PY
       - name: Upload queue artifact
         uses: actions/upload-artifact@v4
@@ -58,3 +70,4 @@ jobs:
           name: annotation-queue-validated-llm-v0.2
           path: annotation-queues/validated-llm-v0.2-candidates.jsonl
           if-no-files-found: error
+          retention-days: 7
