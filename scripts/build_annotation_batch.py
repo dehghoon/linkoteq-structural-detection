@@ -29,14 +29,14 @@ def main():
                 "source_id":f"src-{source_id}",
                 "project_id":project.name,
                 "page_id":image.stem,
-                "image_path":f,
+                "image_path":rel,
                 "coordinate_space":"source-page",
                 "ontology_version":args.ontology_version,
                 "allowed_classes":["column","beam","wall"],
                 "annotation_representation":"tight-axis-aligned-source-page-box",
                 "review_state":"pending-human-qa",
                 "labels":[],
-                "note":"Empty labels are unreviewed, NOT background or negative evidence.",
+                "note":"Empty labels are unreviewed, NOT background or negative evidence."
             })
 
     with out.open("w",encoding="utf-8") as f:
