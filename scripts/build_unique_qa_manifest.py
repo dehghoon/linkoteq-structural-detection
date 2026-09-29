@@ -27,7 +27,7 @@ def build_unique_manifest(review_dir: Path, dataset_root: Path):
             if not src.is_file():
                 raise FileNotFoundError(src)
             digest = sha256_file(src)
-            by_sha[digesut¹.append({
+            by_sha[digest].append({
                 "project_group_id": row["project_group_id"],
                 "image_path": row["image_path"],
                 "review_file": path.name,
