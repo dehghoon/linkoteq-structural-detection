@@ -91,6 +91,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: annotation-queue-validated-llm-v0.2
-          path: "$QUEUE"
+          path: ${{ env.QUEUE }}
           if-no-files-found: error
           retention-days: 7
