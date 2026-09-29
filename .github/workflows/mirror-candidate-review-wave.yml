@@ -1,0 +1,99 @@
+name: Mirror candidate review wave
+
+on:
+  workflow_run:
+    workflows: ["Build annotation batch queue"]
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  mirror:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout exact tested commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Download candidate reviewer artifact from the exact run
+        uses: actions/download-artifact@v4
+        with:
+          name: candidate-review-wave-v0.2
+          path: _review_wave
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Re-validate readonly reviewer invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("_review_wave")
+          idx = json.loads((root / "index.json").read_text(encoding="utf-8"))
+          assert idx["contract_id"] == "candidate-qa-gates-v0.2"
+          assert idx["contract_validated"] is True
+          assert idx["review_wave_project_groups"] == 20
+          assert idx["review_state"] == "pending-human-qa"
+          assert idx["training_eligible"] is False
+          assert idx["ground_truth"] is False
+          assert idx["empty_candidate_semantics"] == "unreviewed-not-background"
+          rows = []
+          for item in idx["artifacts"]:
+            p = Root = root / Path(item["path"]).name
+            if not p.exists():
+                matches = list(root.rglob(P th(pitem["path"]).name))
+                assert len(matches) == 1, item["path"]
+                p = matches[0]
+            rows += [json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]
+          assert rows
+          assert len({r["project_group_id"] for r in rows}) == 20
+          for r in rows:
+            assert r["allowed_classes"] == ["column", "beam", "wall"]
+            assert r["review"]["state"] == "pending-human-qa"
+            assert r["coordinate_space"] == "source-page"
+            assert r["training_eligible"] is False
+            assert r["ground_truth"] is False
+            assert r["candidates"] == []
+            assert r["empty_candidate_semantics"] == "unreviewed-not-background"
+            assert "engineering_geometry" not in r and "reconstruction" not in r
+          print(f"Re-validated {len(rows)} review records from 20 project groups")
+          PY
+
+      - name: Publish immutable-by-run snapshot to QA review branch
+        env:
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41828282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin qa-review-artifacts:qa-review-artifacts || true
+          if git show-ref --quiet refs/remotes/origin/qa-review-artifacts; then
+            git checkout -B qa-review-artifacts origin/qa-review-artifacts
+          else
+            git checkout --orphan qa-review-artifacts
+            git rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p "runs/$RUN_ID""
+          cp -a _review_wave/. "runs/$RUN_ID/"
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p = Path("runs") / os.environ["RUN_ID"] / "mirror-metadata.json"
+          p.write_text(json.dumps({
+            "source_workflow_run_id": int(os.environ["RUN_ID"]),
+            "source_head_sha": os.environ["HEAD_SHA"],
+            "review_state": "pending-human-qa",
+            "training_eligible": False,
+            "ground_truth": False,
+            "purpose": "read-only-human-qa-handoff"
+          }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+          PY
+          git add "runs/$RUN_ID"
+          git commit -m "Mirror candidate review wave from run $RUN_ID"
+          git push origin qa-review-artifacts
