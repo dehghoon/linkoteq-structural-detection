@@ -30,6 +30,9 @@ jobs:
       - name: Build exact duplicate QA report
         run: |
           python scripts/build_qa_duplicate_report.py --review-dir /tmp/reviewer --dataset-root datasets/validated-llm-v0.1 --output /tmp/qa-images/duplicate-report.json
+      - name: Build unique QA review manifest
+        run: |
+          python scripts/build_unique_qa_manifest.py --review-dir /tmp/reviewer --dataset-root datasets/validated-llm-v0.1 --output /tmp/qa-images/unique-review-manifest.json
       - name: Install ImageMagick
         run: |
           sudo apt-get update
