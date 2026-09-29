@@ -33,57 +33,18 @@ jobs:
       - name: Build and contract-validate reviewer artifact
         run: python scripts/build_candidate_review_artifacts.py --qa-dir "$QA_BATCH_DIR" --output-dir "$REVIEWER_ARTIFACT_DIR" --contract contracts/candidate-qa-gates-v0.2.json
       - name: Validate strict readonly QA invariants
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          root = Path("annotation-queues/reviewer-artifacts-v0.2")
-          idx = json.loads((root / "index.json").read_text(encoding="utf-8"))
-          assert idx["contract_id"] == "candidate-qa-gates-v0.2"
-          assert idx["contract_validated"] is True
-          assert idx["review_wave_project_groups"] == 20
-          assert idx["review_state"] == "pending-human-qa"
-          assert idx["training_eligible"] is False
-          assert idx["ground_truth"] is False
-          assert idx["empty_candidate_semantics"] == "unreviewed-not-background"
-          rows = []
-          for item in idx["artifacts"]:
-            rows += [json.loads(x) for x in Path(item["path"]).read_text(encoding="utf-8").splitlines() if x.strip()]
-          assert rows and len({r["project_group_id"] for r in rows}) == 20
-          for r in rows:
-            assert r["allowed_classes"] == ["column", "beam", "wall"]
-            assert r["coordinate_space"] == "source-page"
-            assert r["review"]["state"] == "pending-human-qa"
-            assert r["training_eligible"] is False
-            assert r["ground_truth"] is False
-            assert r["candidates"] == []
-            assert r["empty_candidate_semantics"] == "unreviewed-not-background"
-            assert "engineering_geometry" not in r and "reconstruction" not in r
-          print(f"Validated {len(rows)} review records across 20 project groups")
-          PY
-      - name: Prepare snapshot outside git worktree
+        run: python -c 'import json,pathlib; r=pathlib.Path("annotation-queues/reviewer-artifacts-v0.2"); i=json.loads((r/"index.json").read_text()); assert i["contract_id"]=="candidate-qa-gates-v0.2" and i["contract_validated"] is True and i["review_wave_project_groups"]==20 and i["review_state"]=="pending-human-qa" and i["training_eligible"] is False and i["ground_truth"] is False and i["empty_candidate_semantics"]=="unreviewed-not-background"; rows=[json.loads(x) for a in i["artifacts"] for x in pathlib.Path(a["path"]).read_text().splitlines() if x.strip()]; assert rows and len({x["project_group_id"] for x in rows})==20; assert all(x["allowed_classes"]==["column","beam","wall"] and x["coordinate_space"]=="source-page" and x["review"]["state"]=="pending-human-qa" and x["training_eligible"] is False and x["ground_truth"] is False and x["candidates"]==[] and x["empty_candidate_semantics"]=="unreviewed-not-background" and "engineering_geometry" not in x and "reconstruction" not in x for x in rows); print(f"Validated {len(rows)} review records across 20 project groups")'
+      - name: Prepare snapshot
         env:
           RUN_ID: ${{ github.run_id }}
           HEAD_SHA: ${{ github.sha }}
         run: |
-           set -euo pipefail
+          set -euo pipefail
           rm -rf /tmp/candidate-review-wave-v0.2
           mkdir -p /tmp/candidate-review-wave-v0.2
           cp -a "$REVIEWER_ARTIFACT_DIR"/. /tmp/candidate-review-wave-v0.2/
-          python - <<'PY'
-          import json, os
-          from pathlib import Path
-          p = Path("/tmp/candidate-review-wave-v0.2/mirror-metadata.json")
-          p.write_text(json.dumps({
-            "source_workflow_run_id": int(os.environ["RUN_ID"]),
-            "source_head_sha": os.environ["HEAD_SHA"],
-            "review_state": "pending-human-qa",
-            "training_eligible": False,
-            "ground_truth": False,
-            "purpose": "read-only-human-qa-handoff"
-          }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-          PY
-      - name: Publish immutable-by-run QA snapshot
+          python -c 'import json,os,pathlib; pathlib.Path("/tmp/candidate-review-wave-v0.2/mirror-metadata.json").write_text(json.dumps({"source_workflow_run_id":int(os.environ["RUN_ID"]),"source_head_sha":os.environ["HEAD_SHA"],"review_state":"pending-human-qa","training_eligible":False,"ground_truth":False,"purpose":"read-only-human-qa-handoff"},indent=2,sort_keys=True)+"\\n")'
+      - name: Publish QA snapshot
         env:
           RUN_ID: ${{ github.run_id }}
         run: |
