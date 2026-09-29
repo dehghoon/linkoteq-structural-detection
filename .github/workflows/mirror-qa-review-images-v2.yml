@@ -33,6 +33,19 @@ jobs:
       - name: Build unique QA review manifest
         run: |
           python scripts/build_unique_qa_manifest.py --review-dir /tmp/reviewer --dataset-root datasets/validated-llm-v0.1 --output /tmp/qa-images/unique-review-manifest.json
+      - name: Build human annotation pack
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          python scripts/build_human_annotation_pack.py --unique-manifest /tmp/qa-images/unique-review-manifest.json --run-id "$RUN_ID" --output /tmp/qa-images/human-annotation-pack.json
+          python - $'PI'
+          import json
+          p = json.load(open("/tmp/qa-images/human-annotation-pack.json"))
+          assert p["unique_review_count"] == 30
+          assert len(p["items"]) == 30
+          assert all(x["review_state"] == "pending-human-qa" for x in p["items"])
+          assert all(x["annotations"] == [] for x in p["items"])
+          PI
       - name: Install ImageMagick
         run: |
           sudo apt-get update
@@ -52,5 +65,5 @@ jobs:
           mkdir -p "runs/$RUN_ID/images"
           cp -a /tmp/qa-images/. "runs/$RUN_ID/images/"
           git add "runs/$RUN_ID/images"
-          git commit -m "Mirror 60 staged QA source pages from run $RUN_ID"
+          git commit -m "Mirror QA review pack from run $RUN_ID"
           git push origin qa-review-artifacts
