@@ -1,0 +1,48 @@
+name: Materialize canonical source manifest
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "scripts/materialize_source_manifest.py"
+      - ".github/workflows/materialize-source-manifest.yml"
+permissions:
+  contents: read
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Materialize manifest
+        run: |
+          python scripts/materialize_source_manifest.py --input-root datasets/validated-llm-v0.1 --dataset-id validated-llm-source-v0.2-candidate --output datasets/source-drawings/validated-llm-source-v0.2-candidate/manifest.jsonl
+      - name: Validate manifest invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("datasets/source-drawings/validated-llm-source-v0.2-candidate/manifest.jsonl")
+          rows=[json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]
+          assert rows, "empty manifest"
+          seen=set(); roles={}
+          for r in rows:
+              assert r["coordinate_space"] == "source-page"
+              assert r["page_role"] in {"plan","vertical-reference","unclassified"}
+              assert r["size_bytes"] > 0
+              assert len(r["sha256"]) == 64
+              key=(r["project_group_id"],r["source_id"],r["page_id"])
+              assert key not in seen, f"duplicate identity: {key}"
+              seen.add(key); roles[r["page_role"]]=roles.get(r["page_role"],0)+1
+          projects={r["project_group_id"] for r in rows}
+          print(f"Validated {len(rows)} source assets across {len(projects)} projects; roles={roles}")
+          PY
+      - name: Upload canonical manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: canonical-source-manifest-v0.2-candidate
+          path: datasets/source-drawings/validated-llm-source-v0.2-candidate/manifest.jsonl
+          retention-days: 7
