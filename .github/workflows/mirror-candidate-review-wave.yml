@@ -44,9 +44,9 @@ jobs:
           assert idx["empty_candidate_semantics"] == "unreviewed-not-background"
           rows = []
           for item in idx["artifacts"]:
-            p = Root = root / Path(item["path"]).name
+            p = root / Path(item["path"]).name
             if not p.exists():
-                matches = list(root.rglob(P th(pitem["path"]).name))
+                matches = list(root.rglob(Path(item["path"]).name))
                 assert len(matches) == 1, item["path"]
                 p = matches[0]
             rows += [json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]
@@ -71,7 +71,7 @@ jobs:
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
-          git config user.email "41828282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin qa-review-artifacts:qa-review-artifacts || true
           if git show-ref --quiet refs/remotes/origin/qa-review-artifacts; then
             git checkout -B qa-review-artifacts origin/qa-review-artifacts
@@ -79,7 +79,7 @@ jobs:
             git checkout --orphan qa-review-artifacts
             git rm -rf . >/dev/null 2>&1 || true
           fi
-          mkdir -p "runs/$RUN_ID""
+          mkdir -p "runs/$RUN_ID"
           cp -a _review_wave/. "runs/$RUN_ID/"
           python - <<'PY'
           import json, os
