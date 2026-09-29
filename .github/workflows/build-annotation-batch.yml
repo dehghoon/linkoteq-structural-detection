@@ -22,6 +22,7 @@ jobs:
       ONTOLOGY_VERSION: v0.2
       QUEUE: annotation-queues/validated-llm-v0.2-candidates.jsonl
       QA_BATCH_DIR: annotation-queues/qa-batches-v0.2
+      REVIEW_PROJECT_GROUPS: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -51,43 +52,53 @@ jobs:
           assert rows, "no plan pages in canonical manifest"
           projects=set(); ids=set()
           for r in rows:
-              assert r["coordinate_space"]=="source-page"
-              assert r["ontology_version"]=="v0.2"
-              assert r["allowed_classes"]==["column","beam","wall"]
-              assert r["review_state"]=="pending-human-qa"
-              assert r["labels"]==[]
-              assert r["page_role"]=="plan"
-              key=(r["project_group_id"],r["source_id"],r["page_id"])
-              assert key not in ids
-              ids.add(key); projects.add(r["project_group_id"])
+            assert r["coordinate_space"]=="source-page"
+            assert r["ontology_version"]=="v0.2"
+            assert r["allowed_classes"]==["column","beam","wall"]
+            assert r["review_state"]=="pending-human-qa"
+            assert r["labels"]==[]
+            assert r["page_role"]=="plan"
+            key=(r["project_group_id"],r["source_id"],r["page_id"])
+            assert key not in ids
+            ids.add(key); projects.add(r["project_group_id"])
           print(f"Validated {len(rows)} plan queue records across {len(projects)} projects")
           PY
-      - name: Build project-isolated QA batches
-        run: python scripts/build_qa_batches.py --input "$QUEUE" --output-dir "$QA_BATCH_DIR" --target-pages 20
-      - name: Validate QA batch index
+      - name: Build staged project-isolated QA wave
+        run: |
+          python scripts/build_qa_batches.py \
+            --input "$QUEUE" \
+            --output-dir "$QA_BATCH_DIR" \
+            --target-pages 20 \
+            --review-project-groups "$REVIEW_PROJECT_GROUPS"
+      - name: Validate staged QA index
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
           p=Path("annotation-queues/qa-batches-v0.2/index.json")
           d=json.loads(p.read_text(encoding="utf-8"))
-          assert d["total_pages"]==224 and d["total_project_groups"]==83
+          assert d["total_queue_pages"]==224
+          assert d["total_queue_project_groups"]==83
+          assert d["review_wave_project_groups"]==20
+          assert d["review_wave_pages"]>0
+          assert d["deferred_project_groups"]==63
+          assert d["deferred_pages"]+d["review_wave_pages"]==224
           seen=set(); pages=0
           for b in d["batches"]:
             for gid in b["project_group_ids"]:
               assert gid not in seen; seen.add(gid)
             pages+=b["page_count"]
-          assert pages==224 and len(seen)==83
-          print(f"Validated {len(d['batches'])} QA batches: {pages} pages, {len(seen)} project groups")
+          assert pages==d["review_wave_pages"] and len(seen)==20
+          print(f"Validated staged QA wave: {len(seen)} project groups, {pages} pages; deferred {d['deferred_project_groups']} project groups")
           PY
-      - name: Upload QA batch artifact
+      - name: Upload staged QA artifact
         uses: actions/upload-artifact@v4
         with:
-          name: qa-batches-validated-llm-v0.2
+          name: qa-review-wave-validated-llm-v0.2
           path: annotation-queues/qa-batches-v0.2/
           if-no-files-found: error
           retention-days: 7
-      - name: Upload queue artifact
+      - name: Upload queue pool artifact
         uses: actions/upload-artifact@v4
         with:
           name: annotation-queue-validated-llm-v0.2
