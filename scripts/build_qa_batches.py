@@ -21,7 +21,7 @@ def main():
     for r in rows:
         assert r["review_state"]=="pending-human-qa"
         assert r["page_role"]=="plan"
-        assert r["soordinate_space"]=="source-page"
+        assert r["coordinate_space"]=="source-page"
         groups[r["project_group_id"]].append(r)
 
     batches=[]
@@ -50,7 +50,7 @@ def main():
 
     for i,b in enumerate(batches, 1):
         bid=f"qa-batch-{i:03d}"
-        bp=out/f"bid}.jsonl"
+        bp=out/f"{bid}.jsonl"
         brows=[]
         for gid,grs in b:
             for r in grs:
@@ -60,7 +60,7 @@ def main():
         with bp.open("w", encoding="utf-8") as f:
             for r in brows:
                 f.write(json.dumps(r, sort_keys=True) + "\n")
-        index["batches"].append({batch_id": bid, "page_count": len(brows), "project_group_count": len(b), "project_group_ids": [gid for gid,_ in b], "path": str(bp)})
+        index["batches"].append({"batch_id": bid, "page_count": len(brows), "project_group_count": len(b), "project_group_ids": [gid for gid,_ in b], "path": str(bp)})
 
     (out/"index.json").write_text(json.dumps(index, indent=2, sort_keys=True)+"\n", encoding="utf-8")
     print(f"Built {len(batches)} QA batches for {len(rows)} pages across {len(groups)} project groups")
