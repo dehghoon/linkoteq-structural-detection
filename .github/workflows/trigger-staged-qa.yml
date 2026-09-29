@@ -19,5 +19,5 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh workflow run build-annotation-batch.yml --ref main
+          gh workflow run build-annotation-batch.yml --R dehghoon/linkoteq-structural-detection --ref main
           echo "Dispatched Build annotation batch queue on main."
