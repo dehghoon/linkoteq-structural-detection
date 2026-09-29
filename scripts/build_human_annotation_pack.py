@@ -12,7 +12,7 @@ def build_pack(manifest: dict, run_id: str) -> dict:
     for i, entry in enumerate(manifest["representatives"], 1):
         rep = entry["representative"]
         image_path = rep["image_path"]
-        stem = image_path[:-45 if image_path.lower().endswith(".png") else image_path
+        stem = image_path[:-4] if image_path.lower().endswith(".png") else image_path
         items.append({
             "item_id": f"qa-{run_id}-{i:03d}",
             "sha256": entry["sha256"],
@@ -44,7 +44,7 @@ def build_pack(manifest: dict, run_id: str) -> dict:
             "annotations_start_empty": True,
             "no_auto_approval": True,
             "wall_requires_human_qa": True,
-            "no hidden_continuation_inference": True,
+            "no_hidden_continuation_inference": True,
             "candidate_never_equals_ground_truth": True,
             "enables_training": False,
             "emits_canonical_engineering_geometry": False,
