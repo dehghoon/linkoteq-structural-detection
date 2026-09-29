@@ -7,7 +7,9 @@ on:
     paths:
       - "scripts/build_annotation_batch.py"
       - "scripts/build_qa_batches.py"
+      - "scripts/build_candidate_review_artifacts.py"
       - "scripts/materialize_source_manifest.py"
+      - "contracts/candidate-qa-gates-v0.2.json"
       - ".github/workflows/build-annotation-batch.yml"
 
 permissions:
@@ -22,6 +24,7 @@ jobs:
       ONTOLOGY_VERSION: v0.2
       QUEUE: annotation-queues/validated-llm-v0.2-candidates.jsonl
       QA_BATCH_DIR: annotation-queues/qa-batches-v0.2
+      REVIEWER_ARTIFACT_DIR: annotation-queues/reviewer-artifacts-v0.2
       REVIEW_PROJECT_GROUPS: 20
     steps:
       - uses: actions/checkout@v4
@@ -30,18 +33,12 @@ jobs:
           python-version: "3.12"
       - name: Materialize canonical manifest
         run: |
-          python scripts/materialize_source_manifest.py \
-            --input-root datasets/validated-llm-v0.1 \
-            --dataset-id validated-llm-source-v0.2-candidate \
-            --output "$MANIFEST"
+          python scripts/materialize_source_manifest.py             --input-root datasets/validated-llm-v0.1             --dataset-id validated-llm-source-v0.2-candidate             --output "$MANIFEST"
       - name: Validate canonical manifest
         run: test -s "$MANIFEST"
       - name: Build pending human-QA queue
         run: |
-          python scripts/build_annotation_batch.py \
-            --manifest "$MANIFEST" \
-            --ontology-version "$ONTOLOGY_VERSION" \
-            --output "$QUEUE"
+          python scripts/build_annotation_batch.py            --manifest "$MANIFEST"            --ontology-version "$ONTOLOGY_VERSION"            --output "$QUEUE"
       - name: Validate queue invariants
         run: |
           python - <<'PY'
@@ -65,12 +62,8 @@ jobs:
           PY
       - name: Build staged project-isolated QA wave
         run: |
-          python scripts/build_qa_batches.py \
-            --input "$QUEUE" \
-            --output-dir "$QA_BATCH_DIR" \
-            --target-pages 20 \
-            --review-project-groups "$REVIEW_PROJECT_GROUPS"
-      - name: Validate staged QA index
+          python scripts/build_qa_batches.py            --input "$QUEUE"            --output-dir "$QA_BATCH_DIR"             --target-pages 20             --review-project-groups "$REVIEW_PROJECT_GROUPS"
+      - name: Validate staged QA batch index
         run: |
           python - <<'PY'
           import json
@@ -89,13 +82,52 @@ jobs:
               assert gid not in seen; seen.add(gid)
             pages+=b["page_count"]
           assert pages==d["review_wave_pages"] and len(seen)==20
-          print(f"Validated staged QA wave: {len(seen)} project groups, {pages} pages; deferred {d['deferred_project_groups']} project groups")
+          print(f"Validated staged QA review wave: {len(seen)} project groups, {pages} pages; deferred {d['deferred_project_groups']} project groups")
+          PY
+      - name: Build and contract-validate reviewer artifact
+        run: |
+          python scripts/build_candidate_review_artifacts.py            --qa-dir "$QA_BATCH_DIR"            --output-dir "$REVIEWER_ARTIFACT_DIR"             --contract contracts/candidate-qa-gates-v0.2.json
+      - name: Validate reviewer artifact invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path("annotation-queues/reviewer-artifacts-v0.2")
+          idx=json.loads((root/"index.json").read_text(encoding="utf-8"))
+          assert idx["contract_id"]=="candidate-qa-gates-v0.2"
+          assert idx["contract_validated"] is True
+          assert idx["review_wave_project_groups"]==20
+          assert idx["review_state"]=="pending-human-qa"
+          assert idx["training_eligible"] is False
+          assert idx["ground_truth"] is False
+          assert idx["empty_candidate_semantics"]=="unreviewed-not-background"
+          rows=[]
+          for item in idx["artifacts"]:
+            rows += [json.loads(x) for x in Path(item["path"]).read_text(encoding="utf-8").splitlines() if x.strip()]
+          assert rows
+          assert len({r["project_group_id"] for r in rows})==20
+          for r in rows:
+            assert r["allowed_classes"]==["column","beam","wall"]
+            assert r["coordinate_space"]=="source-page"
+            assert r["review"]["state"]=="pending-human-qa"
+            assert r["training_eligible"] is False and r["ground_truth"] is False
+            assert r["candidates"]==[]
+            assert r["empty_candidate_semantics"]=="unreviewed-not-background"
+            assert "engineering_geometry" not in r and "reconstruction" not in r
+          print(f"Validated reviewer artifact: {len(rows)} runtime QA records across 20 project groups")
           PY
       - name: Upload staged QA artifact
         uses: actions/upload-artifact@v4
         with:
           name: qa-review-wave-validated-llm-v0.2
           path: annotation-queues/qa-batches-v0.2/
+          if-no-files-found: error
+          retention-days: 7
+      - name: Upload candidate reviewer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate-review-wave-v0.2
+          path: annotation-queues/reviewer-artifacts-v0.2/
           if-no-files-found: error
           retention-days: 7
       - name: Upload queue pool artifact
