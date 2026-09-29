@@ -1,0 +1,23 @@
+name: Trigger staged QA review wave
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/trigger-staged-qa.yml"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch contract-validated staged QA pipeline
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run build-annotation-batch.yml --ref main
+          echo "Dispatched Build annotation batch queue on main."
