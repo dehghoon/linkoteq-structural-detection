@@ -1,0 +1,50 @@
+name: Mirror QA review images v2
+
+on:
+  push:
+    branches: ["main"]
+    paths: [".github/workflows/mirror-qa-review-images-v2.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild exact staged QA wave
+        run: |
+          python scripts/materialize_source_manifest.py --input-root datasets/validated-llm-v0.1 --dataset-id validated-llm-source-v0.2-candidate --output /tmp/manifest.jsonl
+          python scripts/build_annotation_batch.py --manifest /tmp/manifest.jsonl --ontology-version v0.2 --output /tmp/queue.jsonl
+          python scripts/build_qa_batches.py --input /tmp/queue.jsonl --output-dir /tmp/qa --target-pages 20 --review-project-groups 20
+          python scripts/build_candidate_review_artifacts.py --qa-dir /tmp/qa --output-dir /tmp/reviewer --contract contracts/candidate-qa-gates-v0.2.json
+      - name: Collect exact source pages
+        run: |
+          python -c 'import json,pathlib,shutil; r=pathlib.Path("/tmp/reviewer"); rows=[json.loads(x) for p in r.glob("qa-batch-*-review.jsonl") for x in p.read_text().splitlines() if x.strip()]; assert len(rows)==60 and len({x["project_group_id"] for x in rows})==20; b=pathlib.Path("datasets/validated-llm-v0.1"); o=pathlib.Path("/tmp/qa-images/source"); [(o/pathlib.Path(x["image_path"])).parent.mkdir(parents=True,exist_ok=True) or shutil.copy2(b/x["image_path"],o/x["image_path"]) for x in rows]; print("collected",len(rows))'
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          convert -version
+      - name: Build reviewer previews
+        run: |
+          find /tmp/qa-images/source -type f -name '*.png' -print0 | while IFS= read -r -d '' f; do rel="${f#/tmp/qa-images/source/}"; out="/tmp/qa-images/previews/${rel%.png}.jpg"; mkdir -p "$(dirname "$out")"; convert "$f" -thumbnail '1600x1600>' -quality 72 "$out"; done
+      - name: Publish to QA branch
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin qa-review-artifacts:refs/remotes/origin/qa-review-artifacts
+          git checkout -B qa-review-artifacts origin/qa-review-artifacts
+          mkdir -p "runs/$RUN_ID/images"
+          cp -a /tmp/qa-images/. "runs/$RUN_ID/images/"
+          git add "runs/$RUN_ID/images"
+          git commit -m "Mirror 60 staged QA source pages from run $RUN_ID"
+          git push origin qa-review-artifacts
