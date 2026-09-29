@@ -26,7 +26,7 @@ def test_exact_duplicate_report_is_qa_only(tmp_path: Path):
     report = build_report(review, data)
     assert report["record_count"] == 3
     assert report["resolved_source_count"] == 3
-    assert {"unique_source_hash_count"] == 2
+    assert report["unique_source_hash_count"] == 2
     assert report["duplicate_group_count"] == 1
     assert report["cross_project_duplicate_group_count"] == 1
     assert report["duplicate_groups"][0]["member_count"] == 2
