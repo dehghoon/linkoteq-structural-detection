@@ -10,7 +10,7 @@ on:
       - "scripts/materialize_source_manifest.py"
       - ".github/workflows/build-annotation-batch.yml"
 
-\npermissions:
+permissions:
   contents: read
 
 jobs:
@@ -35,7 +35,7 @@ jobs:
             --output "$MANIFEST"
       - name: Validate canonical manifest
         run: test -s "$MANIFEST"
-      - name: Build pending human-QA Queue
+      - name: Build pending human-QA queue
         run: |
           python scripts/build_annotation_batch.py \
             --manifest "$MANIFEST" \
@@ -51,15 +51,15 @@ jobs:
           assert rows, "no plan pages in canonical manifest"
           projects=set(); ids=set()
           for r in rows:
-            assert r["coordinate_space"]=="source-page"
-            assert r["ontology_version"]=="v0.2"
-            assert r["allowed_classes"]==["column","beam","wall"]
-            assert r["review_state"]=="pending-human-qa"
-            assert r["labels"]==[]
-            assert r["page_role"]=="plan"
-            key=(r["project_group_id"],r["source_id"],r["page_id"])
-            assert key not in ids
-            ids.add(key); projects.add(r["project_group_id"])
+              assert r["coordinate_space"]=="source-page"
+              assert r["ontology_version"]=="v0.2"
+              assert r["allowed_classes"]==["column","beam","wall"]
+              assert r["review_state"]=="pending-human-qa"
+              assert r["labels"]==[]
+              assert r["page_role"]=="plan"
+              key=(r["project_group_id"],r["source_id"],r["page_id"])
+              assert key not in ids
+              ids.add(key); projects.add(r["project_group_id"])
           print(f"Validated {len(rows)} plan queue records across {len(projects)} projects")
           PY
       - name: Build project-isolated QA batches
@@ -71,7 +71,7 @@ jobs:
           from pathlib import Path
           p=Path("annotation-queues/qa-batches-v0.2/index.json")
           d=json.loads(p.read_text(encoding="utf-8"))
-          assert d["total_pages"]==224, d["total_project_groups"]==83
+          assert d["total_pages"]==224 and d["total_project_groups"]==83
           seen=set(); pages=0
           for b in d["batches"]:
             for gid in b["project_group_ids"]:
