@@ -1,0 +1,537 @@
+{
+  "hash_algorithm": "sha256",
+  "manifest_type": "qa-exact-source-unique-review-manifest",
+  "policy": {
+    "changes_labels": false,
+    "changes_review_state": false,
+    "changes_splits": false,
+    "enables_training": false,
+    "preserves_all_record_provenance": true,
+    "review_one_representative_per_exact_source_hash": true
+  },
+  "representatives": [
+    {
+      "alias_count": 1,
+      "aliases": [
+        {
+          "image_path": "Mesecher-Goudreau-Residence/plans/images/S4_FRAMING_PLAN_UPPER_ROOF.png",
+          "project_group_id": "Mesecher-Goudreau-Residence",
+          "review_file": "qa-batch-002-review.jsonl",
+          "review_line": 1
+        }
+      ],
+      "representative": {
+        "image_path": "Mesecher-Goudreau-Residence/plans/images/S4_FRAMING_PLAN_UPPER_ROOF-1.png",
+        "project_group_id": "Mesecher-Goudreau-Residence",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 2
+      },
+      "sha256": "0b1c8d1eda4e7a00c491549beb182731333437185d60a56ea0c142be97413653"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "P2025-182/plans/images/EsMx201_mezzanine_plan_no_titleblock-1.png",
+        "project_group_id": "P2025-182",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 15
+      },
+      "sha256": "133bfa822389f3e477aa4c70fa003f752bd7af16bfe24f93ee425e5a98d5c123"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "P2026-014/plans/images/EsMx401_no_titleblock-1.png",
+        "project_group_id": "P2026-014",
+        "review_file": "qa-batch-003-review.jsonl",
+        "review_line": 20
+      },
+      "sha256": "182c463ff76ce1caa5a7f5afbe03145a5e3b5e546d4344e6e2b4bae4fe383ca9"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "Dade-City-New-Restrooms/plans/images/S1.00_FOUNDATION_PLAN.png",
+        "project_group_id": "Dade-City-New-Restrooms",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 19
+      },
+      "sha256": "1f59baeb1c5d7a2e336beba1c4cc6840d662288b11dee4664523c239750bb8a1"
+    },
+    {
+      "alias_count": 5,
+      "aliases": [
+        {
+          "image_path": "Porterville-Plan-2/plans/images/S-201.png",
+          "project_group_id": "Porterville-Plan-2",
+          "review_file": "qa-batch-001-review.jsonl",
+          "review_line": 6
+        },
+        {
+          "image_path": "Porterville-Plan-2/plans/images/S-202-1.png",
+          "project_group_id": "Porterville-Plan-2",
+          "review_file": "qa-batch-001-review.jsonl",
+          "review_line": 9
+        },
+        {
+          "image_path": "Porterville-Plan-2/plans/images/S-202.png",
+          "project_group_id": "Porterville-Plan-2",
+          "review_file": "qa-batch-001-review.jsonl",
+          "review_line": 8
+        },
+        {
+          "image_path": "Porterville-Plan-2/plans/images/S-203-1.png",
+          "project_group_id": "Porterville-Plan-2",
+          "review_file": "qa-batch-001-review.jsonl",
+          "review_line": 11
+        },
+        {
+          "image_path": "Porterville-Plan-2/plans/images/S-203.png",
+          "project_group_id": "Porterville-Plan-2",
+          "review_file": "qa-batch-001-review.jsonl",
+          "review_line": 10
+        }
+      ],
+      "representative": {
+        "image_path": "Porterville-Plan-2/plans/images/S-201-1.png",
+        "project_group_id": "Porterville-Plan-2",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 7
+      },
+      "sha256": "37b2823bc303b521da395350e2b8bc42b30715d89731ff52e4411db3c2cf26da"
+    },
+    {
+      "alias_count": 1,
+      "aliases": [
+        {
+          "image_path": "Tuscaloosa-DHR-Building-1/plans/images/S2.02_ROOF_FRAMING_PLAN-1.png",
+          "project_group_id": "Tuscaloosa-DHR-Building-1",
+          "review_file": "qa-batch-001-review.jsonl",
+          "review_line": 3
+        }
+      ],
+      "representative": {
+        "image_path": "Tuscaloosa-DHR-Building-1/plans/images/S2.01_FLOOR_AND_FOUNDATION_PLAN-1.png",
+        "project_group_id": "Tuscaloosa-DHR-Building-1",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 2
+      },
+      "sha256": "387b5808c8a05d6237e1d53d902d7a36d3653fa40f2d202d896777b05fbf3562"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "Tuscaloosa-DHR-Building-1/plans/images/S2.02_ROOF_FRAMING_PLAN.png",
+        "project_group_id": "Tuscaloosa-DHR-Building-1",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 4
+      },
+      "sha256": "4feebd25175566577ce7663e1f969b750fa18e7083510e6a83d137212c6aa5a7"
+    },
+    {
+      "alias_count": 1,
+      "aliases": [
+        {
+          "image_path": "Mesecher-Goudreau-Residence/plans/images/S2_FRAMING_PLAN_2ND_FLOOR_LOWER_ROOF.png",
+          "project_group_id": "Mesecher-Goudreau-Residence",
+          "review_file": "qa-batch-002-review.jsonl",
+          "review_line": 3
+        }
+      ],
+      "representative": {
+        "image_path": "Mesecher-Goudreau-Residence/plans/images/S2_FRAMING_PLAN_2ND_FLOOR_LOWER_ROOF-1.png",
+        "project_group_id": "Mesecher-Goudreau-Residence",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 4
+      },
+      "sha256": "5169e3abcdbdeef0c2831c983ad266afcd6527d4d585cfe1e2c469fce015bc6b"
+    },
+    {
+      "alias_count": 3,
+      "aliases": [
+        {
+          "image_path": "Sedalia-House-A/plans/images/S1.01.png",
+          "project_group_id": "Sedalia-House-A",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 16
+        },
+        {
+          "image_path": "Sedalia-House-A/plans/images/S1.02-1.png",
+          "project_group_id": "Sedalia-House-A",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 19
+        },
+        {
+          "image_path": "Sedalia-House-A/plans/images/S1.02.png",
+          "project_group_id": "Sedalia-House-A",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 18
+        }
+      ],
+      "representative": {
+        "image_path": "Sedalia-House-A/plans/images/S1.01-1.png",
+        "project_group_id": "Sedalia-House-A",
+        "review_file": "qa-batch-003-review.jsonl",
+        "review_line": 17
+      },
+      "sha256": "571f03a9367c4f1d0213e2359c99d0ea714f0e5a71b678f4e6531785bf3fb356"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "ParkLawn-GO/plans/images/roof-framing-plan_no_titleblock-1.png",
+        "project_group_id": "ParkLawn-GO",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 12
+      },
+      "sha256": "57e50561d6adc02f551b11bfdc4d6c730463a787ac652c0e4373253b00e24945"
+    },
+    {
+      "alias_count": 1,
+      "aliases": [
+        {
+          "image_path": "Post-Farm-Seed-Storage/plans/images/S2.0_ROOF_FRAMING_PLAN.png",
+          "project_group_id": "Post-Farm-Seed-Storage",
+          "review_file": "qa-batch-002-review.jsonl",
+          "review_line": 11
+        }
+      ],
+      "representative": {
+        "image_path": "Post-Farm-Seed-Storage/plans/images/S1.0_FOUNDATION_PLAN.png",
+        "project_group_id": "Post-Farm-Seed-Storage",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 10
+      },
+      "sha256": "5b61461e96a1b7dd5109ae2c0931e23e37224d728f231f02d9a9a993e53933be"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "P2025-182/plans/images/EsMx401_roof_plan_no_titleblock-1.png",
+        "project_group_id": "P2025-182",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 16
+      },
+      "sha256": "5ef318d86a2cc2f68bf99097b8fabe1b5a5fa2291dc29225259ef8b3667399a5"
+    },
+    {
+      "alias_count": 1,
+      "aliases": [
+        {
+          "image_path": "Sedalia-State-Fair-Fire-Station/plans/images/S-300_ROOF_FRAMING_PLAN.png",
+          "project_group_id": "Sedalia-State-Fair-Fire-Station",
+          "review_file": "qa-batch-002-review.jsonl",
+          "review_line": 18
+        }
+      ],
+      "representative": {
+        "image_path": "Sedalia-State-Fair-Fire-Station/plans/images/S-300A_SHEAR_WALL_PLAN.png",
+        "project_group_id": "Sedalia-State-Fair-Fire-Station",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 17
+      },
+      "sha256": "664e7777480eb759162b94baee2ff9c34b6a9266ba78c7697269e82b945244c2"
+    },
+    {
+      "alias_count": 2,
+      "aliases": [
+        {
+          "image_path": "Pangan-Residence/plans/images/S2.2_2ND_FLOOR_FRAMING_PLAN.png",
+          "project_group_id": "Pangan-Residence",
+          "review_file": "qa-batch-001-review.jsonl",
+          "review_line": 17
+        },
+        {
+          "image_path": "Pangan-Residence/plans/images/S2.3_ROOF_FRAMING_PLAN.png",
+          "project_group_id": "Pangan-Residence",
+          "review_file": "qa-batch-001-review.jsonl",
+          "review_line": 18
+        }
+      ],
+      "representative": {
+        "image_path": "Pangan-Residence/plans/images/S2.1_FOUNDATION_PLAN.png",
+        "project_group_id": "Pangan-Residence",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 16
+      },
+      "sha256": "6c9f4d42cb422b571b8dae081a9b0f3b55aa351ced16ee7adf28de6ccf3b39e2"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "P2026-120/plans/images/EsMx401-roof_selected-1.png",
+        "project_group_id": "P2026-120",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 20
+      },
+      "sha256": "6cdd23f4df1bc3cc723171c8c50bb88061b4846029c2e7dc18a1619e6c0eef75"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "ParkLawn-GO/plans/images/floor-framing-plan_no_titleblock-1.png",
+        "project_group_id": "ParkLawn-GO",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 13
+      },
+      "sha256": "74a9c09f654cdb85c1cc4a4ad0f7b728b41cf9c563878f1cead9110eb4b2a5e3"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "Hamilton-115096/plans/images/foundation-plan_no_titleblock-1.png",
+        "project_group_id": "Hamilton-115096",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 7
+      },
+      "sha256": "765addbed7b299bd06a259626aa43663f36777a8b23b1474039aa77882846d38"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "ProRFx-CDS-250783A/plans/images/S102_ROOF_FRAMING_PLAN.png",
+        "project_group_id": "ProRFx-CDS-250783A",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 13
+      },
+      "sha256": "7a23e77f1f21201e8c176d3806928e991c7d6fa4f42dceddc01fb2b64e3497ae"
+    },
+    {
+      "alias_count": 1,
+      "aliases": [
+        {
+          "image_path": "Mesecher-Goudreau-Residence/plans/images/S1_FOUNDATION_PLAN.png",
+          "project_group_id": "Mesecher-Goudreau-Residence",
+          "review_file": "qa-batch-002-review.jsonl",
+          "review_line": 5
+        }
+      ],
+      "representative": {
+        "image_path": "Mesecher-Goudreau-Residence/plans/images/S1_FOUNDATION_PLAN-1.png",
+        "project_group_id": "Mesecher-Goudreau-Residence",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 6
+      },
+      "sha256": "8ba1548e89e1247ee0429e0d77300c2db4fcb56cc9511e44ac044b4a0733d966"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "Dade-City-New-Restrooms/plans/images/S1.10_FRAMING_PLAN.png",
+        "project_group_id": "Dade-City-New-Restrooms",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 20
+      },
+      "sha256": "9af76e97f170739510ca7b7acbc5c2ada61c32bdfe22cde9825dd4efc03970b1"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "P2026-021-BLDG2/plans/images/EsMx401_no_titleblock-1.png",
+        "project_group_id": "P2026-021-BLDG2",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 9
+      },
+      "sha256": "a87ff7a563ee9f17eb2147cc1ef6460b56aaac493aa7aa460eefd580e11ed8ca"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "P2026-095/plans/images/EsMx401_roof_selected-1.png",
+        "project_group_id": "P2026-095",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 12
+      },
+      "sha256": "b00d4be192d1c5593c17e82ad8740c355edfd2e82854ee3bd068ddea3c34856c"
+    },
+    {
+      "alias_count": 13,
+      "aliases": [
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S101.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 1
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S102A-1.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 4
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S102A.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 3
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S102B-1.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 6
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S102B.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 5
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S102C-1.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 8
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S102C.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 7
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S103-1.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 10
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S103.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 9
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S104-1.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 12
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S104.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 11
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S105-1.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 14
+        },
+        {
+          "image_path": "Multnomah-Station-Apartments/plans/images/S105.png",
+          "project_group_id": "Multnomah-Station-Apartments",
+          "review_file": "qa-batch-003-review.jsonl",
+          "review_line": 13
+        }
+      ],
+      "representative": {
+        "image_path": "Multnomah-Station-Apartments/plans/images/S101-1.png",
+        "project_group_id": "Multnomah-Station-Apartments",
+        "review_file": "qa-batch-003-review.jsonl",
+        "review_line": 2
+      },
+      "sha256": "c0529973e69fbf46f1453e7714e2cf2fa8c21d8ecf78fb0b7f2c9771d52b544c"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "ProRFx-CDS-250783A/plans/images/S101_FOUNDATION_PLAN.png",
+        "project_group_id": "ProRFx-CDS-250783A",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 14
+      },
+      "sha256": "c30e0255534bba639a49a06d744ab27be268caf943df347ef8b4995c2b761359"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "P2026-048/plans/images/EsMx401-roof_selected-1.png",
+        "project_group_id": "P2026-048",
+        "review_file": "qa-batch-003-review.jsonl",
+        "review_line": 15
+      },
+      "sha256": "c96f6b9b524a6ab0c312d3800b1f553c7c5dae2896ef5e7ca78ec25307cd3645"
+    },
+    {
+      "alias_count": 1,
+      "aliases": [
+        {
+          "image_path": "Wendys-Encinitas-Refresh/plans/images/S2.0_ROOF_FRAMING_PLAN.png",
+          "project_group_id": "Wendys-Encinitas-Refresh",
+          "review_file": "qa-batch-001-review.jsonl",
+          "review_line": 15
+        }
+      ],
+      "representative": {
+        "image_path": "Wendys-Encinitas-Refresh/plans/images/S1.0_FOUNDATION_PLAN.png",
+        "project_group_id": "Wendys-Encinitas-Refresh",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 14
+      },
+      "sha256": "ce2cbbab29a1657171e0df1c076293de7caf6d7d51f5bd8f01570f1d55e1e288"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "Sedalia-State-Fair-Fire-Station/plans/images/S-200_FOUNDATION_PLAN.png",
+        "project_group_id": "Sedalia-State-Fair-Fire-Station",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 19
+      },
+      "sha256": "d2ef95b130182f9bbe1233ef83e606b414071bfa7b83e79f564d11651c56155c"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "Tuscaloosa-DHR-Building-1/plans/images/S2.01_FLOOR_AND_FOUNDATION_PLAN.png",
+        "project_group_id": "Tuscaloosa-DHR-Building-1",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 5
+      },
+      "sha256": "e910053b662935c5d488fc7cb4aa6f99755ea6a03d96f543dd6d73189c5d16d3"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "Hamilton-115096/plans/images/roof-framing-plan_no_titleblock-1.png",
+        "project_group_id": "Hamilton-115096",
+        "review_file": "qa-batch-002-review.jsonl",
+        "review_line": 8
+      },
+      "sha256": "f0b85a3cb2c7b7ab32545d19beb288f684e7caf9690829919d9faccd1edaf6cb"
+    },
+    {
+      "alias_count": 0,
+      "aliases": [],
+      "representative": {
+        "image_path": "P2026-021-BLDG1/plans/images/EsMx401_no_titleblock-1.png",
+        "project_group_id": "P2026-021-BLDG1",
+        "review_file": "qa-batch-001-review.jsonl",
+        "review_line": 1
+      },
+      "sha256": "f9caac50dbe94d504f3883869db1b16ab17713c153fc8d162b306f30f05242b2"
+    }
+  ],
+  "source_record_count": 60,
+  "unique_review_count": 30
+}
