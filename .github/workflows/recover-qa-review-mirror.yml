@@ -1,0 +1,105 @@
+name: Recover QA review mirror
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/recover-qa-review-mirror.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      MANIFEST: datasets/source-drawings/validated-llm-source-v0.2-candidate/manifest.jsonl
+      QUEUE: annotation-queues/validated-llm-v0.2-candidates.jsonl
+      QA_BATCH_DIR: annotation-queues/qa-batches-v0.2
+      REVIEWER_ARTIFACT_DIR: annotation-queues/reviewer-artifacts-v0.2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Materialize runtime manifest
+        run: python scripts/materialize_source_manifest.py --input-root datasets/validated-llm-v0.1 --dataset-id validated-llm-source-v0.2-candidate --output "$MANIFEST"
+      - name: Build queue
+        run: python scripts/build_annotation_batch.py --manifest "$MANIFEST" --ontology-version v0.2 --output "$QUEUE"
+      - name: Build same 20-project-group staged wave
+        run: python scripts/build_qa_batches.py --input "$QUEUE" --output-dir "$QA_BATCH_DIR" --target-pages 20 --review-project-groups 20
+      - name: Build and contract-validate reviewer artifact
+        run: python scripts/build_candidate_review_artifacts.py --qa-dir "$QA_BATCH_DIR" --output-dir "$REVIEWER_ARTIFACT_DIR" --contract contracts/candidate-qa-gates-v0.2.json
+      - name: Validate strict readonly QA invariants
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path("annotation-queues/reviewer-artifacts-v0.2")
+          idx = json.loads((root / "index.json").read_text(encoding="utf-8"))
+          assert idx["contract_id"] == "candidate-qa-gates-v0.2"
+          assert idx["contract_validated"] is True
+          assert idx["review_wave_project_groups"] == 20
+          assert idx["review_state"] == "pending-human-qa"
+          assert idx["training_eligible"] is False
+          assert idx["ground_truth"] is False
+          assert idx["empty_candidate_semantics"] == "unreviewed-not-background"
+          rows = []
+          for item in idx["artifacts"]:
+            rows += [json.loads(x) for x in Path(item["path"]).read_text(encoding="utf-8").splitlines() if x.strip()]
+          assert rows and len({r["project_group_id"] for r in rows}) == 20
+          for r in rows:
+            assert r["allowed_classes"] == ["column", "beam", "wall"]
+            assert r["coordinate_space"] == "source-page"
+            assert r["review"]["state"] == "pending-human-qa"
+            assert r["training_eligible"] is False
+            assert r["ground_truth"] is False
+            assert r["candidates"] == []
+            assert r["empty_candidate_semantics"] == "unreviewed-not-background"
+            assert "engineering_geometry" not in r and "reconstruction" not in r
+          print(f"Validated {len(rows)} review records across 20 project groups")
+          PY
+      - name: Prepare snapshot outside git worktree
+        env:
+          RUN_ID: ${{ github.run_id }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+           set -euo pipefail
+          rm -rf /tmp/candidate-review-wave-v0.2
+          mkdir -p /tmp/candidate-review-wave-v0.2
+          cp -a "$REVIEWER_ARTIFACT_DIR"/. /tmp/candidate-review-wave-v0.2/
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          p = Path("/tmp/candidate-review-wave-v0.2/mirror-metadata.json")
+          p.write_text(json.dumps({
+            "source_workflow_run_id": int(os.environ["RUN_ID"]),
+            "source_head_sha": os.environ["HEAD_SHA"],
+            "review_state": "pending-human-qa",
+            "training_eligible": False,
+            "ground_truth": False,
+            "purpose": "read-only-human-qa-handoff"
+          }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+          PY
+      - name: Publish immutable-by-run QA snapshot
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin qa-review-artifacts:refs/remotes/origin/qa-review-artifacts || true
+          if git show-ref --quiet refs/remotes/origin/qa-review-artifacts; then
+            git checkout -B qa-review-artifacts origin/qa-review-artifacts
+          else
+            git checkout --orphan qa-review-artifacts
+            git rm -rf . || true
+            find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          fi
+          mkdir -p "runs/$RUN_ID"
+          cp -a /tmp/candidate-review-wave-v0.2/. "runs/$RUN_ID/"
+          git add "runs/$RUN_ID"
+          git commit -m "Mirror candidate review wave from run $RUN_ID"
+          git push origin qa-review-artifacts
