@@ -27,6 +27,9 @@ jobs:
       - name: Collect exact source pages
         run: |
           python -c 'import json,pathlib,shutil; r=pathlib.Path("/tmp/reviewer"); rows=[json.loads(x) for p in r.glob("qa-batch-*-review.jsonl") for x in p.read_text().splitlines() if x.strip()]; assert len(rows)==60 and len({x["project_group_id"] for x in rows})==20; b=pathlib.Path("datasets/validated-llm-v0.1"); o=pathlib.Path("/tmp/qa-images/source"); [(o/pathlib.Path(x["image_path"])).parent.mkdir(parents=True,exist_ok=True) or shutil.copy2(b/x["image_path"],o/x["image_path"]) for x in rows]; print("collected",len(rows))'
+      - name: Build exact duplicate QA report
+        run: |
+          python scripts/build_qa_duplicate_report.py --review-dir /tmp/reviewer --dataset-root datasets/validated-llm-v0.1 --output /tmp/qa-images/duplicate-report.json
       - name: Install ImageMagick
         run: |
           sudo apt-get update
