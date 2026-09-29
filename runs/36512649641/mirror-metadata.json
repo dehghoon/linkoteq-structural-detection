@@ -1,0 +1,8 @@
+{
+  "ground_truth": false,
+  "purpose": "read-only-human-qa-handoff",
+  "review_state": "pending-human-qa",
+  "source_head_sha": "502c0c76bf9672d8d70376ce131bf7f9fdd54767",
+  "source_workflow_run_id": 36512649641,
+  "training_eligible": false
+}\n

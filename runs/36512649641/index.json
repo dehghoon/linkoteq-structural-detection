@@ -1,0 +1,57 @@
+{
+  "artifacts": [
+    {
+      "batch_id": "qa-batch-001",
+      "path": "annotation-queues/reviewer-artifacts-v0.2/qa-batch-001-review.jsonl",
+      "project_group_ids": [
+        "Dade-City-New-Restrooms",
+        "P2026-021-BLDG1",
+        "Pangan-Residence",
+        "ParkLawn-GO",
+        "Porterville-Plan-2",
+        "Tuscaloosa-DHR-Building-1",
+        "Wendys-Encinitas-Refresh"
+      ],
+      "record_count": 20
+    },
+    {
+      "batch_id": "qa-batch-002",
+      "path": "annotation-queues/reviewer-artifacts-v0.2/qa-batch-002-review.jsonl",
+      "project_group_ids": [
+        "Hamilton-115096",
+        "Mesecher-Goudreau-Residence",
+        "P2025-182",
+        "P2026-021-BLDG2",
+        "P2026-095",
+        "P2026-120",
+        "Post-Farm-Seed-Storage",
+        "ProRFx-CDS-250783A",
+        "Sedalia-State-Fair-Fire-Station"
+      ],
+      "record_count": 20
+    },
+    {
+      "batch_id": "qa-batch-003",
+      "path": "annotation-queues/reviewer-artifacts-v0.2/qa-batch-003-review.jsonl",
+      "project_group_ids": [
+        "Multnomah-Station-Apartments",
+        "P2026-014",
+        "P2026-048",
+        "Sedalia-House-A"
+      ],
+      "record_count": 20
+    }
+  ],
+  "candidate_generator": "staged-qa-review-envelope-v0.2",
+  "contract_id": "candidate-qa-gates-v0.2",
+  "contract_validated": true,
+  "empty_candidate_semantics": "unreviewed-not-background",
+  "format_version": "candidate-review-index-v0.2",
+  "ground_truth": false,
+  "note": "Reviewer artifact only. Empty candidates are unreviewed and MUST NOT be treated as background/negative evidence. Human QA is required before any annotation promotion. This artifact does not approve labels, enable training, release a dataset, or emit engineering geometry.",
+  "review_state": "pending-human-qa",
+  "review_wave_pages": 60,
+  "review_wave_project_groups": 20,
+  "source_qa_index": "annotation-queues/qa-batches-v0.2/index.json",
+  "training_eligible": false
+}
