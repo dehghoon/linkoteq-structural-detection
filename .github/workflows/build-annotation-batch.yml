@@ -3,10 +3,10 @@ name: Build annotation batch queue
 on:
   workflow_dispatch:
     inputs:
-      input_root:
-        description: Source dataset root
+      manifest:
+        description: Canonical source manifest JSONL
         required: true
-        default: datasets/validated-llm-v0.1
+        default: datasets/source-drawings/validated-llm-source-v0.2-candidate/manifest.jsonl
       ontology_version:
         description: Active annotation ontology
         required: true
@@ -25,23 +25,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     env:
-      INPUT_ROOT: ${{ github.event.inputs.input_root || 'datasets/validated-llm-v0.1' }}
+      MANIFEST: ${{ github.event.inputs.manifest || 'datasets/source-drawings/validated-llm-source-v0.2-candidate/manifest.jsonl' }}
       ONTOLOGY_VERSION: ${{ github.event.inputs.ontology_version || 'v0.2' }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate source root
+      - name: Validate canonical manifest
         run: |
-          test -d "$INPUT_ROOT"
+          test -f "$MANIFEST"
           test "$ONTOLOGY_VERSION" = "v0.2"
       - name: Build pending human-QA queue
         run: |
           python scripts/build_annotation_batch.py \
-            --input-root "$INPUT_ROOT" \
+            --manifest "$MANIFEST" \
             --ontology-version "$ONTOLOGY_VERSION" \
             --output annotation-queues/validated-llm-v0.2-candidates.jsonl
       - name: Validate queue invariants
@@ -49,20 +47,21 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          p = Path("annotation-queues/validated-llm-v0.2-candidates.jsonl")
-          n = 0
-          projects = set()
-          for line in p.read_text(encoding="utf-8").splitlines():
-              r = json.loads(line)
-              n += 1
-              projects.add(r["project_id"])
-              assert r["coordinate_space"] == "source-page"
-              assert r["ontology_version"] == "v0.2"
-              assert r["allowed_classes"] == ["column", "beam", "wall"]
-              assert r["review_state"] == "pending-human-qa"
-              assert r["labels"] == []
-          assert n > 0, "no rendered source-page images found"
-          print(f"Validated {n} queue records across {len(projects)} projects")
+          p=Path("annotation-queues/validated-llm-v0.2-candidates.jsonl")
+          rows=[json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip()]
+          assert rows, "no plan pages in canonical manifest"
+          projects=set(); ids=set()
+          for r in rows:
+              assert r["coordinate_space"]=="source-page"
+              assert r["ontology_version"]=="v0.2"
+              assert r["allowed_classes"]==["column","beam","wall"]
+              assert r["review_state"]=="pending-human-qa"
+              assert r["labels"]==[]
+              assert r["page_role"]=="plan"
+              key=(r["project_group_id"],r["source_id"],r["page_id"])
+              assert key not in ids
+              ids.add(key); projects.add(r["project_group_id"])
+          print(f"Validated {len(rows)} plan queue records across {len(projects)} projects")
           PY
       - name: Upload queue artifact
         uses: actions/upload-artifact@v4
