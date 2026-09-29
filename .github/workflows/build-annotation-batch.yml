@@ -6,10 +6,11 @@ on:
     branches: ["main"]
     paths:
       - "scripts/build_annotation_batch.py"
+      - "scripts/build_qa_batches.py"
       - "scripts/materialize_source_manifest.py"
       - ".github/workflows/build-annotation-batch.yml"
 
-permissions:
+\npermissions:
   contents: read
 
 jobs:
@@ -19,6 +20,8 @@ jobs:
     env:
       MANIFEST: datasets/source-drawings/validated-llm-source-v0.2-candidate/manifest.jsonl
       ONTOLOGY_VERSION: v0.2
+      QUEUE: annotation-queues/validated-llm-v0.2-candidates.jsonl
+      QA_BATCH_DIR: annotation-queues/qa-batches-v0.2
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,14 +34,13 @@ jobs:
             --dataset-id validated-llm-source-v0.2-candidate \
             --output "$MANIFEST"
       - name: Validate canonical manifest
-        run: |
-          test -s "$MANIFEST"
-      - name: Build pending human-QA queue
+        run: test -s "$MANIFEST"
+      - name: Build pending human-QA Queue
         run: |
           python scripts/build_annotation_batch.py \
             --manifest "$MANIFEST" \
             --ontology-version "$ONTOLOGY_VERSION" \
-            --output annotation-queues/validated-llm-v0.2-candidates.jsonl
+            --output "$QUEUE"
       - name: Validate queue invariants
         run: |
           python - <<'PY'
@@ -49,21 +51,46 @@ jobs:
           assert rows, "no plan pages in canonical manifest"
           projects=set(); ids=set()
           for r in rows:
-              assert r["coordinate_space"]=="source-page"
-              assert r["ontology_version"]=="v0.2"
-              assert r["allowed_classes"]==["column","beam","wall"]
-              assert r["review_state"]=="pending-human-qa"
-              assert r["labels"]==[]
-              assert r["page_role"]=="plan"
-              key=(r["project_group_id"],r["source_id"],r["page_id"])
-              assert key not in ids
-              ids.add(key); projects.add(r["project_group_id"])
+            assert r["coordinate_space"]=="source-page"
+            assert r["ontology_version"]=="v0.2"
+            assert r["allowed_classes"]==["column","beam","wall"]
+            assert r["review_state"]=="pending-human-qa"
+            assert r["labels"]==[]
+            assert r["page_role"]=="plan"
+            key=(r["project_group_id"],r["source_id"],r["page_id"])
+            assert key not in ids
+            ids.add(key); projects.add(r["project_group_id"])
           print(f"Validated {len(rows)} plan queue records across {len(projects)} projects")
           PY
+      - name: Build project-isolated QA batches
+        run: python scripts/build_qa_batches.py --input "$QUEUE" --output-dir "$QA_BATCH_DIR" --target-pages 20
+      - name: Validate QA batch index
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("annotation-queues/qa-batches-v0.2/index.json")
+          d=json.loads(p.read_text(encoding="utf-8"))
+          assert d["total_pages"]==224, d["total_project_groups"]==83
+          seen=set(); pages=0
+          for b in d["batches"]:
+            for gid in b["project_group_ids"]:
+              assert gid not in seen; seen.add(gid)
+            pages+=b["page_count"]
+          assert pages==224 and len(seen)==83
+          print(f"Validated {len(d['batches'])} QA batches: {pages} pages, {len(seen)} project groups")
+          PY
+      - name: Upload QA batch artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-batches-validated-llm-v0.2
+          path: annotation-queues/qa-batches-v0.2/
+          if-no-files-found: error
+          retention-days: 7
       - name: Upload queue artifact
         uses: actions/upload-artifact@v4
         with:
           name: annotation-queue-validated-llm-v0.2
-          path: annotation-queues/validated-llm-v0.2-candidates.jsonl
+          path: "$QUEUE"
           if-no-files-found: error
           retention-days: 7
