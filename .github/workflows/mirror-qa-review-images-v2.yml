@@ -38,14 +38,7 @@ jobs:
           RUN_ID: ${{ github.run_id }}
         run: |
           python scripts/build_human_annotation_pack.py --unique-manifest /tmp/qa-images/unique-review-manifest.json --run-id "$RUN_ID" --output /tmp/qa-images/human-annotation-pack.json
-          python - $'PI'
-          import json
-          p = json.load(open("/tmp/qa-images/human-annotation-pack.json"))
-          assert p["unique_review_count"] == 30
-          assert len(p["items"]) == 30
-          assert all(x["review_state"] == "pending-human-qa" for x in p["items"])
-          assert all(x["annotations"] == [] for x in p["items"])
-          PI
+          python -c 'import json; p=json.load(open("/tmp/qa-images/human-annotation-pack.json")); assert p["unique_review_count"]==30; assert len(p["items"])==30; assert all(x["review_state"]=="pending-human-qa" for x in p["items"]); assert all(x["annotations"]==[] for x in p["items"])'
       - name: Install ImageMagick
         run: |
           sudo apt-get update
