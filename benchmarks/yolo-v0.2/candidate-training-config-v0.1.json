@@ -1,0 +1,50 @@
+{
+  "config_id": "yolo-v0.2-candidate-training-v0.1",
+  "status": "prepared-blocked",
+  "purpose": "Versioned Candidate baseline training configuration to be used only after all active training-readiness gates pass.",
+  "ontology": "v0.2",
+  "coordinate_space": "source-page",
+  "class_id_map": {"0": "column", "1": "beam", "2": "wall"},
+  "base_model": {
+    "family": "YOLO",
+    "artifact": "yolo11n.pt",
+    "note": "Base weights are not a Link?teq production model. Trained output remains Candidate."
+  },
+  "dataset_requirements": {
+    "require_versioned_frozen_release": true,
+    "require_human_approved_labels": true,
+    "require_project_group_split_isolation": true,
+    "require_duplicate_gates": true,
+    "require_deterministic_yolo_export": true,
+    "missing_or_unreviewed_regions_are_background": false
+  },
+  "training": {
+    "imgsz": 1536,
+    "epochs": 100,
+    "batch": 4,
+    "patience": 20,
+    "seed": 7,
+    "deterministic": true,
+    "device": "auto",
+    "workers": 2,
+    "project": "artifacts/yolo-v0.2-candidates",
+    "name": "candidate-v0.1"
+  },
+  "evaluation_requirements": {
+    "per_class_metrics": ["precision", "recall"],
+    "require_frozen_regression_set": true,
+    "require_new_human_approved_qa_challenge_set": true
+  },
+  "registry_identity": {
+    "model_id": "structural-detector-yolo-v0.2-candidate-v0.1",
+    "stage": "Candidate",
+    "production": false,
+    "admin_approval_required_for_promotion": true,
+    "rollback_required_for_promotion": true
+  },
+  "gate": {
+    "training_authorized": false,
+    "required_readiness_gates": ["TR1", "TR2", "TR3", "TR4", "TR5", "TR6", "TR7"],
+    "require_dataset_training_enabled": true
+  }
+}
