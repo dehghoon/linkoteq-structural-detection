@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project_group_id": "P2026-024",
   "source_image": "datasets/validated-llm-v0.1/P2026-024/plans/images/EsMx401_no_titleblock-1.png",
   "approved_overlay": "qa-approved-overlay.jpg",
@@ -9,18 +9,26 @@
   "overlay_raster": {"width": 1536, "height": 1307},
   "registration_policy": {"minor_raster_difference_accepted_for_recovery": true, "native_vector_annotation": false},
   "overlay_legend_claim": {"column": 28, "beam": 44, "wall": 12, "total": 84},
+  "observed_raster_bbox_count": {
+    "method": "color-coded-bbox/label-pair visual count from human-approved overlay; legend swatches excluded",
+    "column": 28,
+    "beam": 44,
+    "wall": 12,
+    "total": 84,
+    "human_approved": true
+  },
   "recovery_result": {
-    "status": "needs-final-qa",
+    "status": "counts-human-approved-exact-bbox-serialization-pending",
     "exact_bbox_serialization": false,
-    "reason": "The raster overlay contains class-colored member outlines/segments and text labels that are not separable into 84 unique tight axis-aligned boxes without inference.",
     "fabricate_missing_boxes": false
   },
-  "review_state": "needs-final-qa",
+  "review_state": "human-approved-raster-counts",
   "training_enabled": false,
   "canonical_engineering_geometry": false,
   "provenance": {
     "source": "human-approved-raster-overlay",
-    "recovery": "automated-raster-analysis",
-    "note": "This artifact records the recovery attempt and MUST NOT be treated as training ground truth until final QA resolves tight boxes."
+    "recovery": "automated-raster-color-analysis-plus-visual-bbox-count",
+    "decision": "explicit-user-approval-of-raster-quality-and-counts",
+    "note": "Observed counts are approved for this raster QA evidence. Training remains disabled until box coordinates are serialized and applicable dataset/training gates pass."
   }
 }
