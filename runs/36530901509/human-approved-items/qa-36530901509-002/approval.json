@@ -1,0 +1,20 @@
+{
+  "item_id": "qa-36530901509-002",
+  "run_id": "36530901509",
+  "review_state": "human-approved",
+  "coordinate_space": "source-page",
+  "approved_classes": ["column", "beam", "wall"],
+  "approved_visualization": "a_clean_architectural_mezzanine_plan_drawing_on_a.png",
+  "visualization_counts": {
+    "beam": 7,
+    "column": 4,
+    "wall": 3
+  },
+  "provenance": {
+    "source": "human-qa-in-chat",
+    "decision": "explicit-user-approval"
+  },
+  "training_enabled": false,
+  "canonical_engineering_geometry": false,
+  "note": "Approved review visualization. Training remains disabled until applicable dataset and training gates pass."
+}
