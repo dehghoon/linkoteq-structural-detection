@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-import json, shutil
+import json, os, shutil
 from pathlib import Path
 
-PACK = Path("runs/36530901509/images/human-annotation-pack.json")
+SOURCE_ROOT = Path(os.environ.get("SOURCE_REVIEW_ROOT", "."))
+PACK = SOURCE_ROOT / "runs/36530901509/images/human-annotation-pack.json"
 OUT = Path("runs/36530901509/review-batches/remaining-29/work")
 
 data = json.loads(PACK.read_text())
@@ -10,12 +11,12 @@ assert data["spec_version"] == "0.2"
 assert data["coordinate_space"] == "source-page"
 assert data["allowed_classes"] == ["column", "beam", "wall"]
 items = [x for x in data["items"] if x["item_id"] != "qa-36530901509-002"]
-assert len(items) == 29, f"expected 29, got {len(items)}"
-(OUT / "images").mkdir(parents=True, exist_ok=True)
+assert len(items) == 29, f"expected 29, got {len(items)}"(OUT / "images").mkdir(parents=True, exist_ok=True)
 
 materialized = []
 for x in items:
-    src = Path(x["preview_path"])
+    rel_src = Path(x["preview_path"])
+    src = SOURCE_ROOT / rel_src
     if not src.is_file():
         raise SystemExit(f"missing preview: {src}")
     dst = OUT / "images" / f"{x['item_id']}{src.suffix.lower()}"
