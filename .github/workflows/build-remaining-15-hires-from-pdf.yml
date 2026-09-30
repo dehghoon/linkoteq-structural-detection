@@ -1,0 +1,76 @@
+name: Build remaining 15 hi-res QA sources from PDF
+
+on:
+  workflow_dispatch:
+    inputs:
+      dpi:
+        description: "Raster DPI"
+        required: false
+        default: "400"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PDF rasterizer
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      - name: Build hi-res source pack
+        env:
+          DPI: ${{ inputs.dpi }}
+        run: |
+          set -euo pipefail
+          rm -rf artifacts/remaining-15-hires && mkdir -p artifacts/remaining-15-hires
+          python3 - <<'PY'
+          import json, os, subprocess, pathlib, shutil
+
+          targets = {"003","004","010","012","015","016","017","018","020","021","022","024","025","029","030"}
+          pack_path = pathlib.Path("runs/36530901509/images/human-annotation-pack.json")
+          if not pack_path.exists():
+            raise SystemExit(f"missing {pack_path}")
+          pack = json.loads(pack_path.read_text())
+          items = pack.get("items") or pack.get("records") or []
+          out = pathlib.Path("artifacts/remaining-15-hires")
+          dpi = int(os.environ.get("DPI") or 400)
+          manifest = {"coordinate_space": "source-page", "dpi": dpi, "items": []}
+
+          for it in items:
+            qid = str(it.get("qa_id") or it.get("id") or "")
+            num = qid.rsplit("-", 1)[-1]
+            if num not in targets:
+              continue
+            src = it.get("source_path") or it.get("image_path") or it.get("source_image")
+            if not src:
+              raise SystemExit(f"{qid}: missing source path")
+            parts = pathlib.Path(src).parts
+            try:
+              i = parts.index("validated-llm-v0.1")
+              project = parts[i+1]
+            except (ValueError, IndexError):
+              project = it.get("project_id") or it.get("source_id")
+            if not project:
+              raise SystemExit(f"{qid}: cannot resolve project")
+            image_name = pathlib.Path(src).name
+            stem = image_name.replace("_no titleblock-1.png","").replace("-1.png","").replace(".png","")
+            candidates = list(pathlib.Path(f"datasets/validated-llm-v0.1/{project}/originals").glob(f"{*stem*}_original.pdf"))
+            if not candidates:
+              candidates = list(pathlib.Path(f"datasets/validated-llm-v0.1/{project}/originals").glob("*.original.pdf"))
+            if len(candidates) != 1:
+              raise SystemExit(f"{qid}: PDF mapping ambiguous: {candidates}")
+            pdf = candidates[0]
+            prefix = out / f{qid}__s{project}"
+            subprocess.run(["pdpptoppm","-f","1","-singlefile","-png","-r",str(dpi), str(pdf), str(prefix)], check=True)
+            png = pathlib.Path(str(prefix) + ".png")
+            manifest["items"].append({"qa_id":qid,"project":project,"pdf":str(pdf),"raster":str(png),"review_state":"pending-human-qa","training_ground_truth":False})
+          (out / "manifest.json").write_text(json.dumps(manifest,indent=2) + "\n")
+          print(f"built {len(manifest['items']} hi-res rasters")
+          PY
+      - name: Upload hi-res QA source pack
+        uses: actions/upload-artifact@v4
+        with:
+          name: remaining-15-hires-qa-sources
+          path: artifacts/remaining-15-hires
+          if-no-files-found: error
+          retention-days: 14
