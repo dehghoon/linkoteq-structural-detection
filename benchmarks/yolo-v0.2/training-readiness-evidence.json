@@ -7,7 +7,7 @@
     "contracts/annotation-spec-v0.2.md",
     "benchmarks/yolo-v0.2/benchmark-plan.json"
   ],
-  "courdinate_space": "source-page",
+  "coordinate_space": "source-page",
   "classes": ["column", "beam", "wall"],
   "gates": {
     "TR1": {
