@@ -1,15 +1,10 @@
 {
   "dataset_id": "yolo-human-approved-v0.1",
-  "status": "staging",
+  "status": "staging-serialized",
   "purpose": "Append-only staging area for Human-QA-approved source-page detection annotations before frozen YOLO release.",
   "ontology": "v0.2",
   "coordinate_space": "source-page",
-  "class_id_map": {
-    "0": "column",
-    "1": "beam",
-    "2": "wall"
-  },
-  "promotion_rule": "Only human-approved tight axis-aligned source-page bboxes with explicit provenance may be exported to YOLO labels. Raster overlays or counts alone are not training ground truth.",
+  "class_id_map": {"0":"column","1":"beam","2":"wall"},
   "training_enabled": false,
   "samples": [
     {
@@ -17,24 +12,28 @@
       "project_group_id": "P2025-182",
       "source_image": "datasets/validated-llm-v0.1/P2025-182/plans/images/EsMx201_mezzanine_plan_no_titleblock-1.png",
       "review_state": "human-approved",
-      "approved_counts": {"column": 4, "beam": 7, "wall": 3, "total": 14},
-      "box_serialization": "pending",
-      "yolo_export_status": "blocked-pending-exact-bboxes"
+      "serialized_counts": {"column":4,"beam":7,"wall":3,"total":14},
+      "box_serialization": "complete",
+      "yolo_label": "datasets/yolo-human-approved-v0.1/labels/P2025-182__qa-36530901509-002.txt",
+      "yolo_export_status": "serialized-validated"
     },
     {
       "sample_id": "P2026-024",
       "project_group_id": "P2026-024",
       "source_image": "datasets/validated-llm-v0.1/P2026-024/plans/images/EsMx401_no_titleblock-1.png",
-      "review_state": "human-approved-raster-counts",
-      "approved_counts": {"column": 28, "beam": 44, "wall": 12, "total": 84},
-      "provenance": "datasets/yolo-candidate-v0.1/P2026-024/raster-recovery.json",
-      "box_serialization": "pending",
-      "yolo_export_status": "blocked-pending-exact-bboxes"
+      "review_state": "human-approved-drawn-annotations",
+      "legend_policy": "ignored-not-ground-truth",
+      "serialized_counts": {"column":17,"beam":41,"wall":12,"total":70},
+      "box_serialization": "complete",
+      "yolo_label": "datasets/yolo-human-approved-v0.1/labels/P2026-024.txt",
+      "yolo_export_status": "serialized-validated"
     }
   ],
   "summary": {
     "human_approved_pages": 2,
-    "yolo_exportable_pages": 0,
-    "pending_exact_bbox_serialization": 2
+    "yolo_serialized_pages": 2,
+    "total_serialized_boxes": 84,
+    "pending_exact_bbox_serialization": 0,
+    "training_enabled": false
   }
 }
