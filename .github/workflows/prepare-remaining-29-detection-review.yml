@@ -19,14 +19,24 @@ jobs:
   prepare:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout runner code from main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
       - name: Checkout source review ref
         uses: actions/checkout@v4
         with:
+          repository: dehghoon/linkoteq-structural-detection
           ref: ${{ inputs.source_ref }}
+          path: _source_review
           fetch-depth: 0
 
       - name: Validate and materialize 29-item batch
         shell: bash
+        env:
+          SOURCE_REVIEW_ROOT: ${{ github.workspace }}/_source_review
         run: |
           set -euo pipefail
           python scripts/materialize_remaining_29.py
