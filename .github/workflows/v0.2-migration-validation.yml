@@ -45,6 +45,23 @@ jobs:
           gates = p["training_readiness_gates"]
           assert [g["id"] for g in gates] == [f"TR{i}" for i in range(1, 8)]
           assert all(g["status"] == "BLOCKED" for g in gates)
+
+          # Evidence-backed readiness may advance individual gates without
+          # authorizing training or changing the benchmark plan prematurely.
+          with open("benchmarks/yolo-v0.2/training-readiness-evidence.json", encoding="utf-8") as f:
+              e = json.load(f)
+          expected = {
+              "TR1": "BLOCKED",
+              "TR2": "BLOCKED",
+              "TR3": "PASS",
+              "TR4": "PASS",
+              "TR5": "BLOCKED",
+              "TR6": "BLOCKED",
+              "TR7": "BLOCKED",
+          }
+          assert {k: v["status"] for k, v in e["gates"].items()} == expected
+          assert e["summary"]["enables_training"] is False
+          assert e["summary"]["training_authorized"] is False
           PY
       - name: Validate exact and near cross-split duplicates
         run: |
