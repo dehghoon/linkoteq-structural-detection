@@ -1,0 +1,35 @@
+{
+  "audit_id": "yolo-human-approved-v0.1-serialization-audit-2026-09-29",
+  "coordinate_space": "source-page",
+  "samples": [
+    {
+      "sample_id": "qa-36530901509-002",
+      "project_group_id": "P2025-182",
+      "human_qa_approved": true,
+      "approved_semantic_counts": {"column":4,"beam":7,"wall":3,"total":14},
+      "raster_registration_status": "needs-registration",
+      "finding": "The approved visualization is not pixel-registered to the source-page raster. Direct color-box coordinates cannot be treated as source-page ground truth.",
+      "exact_bbox_serialization": false,
+      "yolo_exportable": false,
+      "next_action": "Register the approved visualization to the source page using validated common plan anchors, then serialize and review the transformed boxes."
+    },
+    {
+      "sample_id": "P2026-024",
+      "project_group_id": "P2026-024",
+      "human_qa_approved": true,
+      "previously_recorded_legend_counts": {"column":28,"beam":44,"wall":12,"total":84},
+      "raster_registration_status": "approximately-1-to-1-minor-height-difference",
+      "finding": "Independent raster inspection shows that the legend class counts cannot be used as bbox counts. The vaster contains colored geometry, label boxes, and text that are connected; the previous 28/44/12 record was not a verified independent bbox serialization.",
+      "legend_counts_admissible_as_training_gt": false,
+      "exact_bbox_serialization": false,
+      "yolo_exportable": false,
+      "next_action": "Recover tight axis-aligned box candidates from colored geometry, exclude legend/text, and perform coordinate QA before Yolo export."
+    }
+  ],
+  "summary": {
+    "human_qa_approved_pages": 2,
+    "yolo_exportable_pages": 0,
+    "fabricated_boxes": 0,
+    "training_enabled": false
+  }
+}
