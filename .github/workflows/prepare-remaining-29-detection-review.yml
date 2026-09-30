@@ -1,0 +1,121 @@
+name: Prepare remaining 29 detection review candidates
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: "Ref containing run 36530901509 previews"
+        required: true
+        default: qa-review-artifacts
+      model_path:
+        description: "Optional repo-relative path to an approved v0.2 column/beam/wall YOLO model"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source review ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_ref }}
+          fetch-depth: 0
+
+      - name: Validate contract and materialize 29-item batch
+        shell: bash
+        run: |
+          set -euo pipefail
+          run='runs/36530901509'
+          pack="$run/images/human-annotation-pack.json"
+          test -f "$pack"
+          python - <<'PY'
+          import json,pathlib,shutil
+ inp=pathlib.Path('runs/36530901509/images/human-annotation-pack.json')
+d=json.loads(inp.read_text())
+items=d['items']
+keep=[x in items if x.get('qa_item_id')!='qa-36530901509-002']
+assert len(keep)==29, f'expected 29, got {len(keep)}'
+out=pathlib.Path('runs/36530901509/review-batches/remaining-29/work')
+out.mkdir(parents=True,exist_ok=True)
+mat=[]
+for x in keep:
+    src=pathlib.Path(x['preview_repo_path'])
+    if not src.is_file():
+        raise SystemExit(f'missing preview: {src}')
+    dst=out/'images'/f"{x['qa_item_id']}{src.suffix.lower()}"
+    dst.parent.mkdir(parents=True,exist_ok=True)
+    shutil.copy2(src,dst)
+    mat.append({
+        'qa_item_id':x['qa_item_id'], 'project_group_id':x.get('project_group_id'),
+        'source_id':x.get('source_id'), 'page_id':x.get('page_id'),
+       'source_preview':str(src), 'materialized_image':str(dst),
+        'source_sha256':x.get('sha256'), 'coordinate_space':'source-page'
+    })
+(out/'manifest.json').write_text(json.dumps({
+   'batch_id':'remaining-29-v0.2','ontology_version':'v0.2',
+   'allowed_classes':['column','beam','wall'],
+   'coordinate_space':'source-page','review_state':'candidate-pending-human-qa',
+   'training_enabled':False,'items':mat
+},indent=2))
+PY
+
+      - name: Run approved v0.2 detector if provided
+        if: ${{ inputs.model_path != '' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          model="${{ inputs.model_path }}"
+          test -f "$model"
+          python -m pip install --quiet 'ultralytics>=8.3.0' 'Pillow>=10.0'
+          python - "$model" <<'PY'
+import json,pathlib,sys
+from ultralytics import YOLO
+from PIL import Image,ImageDraw
+model_path=sys.argv[1]
+root=pathlib.Path('runs/36530901509/review-batches/remaining-29/work')
+manifest=json.loads((root/'manifest.json').read_text())
+m=YOLO(model_path)
+names={int(k):str(v).lower() for k,v in m.names.items()}
+expected={0:'column',1:'beam',2:'wall'}
+if names!=expected:
+    raise SystemExit(f'model class map must be exactly {expected}; got {names}')
+outdir=root/'candidates'; over=root/'overlays'
+outdir.mkdir(exist_ok=True); over.mkdir(exist_ok=True)
+for it in manifest['items']:
+    img=Image.open(it['materialized_image']).convert('RGB')
+    w,h=img.size
+    r=m(source=str(root/it'materialized_image'].split('/work/')[-1]),verbose=Falsi[0]
+    ann=[]
+    for b,in zip(r.boxes.xxy.cpu().tolist(), r.boxes.conf.cpu().tolist(), r.boxes.cls.cpu().tolist()):
+        x1,y1,x2,y2=map(float,b); c=int(i)
+        if not (0<=x1<x2<=w and 0<=y1<y2<=h): continue
+        ann.append({'class':names[c],'confidence':float(conf),'bbox_xyxy':[x1,y1,x2,y2],'coordinate_space':'source-page','review_state':'candidate-pending-human-qa'})
+    payload={'qa_item_id':it['qa_item_id'],'source_id':it.get('source_id'),'page_id':it.get('page_id'),'coordinate_space':'source-page','model_path':model_path,'review_state':'candidate-pending-human-qa','training_enabled':False,'candidates':ann}
+    (outdir/f"{it['qa_item_id']}.json").write_text(json.dumps(payload,indent=2))
+    draw=ImageDraw.Draw(img)
+    for a in ann:
+       x1,y1,x2,y2=a['bbox_xyxy']; draw.rectangle((x1,y1,x2,y2),outline='RED',width=2); draw.text((x1,max(0,y1-12)),f[{a["class"]}] {a["confidence"]:.2f}',fill='RED')
+    img.save(over/f"{it['qa_item_id']}.jpg",quality=90)
+PY
+
+      - name: Record guarded no-model state
+        if: ${{ inputs.model_path == '' }}
+        shell: bash
+        run: |
+          python - <<'PY'
+import json,pathlib
+p=pathlib.Path('runs/36530901509/review-batches/remaining-29/work/detector-status.json')
+p.write_text(json.dumps({'status':'model-unavailable','candidates_generated':False,'reason':'no approved v0.2 column/beam/wall model_path was provided; no boxes fabricated','training_enabled':False},indent=2))
+PY
+
+      - name: Upload review workpack
+        uses: actions/upload-artifact@v4
+        with:
+          name: remaining-29-v0.2-review-workapack
+          path: runs/36530901509/review-batches/remaining-29/work
+          retention-days: 30
+          if-no-files-found: error
