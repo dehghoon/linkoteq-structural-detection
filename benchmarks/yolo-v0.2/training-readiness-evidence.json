@@ -1,0 +1,51 @@
+{
+  "assessment_id": "yolo-v0.2-training-readiness-evidence-2026-09-29",
+  "benchmark_id": "yolo-v0.2",
+  "assessment_date": "2026-09-29",
+  "contract_basis": [
+    "contracts/dataset-training-input-policy-v0.1.md",
+    "contracts/annotation-spec-v0.2.md",
+    "benchmarks/yolo-v0.2/benchmark-plan.json"
+  ],
+  "courdinate_space": "source-page",
+  "classes": ["column", "beam", "wall"],
+  "gates": {
+    "TR1": {
+      "status": "BLOCKED",
+      "reason": "No frozen versioned training-capable release distinct from pilot-v0.1/pilot-v0.2 is yet recorded."
+    },
+    "TR2": {
+      "status": "BLOCKED",
+      "reason": "Training/evaluation regions require complete human-approved source-evidence labels; rendered/raster overlays alone are not admissible ground truth under the active policy."
+    },
+    "TR2": {
+      "status": "PASS",
+      "evidence": "datasets/pilot-v0.2/manifest.json#splits",
+      "reason": "Pilot v0.2 manifest has frozen project-group train/validation/test assignments."
+    },
+    "TR4": {
+      "status": "PASS",
+      "evidence": "datasets/pilot-v0.2/cross-split-duplicate-report-v0.2.json",
+      "reason": "Pilot v0.2 manifest records both exact and near cross-split duplicate gates as PASS."
+    },
+    "TR5": {
+      "status": "BLOCKED",
+      "reason": "No deterministic YOLO export artifact has yet been verified with class mapping column=0, beam=1, wall=2 and source-page provenance."
+    },
+    "TR6": {
+      "status": "BLOCKED",
+      "reason": "Frozen regression set and human-approved QA challenge set are not yet recorded as training-ready artifacts."
+    },
+    "TR7": {
+      "status": "BLOCKED",
+      "reason": "Training run configuration and versioned artifact/model-registry identity are not yet defined."
+    }
+  },
+  "summary": {
+    "passed": ["TR3", "TR4"],
+    "blocked": ["TR1", "TR2", "TR5", "TR6", "TR7"],
+    "enables_training": false,
+    "training_authorized": false
+  },
+  "next_action": "Build a new immutable training-capable dataset release from human-approved source-evidence annotations, then generate and validate the deterministic YOLO export before re-assessing TR1/TR2/TR5."
+}
