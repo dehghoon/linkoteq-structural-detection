@@ -1,0 +1,35 @@
+{
+  "batch_id": "remaining-29-v0.2",
+  "source_run_id": "36530901509",
+  "source_pack": "runs/36530901509/images/human-annotation-pack.json",
+  "spec_version": "0.2",
+  "coordinate_space": "source-page",
+  "annotation_geometry": "tight-axis-aligned-box",
+  "allowed_classes": ["column", "beam", "wall"],
+  "excluded_already_approved_items": ["qa-36530901509-002"],
+  "item_selection": {
+    "include_item_ids": "qa-36530901509-001 and qa-36530901509-003 through qa-36530901509-030",
+    "expected_item_count": 29,
+    "preserve_project_group_id": true,
+    "preserve_aliase_and_duplicate_metadata": true
+  },
+  "annotation_rules": {
+    "column": "visible structural column plan-footprint only",
+    "beam": "full visible structural beam graphic footprint only",
+    "wall": "visible structural-wall graphic only when structural semantics are reliable",
+    "no_inferred_continuation": true,
+    "no_ambiguous_wall_class": true,
+    "ambiguity_route": "QA-metadata",
+    "exclude": ["grids", "dimensions", "leaders", "notes", "cut-lines", "nonstructural-linework", "architectural-partitions-without-reliable-structural-semantics", "slab-or-foundation-edges-that-are-not-wall-graphics"]
+  },
+  "review_policy": {
+    "candidate_never_equals_ground_truth": true,
+    "no_auto_approval": true,
+    "wall_candidates_require_human_qa": true,
+    "unapproved_or_missing_labels_are_not_background": true,
+    "enables_training": false,
+    "emits_canonical_engineering_geometry": false
+  },
+  "status": "prepared-annotation-candidates-pending-human-qa",
+  "note": "This index defines the single 29-page review wave. The source pack remains authoritative for per-item source, preview, SHA256, alias, and project-group metadata. No annotation is approved by this artifact."
+}
