@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "project_group_id": "P2026-024",
+  "source_image": "datasets/validated-llm-v0.1/P2026-024/plans/images/EsMx401_no_titleblock-1.png",
+  "approved_overlay": "qa-approved-overlay.jpg",
+  "coordinate_space": "source-page",
+  "recovery_method": "raster-color-recovery",
+  "source_raster": {"width": 1536, "height": 1306},
+  "overlay_raster": {"width": 1536, "height": 1307},
+  "registration_policy": {"minor_raster_difference_accepted_for_recovery": true, "native_vector_annotation": false},
+  "overlay_legend_claim": {"column": 28, "beam": 44, "wall": 12, "total": 84},
+  "recovery_result": {
+    "status": "needs-final-qa",
+    "exact_bbox_serialization": false,
+    "reason": "The raster overlay contains class-colored member outlines/segments and text labels that are not separable into 84 unique tight axis-aligned boxes without inference.",
+    "fabricate_missing_boxes": false
+  },
+  "review_state": "needs-final-qa",
+  "training_enabled": false,
+  "canonical_engineering_geometry": false,
+  "provenance": {
+    "source": "human-approved-raster-overlay",
+    "recovery": "automated-raster-analysis",
+    "note": "This artifact records the recovery attempt and MUST NOT be treated as training ground truth until final QA resolves tight boxes."
+  }
+}
