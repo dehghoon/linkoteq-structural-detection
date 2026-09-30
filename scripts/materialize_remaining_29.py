@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-import json, os, shutil
+import json
+import os
+import shutil
 from pathlib import Path
 
 SOURCE_ROOT = Path(os.environ.get("SOURCE_REVIEW_ROOT", "."))
@@ -11,7 +13,9 @@ assert data["spec_version"] == "0.2"
 assert data["coordinate_space"] == "source-page"
 assert data["allowed_classes"] == ["column", "beam", "wall"]
 items = [x for x in data["items"] if x["item_id"] != "qa-36530901509-002"]
-assert len(items) == 29, f"expected 29, got {len(items)}"(OUT / "images").mkdir(parents=True, exist_ok=True)
+assert len(items) == 29, f"expected 29, got {len(items)}"
+
+(OUT / "images").mkdir(parents=True, exist_ok=True)
 
 materialized = []
 for x in items:
@@ -31,7 +35,7 @@ for x in items:
         "source_sha256": x["sha256"],
         "coordinate_space": "source-page",
         "review_state": "candidate-pending-human-qa",
-        "annotations": []
+        "annotations": [],
     })
 
 manifest = {
@@ -43,6 +47,6 @@ manifest = {
     "coordinate_space": "source-page",
     "candidate_never_equals_ground_truth": True,
     "training_enabled": False,
-    "items": materialized
+    "items": materialized,
 }
 (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
