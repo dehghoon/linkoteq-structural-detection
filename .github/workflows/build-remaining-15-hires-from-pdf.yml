@@ -27,14 +27,15 @@ jobs:
           sparse-checkout: |
             runs/36530901509/images/human-annotation-pack.json
 
-      - name: Validate builder and preflight source
+      - name: Validate shared resolver and preflight source
         run: |
           set -euo pipefail
           git rev-parse --short HEAD
-          sha256sum scripts/build_remaining_15_hires.py scripts/preflight_remaining_15_hires.py
+          sha256sum scripts/remaining_15_source_resolver.py scripts/build_remaining_15_hires.py scripts/preflight_remaining_15_hires.py
+          python3 -m py_compile scripts/remaining_15_source_resolver.py
           python3 -m py_compile scripts/build_remaining_15_hires.py
           python3 -m py_compile scripts/preflight_remaining_15_hires.py
-          python3 scripts/preflight_remaining_15_hires.py             --pack ".qa-review/runs/36530901509/images/human-annotation-pack.json"
+          python3 scripts/preflight_remaining_15_hires.py --pack ".qa-review/runs/36530901509/images/human-annotation-pack.json"
 
       - name: Install PDF rasterizer
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
@@ -42,7 +43,7 @@ jobs:
       - name: Build hi-res source pack
         run: |
           set -euo pipefail
-          python3 scripts/build_remaining_15_hires.py             --pack ".qa-review/runs/36530901509/images/human-annotation-pack.json"             --out "artifacts/remaining-15-hires"             --dpi "${{ inputs.dpi }}"
+          python3 scripts/build_remaining_15_hires.py --pack ".qa-review/runs/36530901509/images/human-annotation-pack.json" --out "artifacts/remaining-15-hires" --dpi "${{ inputs.dpi }}"
 
       - name: Verify artifact count
         run: |
