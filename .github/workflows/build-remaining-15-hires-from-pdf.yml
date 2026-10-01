@@ -27,6 +27,12 @@ jobs:
           sparse-checkout: |
             runs/36530901509/images/human-annotation-pack.json
 
+      - name: Validate builder source
+        run: |
+          git rev-parse --short HEAD
+          sha256sum scripts/build_remaining_15_hires.py
+          python3 -m py_compile scripts/build_remaining_15_hires.py
+
       - name: Install PDF rasterizer
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
 
