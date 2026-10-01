@@ -27,21 +27,30 @@ jobs:
           sparse-checkout: |
             runs/36530901509/images/human-annotation-pack.json
 
-      - name: Validate builder source
+      - name: Validate builder and preflight source
         run: |
+          set -euo pipefail
           git rev-parse --short HEAD
-          sha256sum scripts/build_remaining_15_hires.py
+          sha256sum scripts/build_remaining_15_hires.py scripts/preflight_remaining_15_hires.py
           python3 -m py_compile scripts/build_remaining_15_hires.py
+          python3 -m py_compile scripts/preflight_remaining_15_hires.py
+          python3 scripts/preflight_remaining_15_hires.py             --pack ".qa-review/runs/36530901509/images/human-annotation-pack.json"
 
       - name: Install PDF rasterizer
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
 
       - name: Build hi-res source pack
         run: |
-          python3 scripts/build_remaining_15_hires.py \
-            --pack ".qa-review/runs/36530901509/images/human-annotation-pack.json" \
-            --out "artifacts/remaining-15-hires" \
-            --dpi "${{ inputs.dpi }}"
+          set -euo pipefail
+          python3 scripts/build_remaining_15_hires.py             --pack ".qa-review/runs/36530901509/images/human-annotation-pack.json"             --out "artifacts/remaining-15-hires"             --dpi "${{ inputs.dpi }}"
+
+      - name: Verify artifact count
+        run: |
+          set -euo pipefail
+          test -f artifacts/remaining-15-hires/manifest.json
+          count=$(find artifacts/remaining-15-hires -maxdepth 1 -type f -name '*.png' | wc -l)
+          test "$count" -eq 15
+          echo "ARTIFACT PASS: 15/15 PNG"
 
       - name: Upload hi-res QA source pack
         uses: actions/upload-artifact@v4
