@@ -1,0 +1,52 @@
+name: Build remaining 15 QA sources from existing images
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout main dataset
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Checkout QA review metadata
+        uses: actions/checkout@v4
+        with:
+          ref: qa-review-artifacts
+          path: .qa-review
+          sparse-checkout: |
+            runs/36530901509/images/human-annotation-pack.json
+
+      - name: Validate builder
+        run: |
+          set -euo pipefail
+          git rev-parse --short HEAD
+          python3 -m py_compile scripts/build_remaining_15_existing_images.py
+
+      - name: Copy 15 existing source images
+        run: |
+          set -euo pipefail
+          python3 scripts/build_remaining_15_existing_images.py \
+            --pack ".qa-review/runs/36530901509/images/human-annotation-pack.json" \
+            --out "artifacts/remaining-15-existing-images"
+
+      - name: Verify 15 of 15
+        run: |
+          set -euo pipefail
+          test -f artifacts/remaining-15-existing-images/manifest.json
+          count=$(find artifacts/remaining-15-existing-images -maxdepth 1 -type f \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' \) | wc -l)
+          test "$count" -eq 15
+          echo "ARTIFACT PASS: 15/15 images"
+
+      - name: Upload 15-image QA pack
+        uses: actions/upload-artifact@v4
+        with:
+          name: remaing-15-existing-images
+          path: artifacts/remaining-15-existing-images
+          if-no-files-found: error
+          retention-days: 14
