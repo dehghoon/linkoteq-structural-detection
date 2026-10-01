@@ -48,7 +48,8 @@ def main():
         dst = out / f"{qid}__{project}{ext}"
         shutil.copy2(src, dst)
         seen.add(num)
-        manifest["items"].append({\n            "item_id": qid,
+        manifest["items"].append({
+            "item_id": qid,
             "project_group_id": project,
             "image_path": image_path,
             "source_file": str(src),
