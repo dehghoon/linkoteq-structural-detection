@@ -1,1 +1,67 @@
 name: Materialize reviewed JPGs to main
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+          fetch-depth: 1
+
+      - name: Checkout reviewed artifacts
+        uses: actions/checkout@v4
+        with:
+          ref: qa-review-artifacts
+          path: qa
+          fetch-depth: 1
+
+      - name: Copy reviewed JPG/JPEG source images only
+        shell: bash
+        run: |
+          set -euo pipefail
+          dest="main/datasets/human-annotation-inbox-v0.1/images"
+          rm -rf "$dest"
+          mkdir -p "$dest"
+
+          found=0
+          while IFS= read -r -d '' src; do
+            rel="${src#qa/runs/}"
+            run_id="${rel%%/*}"
+            after_run="${rel#*/images/source/}"
+            project="${after_run%%/*}"
+            file="$(basename "$src")"
+            out="${run_id}__${project}__${file}"
+            cp "$src" "$dest/$out"
+            found=$((found + 1))
+          done < <(find qa/runs -type f \( -iname '*.jpg' -o -iname '*.jpeg' \) -path '*/images/source/*' -print0)
+
+          if [ "$found" -eq 0 ]; then
+            echo "No JPG/JPEG files found under qa-review-artifacts/runs/*/images/source/"
+            exit 1
+          fi
+
+          echo "Copied $found reviewed JPG/JPEG source files."
+
+      - name: Commit materialized images
+        shell: bash
+        working-directory: main
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datasets/human-annotation-inbox-v0.1/images
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Materialize reviewed JPGs for human annotation"
+          git push origin HEAD:main
