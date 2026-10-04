@@ -14,12 +14,16 @@
     "gpt6-handoff-verification": "complete",
     "production-verification": "not-started"
   },
-  "handoffarget": "dehghoon/linkoteq-drawing-reconstruction",
+  "handoffTarget": "dehghoon/linkoteq-drawing-reconstruction",
   "handoffContract": "contracts/structural-detection-evidence-v0.2.md",
   "handoffStatus": "active",
-  "activeClasses": ["column","beam","wall"],
+  "activeClasses": [
+    "column",
+    "beam",
+    "wall"
+  ],
   "coordinateSpace": "source-page",
-  "migrationEvendence": {
+  "migrationEvidence": {
     "path": "contracts/migration-v0.1-to-v0.2-verification-2026-09-21.json",
     "detectionCiRunId": 35688458443,
     "detectionCiTestedCommit": "a8fd4d27886ece4e1b2e8babe69b14b8e28b29cf",
@@ -38,5 +42,13 @@
   "detectionOwner": "GPT-7",
   "reconstructionOwner": "GPT-6",
   "orchestrationOwner": "GPT-4",
-  "orchestrator": "GPT-4"
+  "orchestrator": "GPT-4",
+  "manualLabelingIntake": {
+    "status": "active",
+    "contract": "contracts/manual-labeling-intake-v0.1.md",
+    "validationRules": "contracts/manual-labeling-intake-validation-rules-v0.1.json",
+    "verificationTest": "tests/test_manual_labeling_intake_contract.py",
+    "activatedBy": "GPT-4",
+    "trainingAuthorized": false
+  }
 }
