@@ -50,5 +50,14 @@
     "verificationTest": "tests/test_manual_labeling_intake_contract.py",
     "activatedBy": "GPT-4",
     "trainingAuthorized": false
+  },
+  "manualLabelingYoloBundle": {
+    "status": "staging-active",
+    "contract": "contracts/manual-labeling-yolo-artifact-bundle-v0.1.md",
+    "builder": "scripts/build_manual_labeling_yolo_bundle.py",
+    "verificationTest": "tests/test_manual_labeling_yolo_bundle.py",
+    "requiresGpt7Admission": true,
+    "requiresPrivateArtifactRepository": true,
+    "trainingAuthorized": false
   }
 }
