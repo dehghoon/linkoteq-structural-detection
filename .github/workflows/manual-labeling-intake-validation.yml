@@ -5,13 +5,23 @@ on:
     paths:
       - "contracts/manual-labeling-intake-v0.1.md"
       - "contracts/manual-labeling-intake-validation-rules-v0.1.json"
+      - "contracts/manual-labeling-yolo-artifact-bundle-v0.1.md"
+      - "contracts/dataset-source-assets-v0.1.md"
+      - "scripts/build_manual_labeling_yolo_bundle.py"
+      - "scripts/export_yolo_human_approved.py"
       - "tests/test_manual_labeling_intake_contract.py"
+      - "tests/test_manual_labeling_yolo_bundle.py"
       - ".github/workflows/manual-labeling-intake-validation.yml"
   pull_request:
     paths:
       - "contracts/manual-labeling-intake-v0.1.md"
       - "contracts/manual-labeling-intake-validation-rules-v0.1.json"
+      - "contracts/manual-labeling-yolo-artifact-bundle-v0.1.md"
+      - "contracts/dataset-source-assets-v0.1.md"
+      - "scripts/build_manual_labeling_yolo_bundle.py"
+      - "scripts/export_yolo_human_approved.py"
       - "tests/test_manual_labeling_intake_contract.py"
+      - "tests/test_manual_labeling_yolo_bundle.py"
       - ".github/workflows/manual-labeling-intake-validation.yml"
 
 jobs:
@@ -22,5 +32,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate manual labeling intake contract
-        run: python -m unittest tests/test_manual_labeling_intake_contract.py -v
+      - name: Validate manual labeling intake and YOLO artifact contracts
+        run: |
+          python -m unittest tests/test_manual_labeling_intake_contract.py -v
+          python -m unittest tests/test_manual_labeling_yolo_bundle.py -v
