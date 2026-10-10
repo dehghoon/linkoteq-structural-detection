@@ -1,0 +1,75 @@
+{
+  "handoff_version": "github-manual-labeling-v2",
+  "source_repository": "dehghoon/Main-website",
+  "destination_repository": "dehghoon/linkoteq-structural-detection",
+  "candidate_id": "ea96d907-de30-4248-91fc-9dadfd94089b",
+  "source_id": "a611589a-ff59-4d8d-8c02-5cf365130b0e",
+  "project_group_id": "manual-labeling",
+  "source_sha256": "b9b6ee492aed3e106bf6aa473047039e0bd00e98d19da5acf0e2c1d565ffa986",
+  "original_filename": "EsMx201_mezzanine_plans_no_titleblock.pdf",
+  "source_mime_type": "application/pdf",
+  "page_index": 0,
+  "workflow_state": "owner-approved",
+  "owner_disposition": "owner-approved",
+  "dataset_admission": "pending-gpt7",
+  "training_ready": false,
+  "dataset_split_assigned": false,
+  "original_source_file": "datasets/manual-labeling-inbox/ea96d907-de30-4248-91fc-9dadfd94089b/original/EsMx201_mezzanine_plans_no_titleblock.pdf",
+  "yolo_image_file": "datasets/manual-labeling-inbox/ea96d907-de30-4248-91fc-9dadfd94089b/rendered/page-0001.png",
+  "rendered_image": {
+    "path": "datasets/manual-labeling-inbox/ea96d907-de30-4248-91fc-9dadfd94089b/rendered/page-0001.png",
+    "page_index": 0,
+    "width_px": 5841,
+    "height_px": 5184,
+    "render_scale": 2,
+    "mime_type": "image/png"
+  },
+  "annotations_file": "datasets/manual-labeling-inbox/ea96d907-de30-4248-91fc-9dadfd94089b/annotations.json",
+  "annotation_coordinate_space": "source-page",
+  "annotation_unit": "pdf-point",
+  "transform": {
+    "unit": "pdf-point",
+    "render_version": "pdf-lib-geometry-v1/pdfjs-render-scale-2",
+    "raster_width_px": 5841,
+    "coordinate_space": "source-page",
+    "display_width_px": 5841,
+    "raster_height_px": 5184,
+    "display_height_px": 5184,
+    "page_rotation_deg": 0,
+    "effective_crop_box_pdf": [
+      0,
+      0,
+      2920.32,
+      2592
+    ],
+    "effective_page_width_pt": 2920.32,
+    "display_to_raster_affine": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "effective_page_height_pt": 2592,
+    "transform_validation_state": "validated",
+    "raster_to_source_page_affine": [
+      0.4999691833590139,
+      0,
+      0,
+      0.5,
+      0,
+      0
+    ],
+    "source_page_to_raster_affine": [
+      2.0001232741617354,
+      0,
+      0,
+      2,
+      0,
+      0
+    ]
+  },
+  "note": "Original PDF is preserved for provenance. GPT-7/YOLO consumes the rendered PNG page referenced by yolo_image_file.",
+  "created_at": "2026-10-10T02:01:21.677Z"
+}

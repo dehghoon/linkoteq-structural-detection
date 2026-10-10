@@ -1,0 +1,94 @@
+{
+  "schema_version": "manual-labeling-intake-v0.1",
+  "candidate_id": "ea96d907-de30-4248-91fc-9dadfd94089b",
+  "source_id": "a611589a-ff59-4d8d-8c02-5cf365130b0e",
+  "page_id": "b9b6ee492aed3e106bf6aa473047039e0bd00e98d19da5acf0e2c1d565ffa986:page:0",
+  "coordinate_space": "source-page",
+  "unit": "pdf-point",
+  "transform": {
+    "unit": "pdf-point",
+    "render_version": "pdf-lib-geometry-v1/pdfjs-render-scale-2",
+    "raster_width_px": 5841,
+    "coordinate_space": "source-page",
+    "display_width_px": 5841,
+    "raster_height_px": 5184,
+    "display_height_px": 5184,
+    "page_rotation_deg": 0,
+    "effective_crop_box_pdf": [
+      0,
+      0,
+      2920.32,
+      2592
+    ],
+    "effective_page_width_pt": 2920.32,
+    "display_to_raster_affine": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "effective_page_height_pt": 2592,
+    "transform_validation_state": "validated",
+    "raster_to_source_page_affine": [
+      0.4999691833590139,
+      0,
+      0,
+      0.5,
+      0,
+      0
+    ],
+    "source_page_to_raster_affine": [
+      2.0001232741617354,
+      0,
+      0,
+      2,
+      0,
+      0
+    ]
+  },
+  "raster_target": {
+    "path": "datasets/manual-labeling-inbox/ea96d907-de30-4248-91fc-9dadfd94089b/rendered/page-0001.png",
+    "width_px": 5841,
+    "height_px": 5184
+  },
+  "annotations": [
+    {
+      "bbox": {
+        "xmax": 915.6935593220339,
+        "xmin": 874.9313659022932,
+        "ymax": 746.3216911764706,
+        "ymin": 717.2040441176471
+      },
+      "class": "column",
+      "flags": {},
+      "annotation_id": "86b9ea02-28a0-4d66-9bb0-bed0397d4bb8",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 1215.5868394815554,
+        "xmin": 347.93443668993024,
+        "ymax": 414.3805147058824,
+        "ymin": 408.5569852941177
+      },
+      "class": "wall",
+      "flags": {},
+      "annotation_id": "59863d21-98a3-4ddc-ad70-970c00b20dbc",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 598.3307676969093,
+        "xmin": 548.833818544367,
+        "ymax": 1075.3511029411766,
+        "ymin": 912.2922794117648
+      },
+      "class": "beam",
+      "flags": {},
+      "annotation_id": "572a42c2-091d-4b17-b5bc-7b336c1f6aa6",
+      "annotation_spec_version": "v0.2"
+    }
+  ]
+}
