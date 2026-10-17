@@ -78,7 +78,8 @@
       "page_number": 1,
       "path": "datasets/manual-labeling-inbox/5f997e3e-9c7a-4cd4-98e2-c005f3c12d98/preview/annotated-page-0001.png",
       "mime_type": "image/png",
-      "purpose": "human-qa-only"
+      "purpose": "human-qa-only",
+      "renderer_version": "readable-labels-v2"
     }
   ]
 }
