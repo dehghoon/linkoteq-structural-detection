@@ -1,0 +1,202 @@
+{
+  "schema_version": "manual-labeling-intake-v0.2",
+  "candidate_id": "292d9b8d-14ab-48b4-b417-83b737d25c20",
+  "source_id": "39b83ccc-5d88-4a6c-8446-c8386ea60454",
+  "page_id": "381823c292035715c8117dcdf3df0da70a908cecc1759ea6d75327c6f0c647d8:page:1",
+  "coordinate_space": "source-page",
+  "unit": "pdf-point",
+  "transform": {
+    "unit": "pdf-point",
+    "render_version": "pdf-lib-geometry-v1/pdfjs-render-scale-2",
+    "raster_width_px": 5184,
+    "coordinate_space": "source-page",
+    "display_width_px": 5184,
+    "raster_height_px": 3456,
+    "display_height_px": 3456,
+    "page_rotation_deg": 0,
+    "effective_crop_box_pdf": [
+      0,
+      0,
+      2592,
+      1728
+    ],
+    "effective_page_width_pt": 2592,
+    "display_to_raster_affine": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "effective_page_height_pt": 1728,
+    "transform_validation_state": "validated",
+    "raster_to_source_page_affine": [
+      0.5,
+      0,
+      0,
+      0.5,
+      0,
+      0
+    ],
+    "source_page_to_raster_affine": [
+      2,
+      0,
+      0,
+      2,
+      0,
+      0
+    ]
+  },
+  "raster_target": {
+    "path": "datasets/manual-labeling-inbox/292d9b8d-14ab-48b4-b417-83b737d25c20/rendered/page-0002.png",
+    "width_px": 5184,
+    "height_px": 3456
+  },
+  "annotations": [
+    {
+      "bbox": {
+        "xmax": 1045.625,
+        "xmin": 1025.625,
+        "ymax": 945.48828125,
+        "ymin": 922.98828125
+      },
+      "class": "column",
+      "flags": {},
+      "annotation_id": "e3e05cc3-c33c-4cbd-a19d-11f0006b7a10",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 1049.375,
+        "xmin": 1033.125,
+        "ymax": 800.48828125,
+        "ymin": 789.23828125
+      },
+      "class": "column",
+      "flags": {},
+      "annotation_id": "a4b80dd1-b10e-4a2c-87c6-40ac55d01e6b",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 940.625,
+        "xmin": 920.625,
+        "ymax": 801.73828125,
+        "ymin": 790.48828125
+      },
+      "class": "column",
+      "flags": {},
+      "annotation_id": "7b2c57c9-73fc-4898-ae52-4be718191ef5",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 936.875,
+        "xmin": 928.125,
+        "ymax": 931.73828125,
+        "ymin": 806.73828125
+      },
+      "class": "column",
+      "flags": {},
+      "annotation_id": "53ed147b-8a06-43a7-a50a-dc160f856269",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 1041.875,
+        "xmin": 1031.875,
+        "ymax": 920.48828125,
+        "ymin": 800.48828125
+      },
+      "class": "column",
+      "flags": {},
+      "annotation_id": "fcaefb11-4101-40aa-9932-e05bc18eeda7",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 1151.875,
+        "xmin": 1141.875,
+        "ymax": 799.23828125,
+        "ymin": 789.23828125
+      },
+      "class": "column",
+      "flags": {},
+      "annotation_id": "d753c490-c0b1-42e8-bfd3-efce4eaba7af",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 921.875,
+        "xmin": 830.625,
+        "ymax": 794.23828125,
+        "ymin": 792.98828125
+      },
+      "class": "wall",
+      "flags": {},
+      "annotation_id": "1f9a2ba8-b24d-482b-a25c-3a6f0c6322db",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 1141.875,
+        "xmin": 1055.625,
+        "ymax": 800.48828125,
+        "ymin": 791.73828125
+      },
+      "class": "wall",
+      "flags": {},
+      "annotation_id": "f18d8614-9f67-4d83-805f-a14692736bc1",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 1254.375,
+        "xmin": 1155.625,
+        "ymax": 794.23828125,
+        "ymin": 791.73828125
+      },
+      "class": "wall",
+      "flags": {},
+      "annotation_id": "5a7e0064-e11c-4b62-b638-34a68f52082e",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 1258.125,
+        "xmin": 1249.375,
+        "ymax": 926.73828125,
+        "ymin": 797.98828125
+      },
+      "class": "wall",
+      "flags": {},
+      "annotation_id": "99fae9a2-c303-44fa-98e5-1ccd5599bb8a",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 1246.875,
+        "xmin": 826.875,
+        "ymax": 929.23828125,
+        "ymin": 924.23828125
+      },
+      "class": "wall",
+      "flags": {},
+      "annotation_id": "24788a86-cabb-403c-b5f5-2568258a9455",
+      "annotation_spec_version": "v0.2"
+    },
+    {
+      "bbox": {
+        "xmax": 826.875,
+        "xmin": 818.125,
+        "ymax": 930.48828125,
+        "ymin": 805.48828125
+      },
+      "class": "wall",
+      "flags": {},
+      "annotation_id": "f9888812-b789-4ae6-8167-e8f053ce527d",
+      "annotation_spec_version": "v0.2"
+    }
+  ]
+}
