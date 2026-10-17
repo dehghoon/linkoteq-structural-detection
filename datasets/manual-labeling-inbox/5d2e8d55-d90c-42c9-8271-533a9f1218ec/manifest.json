@@ -1,0 +1,68 @@
+{
+  "handoff_version": "github-manual-labeling-v2",
+  "source_repository": "dehghoon/Main-website",
+  "destination_repository": "dehghoon/linkoteq-structural-detection",
+  "candidate_id": "5d2e8d55-d90c-42c9-8271-533a9f1218ec",
+  "source_id": "79b4c014-d09e-429c-a11c-94b9c0d4a86b",
+  "project_group_id": "upload:9683dc0ef2f0ad242a5bbcb4629f4a75af38a748469aba24df5210f9d47fa934",
+  "source_sha256": "9683dc0ef2f0ad242a5bbcb4629f4a75af38a748469aba24df5210f9d47fa934",
+  "original_filename": "EsMx401-roof_selected-1.jpg",
+  "source_mime_type": "image/jpeg",
+  "page_index": 0,
+  "workflow_state": "owner-approved",
+  "owner_disposition": "owner-approved",
+  "dataset_admission": "pending-gpt7",
+  "training_ready": false,
+  "dataset_split_assigned": false,
+  "original_source_file": "datasets/manual-labeling-inbox/5d2e8d55-d90c-42c9-8271-533a9f1218ec/original/EsMx401-roof_selected-1.jpg",
+  "yolo_image_file": "datasets/manual-labeling-inbox/5d2e8d55-d90c-42c9-8271-533a9f1218ec/original/EsMx401-roof_selected-1.jpg",
+  "rendered_image": null,
+  "annotations_file": "datasets/manual-labeling-inbox/5d2e8d55-d90c-42c9-8271-533a9f1218ec/annotations.json",
+  "annotation_coordinate_space": "source-page",
+  "annotation_unit": "pdf-point",
+  "transform": {
+    "unit": "pdf-point",
+    "render_version": "jpeg-source-v1",
+    "raster_width_px": 1600,
+    "coordinate_space": "source-page",
+    "display_width_px": 1600,
+    "raster_height_px": 1200,
+    "display_height_px": 1200,
+    "page_rotation_deg": 0,
+    "effective_crop_box_pdf": [
+      0,
+      0,
+      581.465778316172,
+      436.09933373712903
+    ],
+    "effective_page_width_pt": 581.465778316172,
+    "display_to_raster_affine": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "effective_page_height_pt": 436.09933373712903,
+    "transform_validation_state": "validated",
+    "raster_to_source_page_affine": [
+      0.3634161114476075,
+      0,
+      0,
+      0.36341611144760755,
+      0,
+      0
+    ],
+    "source_page_to_raster_affine": [
+      2.751666666666667,
+      0,
+      0,
+      2.7516666666666665,
+      0,
+      0
+    ]
+  },
+  "note": "Original raster image is the GPT-7/YOLO image candidate.",
+  "created_at": "2026-10-17T03:15:10.767Z"
+}
